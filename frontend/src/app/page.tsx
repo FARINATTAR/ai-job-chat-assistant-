@@ -12,7 +12,7 @@ import {
   CheckCircle2,
   Filter,
 } from "lucide-react";
-import { getSessionId, checkBackendHealth, API_BASE_URL, JobMatch, ResumeProfile } from "@/lib/api";
+import { getSessionId, checkBackendHealth, API_BASE_URL, JobMatch, ResumeProfile, applyToJobDirect } from "@/lib/api";
 import { ResumeUploader } from "@/components/resume/ResumeUploader";
 import { JobCard } from "@/components/jobs/JobCard";
 import { AgentTraceBadge, AgentTraceEvent } from "@/components/chat/AgentTraceBadge";
@@ -27,7 +27,12 @@ interface ChatMessage {
 }
 
 export default function Home() {
-  const [sessionId, setSessionId] = useState<string>("");
+  const [sessionId, setSessionId] = useState<string>(() => {
+    if (typeof window !== "undefined") {
+      return getSessionId();
+    }
+    return "session_init";
+  });
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [inputMessage, setInputMessage] = useState("");
   const [isStreaming, setIsStreaming] = useState(false);
@@ -37,6 +42,7 @@ export default function Home() {
     jobs_loaded: 0,
   });
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [appliedJobIds, setAppliedJobIds] = useState<Set<string>>(new Set());
   const [currentTrace, setCurrentTrace] = useState<AgentTraceEvent[]>([]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -52,8 +58,8 @@ export default function Home() {
         content:
           "👋 Welcome! I am your **AI Job Chat Assistant**.\n\n" +
           "1. **Upload your resume** (PDF or DOCX) on the left to get started.\n" +
-          "2. I'll auto-extract your skills and designation to recommend the best matching jobs from our 1,600+ dataset.\n" +
-          "3. You can naturally refine searches (*'show remote roles'*, *'jobs needing Python'*) and apply (*'apply to job 1'*).",
+          "2. I'll auto-extract your skills and designation to recommend the best matching jobs from our 1,600+ verified software engineering dataset.\n" +
+          "3. You can naturally refine searches (*'show remote roles'*, *'jobs needing Python'*) and apply (*'apply to job 1'* or click Quick Apply).",
       },
     ]);
 
@@ -190,8 +196,24 @@ export default function Home() {
     }
   };
 
-  const handleApplyToJob = async (reference: string) => {
-    await handleSendMessage(`apply to job ${reference}`);
+  const handleApplyToJob = async (reference: string, jobId: string) => {
+    try {
+      const data = await applyToJobDirect(jobId, sessionId);
+      setAppliedJobIds((prev) => {
+        const next = new Set(prev);
+        next.add(jobId);
+        return next;
+      });
+
+      const confirmMsg: ChatMessage = {
+        id: "apply_conf_" + Date.now(),
+        role: "assistant",
+        content: data.message || `✅ Successfully submitted application for Job #${reference}!`,
+      };
+      setMessages((prev) => [...prev, confirmMsg]);
+    } catch (e: any) {
+      await handleSendMessage(`apply to job ${reference}`);
+    }
   };
 
   return (
@@ -319,7 +341,12 @@ export default function Home() {
                   {msg.jobResults && msg.jobResults.length > 0 && (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">
                       {msg.jobResults.map((match) => (
-                        <JobCard key={match.job.id} match={match} onApply={handleApplyToJob} />
+                        <JobCard
+                          key={match.job.id}
+                          match={match}
+                          onApply={handleApplyToJob}
+                          isApplied={appliedJobIds.has(match.job.id)}
+                        />
                       ))}
                     </div>
                   )}

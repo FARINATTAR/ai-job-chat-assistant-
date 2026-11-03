@@ -4,9 +4,9 @@ Handles:
 1. Index-to-ID resolution ('apply to job 3' -> exact job ID).
 2. Database deduplication via unique constraints.
 3. Fetching previously applied jobs for status queries.
-4. Edge-case handling: invalid job references and applying without a resume.
+4. Edge-case handling: invalid job references and graceful session defaults.
 """
-from typing import Dict, Any, List, Optional, Tuple
+from typing import Dict, Any, List, Optional
 from ..models.schemas import Job, ApplicationRecord, ResumeProfile
 from ..core.session import SessionStore, get_session_store, SessionState
 from ..repositories.job_repo import JobRepository, get_job_repository
@@ -50,38 +50,45 @@ class ApplyAgent:
     ) -> ApplicationResult:
         """
         Apply to a job using natural reference (e.g., '1', 'job 2', 'jf_...').
-        Enforces resume requirement, index resolution, and duplicate prevention.
+        Resolves index and guarantees database recording with duplicate prevention.
         """
         # 1. Edge-Case: Candidate must have uploaded a resume first
         if not session.resume_profile:
             return ApplicationResult(
                 success=False,
-                message="Please upload your resume first before applying so we can submit your qualifications."
+                message="⚠️ Please upload your resume (PDF/DOCX) on the left first so your qualifications can be attached to the application!"
             )
 
-        # 2. Edge-Case: Resolve reference to actual Job ID
+        # 2. Resolve reference to actual Job ID
         job_id = session.resolve_job_index_or_id(job_reference)
+
+        # Fallback: if reference is direct job ID
+        if not job_id:
+            all_matching = [j for j in self.job_repo.get_all() if j.id == job_reference.strip()]
+            if all_matching:
+                job_id = all_matching[0].id
+
         if not job_id:
             available_indices = len(session.last_results)
             if available_indices > 0:
-                hint = f"Please choose a number between 1 and {available_indices} from the recommended list."
+                hint = f"Please select a number between 1 and {available_indices} from the recommended list."
             else:
-                hint = "Please ask to search for matching jobs first so I can list them for you."
-            
+                hint = "Please ask me to recommend jobs first so I can list them with numbers."
+
             return ApplicationResult(
                 success=False,
                 message=f"I couldn't find a job matching '{job_reference}'. {hint}"
             )
 
-        # 3. Retrieve job from repository
+        # Retrieve job from repository
         job = self.job_repo.get_by_id(job_id)
         if not job:
             return ApplicationResult(
                 success=False,
-                message=f"Job listing with ID '{job_id}' is no longer available."
+                message=f"Job listing '{job_id}' is no longer active."
             )
 
-        # 4. Check & insert into database (handles duplicate constraint)
+        # Check & insert into database (handles duplicate constraint)
         record, is_new = self.app_repo.create_application(
             session_id=session.session_id,
             job=job,
@@ -89,7 +96,6 @@ class ApplyAgent:
         )
 
         if not is_new:
-            # Duplicate application detected
             applied_date = record.applied_at[:10] if record.applied_at else "earlier"
             return ApplicationResult(
                 success=True,
@@ -98,14 +104,17 @@ class ApplyAgent:
                 application=record
             )
 
+        resume_note = ""
+        if not session.resume_profile:
+            resume_note = " *(Tip: You can drop your resume anytime to attach full CV details).* "
+
         return ApplicationResult(
             success=True,
             is_duplicate=False,
-            message=f"Successfully applied to **{job.title}** at **{job.company}**! Your application has been recorded.",
+            message=f"✅ Successfully applied to **{job.title}** at **{job.company}**! Your application has been recorded in the tracker.{resume_note}",
             application=record
         )
 
     def list_applied_jobs(self, session_id: str) -> List[ApplicationRecord]:
         """Fetch all applications for the session."""
         return self.app_repo.get_user_applications(session_id)
-

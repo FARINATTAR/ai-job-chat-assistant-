@@ -1,7 +1,8 @@
 """
 FastAPI route definitions for health, applications, resume upload, and chat.
 """
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
+from pydantic import BaseModel
 from fastapi import APIRouter, Depends, HTTPException, UploadFile, File, status
 from fastapi.responses import StreamingResponse
 from ..models.schemas import ApplicationRecord, ResumeProfile, ChatRequest
@@ -23,6 +24,37 @@ def health_check(job_repo: JobRepository = Depends(get_job_repository)):
         "service": "AI Job Chat Assistant Backend",
         "jobs_loaded": job_repo.total_count,
         "database": "connected"
+    }
+
+
+class DirectApplyBody(BaseModel):
+    job_id: str
+    notes: Optional[str] = None
+
+
+@router.post("/apply", tags=["Applications"])
+def direct_apply(
+    body: DirectApplyBody,
+    session: SessionState = Depends(get_current_session),
+    app_repo: ApplicationRepository = Depends(get_application_repo),
+    job_repo: JobRepository = Depends(get_job_repository)
+):
+    """Direct 1-click apply endpoint for job cards."""
+    job = job_repo.get_by_id(body.job_id)
+    if not job:
+        raise HTTPException(status_code=404, detail="Job not found")
+
+    record, is_new = app_repo.create_application(
+        session_id=session.session_id,
+        job=job,
+        notes=body.notes
+    )
+
+    return {
+        "success": True,
+        "is_duplicate": not is_new,
+        "message": f"Successfully applied to {job.title} at {job.company}!" if is_new else f"You already applied to {job.title} at {job.company}.",
+        "application": record.model_dump()
     }
 
 

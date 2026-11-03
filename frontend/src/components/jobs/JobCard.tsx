@@ -6,7 +6,7 @@ import { JobMatch } from "@/lib/api";
 
 interface JobCardProps {
   match: JobMatch;
-  onApply: (reference: string) => Promise<void>;
+  onApply: (reference: string, jobId: string) => Promise<void>;
   isApplied?: boolean;
 }
 
@@ -20,8 +20,10 @@ export const JobCard: React.FC<JobCardProps> = ({ match, onApply, isApplied = fa
     if (applied || applying) return;
     setApplying(true);
     try {
-      await onApply(String(index));
+      await onApply(String(index), job.id);
       setApplied(true);
+    } catch (e) {
+      console.error("Apply error:", e);
     } finally {
       setApplying(false);
     }

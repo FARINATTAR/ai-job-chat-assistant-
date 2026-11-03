@@ -315,3 +315,4 @@ Follow this script for the screen recording submission:
 | **2:30 – 3:15** | **Conversational Refinement** | Type: *"Show only remote roles"*, followed by *"jobs needing Python"*. Show how filters stack statefully across turns and update results dynamically. |
 | **3:15 – 4:00** | **Natural Apply & Tracking** | Type: *"apply to job 1"*. Show the instant confirmation. Try applying again to show **duplicate prevention**. Then say *"show my applied jobs"* and open the **Applied Jobs Drawer**. |
 | **4:00 – 4:30** | **Edge-Case Handling** | Demonstrate attempting an invalid index (*"apply to job 99"*), showing the clear error correction. Conclude with summary. |
+
