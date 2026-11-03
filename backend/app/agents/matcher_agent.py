@@ -56,6 +56,11 @@ class MatcherAgent:
                 if not job_skills_lower.intersection(requested_lower):
                     continue
 
+            # Experience-Gate: Prevent showing 3+ or 5+ year senior jobs to freshers/interns
+            # Allow at most 1.5 years above candidate's current experience level
+            if job.experience_required > candidate_exp + 1.5:
+                continue
+
             # 2. Strict Score Calculation
             score, matched_skills, missing_skills = self._calculate_match_score(
                 candidate_skills_lower=candidate_skills_lower,

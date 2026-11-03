@@ -182,7 +182,7 @@
     "location": "Mumbai Metropolitan Region",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Machine Learning",
       "Data Analysis",
@@ -512,7 +512,7 @@
     "location": "Kolkata metropolitan area, West Bengal, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 5,
     "skills": [
       "Machine Learning",
       "Deep Learning",
@@ -690,7 +690,7 @@
     "location": "Greater Kolkata Area",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 4,
     "skills": [
       "CI/CD",
       "Problem Solving",
@@ -793,7 +793,7 @@
     "location": "Pune Division, Maharashtra, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 2,
     "skills": [
       "Azure",
       "Excel",
@@ -816,7 +816,7 @@
     "location": "India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "Problem Solving",
@@ -878,7 +878,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "Azure",
@@ -900,7 +900,7 @@
     "location": "Bengaluru East, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 2,
     "skills": [
       "CI/CD",
       "Python",
@@ -930,7 +930,7 @@
     "location": "Bengaluru East, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "AWS",
@@ -1237,7 +1237,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 3,
     "skills": [
       "Node.js",
       "REST API",
@@ -1326,7 +1326,7 @@
     "location": "Talegaon, Maharashtra, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Recruitment"
     ],
@@ -1343,7 +1343,7 @@
     "location": "Noida, Uttar Pradesh, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Rust",
       "Ios",
@@ -1364,7 +1364,7 @@
     "location": "India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Sap",
       "Typing"
@@ -1400,7 +1400,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "REST API",
       "CI/CD",
@@ -1449,7 +1449,7 @@
     "location": "India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Python",
       "Java",
@@ -1516,7 +1516,7 @@
     "location": "Pune Division, Maharashtra, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Data Analysis",
       "Data Science",
@@ -1564,7 +1564,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Communication Skills",
       "AWS",
@@ -1730,7 +1730,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Java",
       "JavaScript",
@@ -1788,7 +1788,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Java",
       "React",
@@ -1860,7 +1860,7 @@
     "location": "Pune/Pimpri-Chinchwad Area",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Communication Skills",
       "Git",
@@ -2415,7 +2415,7 @@
     "location": "United States",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "SQL",
       "Database Design",
@@ -2442,7 +2442,7 @@
     "location": "United States",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "User Experience (UX) Design",
       "User Interface (UI) Design",
@@ -2470,7 +2470,7 @@
     "location": "United States",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Microsoft Excel",
       "Microsoft Word",
@@ -2831,7 +2831,7 @@
     "location": "Mumbai, Maharashtra",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "C++",
       "OOP",
@@ -2855,7 +2855,7 @@
     "location": "Coimbatore",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 5,
     "skills": [
       "Java",
       "Spring",
@@ -2878,7 +2878,7 @@
     "location": "Bangalore, Karnataka",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Java",
       "Microservices",
@@ -2926,7 +2926,7 @@
     "location": "Bengaluru, Karnataka",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Python",
       "C#",
@@ -2974,7 +2974,7 @@
     "location": "Bengaluru, Karnataka",
     "workplace_type": "hybrid",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "C++",
       "C",
@@ -3045,7 +3045,7 @@
     "location": "Remote - India",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 3,
     "skills": [],
     "description": "Who we are At Twilio, we’re shaping the future of communications, all from the comfort of our homes. We deliver innovative solutions to hundreds of thousands of businesses and empower millions of developers worldwide to craft personalized customer experiences. Our dedication to remote-first work,",
     "source_url": "https://job-boards.greenhouse.io/twilio/jobs/8319386?gh_src=jobfound.org&source=jobfound.org",
@@ -3352,7 +3352,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Python",
       "SQL",
@@ -3372,7 +3372,7 @@
     "location": "Chennai, Tamil Nadu, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [],
     "description": "CAD proposal generation using CATIA. Understanding of target setting for Visibility, Package, and Usability (FI) requirements. Knowledge of vehicle-level homologation requirements and ability to propose compliant design solutions. Understanding of occupant-related hardpoints and parameters as per",
     "source_url": "https://in.linkedin.com/jobs/view/vehicle-architecture-ergonomics-at-segula-technologies-4448747497?source=jobfound.org",
@@ -3438,7 +3438,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Ios"
     ],
@@ -3479,7 +3479,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Data Analysis",
       "Data Science",
@@ -3504,7 +3504,7 @@
     "location": "Ajmer, Rajasthan, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Power Bi",
       "Python",
@@ -3569,7 +3569,7 @@
     "location": "Gurgaon, Haryana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Communication Skills",
       "Python",
@@ -3724,7 +3724,7 @@
     "location": "Gurugram, Haryana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 1,
     "skills": [
       "CI/CD",
       "Version Control",
@@ -3769,7 +3769,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 5,
     "skills": [
       "Machine Learning",
       "Data Science",
@@ -3809,7 +3809,7 @@
     "location": "India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Machine Learning",
       "Communication Skills",
@@ -3862,7 +3862,7 @@
     "location": "Pune/Pimpri-Chinchwad Area",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Machine Learning",
       "Deep Learning",
@@ -3895,7 +3895,7 @@
     "location": "Delhi, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "REST API",
       "Docker",
@@ -3942,7 +3942,7 @@
     "location": "Chennai, Tamil Nadu, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Python",
       "SQL",
@@ -3965,7 +3965,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "AWS",
@@ -4016,7 +4016,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 5,
     "skills": [
       "Data Analysis",
       "Spark",
@@ -4040,7 +4040,7 @@
     "location": "Greater Hyderabad Area",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 2,
     "skills": [
       "CI/CD",
       "Express",
@@ -4062,7 +4062,7 @@
     "location": "Pune Division, Maharashtra, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 5,
     "skills": [
       "Communication Skills",
       "SQL",
@@ -4390,7 +4390,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "Version Control",
@@ -4423,7 +4423,7 @@
     "location": "India",
     "workplace_type": "onsite",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "Problem Solving",
@@ -4478,7 +4478,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "Python",
@@ -4769,7 +4769,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Machine Learning",
       "Spring Boot",
@@ -5424,7 +5424,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "Python",
@@ -5651,7 +5651,7 @@
     "location": "Bangalore Urban, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 3,
+    "experience_required": 5,
     "skills": [
       "Communication Skills",
       "Sem"
@@ -5669,7 +5669,7 @@
     "location": "Vapi, Gujarat, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Communication Skills",
       "React",
@@ -5760,7 +5760,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Excel"
     ],
@@ -5777,7 +5777,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Git",
       "Rust",
@@ -5826,7 +5826,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Ios"
     ],
@@ -5893,7 +5893,7 @@
     "location": "Pune Division, Maharashtra, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Java",
       "React",
@@ -5943,7 +5943,7 @@
     "location": "Noida, Uttar Pradesh, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 3,
+    "experience_required": 5,
     "skills": [
       "Python",
       "SQL",
@@ -6184,7 +6184,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Git",
       "Rust"
@@ -6375,7 +6375,7 @@
     "location": "Vapi, Gujarat, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Version Control",
       "Communication Skills",
@@ -6422,7 +6422,7 @@
     "location": "Periyapatna, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Machine Learning",
       "CI/CD",
@@ -6633,7 +6633,7 @@
     "location": "Gurugram, Haryana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Unit Testing",
       "Version Control",
@@ -6700,7 +6700,7 @@
     "location": "Delhi, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 3,
+    "experience_required": 5,
     "skills": [
       "Version Control",
       "Communication Skills",
@@ -6796,7 +6796,7 @@
     "location": "Menomonee Falls, WI",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Data Entry",
       "Microsoft Excel",
@@ -6820,7 +6820,7 @@
     "location": "Alaska",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Data Entry",
       "Typing",
@@ -6938,7 +6938,7 @@
     "location": "Hyderabad",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Python",
       "Houdini",
@@ -6984,7 +6984,7 @@
     "location": "Hyderabad",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Go",
       "Java",
@@ -7145,7 +7145,7 @@
     "location": "Chennai, Tamil Nadu, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 5,
     "skills": [
       "Excel"
     ],
@@ -7182,7 +7182,7 @@
     "location": "Pune Division, Maharashtra, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Communication Skills",
       "Python",
@@ -7202,7 +7202,7 @@
     "location": "Bangalore Urban, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Version Control",
       "Communication Skills",
@@ -7224,7 +7224,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 3,
+    "experience_required": 5,
     "skills": [
       "Spring Boot",
       "Java",
@@ -7500,7 +7500,7 @@
     "location": "Haryana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Excel",
       "Accounting"
@@ -7843,7 +7843,7 @@
     "location": "Atlanta, GA",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 2,
+    "experience_required": 5,
     "skills": [
       "SQL",
       "Google BigQuery",
@@ -7890,7 +7890,7 @@
     "location": "Greater Chennai Area",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Git",
       "Rust",
@@ -7953,7 +7953,7 @@
     "location": "Mumbai Metropolitan Region",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Spring Boot",
       "REST API",
@@ -8173,7 +8173,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Data Analysis",
       "Data Science",
@@ -8293,7 +8293,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 2,
     "skills": [
       "CI/CD",
       "Java",
@@ -8316,7 +8316,7 @@
     "location": "Noida, Uttar Pradesh, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "Java",
@@ -8422,7 +8422,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Python",
       "C++",
@@ -8533,7 +8533,7 @@
     "location": "United States",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 2,
     "skills": [
       "Mechanical design standards",
       "CAD tools",
@@ -8719,7 +8719,7 @@
     "location": "USA",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Data Annotation",
       "Program Management",
@@ -8790,7 +8790,7 @@
     "location": "India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Data Science",
       "Wordpress",
@@ -8893,7 +8893,7 @@
     "location": "Bangalore Urban, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Machine Learning",
       "Deep Learning",
@@ -8953,7 +8953,7 @@
     "location": "New Delhi, Delhi, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Machine Learning",
       "Deep Learning",
@@ -8981,7 +8981,7 @@
     "location": "Greater Hyderabad Area",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Machine Learning",
       "Deep Learning",
@@ -9010,7 +9010,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 3,
     "skills": [
       "Version Control",
       "Python",
@@ -9407,7 +9407,7 @@
     "location": "Thane, Maharashtra, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Python",
       "Java",
@@ -9460,7 +9460,7 @@
     "location": "United States",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 2,
     "skills": [
       "Site Reliability Engineering",
       "Python",
@@ -9705,7 +9705,7 @@
     "location": "India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 2,
     "skills": [
       "Python",
       "SQL",
@@ -9724,7 +9724,7 @@
     "location": "Greater Kolkata Area",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 5,
+    "experience_required": 13,
     "skills": [
       "Machine Learning",
       "Deep Learning",
@@ -9827,7 +9827,7 @@
     "location": "Coimbatore, Tamil Nadu, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 5,
+    "experience_required": 12,
     "skills": [
       "Machine Learning",
       "Data Science",
@@ -9876,7 +9876,7 @@
     "location": "Bengaluru East, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "Node.js",
@@ -9902,7 +9902,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "Python",
@@ -10206,7 +10206,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 8,
     "skills": [
       "Python",
       "Java",
@@ -10230,7 +10230,7 @@
     "location": "India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Power Bi",
       "CI/CD",
@@ -10329,7 +10329,7 @@
     "location": "Pune Division, Maharashtra, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "Python",
@@ -10359,7 +10359,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 8,
     "skills": [
       "Node.js",
       "REST API",
@@ -10470,7 +10470,7 @@
     "location": "Chennai, Tamil Nadu, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Excel",
       "Sem"
@@ -10597,7 +10597,7 @@
     "location": "Greater Kolkata Area",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Ios"
     ],
@@ -10636,7 +10636,7 @@
     "location": "Chennai, Tamil Nadu, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Node.js",
       "Python",
@@ -10662,7 +10662,7 @@
     "location": "Pune Division, Maharashtra, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 5,
     "skills": [
       "Excel",
       "Sap",
@@ -10681,7 +10681,7 @@
     "location": "Ahmedabad, Gujarat, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 3,
     "skills": [
       "Git",
       "C#",
@@ -10720,7 +10720,7 @@
     "location": "Chennai, Tamil Nadu, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "Python",
@@ -11204,7 +11204,7 @@
     "location": "PA",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Provider Data Management",
       "Provider Credentialing",
@@ -11347,7 +11347,7 @@
     "location": "Bengaluru, Karnataka",
     "workplace_type": "hybrid",
     "remote": false,
-    "experience_required": 5,
+    "experience_required": 8,
     "skills": [
       "Python",
       "Django",
@@ -11721,7 +11721,7 @@
     "location": "New York",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 4,
     "skills": [
       "React",
       "JavaScript",
@@ -12266,7 +12266,7 @@
     "location": "Greater Chennai Area",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Communication Skills",
       "Tally",
@@ -12285,7 +12285,7 @@
     "location": "Chennai, Tamil Nadu, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Sem"
     ],
@@ -12364,7 +12364,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "SQL",
       "Hadoop",
@@ -12459,7 +12459,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 2,
     "skills": [
       "Power Bi",
       "SQL"
@@ -12670,7 +12670,7 @@
     "location": "India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Machine Learning",
       "Communication Skills",
@@ -12695,7 +12695,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 3,
     "skills": [
       "Machine Learning",
       "CI/CD",
@@ -12791,7 +12791,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "Communication Skills",
@@ -12837,7 +12837,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "REST API",
       "Communication Skills",
@@ -12896,7 +12896,7 @@
     "location": "Greater Kolkata Area",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "AWS",
@@ -12968,7 +12968,7 @@
     "location": "Gurgaon, Haryana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Machine Learning",
       "Python",
@@ -13093,7 +13093,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Spring Boot",
       "CI/CD",
@@ -13198,7 +13198,7 @@
     "location": "India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "Communication Skills",
@@ -13436,7 +13436,7 @@
     "location": "Chennai, Tamil Nadu, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Sem",
       "Project Management"
@@ -13481,7 +13481,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Data Science",
       "REST API",
@@ -13527,7 +13527,7 @@
     "location": "Chennai, Tamil Nadu, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Communication Skills",
       "Excel",
@@ -13547,7 +13547,7 @@
     "location": "Chennai, Tamil Nadu, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Sem",
       "Project Management"
@@ -13625,7 +13625,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 2,
     "skills": [
       "Problem Solving",
       "Express",
@@ -13646,7 +13646,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 3,
     "skills": [
       "Swift",
       "Android",
@@ -13810,7 +13810,7 @@
     "location": "Sahibzada Ajit Singh Nagar, Punjab, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "Communication Skills",
@@ -13838,7 +13838,7 @@
     "location": "Chennai, Tamil Nadu, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 5,
     "skills": [
       "React Native",
       "Unit Testing",
@@ -14044,7 +14044,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 1,
+    "experience_required": 3,
     "skills": [
       "Python",
       "Java",
@@ -14088,7 +14088,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Data Analysis",
       "Python",
@@ -14219,7 +14219,7 @@
     "location": "Greater Kolkata Area",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 4,
     "skills": [
       "Version Control",
       "Communication Skills",
@@ -14243,7 +14243,7 @@
     "location": "Pune/Pimpri-Chinchwad Area",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Machine Learning",
       "Node.js",
@@ -14298,7 +14298,7 @@
     "location": "Pune/Pimpri-Chinchwad Area",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 2,
     "skills": [
       "CI/CD",
       "Version Control",
@@ -14477,7 +14477,7 @@
     "location": "United States",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Data Platform Engineering",
       "Streaming Data Processing",
@@ -14877,7 +14877,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Git",
       "Onboarding"
@@ -15057,7 +15057,7 @@
     "location": "Chennai, Tamil Nadu, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "Python",
@@ -15299,7 +15299,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "REST API",
       "CI/CD",
@@ -15357,7 +15357,7 @@
     "location": "Nagpur Rural, Maharashtra, India",
     "workplace_type": "onsite",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "Version Control",
@@ -15665,7 +15665,7 @@
     "location": "Bengaluru, Karnataka",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 3,
     "skills": [
       "React",
       "TypeScript",
@@ -15737,7 +15737,7 @@
     "location": "Noida, Uttar Pradesh",
     "workplace_type": "hybrid",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 5,
     "skills": [
       "React",
       "TypeScript",
@@ -16080,7 +16080,7 @@
     "location": "Delhi, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Git",
       "Ios",
@@ -16100,7 +16100,7 @@
     "location": "Pune Division, Maharashtra, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 3,
+    "experience_required": 5,
     "skills": [
       "Python",
       "SQL",
@@ -16252,7 +16252,7 @@
     "location": "Banjara Hills, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 5,
     "skills": [
       "Power Bi",
       "CI/CD",
@@ -16300,7 +16300,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 3,
     "skills": [
       "Power Bi",
       "CI/CD",
@@ -16321,7 +16321,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 2,
     "skills": [
       "Data Analysis",
       "Power Bi",
@@ -16344,7 +16344,7 @@
     "location": "Gurugram, Haryana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Data Science",
       "CI/CD",
@@ -16480,7 +16480,7 @@
     "location": "India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "Python",
@@ -16502,7 +16502,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Excel"
     ],
@@ -16622,7 +16622,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 5,
     "skills": [
       "AWS",
       "Azure",
@@ -16725,7 +16725,7 @@
     "location": "Noida, Uttar Pradesh, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 3,
     "skills": [
       "REST API",
       "Java",
@@ -16747,7 +16747,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Machine Learning",
       "Spring Boot",
@@ -16883,7 +16883,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 2,
     "skills": [
       "Communication Skills",
       "Python",
@@ -16934,7 +16934,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "React",
@@ -17048,7 +17048,7 @@
     "location": "Jaipur, Rajasthan, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Node.js",
       "CI/CD",
@@ -17145,7 +17145,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "Communication Skills",
@@ -17198,7 +17198,7 @@
     "location": "Devanahalli, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Data Analysis"
     ],
@@ -17233,7 +17233,7 @@
     "location": "Mumbai, Maharashtra, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Communication Skills",
       "Sem",
@@ -17535,7 +17535,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Version Control",
       "Python",
@@ -17670,7 +17670,7 @@
     "location": "Chennai, Tamil Nadu, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 2,
     "skills": [
       "Version Control",
       "Git",
@@ -17916,7 +17916,7 @@
     "location": "Bengaluru, Karnataka",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Python",
       "REST APIs",
@@ -17987,7 +17987,7 @@
     "location": "Pune",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 2,
     "skills": [
       "React",
       "TypeScript",
@@ -18010,7 +18010,7 @@
     "location": "Bengaluru",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Java",
       "Golang",
@@ -18298,7 +18298,7 @@
     "location": "United States",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Python",
       "Java",
@@ -18326,7 +18326,7 @@
     "location": "United States",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Python",
       "Java",
@@ -18410,7 +18410,7 @@
     "location": "United States",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "React",
       "TypeScript",
@@ -18438,7 +18438,7 @@
     "location": "United States",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Backend Development",
       "Database Development",
@@ -18714,7 +18714,7 @@
     "location": "United States",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "High School diploma equivalency with 2 years of cumulative experience OR Associate's degree/Bachelor's degree OR 4 years of applicable cumulative job specific experience required"
     ],
@@ -18913,7 +18913,7 @@
     "location": "United States",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "AWS",
       "Agentic Software Development Workflows",
@@ -19039,7 +19039,7 @@
     "location": "USA",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 4,
     "skills": [
       "ASP.NET",
       "SQL Server",
@@ -19251,7 +19251,7 @@
     "location": "USA",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "SQL",
       "Python",
@@ -19275,7 +19275,7 @@
     "location": "USA",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 2,
+    "experience_required": 5,
     "skills": [
       "SQL",
       "Snowflake",
@@ -19347,7 +19347,7 @@
     "location": "USA",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 2,
     "skills": [
       "React",
       "TypeScript",
@@ -19370,7 +19370,7 @@
     "location": "Toronto, Montreal, New York, Ottawa, San Francisco, Vancouver",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 2,
+    "experience_required": 5,
     "skills": [
       "React",
       "TypeScript",
@@ -19418,7 +19418,7 @@
     "location": "USA",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 4,
     "skills": [
       "TypeScript",
       "JavaScript",
@@ -19466,7 +19466,7 @@
     "location": "New York, New York",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "React",
       "TypeScript",
@@ -19600,7 +19600,7 @@
     "location": "Menomonee Falls, WI",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Data Entry",
       "Microsoft Word",
@@ -19642,7 +19642,7 @@
     "location": "San Antonio, TX",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Data Entry",
       "MS Office",
@@ -19664,7 +19664,7 @@
     "location": "Hebron, KY",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Data Entry",
       "Oracle",
@@ -20160,7 +20160,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Python",
       "Kafka",
@@ -20181,7 +20181,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Express",
       "Ios",
@@ -20219,7 +20219,7 @@
     "location": "Chennai, Tamil Nadu, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Python",
       "SQL",
@@ -20344,7 +20344,7 @@
     "location": "Chennai, Tamil Nadu, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Power Bi",
       "CI/CD",
@@ -20391,7 +20391,7 @@
     "location": "Chennai, Tamil Nadu, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 5,
     "skills": [
       "Express",
       "Azure",
@@ -20411,7 +20411,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "Problem Solving",
@@ -20703,7 +20703,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 7,
+    "experience_required": 12,
     "skills": [
       "Azure",
       "Sap"
@@ -20721,7 +20721,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Spring Boot",
       "CI/CD",
@@ -20769,7 +20769,7 @@
     "location": "Noida, Uttar Pradesh, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Machine Learning",
       "Deep Learning",
@@ -20799,7 +20799,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 4,
     "skills": [
       "CI/CD",
       "Version Control",
@@ -20911,7 +20911,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 2,
     "skills": [
       "Typing"
     ],
@@ -20974,7 +20974,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "AWS",
@@ -21066,7 +21066,7 @@
     "location": "Pune Division, Maharashtra, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "AWS",
@@ -21088,7 +21088,7 @@
     "location": "Chennai, Tamil Nadu, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 4,
     "skills": [
       "Python",
       "Express",
@@ -21135,7 +21135,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Python",
       "AWS",
@@ -21159,7 +21159,7 @@
     "location": "Gurugram, Haryana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "AWS",
       "Azure",
@@ -21226,7 +21226,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "Python",
@@ -21319,7 +21319,7 @@
     "location": "India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 2,
     "skills": [
       "CI/CD",
       "Problem Solving",
@@ -21347,7 +21347,7 @@
     "location": "India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "Version Control",
@@ -21401,7 +21401,7 @@
     "location": "Greater Hyderabad Area",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 2,
     "skills": [
       "Python",
       "Kafka",
@@ -21562,7 +21562,7 @@
     "location": "Mumbai, Maharashtra, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Node.js",
       "CI/CD",
@@ -21595,7 +21595,7 @@
     "location": "Mumbai, Maharashtra, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "Communication Skills",
@@ -21651,7 +21651,7 @@
     "location": "Navi Mumbai, Maharashtra, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 4,
     "skills": [
       "CI/CD",
       "AWS",
@@ -21709,7 +21709,7 @@
     "location": "Ahmedabad, Gujarat, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 1,
+    "experience_required": 2,
     "skills": [
       "Node.js",
       "CI/CD",
@@ -21738,7 +21738,7 @@
     "location": "Noida, Uttar Pradesh, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "Python",
@@ -22003,7 +22003,7 @@
     "location": "Bengaluru East, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Machine Learning",
       "Deep Learning",
@@ -22112,7 +22112,7 @@
     "location": "Bengaluru East, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Node.js",
       "Test Automation",
@@ -22197,7 +22197,7 @@
     "location": "Mumbai, Maharashtra, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Node.js",
       "React Native",
@@ -22312,7 +22312,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Spring Boot",
       "REST API",
@@ -22385,7 +22385,7 @@
     "location": "India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "REST API",
       "CI/CD",
@@ -22438,7 +22438,7 @@
     "location": "India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 1,
     "skills": [
       "CI/CD",
       "Version Control",
@@ -22730,7 +22730,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 2,
     "skills": [
       "Communication Skills",
       "Excel",
@@ -22826,7 +22826,7 @@
     "location": "Bengaluru East, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Node.js",
       "Test Automation",
@@ -22902,7 +22902,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 3,
     "skills": [
       "Node.js",
       "REST API",
@@ -22971,7 +22971,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 5,
     "skills": [
       "Java",
       "JavaScript",
@@ -23015,7 +23015,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 5,
     "skills": [
       "REST API",
       "CI/CD",
@@ -23113,7 +23113,7 @@
     "location": "Pune Division, Maharashtra, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [],
     "description": "Program Engineer Job Description Key responsibilities Steers all activities to fulfil the customer requirement book (SOR) Is primary technical contact for customer, manufacturing, competence center, prototype manager, purchase etc. Preparation of Technical documentation such as Product Technical",
     "source_url": "https://in.linkedin.com/jobs/view/program-engineer-at-tenneco-4485311688?source=jobfound.org",
@@ -23147,7 +23147,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 2,
     "skills": [
       "Git",
       "C++",
@@ -23186,7 +23186,7 @@
     "location": "Chennai, Tamil Nadu, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 5,
     "skills": [
       "Sem"
     ],
@@ -23203,7 +23203,7 @@
     "location": "Pune/Pimpri-Chinchwad Area",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Typing"
     ],
@@ -23239,7 +23239,7 @@
     "location": "Pune/Pimpri-Chinchwad Area",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Problem Solving",
       "Communication Skills",
@@ -23259,7 +23259,7 @@
     "location": "Pune/Pimpri-Chinchwad Area",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Data Science",
       "Python",
@@ -23334,7 +23334,7 @@
     "location": "Bangalore Urban, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 5,
     "skills": [
       "REST API",
       "Communication Skills",
@@ -23496,7 +23496,7 @@
     "location": "Bengaluru East, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 5,
     "skills": [
       "REST API",
       "Python",
@@ -23546,7 +23546,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 4,
     "skills": [
       "Communication Skills",
       "Python",
@@ -23780,7 +23780,7 @@
     "location": "Vapi, Gujarat, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "REST API",
       "Unit Testing",
@@ -23900,7 +23900,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Spring Boot",
       "REST API",
@@ -23993,7 +23993,7 @@
     "location": "Greater Hyderabad Area",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Unit Testing",
       "Communication Skills",
@@ -24150,7 +24150,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 5,
     "skills": [
       "Problem Solving",
       "Communication Skills",
@@ -24875,7 +24875,7 @@
     "location": "United States",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       ".NET",
       "React",
@@ -24931,7 +24931,7 @@
     "location": "United States",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 2,
     "skills": [
       "Kubernetes",
       "CI/CD Workflow Automation",
@@ -25384,7 +25384,7 @@
     "location": "United States",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Data Analysis",
       "Data Profiling",
@@ -25409,7 +25409,7 @@
     "location": "United States",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 2,
     "skills": [
       "Collibra",
       "Google Cloud IAM",
@@ -25754,7 +25754,7 @@
     "location": "Pune, Maharashtra",
     "workplace_type": "hybrid",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 4,
     "skills": [
       "Angular",
       "React",
@@ -25898,7 +25898,7 @@
     "location": "Pune, MH",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "C#",
       "C++",
@@ -25922,7 +25922,7 @@
     "location": "Hyderabad",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "React",
       "Python",
@@ -25970,7 +25970,7 @@
     "location": "Bengaluru, Karnataka",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [],
     "description": "Calling all innovators – find your future at Fiserv. We’re Fiserv, a global leader in Fintech and payments, and we move money and information in a way that moves the world. We connect financial institutions, corporations, merchants, and consumers to one another millions of times a day – quickly,",
     "source_url": "https://careers.fiserv.com/us/en/job/FFFYJUSR10405598EXTERNALENUS/Software-Development-Engineer?source=jobfound.org",
@@ -26241,7 +26241,7 @@
     "location": "Pitsea, Essex",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 3,
     "skills": [
       "Business Administration",
       "Customer Service",
@@ -26334,7 +26334,7 @@
     "location": "Bengaluru East, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Java",
       "JavaScript",
@@ -26375,7 +26375,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 5,
     "skills": [
       "Machine Learning",
       "Data Science",
@@ -26403,7 +26403,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Java",
       "SQL",
@@ -26456,7 +26456,7 @@
     "location": "Mumbai, Maharashtra, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Python",
       "SQL",
@@ -26606,7 +26606,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 4,
     "skills": [
       "React",
       "Express",
@@ -26772,7 +26772,7 @@
     "location": "Mumbai Metropolitan Region",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "AWS",
       "Azure",
@@ -27007,7 +27007,7 @@
     "location": "Bengaluru East, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Communication Skills",
       "Python",
@@ -27119,7 +27119,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "React Native",
       "REST API",
@@ -27161,7 +27161,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Node.js",
       "CI/CD",
@@ -27480,7 +27480,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 2,
     "skills": [
       "Sem"
     ],
@@ -27521,7 +27521,7 @@
     "location": "Noida, Uttar Pradesh, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 5,
     "skills": [
       "Java",
       "JavaScript",
@@ -27563,7 +27563,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 5,
     "skills": [
       "Problem Solving",
       "Ios",
@@ -27742,7 +27742,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 2,
     "skills": [
       "Test Automation",
       "Python",
@@ -28028,7 +28028,7 @@
     "location": "United States",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Linux",
       "Windows Server",
@@ -28322,7 +28322,7 @@
     "location": "Chennai, Tamil Nadu, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 5,
     "skills": [
       "Machine Learning",
       "Power Bi",
@@ -28352,7 +28352,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 2,
     "skills": [
       "Data Science",
       "Python",
@@ -28407,7 +28407,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Data Analysis",
       "Power Bi",
@@ -28427,7 +28427,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Communication Skills",
       "Python",
@@ -28563,7 +28563,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 2,
     "skills": [
       "Communication Skills",
       "SQL",
@@ -28584,7 +28584,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Machine Learning",
       "Deep Learning",
@@ -28610,7 +28610,7 @@
     "location": "Bangalore Urban, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 4,
     "skills": [
       "Deep Learning",
       "Python",
@@ -28634,7 +28634,7 @@
     "location": "Chennai, Tamil Nadu, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Machine Learning",
       "Rust",
@@ -28654,7 +28654,7 @@
     "location": "Chennai, Tamil Nadu, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 3,
     "skills": [
       "Node.js",
       "REST API",
@@ -28727,7 +28727,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 5,
     "skills": [
       "Machine Learning",
       "Deep Learning",
@@ -28909,7 +28909,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "Python",
@@ -28990,7 +28990,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 2,
     "skills": [
       "Python",
       "AWS",
@@ -29043,7 +29043,7 @@
     "location": "Bangalore Urban, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "Python",
@@ -29067,7 +29067,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 2,
     "skills": [
       "CI/CD",
       "Version Control",
@@ -29138,7 +29138,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "AWS",
@@ -29220,7 +29220,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 3,
     "skills": [
       "CI/CD",
       "Version Control",
@@ -29275,7 +29275,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "Python",
@@ -29323,7 +29323,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 2,
     "skills": [
       "Machine Learning",
       "Data Science",
@@ -29465,7 +29465,7 @@
     "location": "Bengaluru East, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Java",
       "JavaScript",
@@ -29527,7 +29527,7 @@
     "location": "Chennai, Tamil Nadu, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Spring Boot",
       "REST API",
@@ -29561,7 +29561,7 @@
     "location": "Chennai, Tamil Nadu, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Spring Boot",
       "REST API",
@@ -29752,7 +29752,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 3,
+    "experience_required": 4,
     "skills": [
       "Communication Skills",
       "Python",
@@ -29852,7 +29852,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Java",
       "JavaScript",
@@ -29877,7 +29877,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Java",
       "JavaScript",
@@ -29902,7 +29902,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Java",
       "JavaScript",
@@ -29928,7 +29928,7 @@
     "location": "Mumbai, Maharashtra, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "React Native",
       "REST API",
@@ -29985,7 +29985,7 @@
     "location": "Greater Vadodara Area",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Spark",
       "Git",
@@ -30004,7 +30004,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 5,
     "skills": [
       "Node.js",
       "Python",
@@ -30050,7 +30050,7 @@
     "location": "Greater Bengaluru Area",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Python",
       "Git",
@@ -30195,7 +30195,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Git",
       "C++",
@@ -30287,7 +30287,7 @@
     "location": "Gurugram, Haryana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 1,
+    "experience_required": 4,
     "skills": [
       "Python",
       "TypeScript",
@@ -30402,7 +30402,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Communication Skills",
       "SQL",
@@ -30499,7 +30499,7 @@
     "location": "United States",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Object-Oriented Programming",
       "Software Development"
@@ -30538,7 +30538,7 @@
     "location": "Boardman, OR",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "SAP",
       "Data Entry",
@@ -30655,7 +30655,7 @@
     "location": "Bangalore",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 1,
     "skills": [
       "JavaScript",
       "React",
@@ -30679,7 +30679,7 @@
     "location": "Bengaluru, Pune",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Workday",
       ".NET",
@@ -30727,7 +30727,7 @@
     "location": "Chennai",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "C++",
       "C#",
@@ -30750,7 +30750,7 @@
     "location": "Bengaluru, Karnataka",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Python",
       "LLMs",
@@ -30822,7 +30822,7 @@
     "location": "Hyderabad",
     "workplace_type": "hybrid",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Vue 3",
       "TypeScript",
@@ -31174,7 +31174,7 @@
     "location": "New York City, NY, Durham, NC",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "TypeScript",
       "React",
@@ -31317,7 +31317,7 @@
     "location": "Fort Mill, SC",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "SQL",
       "Microsoft Excel",
@@ -31365,7 +31365,7 @@
     "location": "USA",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 2,
     "skills": [
       "Python",
       "Flask",
@@ -31389,7 +31389,7 @@
     "location": "London",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "SQL",
       "Python",
@@ -31460,7 +31460,7 @@
     "location": "Somerville, MA",
     "workplace_type": "hybrid",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Python",
       "SQL",
@@ -31678,7 +31678,7 @@
     "location": "Mumbai, Maharashtra, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Problem Solving",
       "Rust"
@@ -31718,7 +31718,7 @@
     "location": "Noida, Uttar Pradesh, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 4,
     "skills": [
       "Data Analysis",
       "Version Control",
@@ -31785,7 +31785,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Machine Learning",
       "Data Analysis",
@@ -31804,7 +31804,7 @@
     "location": "India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Machine Learning",
       "CI/CD",
@@ -31921,7 +31921,7 @@
     "location": "Noida, Uttar Pradesh, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Node.js",
       "Spring Boot",
@@ -32009,7 +32009,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 4,
     "skills": [
       "Power Bi",
       "REST API",
@@ -32104,7 +32104,7 @@
     "location": "Bengaluru East, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Spring Boot",
       "REST API",
@@ -32275,7 +32275,7 @@
     "location": "Mumbai, Maharashtra, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Kubernetes",
       "Ios",
@@ -32400,7 +32400,7 @@
     "location": "Vapi, Gujarat, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Unit Testing",
       "Test Automation",
@@ -32425,7 +32425,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "REST API",
       "Unit Testing",
@@ -32459,7 +32459,7 @@
     "location": "United States",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Microsoft Azure",
       "React",
@@ -32569,7 +32569,7 @@
     "location": "United States",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Software engineering fundamentals",
       "Distributed systems",
@@ -32721,7 +32721,7 @@
     "location": "United States",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 1,
     "skills": [
       "C#",
       "Java",
@@ -32861,7 +32861,7 @@
     "location": "United States",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Data Annotation",
       "Linguistic Quality Assurance",
@@ -32887,7 +32887,7 @@
     "location": "United States",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Prompt Writing",
       "Data Labeling",
@@ -32935,7 +32935,7 @@
     "location": "United States",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Microsoft Excel",
       "Power BI",
@@ -33316,7 +33316,7 @@
     "location": "Pune Division, Maharashtra, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Data Science",
       "Git",
@@ -33381,7 +33381,7 @@
     "location": "Vadodara, Gujarat, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 5,
     "skills": [
       "Data Analysis",
       "Data Science",
@@ -33431,7 +33431,7 @@
     "location": "India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Communication Skills",
       "SQL",
@@ -33520,7 +33520,7 @@
     "location": "Mumbai, Maharashtra, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 4,
     "skills": [
       "SQL",
       "Spark",
@@ -33539,7 +33539,7 @@
     "location": "Bengaluru East, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "Version Control",
@@ -33616,7 +33616,7 @@
     "location": "Coimbatore, Tamil Nadu, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Ios"
     ],
@@ -33704,7 +33704,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Machine Learning",
       "Deep Learning",
@@ -33745,7 +33745,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Machine Learning",
       "Data Science",
@@ -33799,7 +33799,7 @@
     "location": "Chennai, Tamil Nadu, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 3,
     "skills": [
       "CI/CD",
       "Python",
@@ -33892,7 +33892,7 @@
     "location": "India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 3,
     "skills": [
       "Data Analysis",
       "CI/CD",
@@ -33988,7 +33988,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Communication Skills",
       "Python",
@@ -34067,7 +34067,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "Python",
@@ -34175,7 +34175,7 @@
     "location": "Greater Hyderabad Area",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "Problem Solving",
@@ -34296,7 +34296,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 4,
     "skills": [
       "Communication Skills",
       "Python",
@@ -34732,7 +34732,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Data Science",
       "Python",
@@ -34786,7 +34786,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 5,
     "skills": [
       "Spring Boot",
       "Unit Testing",
@@ -34922,7 +34922,7 @@
     "location": "Maharashtra, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 4,
     "skills": [
       "Node.js",
       "REST API",
@@ -35013,7 +35013,7 @@
     "location": "Chennai, Tamil Nadu, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Data Analysis",
       "Rust",
@@ -35033,7 +35033,7 @@
     "location": "Jamnagar, Gujarat, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Sem"
     ],
@@ -35068,7 +35068,7 @@
     "location": "Kochi, Kerala, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 8,
     "skills": [
       "Spring Boot",
       "CI/CD",
@@ -35102,7 +35102,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 2,
     "skills": [
       "Onboarding"
     ],
@@ -35192,7 +35192,7 @@
     "location": "Kolkata, West Bengal, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "REST API",
       "CI/CD",
@@ -35299,7 +35299,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 5,
     "skills": [
       "Spring Boot",
       "Version Control",
@@ -35438,7 +35438,7 @@
     "location": "Kozhikode, Kerala, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 2,
     "skills": [
       "React Native",
       "Version Control",
@@ -35460,7 +35460,7 @@
     "location": "Vapi, Gujarat, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "REST API",
       "Unit Testing",
@@ -35548,7 +35548,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 3,
     "skills": [
       "Spring Boot",
       "Python",
@@ -35570,7 +35570,7 @@
     "location": "Vijayawada, Andhra Pradesh, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 3,
+    "experience_required": 12,
     "skills": [
       "Azure",
       ".Net",
@@ -35612,7 +35612,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 2,
     "skills": [
       "CI/CD",
       "Test Automation",
@@ -35648,7 +35648,7 @@
     "location": "United States",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Test Case Design",
       "Debugging",
@@ -35717,7 +35717,7 @@
     "location": "UK",
     "workplace_type": "remote",
     "remote": true,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Ruby on Rails",
       "Python",
@@ -36295,7 +36295,7 @@
     "location": "Gurugram, Haryana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Data Science",
       "Python",
@@ -36442,7 +36442,7 @@
     "location": "Mumbai, Maharashtra, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Data Analysis",
       "Power Bi",
@@ -36545,7 +36545,7 @@
     "location": "Mumbai Metropolitan Region",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Data Analysis",
       "Communication Skills",
@@ -36596,7 +36596,7 @@
     "location": "Gurugram, Haryana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Power Bi",
       "Problem Solving",
@@ -36683,7 +36683,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Machine Learning",
       "Ios",
@@ -36704,7 +36704,7 @@
     "location": "India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Machine Learning",
       "Deep Learning",
@@ -36785,7 +36785,7 @@
     "location": "Greater Hyderabad Area",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 4,
     "skills": [
       "Machine Learning",
       "Deep Learning",
@@ -36960,7 +36960,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 5,
     "skills": [
       "Node.js",
       "REST API",
@@ -36992,7 +36992,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 3,
+    "experience_required": 5,
     "skills": [
       "Machine Learning",
       "CI/CD",
@@ -37253,7 +37253,7 @@
     "location": "Gurugram, Haryana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "AWS",
       "Azure",
@@ -37326,7 +37326,7 @@
     "location": "Pune Division, Maharashtra, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "REST API",
       "Version Control",
@@ -37380,7 +37380,7 @@
     "location": "Pune Division, Maharashtra, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 2,
     "skills": [
       "CI/CD",
       "Python",
@@ -37403,7 +37403,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "Python",
@@ -37700,7 +37700,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Python",
       "Node.js",
@@ -37722,7 +37722,7 @@
     "location": "Nagercoil, Tamil Nadu, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 10,
     "skills": [
       "Spring Boot",
       "REST API",
@@ -37870,7 +37870,7 @@
     "location": "Delhi, Delhi, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Java",
       "JavaScript",
@@ -37960,7 +37960,7 @@
     "location": "Ahmedabad, Gujarat, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Version Control",
       "Communication Skills",
@@ -38040,7 +38040,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Java",
       "JavaScript",
@@ -38134,7 +38134,7 @@
     "location": "Greater Hyderabad Area",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Version Control",
       "Python",
@@ -38207,7 +38207,7 @@
     "location": "Pune Division, Maharashtra, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Unit Testing",
       "Communication Skills",
@@ -38231,7 +38231,7 @@
     "location": "Noida, Uttar Pradesh, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Spring Boot",
       "REST API",
@@ -38435,7 +38435,7 @@
     "location": "Mumbai, Maharashtra, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Node.js",
       "Python",
@@ -38572,7 +38572,7 @@
     "location": "Pune District, Maharashtra, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 2,
+    "experience_required": 5,
     "skills": [
       "Test Automation",
       "Java",
@@ -38774,7 +38774,7 @@
     "location": "Navi Mumbai, Maharashtra, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 2,
     "skills": [
       "SQL",
       "Spark",
@@ -38811,7 +38811,7 @@
     "location": "Pune District, Maharashtra, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 5,
+    "experience_required": 8,
     "skills": [
       "CI/CD",
       "Communication Skills",
@@ -38902,7 +38902,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "CI/CD",
       "Python",
@@ -39004,7 +39004,7 @@
     "location": "Nashik, Maharashtra, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Node.js",
       "CI/CD",
@@ -39082,7 +39082,7 @@
     "location": "Hyderabad, Telangana, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 5,
     "skills": [
       "Version Control",
       "Communication Skills",
@@ -39113,7 +39113,7 @@
     "location": "Bengaluru, Karnataka, India",
     "workplace_type": "onsite",
     "remote": false,
-    "experience_required": 0,
+    "experience_required": 2,
     "skills": [
       "Spring Boot",
       "CI/CD",
