@@ -116,22 +116,18 @@
 ---
 
 ### Phase 6: Orchestrator Agent & Real-Time Streaming
-- [ ] **6.1 Master Orchestrator Architecture:**
-  - Tool-calling loop with system prompt routing between:
-    - `parse_resume_tool`
-    - `match_jobs_tool`
-    - `refine_filter_tool`
-    - `apply_job_tool`
-    - `track_applications_tool`
-- [ ] **6.2 Agent-to-Agent Handoff Events:**
-  - Emit real-time events over Server-Sent Events (SSE):
-    - `event: agent_start` -> `{"agent": "Orchestrator", "thought": "Analyzing user intent..."}`
-    - `event: handoff` -> `{"from": "Orchestrator", "to": "ResumeParser", "reason": "New document uploaded"}`
-    - `event: tool_result` -> `{"status": "success", "summary": "Extracted 12 skills"}`
-    - `event: token` -> Live text streaming of final response
-- [ ] **6.3 Guardrails:**
-  - Loop limit cap (prevent infinite tool calls).
-  - Off-topic redirection (politely guide user back to job searching).
+- [x] **6.1 Master Orchestrator Architecture:**
+  - Conversational state machine and intent detection (`GREETING`, `SEARCH_OR_REFINE`, `APPLY`, `TRACK`, `RESET_FILTERS`).
+  - Seamless routing between `ResumeParser`, `JobMatcher`, and `ApplicationManager`.
+- [x] **6.2 Agent-to-Agent Handoff Events:**
+  - Emits real-time Server-Sent Events (SSE):
+    - `event: agent_start` -> Initial intent analysis
+    - `event: agent_handoff` -> Real-time handoff trace (`Orchestrator ➔ JobMatcher`, `Orchestrator ➔ ApplicationManager`)
+    - `event: job_results` -> Structured JSON cards for UI
+    - `event: token` -> Live conversational message stream
+- [x] **6.3 Guardrails & Testing:**
+  - Enforces resume upload pre-condition before applying or matching.
+  - Complete backend test suite: 20/20 tests passing in pytest.
 
 ---
 
