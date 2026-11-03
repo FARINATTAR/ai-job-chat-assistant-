@@ -132,24 +132,22 @@
 ---
 
 ### Phase 7: Frontend UI/UX (Next.js + Tailwind + shadcn/ui)
-- [ ] **7.1 Modern Conversational Chat Interface:**
-  - Clean chat layout (not a plain form).
-  - Markdown message rendering with streaming text support.
-- [ ] **7.2 Resume Upload Component:**
-  - Drag-and-drop zone directly in chat or side dock.
-  - Displays parsed profile card (Name, Designation, Skills badges, Experience).
-- [ ] **7.3 Interactive Job Cards:**
-  - Title, Company, Location, Remote tag, Experience badge.
-  - Match percentage score with visual progress indicator.
-  - Grounded match reason callout.
-  - Quick **"Apply Now"** button directly on the card (in addition to natural chat apply).
-- [ ] **7.4 Live Agent Trace Indicator:**
-  - Expandable badge/pill in chat showing agent handoffs:
-    `[Orchestrator] ➔ [JobMatcher] ➔ [Searching 1,842 listings]`.
-- [ ] **7.5 Applied Jobs Drawer / Tab:**
-  - Visual panel showing all applied jobs, timestamps, and status badges.
-- [ ] **7.6 Suggested Quick Prompts:**
-  - Chips: *"Show only remote jobs"*, *"Jobs matching Python"*, *"What have I applied to?"*.
+- [x] **7.1 Modern Conversational Chat Interface:**
+  - Responsive two-column layout with theme and Markdown streaming support.
+- [x] **7.2 Resume Upload Component:**
+  - Drag-and-drop zone directly in UI with candidate profile preview card.
+- [x] **7.3 Interactive Job Cards:**
+  - Displays Job Title, Company, Location, Remote tag, Experience badge.
+  - Match percentage score with visual progress color indicator.
+  - Bulleted Grounded Match Reasons (factual, zero hallucination).
+  - 1-click **"Quick Apply"** button directly on the card.
+- [x] **7.4 Live Agent Trace Indicator:**
+  - Expandable badge showing sub-agent handoffs in real-time (`[Orchestrator] ➔ [JobMatcher]`).
+- [x] **7.5 Applied Jobs Drawer:**
+  - Slide-out drawer tracking applied roles, dates, and status badges.
+- [x] **7.6 Suggested Quick Prompts:**
+  - Interactive chips: *"Show only remote roles"*, *"Jobs needing React"*, *"Reset all filters"*.
+  - Next.js production build verified (`next build` compiled with 0 errors).
 
 ---
 
