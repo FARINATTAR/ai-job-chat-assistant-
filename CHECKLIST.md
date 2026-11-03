@@ -65,16 +65,16 @@
 ---
 
 ### Phase 3: Sub-Agent 1 — Resume Parser Agent
-- [ ] **3.1 Document Text Extraction:**
-  - Support PDF parsing via `PyMuPDF` (`fitz`) / `pdfplumber`.
-  - Support DOCX parsing via `python-docx`.
-- [ ] **3.2 Structured LLM Extraction:**
-  - Pydantic Schema: `Name`, `Contact` (Email, Phone, LinkedIn), `Designation`, `Skills` (categorized), `Experience` (years + roles), `Education`, `Projects`.
-  - Native structured output using Gemini / OpenAI API.
-- [ ] **3.3 Resume Edge-Case Handling (Mandatory):**
-  - Corrupt or unreadable files.
-  - Scanned image PDFs without selectable text (returns clear user guidance).
-  - Unsupported file formats.
+- [x] **3.1 Document Text Extraction:**
+  - Support PDF parsing via `PyMuPDF` (`fitz`).
+  - Support DOCX parsing via `python-docx` (including tables and paragraphs).
+- [x] **3.2 Structured LLM Extraction:**
+  - Pydantic Schema: `Name`, `Contact` (Email, Phone, LinkedIn, GitHub), `Designation`, `Skills` (normalized), `Experience` (years + roles), `Education`, `Projects`.
+  - Native structured output using Gemini / OpenAI API with deterministic heuristic fallback.
+- [x] **3.3 Resume Edge-Case Handling (Mandatory):**
+  - Corrupt or unreadable files (scanned image PDFs without selectable text raise `UnreadableDocumentError` with clear guidance).
+  - Unsupported file formats (`.exe`, `.txt` raise `UnsupportedFileError`).
+  - Unit tests verified: 5/5 passing in pytest.
 
 ---
 
