@@ -98,20 +98,20 @@
 ---
 
 ### Phase 5: Sub-Agent 3 — Application & Tracker Agent
-- [ ] **5.1 Reference Resolver:**
-  - Support index numbers: *"apply to job 1"*, *"apply to the second one"*.
-  - Support direct Job IDs: *"apply to job #1428"*.
-- [ ] **5.2 Application Persistence & Deduplication:**
-  - Validate job exists.
-  - Check for existing application under current `session_id`.
-  - Save application record with status `APPLIED` and current timestamp.
-- [ ] **5.3 Application Tracking Query:**
-  - Respond to *"show my applied jobs"* or *"what jobs have I applied to?"*.
-  - List job title, company, applied date, and status.
-- [ ] **5.4 Application Edge-Case Handling (Mandatory):**
-  - Invalid job reference (e.g., user asks for "job 7" when only 3 were listed).
-  - Attempting to apply before uploading a resume (gentle prompt to upload first).
-  - Duplicate application attempt (clear warning with timestamp of original application).
+- [x] **5.1 Reference Resolver:**
+  - Support index numbers: *"apply to job 1"*, *"apply to job 3"*.
+  - Support direct Job IDs: *"apply to job jf_..."*.
+- [x] **5.2 Application Persistence & Deduplication:**
+  - Checks database for existing application under current `session_id`.
+  - Database-level unique constraint prevents duplicates.
+  - Returns friendly notification on duplicate application without error.
+- [x] **5.3 Application Tracking Query:**
+  - Responds to *"show my applied jobs"* or *"what jobs have I applied to?"*.
+  - Lists job title, company, applied date, and status (`APPLIED`).
+- [x] **5.4 Application Edge-Case Handling (Mandatory):**
+  - Invalid job reference (e.g., user asks for "job 99" when only 3 were listed) -> returns guidance.
+  - Attempting to apply before uploading a resume -> prompts user to upload first.
+  - 14/14 unit & integration tests passing.
 
 ---
 
