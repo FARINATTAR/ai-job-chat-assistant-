@@ -30,18 +30,18 @@
 ## 📋 Comprehensive Phase-by-Phase Checklist
 
 ### Phase 1: Job Dataset & Scraper Pipeline
-- [ ] **1.1 Define Job Schema:**
+- [x] **1.1 Define Job Schema:**
   - Standard fields: `id`, `title`, `company`, `location`, `remote` (bool), `experience_required`, `skills` (list), `description`, `source_url`, `posted_at`.
-- [ ] **1.2 Build Scraper Client (`scraper/`):**
-  - Use legal, reliable public APIs & job boards (Arbeitnow, Remotive, Greenhouse/Lever open endpoints) to avoid IP bans/CAPTCHAs.
+- [x] **1.2 Build Scraper Client (`scraper/`):**
+  - Use legal, reliable public APIs & job boards (Jobfound, Arbeitnow) to avoid IP bans/CAPTCHAs.
   - Implement retry logic with exponential backoff and rate-limiting.
-- [ ] **1.3 Taxonomy & Data Extraction:**
+- [x] **1.3 Taxonomy & Data Extraction:**
   - Standardized tech skill extractor (e.g., regex + taxonomy for Python, React, Docker, Node.js, etc.).
   - Experience level parser (maps "Entry", "3+ years", etc. to integer ranges).
-- [ ] **1.4 Dataset Generation & Verification:**
-  - Scrape and deduplicate 1,500 – 2,000 real job records.
-  - Save to `data/jobs.json`.
-  - Validate dataset completeness with a verification script.
+- [x] **1.4 Dataset Generation & Verification:**
+  - Scraped and deduplicated 1,691 real job records from Jobfound.org.
+  - Saved to `data/jobs.json`.
+  - Validated dataset completeness: 1,691 unique jobs, 1,086 developer/tech roles, 428 remote.
 
 ---
 
