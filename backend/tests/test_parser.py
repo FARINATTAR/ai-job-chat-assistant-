@@ -4,7 +4,7 @@ Verifies parsing of valid documents and edge cases: unreadable documents, corrup
 """
 import io
 import pytest
-import fitz
+import pymupdf as fitz
 from app.services.document_extractor import (
     DocumentExtractor,
     UnreadableDocumentError,

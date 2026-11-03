@@ -6,7 +6,7 @@ Detects unreadable documents, scanned PDFs, and malformed files.
 import io
 import os
 from typing import Tuple
-import fitz  # PyMuPDF
+import pymupdf as fitz
 import docx
 
 

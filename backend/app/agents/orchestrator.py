@@ -1,0 +1,238 @@
+"""
+Master Orchestrator Agent.
+Central conversational brain managing state machine, intent routing,
+sub-agent handoffs, and real-time SSE streaming.
+"""
+import re
+import json
+from typing import AsyncGenerator, Dict, Any, List, Optional
+from ..models.schemas import ChatRequest, ResumeProfile, ActiveFilters, JobMatch
+from ..core.session import SessionState, SessionStore, get_session_store
+from ..core.events import StreamEmitter
+from ..repositories.job_repo import JobRepository, get_job_repository
+from ..repositories.app_repo import ApplicationRepository
+from .matcher_agent import MatcherAgent
+from .apply_agent import ApplyAgent
+
+
+class OrchestratorAgent:
+    """Master orchestrator routing between MatcherAgent and ApplyAgent."""
+
+    def __init__(
+        self,
+        job_repo: Optional[JobRepository] = None,
+        session_store: Optional[SessionStore] = None
+    ):
+        self.job_repo = job_repo or get_job_repository()
+        self.session_store = session_store or get_session_store()
+        self.matcher = MatcherAgent(job_repo=self.job_repo)
+
+    def detect_intent(self, message: str) -> Dict[str, Any]:
+        """Detect intent from user natural query."""
+        msg_low = message.strip().lower()
+
+        # 1. Apply intent: "apply to job 3", "apply 1", "apply to the first one"
+        apply_match = re.search(r"\bapply\b(?:\s+(?:to|for)?\s*(?:job)?\s*#?([a-zA-Z0-9_-]+|\d+))?", msg_low)
+        if apply_match and ("job" in msg_low or re.search(r"\b\d+\b", msg_low) or "apply" in msg_low.split()):
+            ref = apply_match.group(1) or ""
+            # If no ref captured in group, look for any digit
+            if not ref:
+                num_match = re.search(r"\b(\d+)\b", msg_low)
+                if num_match:
+                    ref = num_match.group(1)
+            return {"intent": "APPLY", "reference": ref or "1"}
+
+        # 2. Tracking intent: "show my applied jobs", "my applications", "status"
+        if any(kw in msg_low for kw in ["applied jobs", "my applications", "show applied", "application status", "what did i apply"]):
+            return {"intent": "TRACK"}
+
+        # 3. Filter refinement / Search intent
+        # Check for remote
+        is_remote_query = any(kw in msg_low for kw in ["remote", "work from home", "wfh"])
+        is_reset_query = any(kw in msg_low for kw in ["reset", "clear filter", "all jobs", "start over"])
+        has_skill_query = any(s in msg_low for s in ["python", "react", "sql", "java", "docker", "aws", "node", "typescript"])
+        is_recommend_query = any(kw in msg_low for kw in ["recommend", "matching", "find jobs", "show jobs", "search"])
+
+        if is_reset_query:
+            return {"intent": "RESET_FILTERS"}
+
+        if is_remote_query or has_skill_query or is_recommend_query:
+            return {
+                "intent": "SEARCH_OR_REFINE",
+                "is_remote": True if is_remote_query else None,
+                "text": message
+            }
+
+        # 4. Greeting or General query
+        if any(kw in msg_low for kw in ["hi", "hello", "hey", "help", "who are you", "what can you do"]):
+            return {"intent": "GREETING"}
+
+        # Default to search/refine if resume is uploaded
+        return {"intent": "SEARCH_OR_REFINE", "text": message}
+
+    async def stream_chat(
+        self,
+        session: SessionState,
+        user_message: str,
+        app_repo: ApplicationRepository
+    ) -> AsyncGenerator[str, None]:
+        """
+        Main conversational loop yielding SSE formatted event strings.
+        Emits thoughts, agent handoffs, tokens, and job result cards.
+        """
+        # Save user message to history
+        session.history.append({"role": "user", "content": user_message})
+
+        # Emit initial Orchestrator start
+        yield StreamEmitter.agent_start("Orchestrator", "Analyzing user request and active conversational context...")
+
+        intent_data = self.detect_intent(user_message)
+        intent = intent_data.get("intent")
+
+        # -------------------------------------------------------------
+        # Intent: GREETING / HELP
+        # -------------------------------------------------------------
+        if intent == "GREETING":
+            yield StreamEmitter.agent_thought("Orchestrator", "Handling conversational greeting and guide.")
+            greeting_msg = (
+                "👋 Hello! I'm your **AI Job Chat Assistant**.\n\n"
+                "Here is how I can assist you:\n"
+                "1. **Upload your resume** (PDF or DOCX) so I can parse your skills, designation, and experience.\n"
+                "2. Ask me to **recommend matching jobs** from our dataset of over 1,600 verified roles.\n"
+                "3. **Refine naturally** by saying *'show only remote roles'* or *'jobs needing React'*.\n"
+                "4. **Apply seamlessly** by saying *'apply to job 2'*.\n"
+                "5. **Track applications** anytime by asking *'show my applied jobs'*.\n\n"
+                "How would you like to begin?"
+            )
+            session.history.append({"role": "assistant", "content": greeting_msg})
+            yield StreamEmitter.token(greeting_msg)
+            yield StreamEmitter.complete()
+            return
+
+        # -------------------------------------------------------------
+        # Intent: TRACK APPLICATIONS
+        # -------------------------------------------------------------
+        if intent == "TRACK":
+            yield StreamEmitter.agent_handoff("Orchestrator", "ApplicationManager", "User requested previously applied jobs status.")
+            apply_agent = ApplyAgent(app_repo=app_repo, session_store=self.session_store, job_repo=self.job_repo)
+            applied_jobs = apply_agent.list_applied_jobs(session.session_id)
+
+            if not applied_jobs:
+                msg = "You haven't applied to any jobs yet in this session. Ask me to recommend jobs or say *'show remote jobs'* to get started!"
+            else:
+                msg = f"📋 You have applied to **{len(applied_jobs)}** role{'' if len(applied_jobs) == 1 else 's'}:\n\n"
+                for idx, app in enumerate(applied_jobs, start=1):
+                    applied_date = app.applied_at[:10] if app.applied_at else "Recently"
+                    msg += f"{idx}. **{app.job_title}** at **{app.company}**\n   - Status: `{app.status}` | Applied: {applied_date}\n"
+
+            session.history.append({"role": "assistant", "content": msg})
+            yield StreamEmitter.token(msg)
+            yield StreamEmitter.complete()
+            return
+
+        # -------------------------------------------------------------
+        # Intent: APPLY TO JOB
+        # -------------------------------------------------------------
+        if intent == "APPLY":
+            job_ref = intent_data.get("reference", "1")
+            yield StreamEmitter.agent_handoff("Orchestrator", "ApplicationManager", f"Delegating application submission for reference '{job_ref}'.")
+
+            apply_agent = ApplyAgent(app_repo=app_repo, session_store=self.session_store, job_repo=self.job_repo)
+            result = apply_agent.apply_to_job(session=session, job_reference=job_ref)
+
+            response_msg = result.message
+            session.history.append({"role": "assistant", "content": response_msg})
+            yield StreamEmitter.token(response_msg)
+            yield StreamEmitter.complete()
+            return
+
+        # -------------------------------------------------------------
+        # Intent: RESET FILTERS
+        # -------------------------------------------------------------
+        if intent == "RESET_FILTERS":
+            session.active_filters = ActiveFilters()
+            yield StreamEmitter.agent_thought("Orchestrator", "Reset all conversational filters to default.")
+            msg = "All filters have been reset. Re-ranking top jobs based solely on your resume profile..."
+            yield StreamEmitter.token(msg + "\n\n")
+
+        # -------------------------------------------------------------
+        # Intent: SEARCH_OR_REFINE
+        # -------------------------------------------------------------
+        # Check if candidate has uploaded a resume
+        if not session.resume_profile:
+            yield StreamEmitter.agent_thought("Orchestrator", "Candidate has not uploaded a resume yet.")
+            no_resume_msg = (
+                "Please upload your resume (PDF or DOCX) in the chat first! "
+                "Once uploaded, I'll auto-extract your skills and designation to recommend the best matching jobs for you."
+            )
+            session.history.append({"role": "assistant", "content": no_resume_msg})
+            yield StreamEmitter.token(no_resume_msg)
+            yield StreamEmitter.complete()
+            return
+
+        # Stack conversational filters
+        msg_low = user_message.lower()
+        if "remote" in msg_low or "wfh" in msg_low:
+            session.active_filters.remote = True
+        elif "onsite" in msg_low or "in-office" in msg_low:
+            session.active_filters.remote = False
+
+        # Detect specific skill mentions (React, Python, Docker, SQL, etc.)
+        for s in ["React", "Python", "TypeScript", "JavaScript", "SQL", "Docker", "AWS", "FastAPI", "Node.js", "Java"]:
+            if s.lower() in msg_low and s not in session.active_filters.skills:
+                session.active_filters.skills.append(s)
+
+        yield StreamEmitter.agent_handoff(
+            "Orchestrator",
+            "JobMatcher",
+            f"Querying 1,600+ listings. Active filters: Remote={session.active_filters.remote}, Skills={session.active_filters.skills or 'All'}"
+        )
+
+        # Execute Matcher
+        matches, has_matches = self.matcher.match_jobs(
+            profile=session.resume_profile,
+            filters=session.active_filters,
+            limit=5
+        )
+
+        # Handle JD edge case: No matching jobs found
+        if not has_matches or not matches:
+            yield StreamEmitter.agent_thought("JobMatcher", "Zero matching jobs found with current strict filters.")
+            filter_summary = []
+            if session.active_filters.remote:
+                filter_summary.append("Remote only")
+            if session.active_filters.skills:
+                filter_summary.append(f"Skills: {', '.join(session.active_filters.skills)}")
+
+            criteria_str = " (" + ", ".join(filter_summary) + ")" if filter_summary else ""
+            zero_match_msg = (
+                f"I couldn't find any job listings currently matching your strict criteria{criteria_str}.\n\n"
+                "💡 **Suggestions:**\n"
+                "- Say *'reset filters'* to view all recommendations based on your resume.\n"
+                "- Try broadening your skill requirements."
+            )
+            session.history.append({"role": "assistant", "content": zero_match_msg})
+            yield StreamEmitter.token(zero_match_msg)
+            yield StreamEmitter.complete()
+            return
+
+        # Update last_results for index-to-ID mapping ("apply to job 1, 2, 3...")
+        session.last_results = [m.job.id for m in matches]
+
+        # Emit job results payload for frontend UI cards
+        cards_payload = [m.model_dump() for m in matches]
+        yield StreamEmitter.job_results(cards_payload)
+
+        # Text stream response explaining the recommendations
+        text_resp = f"Here are the **top {len(matches)} matching positions** for your profile:\n\n"
+        for m in matches:
+            text_resp += (
+                f"**Job {m.index}: {m.job.title}** at **{m.job.company}**\n"
+                f"- Match Score: `{m.match_score}%` | Location: {m.job.location} ({'Remote' if m.job.remote else 'Onsite'})\n"
+                f"- Key Match: {m.match_reasons[0] if m.match_reasons else 'Aligned with your skills'}\n\n"
+            )
+        text_resp += "To apply, simply say *'apply to job 1'*, *'apply to job 2'*, or click the **Apply** button on the card!"
+
+        session.history.append({"role": "assistant", "content": text_resp})
+        yield StreamEmitter.token(text_resp)
+        yield StreamEmitter.complete()

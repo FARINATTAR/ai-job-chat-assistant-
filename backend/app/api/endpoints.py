@@ -3,12 +3,14 @@ FastAPI route definitions for health, applications, resume upload, and chat.
 """
 from typing import List, Dict, Any
 from fastapi import APIRouter, Depends, HTTPException, UploadFile, File, status
-from ..models.schemas import ApplicationRecord, ResumeProfile
+from fastapi.responses import StreamingResponse
+from ..models.schemas import ApplicationRecord, ResumeProfile, ChatRequest
 from ..repositories.job_repo import JobRepository, get_job_repository
 from ..repositories.app_repo import ApplicationRepository
 from ..agents.parser_agent import ResumeParserAgent
+from ..agents.orchestrator import OrchestratorAgent
 from ..services.document_extractor import DocumentExtractionError
-from .dependencies import get_current_session, get_application_repo, SessionState
+from .dependencies import get_current_session, get_application_repo, SessionState, get_session_store, SessionStore
 
 router = APIRouter(prefix="/api")
 
@@ -22,6 +24,35 @@ def health_check(job_repo: JobRepository = Depends(get_job_repository)):
         "jobs_loaded": job_repo.total_count,
         "database": "connected"
     }
+
+
+@router.post("/chat", tags=["Chat"])
+async def chat_stream(
+    request: ChatRequest,
+    store: SessionStore = Depends(get_session_store),
+    app_repo: ApplicationRepository = Depends(get_application_repo),
+    job_repo: JobRepository = Depends(get_job_repository)
+):
+    """
+    Conversational chat endpoint with Server-Sent Events (SSE) streaming.
+    Streams real-time sub-agent handoffs, thoughts, tokens, and interactive job cards.
+    """
+    session = store.get_or_create(request.session_id)
+    orchestrator = OrchestratorAgent(job_repo=job_repo, session_store=store)
+
+    return StreamingResponse(
+        orchestrator.stream_chat(
+            session=session,
+            user_message=request.message,
+            app_repo=app_repo
+        ),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "Connection": "keep-alive",
+            "X-Accel-Buffering": "no"
+        }
+    )
 
 
 @router.post("/upload", response_model=Dict[str, Any], tags=["Resume"])
