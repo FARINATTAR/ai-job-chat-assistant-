@@ -1,11 +1,13 @@
 """
 FastAPI route definitions for health, applications, resume upload, and chat.
 """
-from typing import List
-from fastapi import APIRouter, Depends, HTTPException
-from ..models.schemas import ApplicationRecord
+from typing import List, Dict, Any
+from fastapi import APIRouter, Depends, HTTPException, UploadFile, File, status
+from ..models.schemas import ApplicationRecord, ResumeProfile
 from ..repositories.job_repo import JobRepository, get_job_repository
 from ..repositories.app_repo import ApplicationRepository
+from ..agents.parser_agent import ResumeParserAgent
+from ..services.document_extractor import DocumentExtractionError
 from .dependencies import get_current_session, get_application_repo, SessionState
 
 router = APIRouter(prefix="/api")
@@ -19,6 +21,79 @@ def health_check(job_repo: JobRepository = Depends(get_job_repository)):
         "service": "AI Job Chat Assistant Backend",
         "jobs_loaded": job_repo.total_count,
         "database": "connected"
+    }
+
+
+@router.post("/upload", response_model=Dict[str, Any], tags=["Resume"])
+async def upload_resume(
+    file: UploadFile = File(...),
+    session: SessionState = Depends(get_current_session)
+):
+    """
+    Upload and auto-parse candidate resume (PDF or DOCX).
+    Extracts name, contact, designation, skills, experience, education, and projects.
+    Saves extracted profile to user's active session.
+    """
+    # 1. Validate file extension
+    filename = file.filename or "resume.pdf"
+    if not (filename.lower().endswith(".pdf") or filename.lower().endswith(".docx") or filename.lower().endswith(".doc")):
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Unsupported file format. Please upload a PDF or DOCX resume."
+        )
+
+    # 2. Read file bytes with size check (max 10MB)
+    try:
+        content = await file.read()
+        if len(content) > 10 * 1024 * 1024:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="File size exceeds maximum allowed limit of 10MB."
+            )
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"Failed to read uploaded file: {e}"
+        )
+
+    # 3. Parse resume with ResumeParserAgent
+    try:
+        parser = ResumeParserAgent()
+        profile = parser.parse_document(content, filename)
+
+        # 4. Save to session context
+        session.resume_profile = profile
+
+        return {
+            "status": "success",
+            "message": f"Resume parsed successfully for {profile.name} ({profile.designation}).",
+            "profile": profile.model_dump()
+        }
+
+    except DocumentExtractionError as e:
+        # Handles unreadable, scanned, or corrupt document specifically as required by JD
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=str(e)
+        )
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"An unexpected error occurred while parsing the resume: {str(e)}"
+        )
+
+
+@router.get("/resume", response_model=Dict[str, Any], tags=["Resume"])
+def get_parsed_resume(session: SessionState = Depends(get_current_session)):
+    """Retrieve the parsed resume profile for the current session."""
+    if not session.resume_profile:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="No resume has been uploaded in this session yet."
+        )
+    return {
+        "status": "success",
+        "profile": session.resume_profile.model_dump()
     }
 
 
