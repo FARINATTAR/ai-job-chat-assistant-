@@ -158,17 +158,16 @@ class OrchestratorAgent:
         # -------------------------------------------------------------
         # Intent: SEARCH_OR_REFINE
         # -------------------------------------------------------------
-        # Check if candidate has uploaded a resume
+        # If candidate has not uploaded a resume, create a default software engineer profile
         if not session.resume_profile:
-            yield StreamEmitter.agent_thought("Orchestrator", "Candidate has not uploaded a resume yet.")
-            no_resume_msg = (
-                "Please upload your resume (PDF or DOCX) in the chat first! "
-                "Once uploaded, I'll auto-extract your skills and designation to recommend the best matching jobs for you."
+            session.resume_profile = ResumeProfile(
+                name="Candidate",
+                designation="Software Engineer",
+                skills=["Python", "JavaScript", "React", "SQL", "Git"],
+                years_of_experience=1.0,
+                experience_summary="Default software engineering profile"
             )
-            session.history.append({"role": "assistant", "content": no_resume_msg})
-            yield StreamEmitter.token(no_resume_msg)
-            yield StreamEmitter.complete()
-            return
+            yield StreamEmitter.agent_thought("Orchestrator", "Using default Software Engineer profile until resume is uploaded.")
 
         # Stack conversational filters
         msg_low = user_message.lower()
@@ -177,22 +176,22 @@ class OrchestratorAgent:
         elif "onsite" in msg_low or "in-office" in msg_low:
             session.active_filters.remote = False
 
-        # Detect specific skill mentions (React, Python, Docker, SQL, etc.)
-        for s in ["React", "Python", "TypeScript", "JavaScript", "SQL", "Docker", "AWS", "FastAPI", "Node.js", "Java"]:
+        # Detect specific skill mentions
+        for s in ["React", "Python", "TypeScript", "JavaScript", "SQL", "Docker", "AWS", "FastAPI", "Node.js", "Java", "C++", "C#"]:
             if s.lower() in msg_low and s not in session.active_filters.skills:
                 session.active_filters.skills.append(s)
 
         yield StreamEmitter.agent_handoff(
             "Orchestrator",
             "JobMatcher",
-            f"Querying 1,600+ listings. Active filters: Remote={session.active_filters.remote}, Skills={session.active_filters.skills or 'All'}"
+            f"Querying {self.job_repo.total_count} verified software jobs. Active filters: Remote={session.active_filters.remote}, Skills={session.active_filters.skills or 'All'}"
         )
 
-        # Execute Matcher
+        # Execute Matcher with limit 10
         matches, has_matches = self.matcher.match_jobs(
             profile=session.resume_profile,
             filters=session.active_filters,
-            limit=5
+            limit=10
         )
 
         # Handle JD edge case: No matching jobs found

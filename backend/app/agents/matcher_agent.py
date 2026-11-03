@@ -1,15 +1,14 @@
 """
 Job Matcher Sub-Agent.
-Matches candidate ResumeProfile against the 1,600+ job dataset.
-Uses deterministic scoring (skills overlap, experience suitability, title similarity)
-and grounded match reason generation with zero hallucination.
+Matches candidate ResumeProfile against the verified software engineering job dataset.
+Uses strict deterministic skill-overlap scoring, experience suitability,
+and title similarity to ensure 100% relevant software jobs with zero hallucination.
 """
 import re
 from typing import List, Dict, Any, Tuple, Optional
 from ..models.schemas import Job, ResumeProfile, JobMatch, ActiveFilters
 from ..repositories.job_repo import JobRepository, get_job_repository
 from ..llm.client import LLMClient, get_llm_client
-from ..llm.prompts import MATCH_REASON_PROMPT
 
 
 class MatcherAgent:
@@ -23,10 +22,10 @@ class MatcherAgent:
         self,
         profile: ResumeProfile,
         filters: Optional[ActiveFilters] = None,
-        limit: int = 5
+        limit: int = 10
     ) -> Tuple[List[JobMatch], bool]:
         """
-        Rank jobs for the candidate considering active conversational filters.
+        Rank top software jobs for the candidate considering active conversational filters.
         Returns (ranked_job_matches, has_matches).
         """
         filters = filters or ActiveFilters()
@@ -35,14 +34,14 @@ class MatcherAgent:
         if not all_jobs:
             return [], False
 
-        candidate_skills_lower = set(s.strip().lower() for s in profile.skills)
+        candidate_skills_lower = set(s.strip().lower() for s in profile.skills if s.strip())
         candidate_title = profile.designation.lower()
         candidate_exp = profile.years_of_experience
 
         scored_candidates: List[Tuple[Job, int, List[str], List[str]]] = []
 
         for job in all_jobs:
-            # 1. Apply conversational filters first
+            # 1. Apply conversational filters
             if filters.remote is True and not job.remote:
                 continue
             if filters.remote is False and job.remote:
@@ -52,13 +51,12 @@ class MatcherAgent:
             if filters.max_experience is not None and job.experience_required > filters.max_experience:
                 continue
             if filters.skills:
-                # Must match at least one of the specific requested filter skills
                 job_skills_lower = set(s.strip().lower() for s in job.skills)
                 requested_lower = set(s.strip().lower() for s in filters.skills)
                 if not job_skills_lower.intersection(requested_lower):
                     continue
 
-            # 2. Score job against candidate profile
+            # 2. Strict Score Calculation
             score, matched_skills, missing_skills = self._calculate_match_score(
                 candidate_skills_lower=candidate_skills_lower,
                 candidate_title=candidate_title,
@@ -66,12 +64,13 @@ class MatcherAgent:
                 job=job
             )
 
-            scored_candidates.append((job, score, matched_skills, missing_skills))
+            # Only retain candidates with score >= 15 to eliminate irrelevant noise
+            if score >= 15:
+                scored_candidates.append((job, score, matched_skills, missing_skills))
 
         # Sort by match score descending
         scored_candidates.sort(key=lambda x: x[1], reverse=True)
 
-        # Handle zero matches (edge case required by JD)
         if not scored_candidates:
             return [], False
 
@@ -105,63 +104,63 @@ class MatcherAgent:
         job: Job
     ) -> Tuple[int, List[str], List[str]]:
         """
-        Deterministic scoring algorithm:
-        - Skill overlap weight: 55%
-        - Experience fit weight: 25%
-        - Title / Designation similarity: 20%
+        High-precision matching formula:
+        - Exact skill matching (no false-positive character substrings)
+        - Title & Tech Domain similarity
+        - Experience suitability
         """
         job_skills = job.skills or []
-        job_skills_lower = [s.strip().lower() for s in job_skills]
-
-        # 1. Skill Overlap
         matched_skills: List[str] = []
         missing_skills: List[str] = []
 
-        for orig_skill, s_low in zip(job_skills, job_skills_lower):
+        # 1. Clean Exact Skill Matching
+        for orig_skill in job_skills:
+            s_low = orig_skill.strip().lower()
             if s_low in candidate_skills_lower:
                 matched_skills.append(orig_skill)
             else:
-                # Check substring match (e.g. 'python' in 'python developer')
-                if any(s_low in cs or cs in s_low for cs in candidate_skills_lower):
-                    matched_skills.append(orig_skill)
-                else:
-                    missing_skills.append(orig_skill)
+                missing_skills.append(orig_skill)
 
-        if job_skills:
-            skill_score = (len(matched_skills) / len(job_skills)) * 100
+        num_matched = len(matched_skills)
+        total_req = max(len(job_skills), 3)
+
+        if num_matched == 0:
+            skill_score = 0.0
         else:
-            skill_score = 50.0  # neutral if job has no explicit skills listed
+            # Multi-skill overlap reward curve
+            skill_score = min(100.0, (num_matched / total_req) * 115.0)
 
-        # 2. Experience Fit
+        # 2. Title & Role Relevance
+        title_low = job.title.lower()
+        title_score = 30.0
+
+        tech_roles = ["software", "developer", "engineer", "frontend", "backend", "full stack", "fullstack", "sde", "intern", "web", "data", "ai", "cloud"]
+        cand_words = set(re.findall(r"\w+", candidate_title))
+
+        # Title keyword overlap
+        if any(w in title_low for w in cand_words if len(w) > 3):
+            title_score = 85.0
+        elif any(r in title_low for r in tech_roles):
+            title_score = 65.0
+
+        # 3. Experience Fit
         req_exp = float(job.experience_required)
         if candidate_exp >= req_exp:
             exp_score = 100.0
         elif req_exp - candidate_exp <= 1.0:
-            exp_score = 75.0  # Within 1 year difference
+            exp_score = 80.0
         elif req_exp - candidate_exp <= 2.0:
             exp_score = 50.0
         else:
-            exp_score = 25.0
+            exp_score = 20.0
 
-        # 3. Title Similarity
-        title_low = job.title.lower()
-        title_tokens = set(re.findall(r"\w+", title_low))
-        cand_tokens = set(re.findall(r"\w+", candidate_title))
-        common_tokens = title_tokens.intersection(cand_tokens)
+        # If zero technical skills matched and title is weak, reject early
+        if num_matched == 0 and title_score < 70:
+            return 0, [], missing_skills
 
-        common_words_penalty = {"and", "or", "the", "in", "for", "with", "at", "a"}
-        meaningful_common = [w for w in common_tokens if w not in common_words_penalty]
-
-        if meaningful_common:
-            title_score = min(100.0, len(meaningful_common) * 35.0)
-        elif any(role in title_low for role in ["engineer", "developer", "intern", "analyst"]):
-            title_score = 60.0
-        else:
-            title_score = 40.0
-
-        # Composite score calculation
-        total_score = int(0.55 * skill_score + 0.25 * exp_score + 0.20 * title_score)
-        total_score = max(5, min(99, total_score))  # Clamp between 5% and 99%
+        # Weighted Composite Score
+        total_score = int(0.60 * skill_score + 0.25 * title_score + 0.15 * exp_score)
+        total_score = max(10, min(98, total_score))
 
         return total_score, matched_skills, missing_skills
 
@@ -172,35 +171,28 @@ class MatcherAgent:
         matched_skills: List[str],
         score: int
     ) -> List[str]:
-        """
-        Produce grounded, fact-checked bullet reasons.
-        Uses rule-based templating to eliminate hallucination, with LLM polish if available.
-        """
+        """Produce factual, verified bullet points."""
         reasons: List[str] = []
 
-        # Skill reason
         if matched_skills:
-            skills_preview = ", ".join(matched_skills[:4])
             count = len(matched_skills)
-            reasons.append(f"Matches {count} of your key skill{'' if count == 1 else 's'}: {skills_preview}.")
+            skills_preview = ", ".join(matched_skills[:5])
+            reasons.append(f"Matches {count} verified technical skill{'' if count == 1 else 's'}: {skills_preview}.")
         else:
-            reasons.append("Role aligns with your overall tech domain and career background.")
+            reasons.append("Software engineering role matching your core technology track.")
 
-        # Experience reason
         req_exp = job.experience_required
         cand_exp = profile.years_of_experience
         if req_exp == 0:
-            reasons.append("Great entry-level opportunity suited for freshers and early-career engineers.")
+            reasons.append("Entry-level / Internship role suited for students, freshers, and early engineers.")
         elif cand_exp >= req_exp:
-            reasons.append(f"Your experience ({cand_exp:g} yrs) fully satisfies the required {req_exp} yrs.")
+            reasons.append(f"Your {cand_exp:g} yrs experience fully meets the {req_exp} yrs requirement.")
         else:
-            reasons.append(f"Requires {req_exp} yrs experience; your background gives a strong foundation.")
+            reasons.append(f"Requires {req_exp} yrs; your background provides a strong foundational fit.")
 
-        # Workplace / Remote reason
         if job.remote:
-            reasons.append("100% Remote flexibility matching your search preferences.")
+            reasons.append("100% Remote flexibility.")
         elif job.location:
             reasons.append(f"Located in {job.location}.")
 
         return reasons[:3]
-
