@@ -46,17 +46,17 @@
 ---
 
 ### Phase 2: Backend Core & Database Setup (FastAPI)
-- [ ] **2.1 Monorepo / Backend Skeleton:**
-  - Setup FastAPI app structure: `app/core`, `app/agents`, `app/api`, `app/services`, `app/models`.
+- [x] **2.1 Monorepo / Backend Skeleton:**
+  - Setup FastAPI app structure: `app/core`, `app/api`, `app/models`, `app/repositories`.
   - Configure environment management (`pydantic-settings`), logging, and CORS.
-- [ ] **2.2 In-Memory Job Repository (`JobRepository`):**
-  - Load `jobs.json` into memory on app startup for sub-millisecond querying and indexing.
-- [ ] **2.3 Database & Application Schema (SQLAlchemy + Alembic):**
-  - Model: `applications` (`id`, `session_id`, `job_id`, `applied_date`, `status`, `notes`).
-  - Add DB-level Unique Constraint on `(session_id, job_id)` to prevent duplicates.
-  - Support SQLite for local testing and PostgreSQL (Neon) for production.
-- [ ] **2.4 Session & Context Store:**
-  - In-memory/Redis/DB session store holding:
+- [x] **2.2 In-Memory Job Repository (`JobRepository`):**
+  - Load `data/jobs.json` into memory on app startup (sub-millisecond indexed lookup and filter).
+- [x] **2.3 Database & Application Schema (SQLAlchemy):**
+  - Model: `applications` (`id`, `session_id`, `job_id`, `job_title`, `company`, `applied_at`, `status`).
+  - Added DB-level Unique Constraint on `(session_id, job_id)` to prevent duplicates.
+  - Supports SQLite for local dev and PostgreSQL (Neon) for deployment.
+- [x] **2.4 Session & Context Store:**
+  - In-memory session store holding:
     - User resume profile
     - `last_results` (Job ID list matching the numbers 1, 2, 3 shown in chat)
     - Active query filters (e.g. `remote=True`, `skills=['React']`)
