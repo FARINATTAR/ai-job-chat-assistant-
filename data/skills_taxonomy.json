@@ -1,0 +1,32 @@
+{
+  "skills": [
+    "Python", "JavaScript", "TypeScript", "React", "Next.js", "Node.js", "FastAPI",
+    "Flask", "Django", "Express.js", "HTML", "CSS", "Tailwind CSS", "Bootstrap",
+    "SQL", "PostgreSQL", "MySQL", "MongoDB", "Redis", "SQLite", "GraphQL", "REST API",
+    "Docker", "Kubernetes", "AWS", "Azure", "GCP", "Git", "GitHub", "CI/CD",
+    "Linux", "Terraform", "Kafka", "RabbitMQ", "Microservices",
+    "Machine Learning", "Deep Learning", "NLP", "Computer Vision", "PyTorch", "TensorFlow",
+    "Pandas", "NumPy", "Scikit-Learn", "Data Analysis", "Java", "C++", "C#", "Go", "Rust",
+    "Agile", "Scrum", "Jest", "Pytest", "Unit Testing"
+  ],
+  "synonyms": {
+    "js": "JavaScript",
+    "ts": "TypeScript",
+    "py": "Python",
+    "reactjs": "React",
+    "react.js": "React",
+    "nextjs": "Next.js",
+    "nodejs": "Node.js",
+    "node": "Node.js",
+    "postgres": "PostgreSQL",
+    "mongo": "MongoDB",
+    "k8s": "Kubernetes",
+    "amazon web services": "AWS",
+    "google cloud platform": "GCP",
+    "ml": "Machine Learning",
+    "ai": "Artificial Intelligence",
+    "rest": "REST API",
+    "restful": "REST API"
+  }
+}
+
