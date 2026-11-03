@@ -203,3 +203,4 @@ class MatcherAgent:
             reasons.append(f"Located in {job.location}.")
 
         return reasons[:3]
+

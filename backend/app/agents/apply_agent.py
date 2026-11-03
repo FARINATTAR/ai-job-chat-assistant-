@@ -108,3 +108,4 @@ class ApplyAgent:
     def list_applied_jobs(self, session_id: str) -> List[ApplicationRecord]:
         """Fetch all applications for the session."""
         return self.app_repo.get_user_applications(session_id)
+

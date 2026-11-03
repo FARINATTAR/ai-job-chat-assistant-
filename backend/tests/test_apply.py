@@ -111,3 +111,4 @@ def test_list_applied_jobs(session_and_agent):
     apps = agent.list_applied_jobs(session.session_id)
     assert len(apps) >= 1
     assert any(a.job_id == session.last_results[0] for a in apps)
+

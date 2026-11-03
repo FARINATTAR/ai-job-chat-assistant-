@@ -71,3 +71,4 @@ def test_matcher_zero_matches_edge_case(sample_profile):
 
     assert has_matches is False
     assert len(matches) == 0
+
