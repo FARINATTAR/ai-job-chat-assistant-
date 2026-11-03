@@ -14,6 +14,7 @@ class SessionState:
         self.resume_profile: Optional[ResumeProfile] = None
         # last_results stores the list of job_ids displayed in the last recommendation (Index 1 -> last_results[0])
         self.last_results: List[str] = []
+        self.index_to_job_id: Dict[int, str] = {}
         self.active_filters: ActiveFilters = ActiveFilters()
         self.history: List[Dict[str, str]] = []  # [{"role": "user"|"assistant", "content": "..."}]
 
@@ -28,7 +29,10 @@ class SessionState:
         digit_match = re.search(r"\b(\d+)\b", ref_clean)
         if digit_match:
             index = int(digit_match.group(1))
-            # 1-based index
+            # Check direct index map
+            if index in self.index_to_job_id:
+                return self.index_to_job_id[index]
+            # 1-based index in last_results
             if 1 <= index <= len(self.last_results):
                 return self.last_results[index - 1]
 
@@ -37,7 +41,7 @@ class SessionState:
             return ref_clean
         
         # Check if it starts with known ID prefix
-        if ref_clean.startswith("jf_") or ref_clean.startswith("an_"):
+        if any(ref_clean.startswith(p) for p in ["jf_", "an_", "arb_", "rem_"]):
             return ref_clean
 
         return None

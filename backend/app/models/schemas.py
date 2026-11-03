@@ -69,6 +69,9 @@ class ActiveFilters(BaseModel):
     skills: List[str] = Field(default_factory=list)
     location: Optional[str] = None
     max_experience: Optional[int] = None
+    source: Optional[str] = None  # "LinkedIn", "Arbeitnow", "Remotive", or None
+    page: int = 1
+    offset: int = 0
     query: Optional[str] = None
 
 

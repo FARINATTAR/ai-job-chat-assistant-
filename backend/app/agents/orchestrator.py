@@ -47,17 +47,25 @@ class OrchestratorAgent:
             return {"intent": "TRACK"}
 
         # 3. Filter refinement / Search intent
+        # Check for pagination: "show more", "next", "more jobs", "next 10", "page 2", etc.
+        is_next_page = any(kw in msg_low for kw in [
+            "show more", "next 10", "next page", "more jobs", "next jobs", "load more", "page 2", "page 3", "page 4"
+        ]) or msg_low in ["next", "more", "load more jobs"]
+        if is_next_page:
+            return {"intent": "NEXT_PAGE"}
+
         # Check for remote
         is_remote_query = any(kw in msg_low for kw in ["remote", "work from home", "wfh"])
         is_reset_query = any(kw in msg_low for kw in ["reset", "clear filter", "all jobs", "start over"])
         has_skill_query = any(s in msg_low for s in ["python", "react", "sql", "java", "docker", "aws", "node", "typescript"])
         has_exp_query = any(w in msg_low for w in ["fresher", "intern", "junior", "senior", "mid-level", "years exp", "yr exp", "yrs exp", "experience", "exp"])
+        has_source_query = any(src in msg_low for src in ["arbeitnow", "remotive", "linkedin", "all source", "all sources"])
         is_recommend_query = any(kw in msg_low for kw in ["recommend", "matching", "find jobs", "show jobs", "search"])
 
         if is_reset_query:
             return {"intent": "RESET_FILTERS"}
 
-        if is_remote_query or has_skill_query or has_exp_query or is_recommend_query:
+        if is_remote_query or has_skill_query or has_exp_query or has_source_query or is_recommend_query:
             return {
                 "intent": "SEARCH_OR_REFINE",
                 "is_remote": True if is_remote_query else None,
@@ -148,17 +156,31 @@ class OrchestratorAgent:
             return
 
         # -------------------------------------------------------------
+        # Intent: NEXT_PAGE (Pagination)
+        # -------------------------------------------------------------
+        if intent == "NEXT_PAGE":
+            session.active_filters.page += 1
+            session.active_filters.offset = (session.active_filters.page - 1) * 10
+            yield StreamEmitter.agent_thought(
+                "Orchestrator",
+                f"Loading page {session.active_filters.page} (jobs #{session.active_filters.offset + 1} to #{session.active_filters.offset + 10})..."
+            )
+
+        # -------------------------------------------------------------
         # Intent: RESET FILTERS
         # -------------------------------------------------------------
-        if intent == "RESET_FILTERS":
+        elif intent == "RESET_FILTERS":
             session.active_filters = ActiveFilters()
             yield StreamEmitter.agent_thought("Orchestrator", "Reset all conversational filters to default.")
             msg = "All filters have been reset. Re-ranking top jobs based solely on your resume profile..."
             yield StreamEmitter.token(msg + "\n\n")
 
         # -------------------------------------------------------------
-        # Intent: SEARCH_OR_REFINE
+        # Intent: SEARCH_OR_REFINE (New search resets to Page 1)
         # -------------------------------------------------------------
+        else:
+            session.active_filters.page = 1
+            session.active_filters.offset = 0
         # If candidate has not uploaded a resume, create a default software engineer profile
         if not session.resume_profile:
             session.resume_profile = ResumeProfile(
@@ -202,13 +224,27 @@ class OrchestratorAgent:
             except ValueError:
                 pass
 
+        # Detect specific source requests
+        if "arbeitnow" in msg_low:
+            session.active_filters.source = "Arbeitnow"
+        elif "remotive" in msg_low:
+            session.active_filters.source = "Remotive"
+        elif "linkedin" in msg_low:
+            session.active_filters.source = "LinkedIn"
+        elif "all source" in msg_low or "all sources" in msg_low:
+            session.active_filters.source = None
+
         filter_desc = []
+        if session.active_filters.source:
+            filter_desc.append(f"Source={session.active_filters.source}")
         if session.active_filters.remote is not None:
             filter_desc.append(f"Remote={session.active_filters.remote}")
         if session.active_filters.max_experience is not None:
             filter_desc.append(f"MaxExp={session.active_filters.max_experience}yr{'s' if session.active_filters.max_experience > 1 else ''}")
         if session.active_filters.skills:
             filter_desc.append(f"Skills={', '.join(session.active_filters.skills)}")
+        if session.active_filters.page > 1:
+            filter_desc.append(f"Page={session.active_filters.page}")
 
         active_desc_str = ", ".join(filter_desc) if filter_desc else "Default Profile"
 
@@ -229,6 +265,8 @@ class OrchestratorAgent:
         if not has_matches or not matches:
             yield StreamEmitter.agent_thought("JobMatcher", "Zero matching jobs found with current strict filters.")
             filter_summary = []
+            if session.active_filters.source:
+                filter_summary.append(f"Source: {session.active_filters.source}")
             if session.active_filters.remote:
                 filter_summary.append("Remote only")
             if session.active_filters.skills:
@@ -236,32 +274,37 @@ class OrchestratorAgent:
 
             criteria_str = " (" + ", ".join(filter_summary) + ")" if filter_summary else ""
             zero_match_msg = (
-                f"I couldn't find any job listings currently matching your strict criteria{criteria_str}.\n\n"
+                f"I couldn't find any additional job listings currently matching your criteria{criteria_str}.\n\n"
                 "💡 **Suggestions:**\n"
-                "- Say *'reset filters'* to view all recommendations based on your resume.\n"
-                "- Try broadening your skill requirements."
+                "- Say *'reset filters'* to view all recommendations from the beginning.\n"
+                "- Try searching another source (e.g., *'show Arbeitnow jobs'* or *'show LinkedIn jobs'*)."
             )
             session.history.append({"role": "assistant", "content": zero_match_msg})
             yield StreamEmitter.token(zero_match_msg)
             yield StreamEmitter.complete()
             return
 
-        # Update last_results for index-to-ID mapping ("apply to job 1, 2, 3...")
+        # Update last_results and index_to_job_id for index-to-ID mapping ("apply to job 1, 2, 3...")
         session.last_results = [m.job.id for m in matches]
+        for m in matches:
+            session.index_to_job_id[m.index] = m.job.id
 
         # Emit job results payload for frontend UI cards
         cards_payload = [m.model_dump() for m in matches]
         yield StreamEmitter.job_results(cards_payload)
 
         # Text stream response explaining the recommendations
-        text_resp = f"Here are the **top {len(matches)} matching positions** for your profile:\n\n"
+        page_num = session.active_filters.page
+        text_resp = f"Here are **matching positions #{matches[0].index} to #{matches[-1].index}** (Page {page_num}):\n\n"
         for m in matches:
+            source_tag = f"[{m.job.source}] " if getattr(m.job, 'source', None) else ""
             text_resp += (
-                f"**Job {m.index}: {m.job.title}** at **{m.job.company}**\n"
+                f"**Job {m.index}: {source_tag}{m.job.title}** at **{m.job.company}**\n"
                 f"- Match Score: `{m.match_score}%` | Location: {m.job.location} ({'Remote' if m.job.remote else 'Onsite'})\n"
                 f"- Key Match: {m.match_reasons[0] if m.match_reasons else 'Aligned with your skills'}\n\n"
             )
-        text_resp += "To apply, simply say *'apply to job 1'*, *'apply to job 2'*, or click the **Apply** button on the card!"
+        text_resp += f"💡 **Want to see more jobs?** Type *'next'* or click **Load More Jobs** below to view the next 10 roles!\n"
+        text_resp += f"👉 To apply, say *'apply to job {matches[0].index}'* or click the **Apply** button on any card."
 
         session.history.append({"role": "assistant", "content": text_resp})
         yield StreamEmitter.token(text_resp)

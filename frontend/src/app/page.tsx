@@ -295,6 +295,30 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Job Board / Source Selector */}
+          <div className="p-4 rounded-2xl bg-slate-900 border border-slate-800 space-y-2.5 text-xs">
+            <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+              <Briefcase className="w-3.5 h-3.5 text-emerald-400" /> Filter by Job Source
+            </p>
+            <div className="grid grid-cols-2 gap-1.5 pt-0.5">
+              {[
+                { label: "🌐 All Sources (2,086)", query: "Show jobs across all sources" },
+                { label: "💼 LinkedIn (1,224)", query: "Show LinkedIn jobs" },
+                { label: "🇩🇪 Arbeitnow (501)", query: "Show Arbeitnow jobs" },
+                { label: "⚡ Remotive (10)", query: "Show Remotive jobs" },
+              ].map((item, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => handleSendMessage(item.query)}
+                  disabled={isStreaming}
+                  className="px-2.5 py-1.5 rounded-xl bg-slate-800/80 hover:bg-emerald-600 hover:text-white border border-slate-700/70 text-slate-300 transition-all text-[11px] font-medium text-left"
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
           {/* Quick Search Chips */}
           <div className="p-4 rounded-2xl bg-slate-900 border border-slate-800 space-y-2 text-xs">
             <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
@@ -303,6 +327,8 @@ export default function Home() {
             <div className="flex flex-wrap gap-1.5 pt-1">
               {[
                 "Recommend matching jobs",
+                "Show next 10 jobs",
+                "Show Arbeitnow jobs",
                 "Show only remote roles",
                 "Jobs needing Python",
                 "Jobs needing React",
@@ -363,15 +389,32 @@ export default function Home() {
 
                   {/* Render Job Cards if available */}
                   {msg.jobResults && msg.jobResults.length > 0 && (
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">
-                      {msg.jobResults.map((match) => (
-                        <JobCard
-                          key={match.job.id}
-                          match={match}
-                          onApply={handleApplyToJob}
-                          isApplied={appliedJobIds.has(match.job.id)}
-                        />
-                      ))}
+                    <div className="space-y-3 pt-2">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        {msg.jobResults.map((match) => (
+                          <JobCard
+                            key={match.job.id}
+                            match={match}
+                            onApply={handleApplyToJob}
+                            isApplied={appliedJobIds.has(match.job.id)}
+                          />
+                        ))}
+                      </div>
+
+                      {/* Pagination: Load Next 10 Jobs */}
+                      <div className="flex items-center justify-between pt-1 text-xs">
+                        <span className="text-[11px] text-slate-500">
+                          Showing {msg.jobResults.length} positions
+                        </span>
+                        <button
+                          type="button"
+                          onClick={() => handleSendMessage("next")}
+                          disabled={isStreaming}
+                          className="px-3.5 py-1.5 rounded-xl bg-slate-800 hover:bg-indigo-600 hover:text-white border border-slate-700/80 text-slate-200 text-xs font-semibold flex items-center gap-1.5 transition-all shadow-md"
+                        >
+                          <span>Load Next 10 Jobs ⏩</span>
+                        </button>
+                      </div>
                     </div>
                   )}
                 </div>
@@ -393,12 +436,14 @@ export default function Home() {
             {/* Quick Filter Ribbon */}
             <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar max-w-4xl mx-auto pb-0.5 text-[11px]">
               <span className="text-slate-500 font-semibold text-[10px] uppercase shrink-0 flex items-center gap-1">
-                <Filter className="w-3 h-3 text-indigo-400" /> Filter:
+                <Filter className="w-3 h-3 text-indigo-400" /> Quick:
               </span>
               {[
+                { label: "⏩ Next 10 Jobs", q: "Show next 10 jobs" },
+                { label: "💼 LinkedIn", q: "Show LinkedIn jobs" },
+                { label: "🇩🇪 Arbeitnow", q: "Show Arbeitnow jobs" },
+                { label: "⚡ Remotive", q: "Show Remotive jobs" },
                 { label: "🎓 Fresher (0-1 yr)", q: "Show jobs for freshers (0-1 yr)" },
-                { label: "💼 1-3 Yrs", q: "Show jobs for 1-3 years experience" },
-                { label: "🚀 3+ Yrs", q: "Show senior jobs (3+ yrs)" },
                 { label: "🏠 Remote Only", q: "Show only remote roles" },
                 { label: "🔄 Reset Filters", q: "Reset all filters" },
               ].map((btn, idx) => (

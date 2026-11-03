@@ -52,6 +52,8 @@ class MatcherAgent:
                 continue
             if filters.location and filters.location.lower() not in job.location.lower():
                 continue
+            if filters.source and filters.source.lower() not in (job.source or "").lower():
+                continue
             if filters.skills:
                 job_skills_lower = set(s.strip().lower() for s in job.skills)
                 requested_lower = set(s.strip().lower() for s in filters.skills)
@@ -103,10 +105,11 @@ class MatcherAgent:
         if not scored_candidates:
             return [], False
 
-        top_candidates = scored_candidates[:limit]
+        offset = filters.offset if filters else 0
+        top_candidates = scored_candidates[offset : offset + limit]
         job_matches: List[JobMatch] = []
 
-        for idx, (job, score, matched_skills, missing_skills) in enumerate(top_candidates, start=1):
+        for idx, (job, score, matched_skills, missing_skills) in enumerate(top_candidates, start=offset + 1):
             reasons = self._generate_grounded_reasons(
                 profile=profile,
                 job=job,
