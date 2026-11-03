@@ -72,3 +72,25 @@ def test_matcher_zero_matches_edge_case(sample_profile):
     assert has_matches is False
     assert len(matches) == 0
 
+
+def test_matcher_blocks_senior_roles_for_freshers():
+    """Ensure senior roles (Associate III, Senior, 3+ yrs) are NEVER shown to freshers/interns."""
+    agent = MatcherAgent()
+    fresher_profile = ResumeProfile(
+        name="Fresher Graduate",
+        designation="Software Engineering Intern",
+        skills=["Python", "SQL", "Git", "Power BI", "Azure"],
+        years_of_experience=0.0
+    )
+    matches, has_matches = agent.match_jobs(fresher_profile, limit=20)
+
+    assert has_matches is True
+    for m in matches:
+        # 1. Experience required must be <= 1 for freshers
+        assert m.job.experience_required <= 1, f"Found job with {m.job.experience_required} yrs exp: {m.job.title}"
+
+        # 2. Senior markers should not exist
+        combined = f"{m.job.title} {m.job.description}".lower()
+        for marker in ["associate iii", "associate ii", "level 3", "senior", "lead", "architect"]:
+            assert marker not in combined, f"Found forbidden seniority marker '{marker}' in job: {m.job.title}"
+

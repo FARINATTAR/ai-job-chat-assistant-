@@ -56,10 +56,22 @@ class MatcherAgent:
                 if not job_skills_lower.intersection(requested_lower):
                     continue
 
-            # Experience-Gate: Prevent showing 3+ or 5+ year senior jobs to freshers/interns
-            # Allow at most 1.5 years above candidate's current experience level
-            if job.experience_required > candidate_exp + 1.5:
-                continue
+            # Experience-Gate: Prevent showing senior jobs to freshers/interns
+            title_and_desc = f"{job.title} {job.description}".lower()
+            senior_markers = [
+                "associate iii", "associate ii", "level 3", "level 2", "lead",
+                "senior", "sr.", "principal", "staff engineer", "architect", "manager"
+            ]
+
+            # If candidate is fresher/intern/early-career (<= 1.0 yr exp)
+            if candidate_exp <= 1.0 or "intern" in candidate_title:
+                if job.experience_required > 1:
+                    continue
+                if any(marker in title_and_desc for marker in senior_markers):
+                    continue
+            else:
+                if job.experience_required > candidate_exp:
+                    continue
 
             # 2. Strict Score Calculation
             score, matched_skills, missing_skills = self._calculate_match_score(
