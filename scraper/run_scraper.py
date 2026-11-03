@@ -14,6 +14,7 @@ from typing import List, Dict, Any
 
 from .jobfound_source import JobfoundSource
 from .arbeitnow_source import ArbeitnowSource
+from .remotive_source import RemotiveSource
 from .skill_extractor import SkillExtractor
 
 
@@ -86,15 +87,21 @@ def main():
     all_jobs: List[Dict[str, Any]] = []
 
     # 1. Primary: Jobfound
-    print(f"--> [Source 1/2] Crawling Jobfound.org...")
+    print(f"--> [Source 1/3] Crawling Jobfound.org...")
     jobfound = JobfoundSource(extractor=extractor)
     jf_jobs = jobfound.fetch_jobs(target_count=args.target)
     all_jobs.extend(jf_jobs)
 
-    # 2. Secondary: If more jobs needed, crawl Arbeitnow
+    # 2. Secondary: Remotive (Verified active open remote software dev jobs)
+    print(f"--> [Source 2/3] Crawling Remotive (Verified Open Software Roles)...")
+    remotive = RemotiveSource(extractor=extractor)
+    rem_jobs = remotive.fetch_jobs(target_count=150)
+    all_jobs.extend(rem_jobs)
+
+    # 3. Tertiary: If more jobs needed, crawl Arbeitnow
     remaining = args.target - len(all_jobs)
     if remaining > 0:
-        print(f"--> [Source 2/2] Fetching additional {remaining} jobs from Arbeitnow...")
+        print(f"--> [Source 3/3] Fetching additional {remaining} jobs from Arbeitnow...")
         arbeitnow = ArbeitnowSource(extractor=extractor)
         an_jobs = arbeitnow.fetch_jobs(target_count=remaining + 100)
         all_jobs.extend(an_jobs)

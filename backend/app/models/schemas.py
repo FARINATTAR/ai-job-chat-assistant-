@@ -19,6 +19,7 @@ class Job(BaseModel):
     source_url: str = ""
     source: Optional[str] = "unknown"
     posted_at: Optional[str] = ""
+    is_active: bool = True
 
 
 class ContactInfo(BaseModel):

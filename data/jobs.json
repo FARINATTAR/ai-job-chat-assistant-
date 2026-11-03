@@ -18,7 +18,8 @@
     "source_url": "https://www.rimojobs.co.uk/jobs/attendance-data-and-administrative-officer-8ff154e0?returnTo=%2Fjobs&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Administration",
-    "posted_at": "2026-11-03T01:25:23.020Z"
+    "posted_at": "2026-11-03T01:25:23.020Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d8f50002d656737f",
@@ -37,30 +38,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/field-data-analyst-4484367543?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Internship",
-    "posted_at": "2026-11-02T18:39:48.813Z"
-  },
-  {
-    "id": "jf_6ae8d8ee00392374a33c",
-    "title": "Verification Automation Trainee",
-    "company": "DECCANX",
-    "location": "Bengaluru, Karnataka, India",
-    "workplace_type": "onsite",
-    "remote": false,
-    "experience_required": 0,
-    "skills": [
-      "Python",
-      "Git",
-      "GitHub",
-      "Rust",
-      "Linux",
-      "Bash",
-      "Gst"
-    ],
-    "description": "This trainee role sits between verification and software: you will build the scripts, regression flows and reports that keep a verification team fast and honest. Reliable automation is what lets us run hundreds of tests, compare results over time and trust a regression summary. What you will work",
-    "source_url": "https://in.linkedin.com/jobs/view/verification-automation-trainee-at-deccanx-4486104033?source=jobfound.org",
-    "source": "jobfound.org",
-    "domain": "Quality Assurance",
-    "posted_at": "2026-11-02T18:39:42.691Z"
+    "posted_at": "2026-11-02T18:39:48.813Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d8e900291a5efd0c",
@@ -85,7 +64,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/ai-styling-intern-at-landmark-group-4484359617?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Internship",
-    "posted_at": "2026-11-02T18:39:37.422Z"
+    "posted_at": "2026-11-02T18:39:37.422Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d8e70038648f7e44",
@@ -114,7 +94,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/snowflake-data-engineering-intern-at-arisdata-4462417988?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Internship",
-    "posted_at": "2026-11-02T18:39:35.664Z"
+    "posted_at": "2026-11-02T18:39:35.664Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d8e60014e58dd35a",
@@ -132,7 +113,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/business-intelligence-and-ai-automation-associate-at-ksg-realty-4477360969?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data & AI",
-    "posted_at": "2026-11-02T18:39:34.053Z"
+    "posted_at": "2026-11-02T18:39:34.053Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d8e000392558a8b0",
@@ -153,7 +135,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/robotics-r-d-intern-at-frictiondynamics-4484373943?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Internship",
-    "posted_at": "2026-11-02T18:39:28.687Z"
+    "posted_at": "2026-11-02T18:39:28.687Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d8df001a230fd930",
@@ -173,7 +156,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/software-intern-fixed-term-at-pmglide-4485760086?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Internship",
-    "posted_at": "2026-11-02T18:39:27.190Z"
+    "posted_at": "2026-11-02T18:39:27.190Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d8d80026826278be",
@@ -196,7 +180,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/sw-applications-engineer-at-applied-materials-india-4484379577?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-02T18:39:20.389Z"
+    "posted_at": "2026-11-02T18:39:20.389Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d8d6003356b2a881",
@@ -213,7 +198,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/specialist-data-analytics-at-fresenius-medical-care-4486161668?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data & AI",
-    "posted_at": "2026-11-02T18:39:18.602Z"
+    "posted_at": "2026-11-02T18:39:18.602Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d8d500126af87929",
@@ -236,7 +222,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/advanced-sql-excel-analyst-at-iqvia-4485486014?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data & AI",
-    "posted_at": "2026-11-02T18:39:17.066Z"
+    "posted_at": "2026-11-02T18:39:17.066Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d8d300129143aef7",
@@ -257,7 +244,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/analyst-data-governance-mgmt-at-american-express-4485724594?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data & AI",
-    "posted_at": "2026-11-02T18:39:15.071Z"
+    "posted_at": "2026-11-02T18:39:15.071Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d8d1002b10aa0967",
@@ -278,7 +266,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/analyst-data-governance-management-at-american-express-4485707390?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data & AI",
-    "posted_at": "2026-11-02T18:39:13.462Z"
+    "posted_at": "2026-11-02T18:39:13.462Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d8cf003ada2da015",
@@ -298,7 +287,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/data-migration-engineer-nov-expanded-team-at-ntt-data-north-america-4486182981?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data & AI",
-    "posted_at": "2026-11-02T18:39:11.728Z"
+    "posted_at": "2026-11-02T18:39:11.728Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d8ce00184b04ac4e",
@@ -325,7 +315,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/data-engineering-associate-at-metyis-4432936997?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data & AI",
-    "posted_at": "2026-11-02T18:39:10.139Z"
+    "posted_at": "2026-11-02T18:39:10.139Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d8cc002ed0db49aa",
@@ -350,7 +341,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/data-engineer-snowflake-at-vivanti-consulting-4485443530?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data & AI",
-    "posted_at": "2026-11-02T18:39:08.524Z"
+    "posted_at": "2026-11-02T18:39:08.524Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d8cb000936f6feee",
@@ -375,7 +367,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/data-engineer-ai-hub-at-linde-4478391562?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data & AI",
-    "posted_at": "2026-11-02T18:39:06.910Z"
+    "posted_at": "2026-11-02T18:39:06.910Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d8c90024a6c16c02",
@@ -395,7 +388,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/snowflake-%2B-cortex-associate-at-pwc-acceleration-center-india-4484388130?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data & AI",
-    "posted_at": "2026-11-02T18:39:05.333Z"
+    "posted_at": "2026-11-02T18:39:05.333Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d8c7003b4e09085b",
@@ -414,7 +408,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/snowflake-data-engineer-ai-engineer-at-kumaran-systems-4486168137?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data & AI",
-    "posted_at": "2026-11-02T18:39:03.721Z"
+    "posted_at": "2026-11-02T18:39:03.721Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d8c6000db40bfd09",
@@ -439,7 +434,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/data-engineer-ai-hub-at-linde%40india-4478501484?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data & AI",
-    "posted_at": "2026-11-02T18:39:01.975Z"
+    "posted_at": "2026-11-02T18:39:01.975Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d8c400246a82b258",
@@ -460,7 +456,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/etl-developer-at-state-street-4486148925?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data & AI",
-    "posted_at": "2026-11-02T18:39:00.371Z"
+    "posted_at": "2026-11-02T18:39:00.371Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d8c30001efd0c1e9",
@@ -482,7 +479,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/software-engineer-data-engineer-azure-at-gartner-4485733827?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data & AI",
-    "posted_at": "2026-11-02T18:38:58.748Z"
+    "posted_at": "2026-11-02T18:38:58.748Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d8c1001cbea28929",
@@ -533,7 +531,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/data-scientist-at-entiovi-technologies-4484347774?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data & AI",
-    "posted_at": "2026-11-02T18:38:54.487Z"
+    "posted_at": "2026-11-02T18:38:54.487Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d8bc00066cae7fe8",
@@ -573,7 +572,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/generative-ai-engineer-at-recrew-ai-4486138504?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data & AI",
-    "posted_at": "2026-11-02T18:38:50.173Z"
+    "posted_at": "2026-11-02T18:38:50.173Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d8b6002205936126",
@@ -592,7 +592,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/agentic-ai-engineer-at-atos-4484322799?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data & AI",
-    "posted_at": "2026-11-02T18:38:46.316Z"
+    "posted_at": "2026-11-02T18:38:46.316Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d8b200295c8e7e7f",
@@ -615,7 +616,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/azure-sme-at-infosys-4485740472?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "DevOps",
-    "posted_at": "2026-11-02T18:38:42.415Z"
+    "posted_at": "2026-11-02T18:38:42.415Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d8b0003d6138fec1",
@@ -681,7 +683,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/linux-admin-at-infosys-4468418401?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "DevOps",
-    "posted_at": "2026-11-02T18:38:37.635Z"
+    "posted_at": "2026-11-02T18:38:37.635Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d8ac0010c7926457",
@@ -891,7 +894,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/platform-engineer-control-automation-at-infosys-4485732706?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "DevOps",
-    "posted_at": "2026-11-02T18:38:24.804Z"
+    "posted_at": "2026-11-02T18:38:24.804Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d89f0017bb96d9c3",
@@ -974,7 +978,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/devops-sde-2-at-pw-physicswallah-4475549540?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "DevOps",
-    "posted_at": "2026-11-02T18:38:18.295Z"
+    "posted_at": "2026-11-02T18:38:18.295Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d898003af218ab12",
@@ -1002,7 +1007,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/software-engineer-devops-at-pivotroots-4368191990?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "DevOps",
-    "posted_at": "2026-11-02T18:38:16.676Z"
+    "posted_at": "2026-11-02T18:38:16.676Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d8970017942115c7",
@@ -1036,7 +1042,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/full-stack-developer-at-jacobs-4486152495?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-02T18:38:15.139Z"
+    "posted_at": "2026-11-02T18:38:15.139Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d89500083d1f89f2",
@@ -1269,7 +1276,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/software-engineer-%E2%80%94-full-stack-immediate-joiners-only-at-factori-com-4485711985?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-02T18:37:41.112Z"
+    "posted_at": "2026-11-02T18:37:41.112Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d873002f407f2d47",
@@ -1900,7 +1908,8 @@
     "source_url": "https://easyapply.jobs/r/ZJz9IXZ27wVNqZ2QU1M2?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-02T18:03:59.444Z"
+    "posted_at": "2026-11-02T18:03:59.444Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d08e000c6dcba923",
@@ -1921,7 +1930,8 @@
     "source_url": "https://jobs.bcdtravel.com/bcdme/job/Event-Web-Registration-Developer-Cvent/1376241057/?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-02T18:03:57.973Z"
+    "posted_at": "2026-11-02T18:03:57.973Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d08b001b06ad2871",
@@ -1949,7 +1959,8 @@
     "source_url": "https://apply.j-vers.com/job/AAAAAAAAAAAAAAAAAAAAABzLJMBjWl5RO4soW8kanFFpBMBZpylQcfsfBjBhAmsOPSifRBhQivI3GcuZ3UD6LQq2mUnjnurI3BPQYUGkUosfI_BozMOu6Txaca_3lcYnajRbrk3NNDyNSasMtfQVoKPMTORVx4AYVG6b18ujpFOzsDd04OXxhcFWCbjaXTC-3GgXA_CsqLQaYZ8Yuko4SIjUgs4NyW4LHGaTbxs5PbP6X_NMfxVbIdGpNzb87Bo4otBBP144ngb9XoXQEL07QH_soMXPNq487XBVQKtbD-NmFOXtJ6Ix70yIqw8zI6JiejTQhvr46ddHumc0Qt2Ccjxdo9P6Nz2y4qqQapelY9o=?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-02T18:03:55.199Z"
+    "posted_at": "2026-11-02T18:03:55.199Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d0890039378754d7",
@@ -1978,7 +1989,8 @@
     "source_url": "https://jobs.bendingspoons.com/positions/6ae123268b07d8a00f7d410a?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-02T18:03:53.661Z"
+    "posted_at": "2026-11-02T18:03:53.661Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d085000c29b92e30",
@@ -2036,7 +2048,8 @@
     "source_url": "https://careers.octave.com/job/Madison-Site-Reliability-Engineer-AL-35758/3457-en_US/?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-02T18:03:47.401Z"
+    "posted_at": "2026-11-02T18:03:47.401Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d08200103de51ad7",
@@ -2060,7 +2073,8 @@
     "source_url": "https://www.ziprecruiter.com/ekn/AALJkTRdcJ1skKMUjWGRGKfXKHLjPBJ8yeL2f0OPYvuu-JhSNtpplGRK0vlo8XVPUg0uGZD8u8JzhXdS07HieoX2a1JZNSR9m5OUrZgSzfvu-12mzd7kizLhDSNFtsCjkigXVCtYCMqsWmbgiGH_-21_vmTD8Ck1eJ7Qz1zSK4R6AK6IL5KJW6xemaoOz-J5iBvluQqT6gJOV1EEjeWhFLiOVzARtGThx_Uz60hBX0rws7cPx4vscpQLYKfyXdeNDqEEyu7t-o6hfgjqqWMZNOQinVxhTTk676iQ1ee-Ew3Ieghz1NJu1_8LTwb7AL0v31uKUt1rNur5GTSaBowJQ3WBBDq5G53-gXfKZGPuHhKPETGgcA0AliMfZLo1bkZ8WXwAIiewplFRqn5sb5WhLoVTBYx_pjC7CAiJxcgk-EDe2Zy8f0-Ghc1ROYZf3EOvTh3fJj7K20n4hml6r7_4u58bySA5mNr",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-02T18:03:46.033Z"
+    "posted_at": "2026-11-02T18:03:46.033Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d0800035520036d3",
@@ -2088,7 +2102,8 @@
     "source_url": "https://careers.clarkassociatesinc.biz/careerdetail/?id=104273&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-02T18:03:44.602Z"
+    "posted_at": "2026-11-02T18:03:44.602Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d07f0011eddbce59",
@@ -2116,7 +2131,8 @@
     "source_url": "https://www1.jobdiva.com/portal/?a=z1jdnwue8plenclbxjwmb1znhwsjog010f4agfwq5l1l4mq2gwf1s1xl73rlub4o&source=jobfound.org#/jobs/29566560",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-02T18:03:43.052Z"
+    "posted_at": "2026-11-02T18:03:43.052Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d07d003ae0b40310",
@@ -2144,7 +2160,8 @@
     "source_url": "https://careers-fedwriters.icims.com/jobs/2554/software-developer%2c-ai-platforms/job?in_iframe=1&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-02T18:03:41.155Z"
+    "posted_at": "2026-11-02T18:03:41.155Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d07b0036dda3287a",
@@ -2172,7 +2189,8 @@
     "source_url": "https://jobs.ashbyhq.com/quo/30949b7e-ae2c-43d7-b350-2a0034abfc01?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-02T18:03:39.548Z"
+    "posted_at": "2026-11-02T18:03:39.548Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d07a0011fe3f9431",
@@ -2200,7 +2218,8 @@
     "source_url": "https://crosscountrymortgage.wd1.myworkdayjobs.com/ccmcareers/job/Remote-USA/Application-Developer--React-_JR03787?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-02T18:03:38.054Z"
+    "posted_at": "2026-11-02T18:03:38.054Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d078002f4d985391",
@@ -2266,7 +2285,8 @@
     "source_url": "https://job-boards.greenhouse.io/embed/job_app?for=calendly&token=8895903002&gh_src=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-02T18:03:35.047Z"
+    "posted_at": "2026-11-02T18:03:35.047Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d0750032ff5d68fc",
@@ -2349,7 +2369,8 @@
     "source_url": "https://jobs.lever.co/elementsolutions/71c360be-2853-4bf8-bf07-c41cdf2e91a9/apply?lever-source=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-02T18:03:30.663Z"
+    "posted_at": "2026-11-02T18:03:30.663Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d071001ac0cec9ef",
@@ -2378,7 +2399,8 @@
     "source_url": "https://jobs.lever.co/merlinlabs/b00bfd34-80cf-481b-9ea9-c00938afd7dd/apply?lever-source=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-02T18:03:29.163Z"
+    "posted_at": "2026-11-02T18:03:29.163Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d070000598186e6a",
@@ -2433,7 +2455,8 @@
     "source_url": "https://arcriskandcompliance.zohorecruit.com/jobs/Careers/428033000008101017/Anti-Money-Laundering-AML-Data-Analyst?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-02T18:03:26.352Z"
+    "posted_at": "2026-11-02T18:03:26.352Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d06b00355ce55d69",
@@ -2461,7 +2484,8 @@
     "source_url": "https://apply.workable.com/performyard/j/8AD2A66FFE/?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Creatives and Design",
-    "posted_at": "2026-11-02T18:03:23.601Z"
+    "posted_at": "2026-11-02T18:03:23.601Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d06a001dc2d1133a",
@@ -2482,7 +2506,8 @@
     "source_url": "https://jobs.dayforcehcm.com/en-US/tisg/CANDIDATEPORTAL/jobs/4221?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Customer Service and Support",
-    "posted_at": "2026-11-02T18:03:22.263Z"
+    "posted_at": "2026-11-02T18:03:22.263Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d067000b9b048903",
@@ -2508,7 +2533,8 @@
     "source_url": "https://careers.duolingo.com/jobs/8888721002?gh_jid=8888721002&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data & AI",
-    "posted_at": "2026-11-02T18:03:18.954Z"
+    "posted_at": "2026-11-02T18:03:18.954Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d065002a113dc1de",
@@ -2536,7 +2562,8 @@
     "source_url": "https://inviso.clearcompany.com/careers/jobs/423e7231-0d7f-af1e-8295-4f020ff58f4e/apply?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-02T18:03:17.434Z"
+    "posted_at": "2026-11-02T18:03:17.434Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d0640011c39a79f7",
@@ -2563,7 +2590,8 @@
     "source_url": "https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=94f16522-9f0f-4a13-b72c-b0eaf60d119d&jobId=613438&ccId=19000101_000001&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-02T18:03:16.051Z"
+    "posted_at": "2026-11-02T18:03:16.051Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d062003347b27b6d",
@@ -2591,7 +2619,8 @@
     "source_url": "https://securserv.applytojob.com/apply/BP3NNciEe4/Cloud-Security-Engineer?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-02T18:03:14.580Z"
+    "posted_at": "2026-11-02T18:03:14.580Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8d0600003b6c993e9",
@@ -2617,7 +2646,8 @@
     "source_url": "https://recruiting2.ultipro.com/sta1026sserv/JobBoard/88f6bf58-d226-4c6f-8429-70fb7f1dc30d/OpportunityDetail?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-02T18:03:11.834Z"
+    "posted_at": "2026-11-02T18:03:11.834Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8afda003b3d0bd910",
@@ -2641,7 +2671,8 @@
     "source_url": "https://fynd.keka.com/careers/jobdetails/145984?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Machine Learning",
-    "posted_at": "2026-11-02T15:44:26.692Z"
+    "posted_at": "2026-11-02T15:44:26.692Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8afcb0020ae8ef355",
@@ -2665,7 +2696,8 @@
     "source_url": "https://careers.equifax.com/en/jobs/j00179300/software-engineer-i/?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-11-02T15:44:11.255Z"
+    "posted_at": "2026-11-02T15:44:11.255Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8afbb0007150b142e",
@@ -2753,7 +2785,8 @@
     "source_url": "https://cutshort.io/job/Software-Developer-Indore-Deqode-m2pT4ilk?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Development",
-    "posted_at": "2026-11-02T15:43:18.554Z"
+    "posted_at": "2026-11-02T15:43:18.554Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8af8e001565b685cc",
@@ -2777,7 +2810,8 @@
     "source_url": "https://careers.westpharma.com/job/Bengaluru-Graduate-Intern%252CD&T%252CValidation-&-Testing-KA/1452779833/?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Testing",
-    "posted_at": "2026-11-02T15:43:09.902Z"
+    "posted_at": "2026-11-02T15:43:09.902Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8a95a0025c6a7038f",
@@ -2801,7 +2835,8 @@
     "source_url": "https://careers.amd.com/careers-home/jobs/92144?lang=en-us&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-11-02T15:16:42.333Z"
+    "posted_at": "2026-11-02T15:16:42.333Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8a94d003b7e16e124",
@@ -2822,7 +2857,8 @@
     "source_url": "https://mavenir.wd1.myworkdayjobs.com/Mavenir_Careers/job/Bangalore-India/Software-Engineer---Layer-1--5G-_R0016594?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-11-02T15:16:29.711Z"
+    "posted_at": "2026-11-02T15:16:29.711Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8a93f0006d5c76fce",
@@ -2846,7 +2882,8 @@
     "source_url": "https://jobs.appliedmaterials.com/job/-/-/95/102236649312?p_sid=rl-UU0b&p_uid=lbjaBxipY5&ss=paid&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-11-02T15:16:14.797Z"
+    "posted_at": "2026-11-02T15:16:14.797Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8a930003da6a124e4",
@@ -2869,7 +2906,8 @@
     "source_url": "https://careers.responsive.io/job/India-Software-Engineer-Coim/59504944/?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-11-02T15:16:00.684Z"
+    "posted_at": "2026-11-02T15:16:00.684Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8a92700166536c5b4",
@@ -2893,7 +2931,8 @@
     "source_url": "https://jobs.ascendion.com/careers/job/1970324837571102?domain=ascendion.com&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-11-02T15:15:51.127Z"
+    "posted_at": "2026-11-02T15:15:51.127Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8a921001371233ee3",
@@ -2941,7 +2980,8 @@
     "source_url": "https://jobs.appliedmaterials.com/job/-/-/95/102024833440?p_sid=szGBixb&p_uid=TaJUurUyvq&ss=paid&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-11-02T15:15:39.102Z"
+    "posted_at": "2026-11-02T15:15:39.102Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8a914002c9c8526bc",
@@ -3012,7 +3052,8 @@
     "source_url": "https://careers.quest-global.com/global/en/job/QGRQGAGLOBALP124230EXTERNALENGLOBAL/Fullstack-Engineer?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-11-02T15:15:22.285Z"
+    "posted_at": "2026-11-02T15:15:22.285Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8a8f40005b00071bd",
@@ -3036,7 +3077,8 @@
     "source_url": "https://philips.wd3.myworkdayjobs.com/jobs-and-careers/job/Bangalore/Software-Technologist-I_593980-1/?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-11-02T15:14:59.383Z"
+    "posted_at": "2026-11-02T15:14:59.383Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae885550036fdead1de",
@@ -3051,7 +3093,8 @@
     "source_url": "https://job-boards.greenhouse.io/twilio/jobs/8319386?gh_src=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering",
-    "posted_at": "2026-11-02T12:43:01.624Z"
+    "posted_at": "2026-11-02T12:43:01.624Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8853c00275c93d136",
@@ -4469,7 +4512,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/software-engineer-at-adtran-4486130004?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "DevOps",
-    "posted_at": "2026-11-02T12:40:34.149Z"
+    "posted_at": "2026-11-02T12:40:34.149Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae884bf002f918f671a",
@@ -4791,7 +4835,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/asset-wealth-management-am-mosaic-technology-hyderabad-associate-software-engineering-at-goldman-sachs-4485483062?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-02T12:40:05.360Z"
+    "posted_at": "2026-11-02T12:40:05.360Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae884a30002f8893aa9",
@@ -5934,7 +5979,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/associate-software-engineer-at-thomson-reuters-4485456874?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-02T12:38:31.444Z"
+    "posted_at": "2026-11-02T12:38:31.444Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae88444000fb84317aa",
@@ -6787,7 +6833,8 @@
     "source_url": "https://jobs.smartrecruiters.com/oneclick-ui/company/BetterHomesAndGardensRealEstateAdvantageRealty/publication/eced29a6-b2e2-462a-90a4-a5b311af9543?dcr_ci=BetterHomesAndGardensRealEstateAdvantageRealty&jr_id=6ae58a09d45dc30fb7d371e3&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Entry",
-    "posted_at": "2026-11-02T10:20:01.476Z"
+    "posted_at": "2026-11-02T10:20:01.476Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae8622200006659c7a4",
@@ -6811,7 +6858,8 @@
     "source_url": "https://www.bestjobtool.com/job-description/3206972428?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Entry",
-    "posted_at": "2026-11-02T10:12:49.742Z"
+    "posted_at": "2026-11-02T10:12:49.742Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae862070009b65da378",
@@ -6834,7 +6882,8 @@
     "source_url": "https://www.bestjobtool.com/job-description-usb/B59C3FEED2BB2A9D81B7B7A6D52777DA?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Entry",
-    "posted_at": "2026-11-02T10:12:22.857Z"
+    "posted_at": "2026-11-02T10:12:22.857Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae861420016b8210b90",
@@ -6858,7 +6907,8 @@
     "source_url": "https://wd3.myworkdaysite.com/recruiting/magna/Magna/job/Bangalore-IN/Intern--Smart-Factory-Solutions_R00244571?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-11-02T10:09:06.088Z"
+    "posted_at": "2026-11-02T10:09:06.088Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae86134003e0fecaa99",
@@ -6881,7 +6931,8 @@
     "source_url": "https://applicants.spyne.ai/jobs/product-builder-intern-fb5a83?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-11-02T10:08:52.731Z"
+    "posted_at": "2026-11-02T10:08:52.731Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae861020024adf1d503",
@@ -6905,7 +6956,8 @@
     "source_url": "https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=58758dfc-14f0-4c27-ab28-426c1122d8c0&ccId=19000101_000001&lang=en_US&jobId=547758&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "AI/ML",
-    "posted_at": "2026-11-02T10:08:02.298Z"
+    "posted_at": "2026-11-02T10:08:02.298Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae860c80029c6c67599",
@@ -6951,7 +7003,8 @@
     "source_url": "https://apply.eyelinestudios.com/careers/job/790316220723?domain=netflix.com&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-11-02T10:06:22.573Z"
+    "posted_at": "2026-11-02T10:06:22.573Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae86052002c29523345",
@@ -6975,7 +7028,8 @@
     "source_url": "https://jobs.deel.com/zema.global/job-details/0c894bf6-a6fe-46dc-baef-6856b53363d4/overview?origin=58fc1886-3713-4cdb-ac76-c10610fc9fa7&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-11-02T10:05:06.462Z"
+    "posted_at": "2026-11-02T10:05:06.462Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae85fe50004e8d8612e",
@@ -6999,7 +7053,8 @@
     "source_url": "https://www.salesforce.com/company/careers/jobs/JR357893/software-engineering-pmts-backend-distributed-systems-cloud-infrastructure/?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-11-02T10:03:16.783Z"
+    "posted_at": "2026-11-02T10:03:16.783Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae85fd60012ad1c4ad8",
@@ -7023,7 +7078,8 @@
     "source_url": "https://job-boards.greenhouse.io/platformscience/jobs/7693381003?gh_src=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-11-02T10:03:02.025Z"
+    "posted_at": "2026-11-02T10:03:02.025Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae85fd1000023adca14",
@@ -7089,7 +7145,8 @@
     "source_url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8878946002&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering",
-    "posted_at": "2026-11-02T06:25:39.694Z"
+    "posted_at": "2026-11-02T06:25:39.694Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae82cd4002d9b035868",
@@ -7671,7 +7728,8 @@
     "source_url": "https://www.fieldguide.com/careers/47a2afc4-1075-4378-83bb-714543b6c272?ashby_jid=47a2afc4-1075-4378-83bb-714543b6c272&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-11-02T01:38:35.573Z"
+    "posted_at": "2026-11-02T01:38:35.573Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae7e977000c66e0bfef",
@@ -7693,7 +7751,8 @@
     "source_url": "https://www.jobleads.com/register/us/81/eafde70b5a53c22d579bdb062970022a0?jmId=2098&jobLocation=2306931245&work_mode=remote&ccuid=76778886076&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Frontend Development",
-    "posted_at": "2026-11-02T01:37:58.982Z"
+    "posted_at": "2026-11-02T01:37:58.982Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae7e94e00315bef3be6",
@@ -7717,7 +7776,8 @@
     "source_url": "https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/21869?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Payment Integrity",
-    "posted_at": "2026-11-02T01:37:18.545Z"
+    "posted_at": "2026-11-02T01:37:18.545Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae7e922001043ab2049",
@@ -7741,7 +7801,8 @@
     "source_url": "https://job-boards.greenhouse.io/embed/job_app?for=sagesure&token=4719520006&gh_src=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Product Management",
-    "posted_at": "2026-11-02T01:36:34.005Z"
+    "posted_at": "2026-11-02T01:36:34.005Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae7e8ef00108b0ac4ff",
@@ -7764,7 +7825,8 @@
     "source_url": "https://myjobs.adp.com/ameritasexternal/cx/job-details?__tx_annotation=false&c=1206501&d=ExternalCareerSite&sor=adprm&reqId=5001222429100&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Analytics",
-    "posted_at": "2026-11-02T01:35:43.022Z"
+    "posted_at": "2026-11-02T01:35:43.022Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae7e6c30027448b56cc",
@@ -7787,7 +7849,8 @@
     "source_url": "https://careers.nomura.com/Nomura/job/London-Credit-Risk-Reporting-Analyst-Lond-EC4R-3AB/1416933700/?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Credit Risk",
-    "posted_at": "2026-11-02T01:26:27.387Z"
+    "posted_at": "2026-11-02T01:26:27.387Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae7e6a2003482f11a69",
@@ -7811,7 +7874,8 @@
     "source_url": "https://recruiting.paylocity.com/Recruiting/Jobs/Details/4554759?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Finance",
-    "posted_at": "2026-11-02T01:25:54.194Z"
+    "posted_at": "2026-11-02T01:25:54.194Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae7e69c00376935b51b",
@@ -7834,7 +7898,8 @@
     "source_url": "https://vumc.wd1.myworkdayjobs.com/vumccareers/job/Nashville-TN/Health-Policy-Data-Analyst---Data-Management---HYBRID_R-67384-1?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Analyst",
-    "posted_at": "2026-11-02T01:25:48.661Z"
+    "posted_at": "2026-11-02T01:25:48.661Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae7e6860030b34bef66",
@@ -7857,7 +7922,8 @@
     "source_url": "https://careers.homedepot.com/job/24086258/hr-analytics-analyst-remote/?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "HR Analytics",
-    "posted_at": "2026-11-02T01:25:26.551Z"
+    "posted_at": "2026-11-02T01:25:26.551Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae7e6690011242cf46b",
@@ -7881,7 +7947,8 @@
     "source_url": "https://job-boards.greenhouse.io/planetlabs/jobs/8160736?gh_src=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Analytics",
-    "posted_at": "2026-11-02T01:24:56.540Z"
+    "posted_at": "2026-11-02T01:24:56.540Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae7d7f6000978f6dd6e",
@@ -8015,7 +8082,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/specialist-software-engineer-angular-developer-india-at-nationwide-4468010314?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-02T00:23:09.433Z"
+    "posted_at": "2026-11-02T00:23:09.433Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae7d7ec0006fdfd227d",
@@ -8074,7 +8142,8 @@
     "source_url": "https://apply.workable.com/ivyhill-technologies-llc/j/18F850348B/?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-02T00:02:40.525Z"
+    "posted_at": "2026-11-02T00:02:40.525Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae7d31f0011ee119b90",
@@ -8120,7 +8189,8 @@
     "source_url": "https://cecinfo.isolvedhire.com/jobs/1875723?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-02T00:02:36.298Z"
+    "posted_at": "2026-11-02T00:02:36.298Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae7d317002c5287b440",
@@ -8455,7 +8525,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/software-engineer-at-itester-inc-4483991466?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-01T18:21:47.139Z"
+    "posted_at": "2026-11-01T18:21:47.139Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae78338002f7f2a62d4",
@@ -8552,7 +8623,8 @@
     "source_url": "https://parkercareers.ttcportals.com/jobs/17913421-product-engineer-ii-fsc?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-01T18:02:42.187Z"
+    "posted_at": "2026-11-01T18:02:42.187Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae77ec1000365678972",
@@ -8574,7 +8646,8 @@
     "source_url": "https://www.geomira-data.com/career/database-developer?source=jobfound.org#",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-01T18:02:40.822Z"
+    "posted_at": "2026-11-01T18:02:40.822Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae77ebe0013af307bac",
@@ -8602,7 +8675,8 @@
     "source_url": "https://apply.j-vers.com/job/AAAAAAAAAAAAAAAAAAAAAJWEazXfB6a0qOU8Rbmj1ZQRuKDR1MZAv9hNySMig83BcPDZG-3aBzehdvjATeLEOTGn6gT9CoqSV00VjWkSge0CIybfP0vMnJBkr99TcBz1xRFFSO4FIpcscOfYTY1woY4aUGMX9ow7GTIPNmOMtPK3z-2i7abB-ayUBFBwQhP6rsvrCck7Ypt1o5Mi5PeV5wyk7UoI632e5x48EhA1gy_K57PEOkTiHZqm9ANgQhYD7xuT_x5mYBz47Du3j2oqpEwUSBc9S5QJ7-aEZU4P0MSOLeQjlyWkaVbHgYxS3n3OtCPYPuw6KNjpe9xMG15sbsh3-55uB3JEL5NalELeQ24=?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-01T18:02:38.034Z"
+    "posted_at": "2026-11-01T18:02:38.034Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae77ebc001d079aaa37",
@@ -8630,7 +8704,8 @@
     "source_url": "https://jobs.fearless.com/us/en/job/P-100257/ai-ml-data-engineer-consultant-data-analytics?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-01T18:02:36.234Z"
+    "posted_at": "2026-11-01T18:02:36.234Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae77ebb0001ab0f9ef9",
@@ -8658,7 +8733,8 @@
     "source_url": "https://job-boards.greenhouse.io/embed/job_app?for=canonical&token=3257589&gh_src=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-01T18:02:34.797Z"
+    "posted_at": "2026-11-01T18:02:34.797Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae77eb900285fafb986",
@@ -8686,7 +8762,8 @@
     "source_url": "https://job-boards.greenhouse.io/embed/job_app?for=tailscale&token=4715160005&gh_src=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-01T18:02:33.399Z"
+    "posted_at": "2026-11-01T18:02:33.399Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae7426f003e0f72dfc6",
@@ -8733,7 +8810,8 @@
     "source_url": "https://job-boards.greenhouse.io/reddit/jobs/8319764?gh_src=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Program Management",
-    "posted_at": "2026-11-01T13:04:54.029Z"
+    "posted_at": "2026-11-01T13:04:54.029Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae73863001d920bba72",
@@ -8757,7 +8835,8 @@
     "source_url": "https://willmott-assosiates-plc.ninjagig.com/jobs/data-entry-clerk/?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Entry",
-    "posted_at": "2026-11-01T13:02:27.170Z"
+    "posted_at": "2026-11-01T13:02:27.170Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae7309f0022da09f7c4",
@@ -8972,7 +9051,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/ai-engineer-microsoft-technology-at-techbaton-4485409139?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data & AI",
-    "posted_at": "2026-11-01T12:29:04.366Z"
+    "posted_at": "2026-11-01T12:29:04.366Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae7308e003dbfeafd6a",
@@ -9001,7 +9081,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/ind-applied-ai-scientist-at-the-hartford-india-4466931740?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data & AI",
-    "posted_at": "2026-11-01T12:29:02.754Z"
+    "posted_at": "2026-11-01T12:29:02.754Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae7308c0021a3b8e976",
@@ -9024,7 +9105,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/associate-iii-semiconductor-s-w-product-development-at-ust-4420116752?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "DevOps",
-    "posted_at": "2026-11-01T12:29:00.293Z"
+    "posted_at": "2026-11-01T12:29:00.293Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae73089002760d7b3a0",
@@ -9044,34 +9126,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/it-consulting-at-infosys-4485163838?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data & AI",
-    "posted_at": "2026-11-01T12:28:57.415Z"
-  },
-  {
-    "id": "jf_6ae730850037ddb3cd88",
-    "title": "Java developer",
-    "company": "Evadivy",
-    "location": "India",
-    "workplace_type": "onsite",
-    "remote": false,
-    "experience_required": 0,
-    "skills": [
-      "Spring Boot",
-      "REST API",
-      "Unit Testing",
-      "Java",
-      "Spring",
-      "SQL",
-      "MySQL",
-      "PostgreSQL",
-      "Git",
-      "Agile",
-      "Scrum"
-    ],
-    "description": "Job Summary We are looking for a skilled Java Developer with strong experience in designing, developing, and maintaining scalable applications. The ideal candidate should have hands-on experience with Java, Spring Boot, REST APIs, microservices, and database technologies. Key Responsibilities",
-    "source_url": "https://in.linkedin.com/jobs/view/java-developer-at-evadivy-4485933910?source=jobfound.org",
-    "source": "jobfound.org",
-    "domain": "Engineering and Development",
-    "posted_at": "2026-11-01T12:28:53.668Z"
+    "posted_at": "2026-11-01T12:28:57.415Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae7307f00172eb5fa17",
@@ -9101,7 +9157,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/net-developer-at-technosys-solutions-inc-4485179243?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-01T12:28:47.115Z"
+    "posted_at": "2026-11-01T12:28:47.115Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae7307b003b54b0c09f",
@@ -9128,7 +9185,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/react-native-developer-at-coforge-4483989152?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-01T12:28:43.701Z"
+    "posted_at": "2026-11-01T12:28:43.701Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae73079001ad859ca61",
@@ -9148,7 +9206,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/offer-engineer-gas-insulated-switchgear-at-hitachi-energy-4469130614?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-01T12:28:41.200Z"
+    "posted_at": "2026-11-01T12:28:41.200Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae730770031e274bd34",
@@ -9167,7 +9226,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/ai-agents-engineer-at-productist-ai-4485405063?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data & AI",
-    "posted_at": "2026-11-01T12:28:39.586Z"
+    "posted_at": "2026-11-01T12:28:39.586Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae73076000b3d6383c0",
@@ -9185,7 +9245,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/lean-pd-project-synergy-at-segula-technologies-4450710269?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-01T12:28:37.953Z"
+    "posted_at": "2026-11-01T12:28:37.953Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae73074002a68565811",
@@ -9217,7 +9278,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/full-stack-ai-engineer-wfh-at-qubrid-ai-4485918685?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data & AI",
-    "posted_at": "2026-11-01T12:28:36.388Z"
+    "posted_at": "2026-11-01T12:28:36.388Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae730730005c33ccf44",
@@ -9235,7 +9297,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/design-engineer-at-steerway-business-consultants-4485190830?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-01T12:28:34.867Z"
+    "posted_at": "2026-11-01T12:28:34.867Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae7306c003a66df14b0",
@@ -9257,7 +9320,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/modelling-resident-at-adaption-4483986384?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data & AI",
-    "posted_at": "2026-11-01T12:28:28.695Z"
+    "posted_at": "2026-11-01T12:28:28.695Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae7306a0039440cbd14",
@@ -9277,7 +9341,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/algorithm-engineer-at-ulook-4485418037?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-01T12:28:26.647Z"
+    "posted_at": "2026-11-01T12:28:26.647Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae730690017b1a9f581",
@@ -9295,7 +9360,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/software-specialist-scada-networking-at-ge-vernova-4469196634?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-01T12:28:25.147Z"
+    "posted_at": "2026-11-01T12:28:25.147Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae730670037b96863d2",
@@ -9327,7 +9393,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/embedded-software-engineer-at-qualitrol-4441453777?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-01T12:28:23.676Z"
+    "posted_at": "2026-11-01T12:28:23.676Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae73066001a3de5776e",
@@ -9348,7 +9415,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/2027-campus-hire-engineer-sw-at-qualcomm-4440753351?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-01T12:28:22.184Z"
+    "posted_at": "2026-11-01T12:28:22.184Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae730640036dd38a41a",
@@ -9369,7 +9437,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/software-development-engineer-sde-1-sde-2-at-ultimutt%E2%84%A2-4485189780?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-01T12:28:20.651Z"
+    "posted_at": "2026-11-01T12:28:20.651Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae730630013ababa90e",
@@ -9398,28 +9467,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/associcate-python-developer-backend-commercialization-technology-at-amgen-4479090890?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-01T12:28:19.081Z"
-  },
-  {
-    "id": "jf_6ae73061001eebce693f",
-    "title": "SOFTWARE DEVELOPER",
-    "company": "Nthalpix Technologies",
-    "location": "Thane, Maharashtra, India",
-    "workplace_type": "onsite",
-    "remote": false,
-    "experience_required": 5,
-    "skills": [
-      "Python",
-      "Java",
-      "JavaScript",
-      "C#",
-      "C++"
-    ],
-    "description": "Company: Nthalpix Technologies Experience: 0–5 Years (Freshers Welcome) Job Type: Full-Time Work Mode: Remote / Hybrid / On-site About Nthalpix Technologies Nthalpix Technologies is a technology-driven company developing innovative software solutions for the engineering industry, with an initial",
-    "source_url": "https://in.linkedin.com/jobs/view/software-developer-at-nthalpix-technologies-4483968716?source=jobfound.org",
-    "source": "jobfound.org",
-    "domain": "Engineering and Development",
-    "posted_at": "2026-11-01T12:28:17.269Z"
+    "posted_at": "2026-11-01T12:28:19.081Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae730600002f31c7de0",
@@ -9477,7 +9526,8 @@
     "source_url": "https://fa-extu-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/2687?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-01T12:02:51.205Z"
+    "posted_at": "2026-11-01T12:02:51.205Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae72a66002d9cbb0668",
@@ -9498,7 +9548,8 @@
     "source_url": "https://www.linkedin.com/jobs/view/4485163625?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Product Management",
-    "posted_at": "2026-11-01T12:02:46.235Z"
+    "posted_at": "2026-11-01T12:02:46.235Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6ea4f001eadfb457e",
@@ -9524,7 +9575,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/intern-data-analyst-at-amber-4485682758?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Internship",
-    "posted_at": "2026-11-01T07:29:19.271Z"
+    "posted_at": "2026-11-01T07:29:19.271Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6ea4e00060f526f07",
@@ -9541,7 +9593,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/electronics-engineering-internship-in-mumbai-at-oneaccord-4485928243?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Internship",
-    "posted_at": "2026-11-01T07:29:17.874Z"
+    "posted_at": "2026-11-01T07:29:17.874Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6ea4b0011d12f9c46",
@@ -9558,7 +9611,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/design-analysis-engineer-at-red-balloon-aerospace-4485161445?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-01T07:29:15.052Z"
+    "posted_at": "2026-11-01T07:29:15.052Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6ea490039366e3b10",
@@ -9576,7 +9630,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/solidworks-designer-at-appl-containers-limited-4483967172?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-01T07:29:13.671Z"
+    "posted_at": "2026-11-01T07:29:13.671Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6ea4300397903b620",
@@ -9595,7 +9650,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/grants-payments-data-analyst-at-worldwide-clinical-trials-4485154371?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Accounting and Finance",
-    "posted_at": "2026-11-01T07:29:07.702Z"
+    "posted_at": "2026-11-01T07:29:07.702Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6ea420020238bc9a9",
@@ -9619,28 +9675,6 @@
     "posted_at": "2026-11-01T07:29:06.301Z"
   },
   {
-    "id": "jf_6ae6ea400031596fac22",
-    "title": "Spark Developer",
-    "company": "Infosys",
-    "location": "Bengaluru East, Karnataka, India",
-    "workplace_type": "onsite",
-    "remote": false,
-    "experience_required": 5,
-    "skills": [
-      "Communication Skills",
-      "Kafka",
-      "Spark",
-      "Hadoop",
-      "Git",
-      "Agile"
-    ],
-    "description": "Minimum Qualifications: Bachelor’s degree (or equivalent) in Engineering/Technology/Computer Science or related field (BTech/BE/MSc or equivalent). 3–5 years of experience working on data engineering or big data processing initiatives. Hands-on experience building and maintaining Spark-based data",
-    "source_url": "https://in.linkedin.com/jobs/view/spark-developer-at-infosys-4485187220?source=jobfound.org",
-    "source": "jobfound.org",
-    "domain": "Data & AI",
-    "posted_at": "2026-11-01T07:29:04.576Z"
-  },
-  {
     "id": "jf_6ae6ea3f00116fc89877",
     "title": "USI-EH27-TAX-GESTC-Qlik Engineer-Hyderabad",
     "company": "Deloitte",
@@ -9662,41 +9696,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/usi-eh27-tax-gestc-qlik-engineer-hyderabad-at-deloitte-4458369799?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data & AI",
-    "posted_at": "2026-11-01T07:29:03.045Z"
-  },
-  {
-    "id": "jf_6ae6ea3d0033b6f2ad26",
-    "title": "Data Engineer – AWS Data Stack, APIs & Agentic AI",
-    "company": "Innova ESI",
-    "location": "Bengaluru, Karnataka, India",
-    "workplace_type": "onsite",
-    "remote": false,
-    "experience_required": 7,
-    "skills": [
-      "Machine Learning",
-      "Power Bi",
-      "REST API",
-      "CI/CD",
-      "Python",
-      "Flask",
-      "SQL",
-      "Kafka",
-      "Spark",
-      "AWS",
-      "Terraform",
-      "Git",
-      "GraphQL",
-      "Ios",
-      "Pytest",
-      "Pandas",
-      "Salesforce",
-      "Google Analytics"
-    ],
-    "description": "Data Engineer AWS Data Stack, APIs & Agentic AI Location : Bangalore Experience : 7 years above Level : SAL2 Key Responsibilities Build and maintain batch and incremental pipelines in Python/PySpark on AWS Glue. You'll own their freshness, completeness and cost. Fetch data from APIs: build reliable",
-    "source_url": "https://in.linkedin.com/jobs/view/data-engineer-%E2%80%93-aws-data-stack-apis-agentic-ai-at-innova-esi-4485931581?source=jobfound.org",
-    "source": "jobfound.org",
-    "domain": "Data & AI",
-    "posted_at": "2026-11-01T07:29:01.566Z"
+    "posted_at": "2026-11-01T07:29:03.045Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6ea3b0014b7e6ca8a",
@@ -9751,7 +9752,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/aiml-and-data-science-at-cognizant-4467882209?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data & AI",
-    "posted_at": "2026-11-01T07:28:57.597Z"
+    "posted_at": "2026-11-01T07:28:57.597Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6ea38001b6c0f5f7c",
@@ -9818,7 +9820,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/applied-scientist-at-amazon-science-4483931863?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data & AI",
-    "posted_at": "2026-11-01T07:28:53.307Z"
+    "posted_at": "2026-11-01T07:28:53.307Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6ea34000757bde998",
@@ -9867,7 +9870,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/infrastructure-platform-engineer-at-htc-global-services-4485930160?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "DevOps",
-    "posted_at": "2026-11-01T07:28:49.507Z"
+    "posted_at": "2026-11-01T07:28:49.507Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6ea300013f8e11671",
@@ -9893,7 +9897,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/oci-%2B-kubernetes-admin-at-infosys-4485157911?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "DevOps",
-    "posted_at": "2026-11-01T07:28:48.111Z"
+    "posted_at": "2026-11-01T07:28:48.111Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6ea2e00371cf61f13",
@@ -10353,37 +10358,6 @@
     "posted_at": "2026-11-01T07:28:11.810Z"
   },
   {
-    "id": "jf_6ae6ea0a00283b6aa60c",
-    "title": "Front End Developer",
-    "company": "ktree.com",
-    "location": "Hyderabad, Telangana, India",
-    "workplace_type": "onsite",
-    "remote": false,
-    "experience_required": 8,
-    "skills": [
-      "Node.js",
-      "REST API",
-      "Java",
-      "JavaScript",
-      "React",
-      "Angular",
-      "Vue",
-      "HTML",
-      "CSS",
-      "Bootstrap",
-      "Php",
-      "Laravel",
-      "Excel",
-      "Agile",
-      "Typing"
-    ],
-    "description": "Full-Time Hyderabad Posted 8 years ago THE TEAM At KTree we tackle tough problems everyday. Learning, Sharing, Collaborating & Supporting one another are key traits in our Team. KTree’s Engineering team enjoy facing challenges as individuals, but we are also eager to collaborate and share our",
-    "source_url": "https://in.linkedin.com/jobs/view/front-end-developer-at-ktree-com-4485941600?source=jobfound.org",
-    "source": "jobfound.org",
-    "domain": "Engineering and Development",
-    "posted_at": "2026-11-01T07:28:10.193Z"
-  },
-  {
     "id": "jf_6ae6ea08003e3c828967",
     "title": "Embedded Product Application Engineer",
     "company": "AMD",
@@ -10522,7 +10496,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/system-performance-engineer-nsp-npu-ai-ml-at-qualcomm-4467540790?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-01T07:27:58.925Z"
+    "posted_at": "2026-11-01T07:27:58.925Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6e9fd002afd108b16",
@@ -10815,7 +10790,8 @@
     "source_url": "https://careers.ogletree.com/jobs/7051?jr_id=6ae0be3c05a39c3e2c70bed6&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Entry",
-    "posted_at": "2026-11-01T06:50:36.630Z"
+    "posted_at": "2026-11-01T06:50:36.630Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6e10b00283b9f8ee3",
@@ -10837,7 +10813,8 @@
     "source_url": "https://talemexa.com/jobs/job-man-1792904326157-1792904397276067?jr_id=6ae4c89ad7424a2a828e87d3&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Entry",
-    "posted_at": "2026-11-01T06:49:47.418Z"
+    "posted_at": "2026-11-01T06:49:47.418Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6e0e3000916345039",
@@ -10857,7 +10834,8 @@
     "source_url": "https://directsource.magnitglobal.com/us/thecignagroup/jobs/122673-data-entry-associate-representative-newburyport-massachusetts?jr_id=6ae0e50505a39c3e2c70dd1c&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Entry",
-    "posted_at": "2026-11-01T06:49:06.923Z"
+    "posted_at": "2026-11-01T06:49:06.923Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6e0ca0021d96e4ff8",
@@ -10880,7 +10858,8 @@
     "source_url": "https://www1.jobdiva.com/portal/?a=smjdnw7la4cjvumzhlko9bfvvnb40r005e814fuwq17o9loy499zfaxc92c41lek&jr_id=6ae3daddd7424a2a828e373e&source=jobfound.org#/jobs/33306912",
     "source": "jobfound.org",
     "domain": "Data Entry",
-    "posted_at": "2026-11-01T06:48:42.294Z"
+    "posted_at": "2026-11-01T06:48:42.294Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6e0b1003de4f517f9",
@@ -10968,7 +10947,8 @@
     "source_url": "https://www.ziprecruiter.com/jobs/v2/eyJsaXN0aW5nX2tleSI6IkNaaGFPNkVyQmxoUThDTUNrRDlsaVEiLCJtYXRjaF9pZCI6IjYxOWQ2ZjliLTgyMmEtNDAxOC1hNGI4LTdlMjI5MGNlYjUwNyIsInNvdXJjZV9wbGFjZW1lbnRfaWQiOjE0Njg4Mjd9?tsid=123468827&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Entry",
-    "posted_at": "2026-11-01T06:47:22.461Z"
+    "posted_at": "2026-11-01T06:47:22.461Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6dbc400395515207f",
@@ -10996,7 +10976,8 @@
     "source_url": "https://appliedconcepts.prevueaps.com/jobs/340843-47571.html?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-01T06:27:16.698Z"
+    "posted_at": "2026-11-01T06:27:16.698Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6dbc3000d846108df",
@@ -11071,7 +11052,8 @@
     "source_url": "https://tally.so/r/2j890D?job_title=Data+Quality+Analyst&company_id=94828165&company_name=B6+Gestora+de+Recursos&job_id=AFR-RR-261029-01498-71C55C7F2B7C&salary=%2495%2C000+-+%24105%2C000+USD%2Fyear&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-01T06:27:11.857Z"
+    "posted_at": "2026-11-01T06:27:11.857Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6dbbc003c99985c3e",
@@ -11095,7 +11077,8 @@
     "source_url": "https://zayo.wd1.myworkdayjobs.com/Zayo_Careers/job/United-States/OSP-Controls--Project-Management-Launch-Specialist_R0017568?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-01T06:27:08.752Z"
+    "posted_at": "2026-11-01T06:27:08.752Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6dbbb0016b80a5dc9",
@@ -11123,7 +11106,8 @@
     "source_url": "https://jobs.ashbyhq.com/eightsleep/74b90c13-fe64-4bcd-9b5e-ebad6b5b4570/application?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-01T06:27:07.135Z"
+    "posted_at": "2026-11-01T06:27:07.135Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6db030022629f50fc",
@@ -11151,7 +11135,8 @@
     "source_url": "https://devdinos.com/careers/full-stack-software-engineer?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-01T06:24:03.331Z"
+    "posted_at": "2026-11-01T06:24:03.331Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6db010015598fb2df",
@@ -11178,7 +11163,8 @@
     "source_url": "https://statheros.freshteam.com/jobs/ap7bj-6fiGSJ/artificial-intelligence-ai-engineer-developer-remote?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-01T06:24:01.091Z"
+    "posted_at": "2026-11-01T06:24:01.091Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6daff002e27c5ef4c",
@@ -11195,7 +11181,8 @@
     "source_url": "https://www.ziprecruiter.com/kn/AAJuD6tesKUI2B3t5B2xgMkmBQSF-GVdBiXvqV9zd7MANFVFaR-PD3HseoyZKWuba0QFo3RavV1llx4cpYXd1NjLkGI9jyDCz0vg1IB5QKhaaQQEA1srqgBR06wPcfcTIuQTn5j7Q8JWX-fM6WeIGoKcbejUHWopFmRJd314ABC6Fuw36hbv18m9RmKRzr-4U1dqCyYLvKNHxtMTwrRQ7DzeK9P3Fmx0QLIGWbsfRWa-Z76LQHjEXA1FZwWAvhNUTLmYFNzo5YsGByJctWFzFrhbyyzln2vKSTX8wtcgBhg2siWu7X1GilNZo7dHk0Of6CONqZ6zNFTo8n1HrXzkDluSHhZI2_R29fGh-k6zk_btd3v9gaC-XVhq2E-45RYxBK2NaOBF2VBxEvCrTUIhRrwd0GUC4W3V0hrQSqHCl7eeG7lwWbiG29_NtngymZPARZntHGEyhvS1yDC0QN_v1xBr5QotU8zh",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-11-01T06:23:59.495Z"
+    "posted_at": "2026-11-01T06:23:59.495Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6da7d002f20e6b28a",
@@ -11218,7 +11205,8 @@
     "source_url": "https://nttdata.dejobs.org/remote-pa/provider-data-processor-remote/3DF6F702A3DD4CF68CB6D7697572757C/job/?vs=5011&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Healthcare Operations",
-    "posted_at": "2026-11-01T06:21:49.526Z"
+    "posted_at": "2026-11-01T06:21:49.526Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6d9ec001472d3f227",
@@ -11242,7 +11230,8 @@
     "source_url": "https://job-boards.greenhouse.io/devrev/jobs/6196801004?gh_src=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineering",
-    "posted_at": "2026-11-01T06:19:24.089Z"
+    "posted_at": "2026-11-01T06:19:24.089Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6d9e5000271e43260",
@@ -11266,7 +11255,8 @@
     "source_url": "https://www.amazon.jobs/en/jobs/10570699/software-development-engineer-aws-dynamodb?cmpid=SPLICX0248M&ss=paid&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-11-01T06:19:16.802Z"
+    "posted_at": "2026-11-01T06:19:16.802Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6d9d9003ac05c2813",
@@ -11290,7 +11280,8 @@
     "source_url": "https://jobs.intuit.com/job/-/-/27595/102630301968?cid=job_li_click_in_active-fy20_cn_text_job_intuit-talent&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-11-01T06:19:05.690Z"
+    "posted_at": "2026-11-01T06:19:05.690Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6d9d70020ab44650a",
@@ -11434,7 +11425,8 @@
     "source_url": "https://skillcollege.keka.com/careers/jobdetails/94341?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Frontend Development",
-    "posted_at": "2026-11-01T06:18:17.465Z"
+    "posted_at": "2026-11-01T06:18:17.465Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6d9a70022d9e3cd3f",
@@ -11458,7 +11450,8 @@
     "source_url": "https://apply.careers.microsoft.com/careers/job/1970393556955128?domain=microsoft.com&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-11-01T06:18:15.330Z"
+    "posted_at": "2026-11-01T06:18:15.330Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6d9a1002551fd9d52",
@@ -11480,7 +11473,8 @@
     "source_url": "https://cutshort.io/job/Frontend-Engineer-Bengaluru-Bangalore-GeoIQ-RlyNKwHC?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Frontend Development",
-    "posted_at": "2026-11-01T06:18:09.369Z"
+    "posted_at": "2026-11-01T06:18:09.369Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6d93f000f0ff89e2a",
@@ -11502,7 +11496,8 @@
     "source_url": "https://jobs.lever.co/usasurveyjob/eabb2ef1-b26c-4b9f-9d4d-3283283332d2?lever-source=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Entry",
-    "posted_at": "2026-11-01T06:16:30.959Z"
+    "posted_at": "2026-11-01T06:16:30.959Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6d93000355ca1de42",
@@ -11525,7 +11520,8 @@
     "source_url": "https://jobs.smartrecruiters.com/HarpethValleyUtilitiesDistrict/743999941539983-remote-data-entry-clerk?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Entry",
-    "posted_at": "2026-11-01T06:16:16.563Z"
+    "posted_at": "2026-11-01T06:16:16.563Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6c3c6001a14c33913",
@@ -11549,7 +11545,8 @@
     "source_url": "https://hckd.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/2040160?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Analytics",
-    "posted_at": "2026-11-01T04:44:54.188Z"
+    "posted_at": "2026-11-01T04:44:54.188Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6c3bc003c8b208c49",
@@ -11573,7 +11570,8 @@
     "source_url": "https://west4thstrategy.applytojob.com/apply/SscfaBcf1m/Junior-Data-Engineer?jr_id=6ae4e87d77c09cb3bd4b0183&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Engineer",
-    "posted_at": "2026-11-01T04:44:44.731Z"
+    "posted_at": "2026-11-01T04:44:44.731Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6c3b6003666c22c0d",
@@ -11595,7 +11593,8 @@
     "source_url": "https://talemexa.com/jobs/job-man-1792914962109-1792915030367536?jr_id=6ae4c8aa77c09cb3bd4aea4e&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-11-01T04:44:38.617Z"
+    "posted_at": "2026-11-01T04:44:38.617Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6c38a003d46c783c7",
@@ -11618,7 +11617,8 @@
     "source_url": "https://careers.wexinc.com/us/en/job/WEXWEXUSR22585EXTERNALENUS/Software-Engineer-Intern?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-11-01T04:43:54.747Z"
+    "posted_at": "2026-11-01T04:43:54.747Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6c36700228928766d",
@@ -11641,7 +11641,8 @@
     "source_url": "https://jobs.greystar.com/job/-/-/35302/100720028032?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Engineering",
-    "posted_at": "2026-11-01T04:43:19.334Z"
+    "posted_at": "2026-11-01T04:43:19.334Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6c34c00308f7570fb",
@@ -11664,7 +11665,8 @@
     "source_url": "https://jobs.statefarm.com/main/jobs/46775?lang=en-us&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Insurance Claims",
-    "posted_at": "2026-11-01T04:42:52.535Z"
+    "posted_at": "2026-11-01T04:42:52.535Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6c34600190d820bb9",
@@ -11688,7 +11690,8 @@
     "source_url": "https://tetratech.referrals.selectminds.com/jobs/digital-systems-internship-co-57614?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering",
-    "posted_at": "2026-11-01T04:42:46.143Z"
+    "posted_at": "2026-11-01T04:42:46.143Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6c337002d98ace1eb",
@@ -11712,7 +11715,8 @@
     "source_url": "https://careers-granicus.icims.com/jobs/10759/data-analyst---customer-analytics/job?mobile=false&width=864&height=500&bga=true&needsRedirect=false&jan1offset=330&jun1offset=330&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Analytics",
-    "posted_at": "2026-11-01T04:42:31.489Z"
+    "posted_at": "2026-11-01T04:42:31.489Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6c3150021268ba19a",
@@ -11736,7 +11740,8 @@
     "source_url": "https://job-boards.greenhouse.io/dataiku/jobs/6239283004?gh_src=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Web Development",
-    "posted_at": "2026-11-01T04:41:57.307Z"
+    "posted_at": "2026-11-01T04:41:57.307Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6c30d000d022387dd",
@@ -11760,7 +11765,8 @@
     "source_url": "https://halvik.isolvedhire.com/jobs/1894977?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Frontend Development",
-    "posted_at": "2026-11-01T04:41:48.980Z"
+    "posted_at": "2026-11-01T04:41:48.980Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6c2f4001818290a6f",
@@ -11775,7 +11781,8 @@
     "source_url": "https://wert-group.talentglade.com/apply/6d3f0c1a2b7e4c519a0e1f4d8e2a7b42?igbTracker=975280234&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-11-01T04:41:24.145Z"
+    "posted_at": "2026-11-01T04:41:24.145Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6c2ee00128810e417",
@@ -11799,7 +11806,8 @@
     "source_url": "https://www.coalitioninc.com/job-posting/4734028005?gh_jid=4734028005&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-11-01T04:41:18.053Z"
+    "posted_at": "2026-11-01T04:41:18.053Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6c2e7000716d95771",
@@ -11823,7 +11831,8 @@
     "source_url": "https://recruiterforge.com/job/157-lkdn-remote-united-states-frontend-engineer?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-11-01T04:41:10.885Z"
+    "posted_at": "2026-11-01T04:41:10.885Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6c2e4000256b6d65e",
@@ -11847,7 +11856,8 @@
     "source_url": "https://careers.7seventy.net/7job/1447-lkdn-1139-remote-united-states-frontend-engineer?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Frontend Development",
-    "posted_at": "2026-11-01T04:41:07.797Z"
+    "posted_at": "2026-11-01T04:41:07.797Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6c2d900065f4431c2",
@@ -11871,7 +11881,8 @@
     "source_url": "https://job-boards.greenhouse.io/careaccess/jobs/4474603009?gh_src=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Web Design",
-    "posted_at": "2026-11-01T04:40:56.867Z"
+    "posted_at": "2026-11-01T04:40:56.867Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6c2d2000f8262dca3",
@@ -11895,7 +11906,8 @@
     "source_url": "https://job-boards.greenhouse.io/fleetio/jobs/4823689007?gh_src=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineering",
-    "posted_at": "2026-11-01T04:40:49.978Z"
+    "posted_at": "2026-11-01T04:40:49.978Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6bda40037b0fa67c5",
@@ -11919,7 +11931,8 @@
     "source_url": "https://www.epicgames.com/site/careers/jobs/6163851004?gh_jid=6163851004&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-11-01T04:18:44.631Z"
+    "posted_at": "2026-11-01T04:18:44.631Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6bd9a0034d2f0e51d",
@@ -11942,7 +11955,8 @@
     "source_url": "https://jobs.plexus.com/careers/job/1099556545198?domain=plexus.com&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Embedded Software",
-    "posted_at": "2026-11-01T04:18:34.603Z"
+    "posted_at": "2026-11-01T04:18:34.603Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6bd82000ec8b8a920",
@@ -11966,7 +11980,8 @@
     "source_url": "https://careers.wtwco.com/jobs/2027-ict-technology-software-engineering-intern-reigate-reigate-england-united-kingdom?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-11-01T04:18:09.991Z"
+    "posted_at": "2026-11-01T04:18:09.991Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6bd64002e75a18996",
@@ -11987,7 +12002,8 @@
     "source_url": "https://ncratleos.wd1.myworkdayjobs.com/ext_non_usalteos/job/DUNDEE-GBR/Software-Engineering-Internship_R1154942?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineering",
-    "posted_at": "2026-11-01T04:17:40.515Z"
+    "posted_at": "2026-11-01T04:17:40.515Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6bd5a001c746c50b7",
@@ -12010,7 +12026,8 @@
     "source_url": "https://jobs.ashbyhq.com/gearset/637b4805-e079-4bbd-91e8-96af81dd288f?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-11-01T04:17:30.187Z"
+    "posted_at": "2026-11-01T04:17:30.187Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6bd4d0035fe838b6a",
@@ -12034,7 +12051,8 @@
     "source_url": "https://job-boards.greenhouse.io/embed/job_app?for=gemini&token=8214272&gh_jid=8214272&gh_src=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-11-01T04:17:17.625Z"
+    "posted_at": "2026-11-01T04:17:17.625Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6bd42001280a74750",
@@ -12054,7 +12072,8 @@
     "source_url": "https://jobs.dayforcehcm.com/en-US/legence/P2SPORTAL/jobs/34724?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Development",
-    "posted_at": "2026-11-01T04:17:06.081Z"
+    "posted_at": "2026-11-01T04:17:06.081Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6bd3b003b088354cb",
@@ -12077,7 +12096,8 @@
     "source_url": "https://jobs.ashbyhq.com/brainco/28c6cd2f-b609-4ca6-a2f6-adfa3d679d0b?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "AI Engineering",
-    "posted_at": "2026-11-01T04:16:59.683Z"
+    "posted_at": "2026-11-01T04:16:59.683Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6bd2100355e2538ba",
@@ -12098,7 +12118,8 @@
     "source_url": "https://jobs.ashbyhq.com/replit/7c3c9d29-cec2-4367-8564-eadaed165aea?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineering",
-    "posted_at": "2026-11-01T04:16:33.562Z"
+    "posted_at": "2026-11-01T04:16:33.562Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6bd1e000c21950cd7",
@@ -12122,7 +12143,8 @@
     "source_url": "https://danaher.wd1.myworkdayjobs.com/DanaherJobs/job/Vista-California-United-States/Software-Engineering-Intern_R1315719/?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-11-01T04:16:29.970Z"
+    "posted_at": "2026-11-01T04:16:29.970Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6bd0d002270118d15",
@@ -12145,7 +12167,8 @@
     "source_url": "https://careers.tiktokusds.com/usds/position/7673582555871185205/detail?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-11-01T04:16:13.328Z"
+    "posted_at": "2026-11-01T04:16:13.328Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae6bd060016768fa2bd",
@@ -12169,7 +12192,8 @@
     "source_url": "https://jobs.jobvite.com/src-inc/job/oC3GAfwF?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering",
-    "posted_at": "2026-11-01T04:16:05.506Z"
+    "posted_at": "2026-11-01T04:16:05.506Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae643c50011e902dcf7",
@@ -14390,7 +14414,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/software-engineer-c%2B%2B-mfc-at-veradigm%C2%AE-4420987455?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-31T19:35:15.605Z"
+    "posted_at": "2026-10-31T19:35:15.605Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae642ee0033e52478a8",
@@ -14468,7 +14493,8 @@
     "source_url": "https://nelnet.wd1.myworkdayjobs.com/mynelnet/job/Lincoln-NE/Full-Stack-Software-Engineer_R23050?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-31T19:09:43.637Z"
+    "posted_at": "2026-10-31T19:09:43.637Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae63cf60012ee660c8a",
@@ -14496,7 +14522,8 @@
     "source_url": "https://job-boards.greenhouse.io/embed/job_app?for=prizepicks&token=7824471003&gh_src=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-31T19:09:42.071Z"
+    "posted_at": "2026-10-31T19:09:42.071Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae63cf4002cdc1228c9",
@@ -14524,7 +14551,8 @@
     "source_url": "https://saferidehealth.bamboohr.com/careers/321?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-31T19:09:40.448Z"
+    "posted_at": "2026-10-31T19:09:40.448Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae63cf2003e4a66064c",
@@ -14545,7 +14573,8 @@
     "source_url": "https://easyapply.jobs/r/nKzeWdn27xhhCn4WrWDY?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Customer Service and Support",
-    "posted_at": "2026-10-31T19:09:38.778Z"
+    "posted_at": "2026-10-31T19:09:38.778Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae63cf10015ac5ffeeb",
@@ -14573,7 +14602,8 @@
     "source_url": "https://jobs.jobvite.com/varonis/job/oHbkAfww?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-31T19:09:37.107Z"
+    "posted_at": "2026-10-31T19:09:37.107Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae63cef000939599234",
@@ -14601,7 +14631,8 @@
     "source_url": "https://empower.wd12.myworkdayjobs.com/empower/job/Nationwide-Remote/Security-Engineer---DLP-and-Insider-threat_R0062920?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-31T19:09:34.309Z"
+    "posted_at": "2026-10-31T19:09:34.309Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae5eec400252b38f83c",
@@ -14625,7 +14656,8 @@
     "source_url": "https://app.screenloop.com/careers/aryaxai/job_posts/8648?sl_source=organic-posting-network&tab=overview&igbTracker=975311944&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "AI Engineering",
-    "posted_at": "2026-10-31T13:36:04.352Z"
+    "posted_at": "2026-10-31T13:36:04.352Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae5eebe003a26174a9e",
@@ -14649,7 +14681,8 @@
     "source_url": "https://pfizer.wd1.myworkdayjobs.com/PfizerCareers/job/India---Chennai/Intern_4965781?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering",
-    "posted_at": "2026-10-31T13:35:58.694Z"
+    "posted_at": "2026-10-31T13:35:58.694Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae5ee33000cc5052c7b",
@@ -14671,7 +14704,8 @@
     "source_url": "https://outlier.ai/generalists/en-us?pod=generalist&domain=Tier_1_generalist&locale=en&cid=01a19224-b007-7b69-beff-24bfb2d71818&jClickId=a3e9ffc7-bbf9-42a7-9f99-63b3f90970c8&jcid=a3e9ffc7-bbf9-42a7-9f99-63b3f90970c8&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "AI Evaluation",
-    "posted_at": "2026-10-31T13:33:38.956Z"
+    "posted_at": "2026-10-31T13:33:38.956Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae5ee060025d98d1144",
@@ -14693,7 +14727,8 @@
     "source_url": "https://j.brt.mv/jb.do?reqGK=27788235&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Claims Processing",
-    "posted_at": "2026-10-31T13:32:54.309Z"
+    "posted_at": "2026-10-31T13:32:54.309Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae5ede200319ee30367",
@@ -14717,7 +14752,8 @@
     "source_url": "https://careers.hcahealthcare.com/jobs/18427500-cardiovascular-data-abstractor?bid=2620&ccuid=76763656982&tm_company=2537&tm_event=view&tm_job=1-INFOR-5015058-OTHLOC-00001&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Health Informatics",
-    "posted_at": "2026-10-31T13:32:18.570Z"
+    "posted_at": "2026-10-31T13:32:18.570Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae5c3fc002e79156e66",
@@ -14740,7 +14776,8 @@
     "source_url": "https://www.indeed.com/viewjob?jk=645cd522225e0dca&vjs=3&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Annotation",
-    "posted_at": "2026-10-31T10:33:32.454Z"
+    "posted_at": "2026-10-31T10:33:32.454Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae59f2800121930fe71",
@@ -15540,7 +15577,8 @@
     "source_url": "https://careers.wexinc.com/us/en/job/WEXWEXUSR22753EXTERNALENUS/Software-Development-Trainee?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-31T07:48:48.298Z"
+    "posted_at": "2026-10-31T07:48:48.298Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae59d56001454689168",
@@ -15564,7 +15602,8 @@
     "source_url": "https://purplle.turbohire.co/job/publicjobs/_TaoLdKb_2Zen/wm6ayRtAk5XKZp2pMUCS278S4TFiYIi0mzqr0lBUNBbSuTKUnu?so=li&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Supply Chain",
-    "posted_at": "2026-10-31T07:48:37.497Z"
+    "posted_at": "2026-10-31T07:48:37.497Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae595da003b024844be",
@@ -15584,7 +15623,8 @@
     "source_url": "https://tally.so/r/2j890D?job_title=Data+Quality+Analyst&company_id=89796138&company_name=Gold&job_id=AFR-PS-261029-01472-B90AB97D7A8E&salary=%24100%2C000+-+%24105%2C000+USD%2Fyear&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-31T07:16:42.577Z"
+    "posted_at": "2026-10-31T07:16:42.577Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae5902a001c77f05308",
@@ -15608,7 +15648,8 @@
     "source_url": "https://fynd.keka.com/careers/jobdetails/145996?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-31T06:52:26.210Z"
+    "posted_at": "2026-10-31T06:52:26.210Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae5901f002a41edb21d",
@@ -15632,7 +15673,8 @@
     "source_url": "https://www.wellsfargojobs.com/en/jobs/r-583496/software-engineer_network-automation/?jClickId=7de5d3be-4177-4562-a273-9ffc1caf344f&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-31T06:52:15.426Z"
+    "posted_at": "2026-10-31T06:52:15.426Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae5900a000bbe38d8fd",
@@ -15656,7 +15698,8 @@
     "source_url": "https://www.sourcingxpress.com/jobs/U7m2rUE039wgVD?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-31T06:51:53.964Z"
+    "posted_at": "2026-10-31T06:51:53.964Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae59006003b00a41da6",
@@ -15704,7 +15747,8 @@
     "source_url": "https://jobs.ashbyhq.com/Diagrid/06fdf2f3-fff0-4628-b58c-2c07d408e656?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-31T06:51:50.259Z"
+    "posted_at": "2026-10-31T06:51:50.259Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae5900300361e9939b2",
@@ -15728,7 +15772,8 @@
     "source_url": "https://careers.societegenerale.com/en/job-offers/software-engineer-python-developer-26000G16-en?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-31T06:51:47.622Z"
+    "posted_at": "2026-10-31T06:51:47.622Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae58feb00184093ea8c",
@@ -16271,7 +16316,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/software-engineer-fabric-digital-ai-at-iq-eq-4485371469?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data & AI",
-    "posted_at": "2026-10-31T06:39:10.900Z"
+    "posted_at": "2026-10-31T06:39:10.900Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae58d0d001e05e7f697",
@@ -17930,7 +17976,8 @@
     "source_url": "https://jobs.smartrecruiters.com/RodeoFX/744000158751015-python-software-developer?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-31T06:20:05.634Z"
+    "posted_at": "2026-10-31T06:20:05.634Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae58885001f4398fdfb",
@@ -17954,7 +18001,8 @@
     "source_url": "https://job-boards.greenhouse.io/commvault/jobs/5440365008?gh_src=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-31T06:19:49.271Z"
+    "posted_at": "2026-10-31T06:19:49.271Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae588810035b1f5d22e",
@@ -17978,7 +18026,8 @@
     "source_url": "https://jobs.ascendion.com/careers/job/1970324837561930?domain=ascendion.com&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-31T06:19:45.632Z"
+    "posted_at": "2026-10-31T06:19:45.632Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae5887b0029c19b0f60",
@@ -18001,7 +18050,8 @@
     "source_url": "https://jobs.ashbyhq.com/opengov/3d6d4ac3-d645-410e-bacf-3395b7da4838?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-31T06:19:39.464Z"
+    "posted_at": "2026-10-31T06:19:39.464Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae5887300027daf2277",
@@ -18025,7 +18075,8 @@
     "source_url": "https://job-boards.greenhouse.io/razorpaysoftwareprivatelimited/jobs/4746983005?gh_src=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-31T06:19:30.815Z"
+    "posted_at": "2026-10-31T06:19:30.815Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae588670011be429431",
@@ -18049,7 +18100,8 @@
     "source_url": "https://www.sourcingxpress.com/jobs/1gh2LaHDvg3r7X?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-31T06:19:19.056Z"
+    "posted_at": "2026-10-31T06:19:19.056Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae58864001a9223c167",
@@ -18145,7 +18197,8 @@
     "source_url": "https://www.linkedin.com/jobs/view/4483434148/?alternateChannel=search&eBP=CwEAAAGhkJVIyqH9elWLuENLzL2cybFS4I6sx36l1GRADE2qZ3ysQnO9VhAMFAbGW-0viT6OcsCfs70kTTBOEz8Oe_NjQPbVkJFUGy59XQh95hiKWT9hBnawOXgDOEQBdAaFRuWrkZMjdQWFXKwZCaXYJwFw7cNxp0z1kFohvVo29FdWjUhkAv0kwojDjbijm_E3xjeu4wzsdnPIYrs8jPpHr-IoNMMn-pjMhsZ1MSNxrHnCPJ0cTxUuDFzr6pI-cuMiYwY7oaqecML1DXivpr0tLNGHknuoOLgfT7EArRGfQr6fpSr76ZozPZb__SJG2WSaifF8JBQ86I-RH4F-8G-XOv2CpCsO6Fwyxbi8NJl7aBXc0jyiHRT0T7fBRdZBFGETovq0QQwR2fLbfPbaSJ8odhpF4L6MImPhzIqjFREQXPn3noDYY",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-31T06:19:06.604Z"
+    "posted_at": "2026-10-31T06:19:06.604Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae5884a003d10f7c3f1",
@@ -18169,7 +18222,8 @@
     "source_url": "https://www.linkedin.com/jobs/view/4484849000/?alternateChannel=search&eBP=NOT_ELIGIBLE_FOR_CHARGING&refId=2va49MvE3xxO1CXC5ff6ww%3D%3D&trackingId=2OB%2FW%2BKB6n%2Bh0B8E%2FRVgmA%3D%3D&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-31T06:18:50.745Z"
+    "posted_at": "2026-10-31T06:18:50.745Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae586380019b0d59a27",
@@ -18193,7 +18247,8 @@
     "source_url": "https://dsu.hireclick.com/jb/software-engineer/view/269181?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-31T06:10:00.189Z"
+    "posted_at": "2026-10-31T06:10:00.189Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae5863600374a3af875",
@@ -18220,7 +18275,8 @@
     "source_url": "https://mckesson.wd3.myworkdayjobs.com/external_careers/job/USA-GA-Atlanta/Software-Engineer-Intern---Summer-2027_JR0153235?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-31T06:09:58.658Z"
+    "posted_at": "2026-10-31T06:09:58.658Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae586350013a6e765f2",
@@ -18266,7 +18322,8 @@
     "source_url": "https://jobs.dayforcehcm.com/en-CA/hhglobal/candidateportal/jobs/26165?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-31T06:09:55.560Z"
+    "posted_at": "2026-10-31T06:09:55.560Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae58630002cbdeb90ce",
@@ -18289,7 +18346,8 @@
     "source_url": "https://careers.rocket.com/us/en/job/R-084963/full-stack-software-developer-hybrid-or-remote?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-31T06:09:52.484Z"
+    "posted_at": "2026-10-31T06:09:52.484Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae5862e00315fc701a4",
@@ -18317,7 +18375,8 @@
     "source_url": "https://careers.unitedhealthgroup.com/job/-/-/34088/102642021360?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-31T06:09:50.558Z"
+    "posted_at": "2026-10-31T06:09:50.558Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae5862d000dc6531308",
@@ -18345,7 +18404,8 @@
     "source_url": "https://careers.unitedhealthgroup.com/job/eden-prairie/associate-full-stack-software-engineer/34088/102642021360?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-31T06:09:48.992Z"
+    "posted_at": "2026-10-31T06:09:48.992Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae5862b0028df8134ab",
@@ -18373,7 +18433,8 @@
     "source_url": "https://job-boards.greenhouse.io/embed/job_app?for=preciselyusjobs&token=4722721005&gh_src=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-31T06:09:47.430Z"
+    "posted_at": "2026-10-31T06:09:47.430Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae5862a0008ca198e28",
@@ -18401,7 +18462,8 @@
     "source_url": "https://job-boards.greenhouse.io/embed/job_app?for=ketch&token=4456718009&gh_src=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-31T06:09:45.902Z"
+    "posted_at": "2026-10-31T06:09:45.902Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae586280024bb32f7d5",
@@ -18429,7 +18491,8 @@
     "source_url": "https://apply.workable.com/within3/j/5FA84267BF/?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-31T06:09:44.343Z"
+    "posted_at": "2026-10-31T06:09:44.343Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae5862600114616025e",
@@ -18484,7 +18547,8 @@
     "source_url": "https://carequest.clearcompany.com/careers/jobs/1f129565-843a-fb60-357c-ce803d72ea6a/apply?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-31T06:09:40.510Z"
+    "posted_at": "2026-10-31T06:09:40.510Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae58623000ca59ca2d0",
@@ -18505,7 +18569,8 @@
     "source_url": "https://www1.jobdiva.com/portal/?a=hjjdnwrz9ex8e2ojln6c7hgzcog9wd03c3227pfmtcegg79khzujgyvy5zkic9uy&source=jobfound.org#/jobs/29561481",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-31T06:09:38.854Z"
+    "posted_at": "2026-10-31T06:09:38.854Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae58620003a27d0b28f",
@@ -18525,7 +18590,8 @@
     "source_url": "https://recruiting2.ultipro.com/mon1026monoh/JobBoard/bcaf2db0-50c8-4e2f-9d65-e8e00c882a25/OpportunityDetail?opportunityId=6b63e98d-e5dd-4b76-86b0-9028d32f727d&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-31T06:09:36.707Z"
+    "posted_at": "2026-10-31T06:09:36.707Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae5861f00083db9f8ae",
@@ -18581,7 +18647,8 @@
     "source_url": "https://careers.unitedhealthgroup.com/job/-/-/34088/102612060416?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-31T06:09:33.336Z"
+    "posted_at": "2026-10-31T06:09:33.336Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae5861c00048310989b",
@@ -18601,7 +18668,8 @@
     "source_url": "https://www1.jobdiva.com/portal/?a=z1jdnwvsl6ckfah57w51w0ybh73vlo09791ws6svfl6o610e858y169jdhdqs4jb&source=jobfound.org#/jobs/29410368",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-31T06:09:31.834Z"
+    "posted_at": "2026-10-31T06:09:31.834Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae5861a001fccc47571",
@@ -18629,7 +18697,8 @@
     "source_url": "https://isienterprises.applytojob.com/apply/D295RT6m6B/Data-Engineer-AI-Automation?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-31T06:09:30.264Z"
+    "posted_at": "2026-10-31T06:09:30.264Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae58618003cd190c0d3",
@@ -18657,7 +18726,8 @@
     "source_url": "https://recruitingbypaycor.com/career/JobIntroduction.action?clientId=8a7883d0934bc7b0019369299b070ae6&id=8a7887aca18473d901a18f62fbd928a7&lang=en&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-31T06:09:28.682Z"
+    "posted_at": "2026-10-31T06:09:28.682Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae586170017d0437727",
@@ -18685,7 +18755,8 @@
     "source_url": "https://vastian.isolvedhire.com/jobs/1895504-660901.html?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-31T06:09:27.143Z"
+    "posted_at": "2026-10-31T06:09:27.143Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae58615002f5ea4c203",
@@ -18705,7 +18776,8 @@
     "source_url": "https://tally.so/r/2j890D?job_title=Data+Quality+Analyst&company_id=112074942&company_name=Niramaye+Divine+Fragrance&job_id=AFR-HI-261029-01482-7563BED6401A&salary=%2495%2C000+-+%2497%2C000+USD%2Fyear&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-31T06:09:25.526Z"
+    "posted_at": "2026-10-31T06:09:25.526Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae58614000c5f8ac270",
@@ -18722,7 +18794,8 @@
     "source_url": "https://jobs.ascension.org/us/en/job/AHEAHUUS24746EXTERNALENUS/data-analyst?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-31T06:09:23.958Z"
+    "posted_at": "2026-10-31T06:09:23.958Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae5861200271131ef9a",
@@ -18746,7 +18819,8 @@
     "source_url": "https://pmic.clearcompany.com/careers/jobs/920f67db-a37f-e34b-e34a-ea17f527668d/apply?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-31T06:09:22.398Z"
+    "posted_at": "2026-10-31T06:09:22.398Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae58611000618f385ce",
@@ -18774,7 +18848,8 @@
     "source_url": "https://job-boards.greenhouse.io/embed/job_app?for=careaccess&token=4474598009&gh_src=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Creatives and Design",
-    "posted_at": "2026-10-31T06:09:20.869Z"
+    "posted_at": "2026-10-31T06:09:20.869Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae5860c00171aa6d63f",
@@ -18793,7 +18868,8 @@
     "source_url": "https://job-boards.greenhouse.io/embed/job_app?for=accenturefederalservices&token=4725774006&gh_src=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-31T06:09:16.113Z"
+    "posted_at": "2026-10-31T06:09:16.113Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae5860a002db0d3a6fb",
@@ -18820,7 +18896,8 @@
     "source_url": "https://www.careers-page.com/mfinite-consulting-llc/job/5W7Y3YV5?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-31T06:09:14.508Z"
+    "posted_at": "2026-10-31T06:09:14.508Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae58609000ecb54d9cd",
@@ -18843,7 +18920,8 @@
     "source_url": "https://www.paycomonline.net/v4/ats/web.php/portal/F7CA68C9429DDE142B89E1664F56DD7B/jobs/355954?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-31T06:09:13.007Z"
+    "posted_at": "2026-10-31T06:09:13.007Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae58607002c9c88991b",
@@ -18873,7 +18951,8 @@
     "source_url": "https://recruiting.paylocity.com/Recruiting/Jobs/Details/4630794?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Customer Service and Support",
-    "posted_at": "2026-10-31T06:09:11.488Z"
+    "posted_at": "2026-10-31T06:09:11.488Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae58606000526c34c55",
@@ -18904,7 +18983,8 @@
     "source_url": "https://careers.kula.ai/relay/62221?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-31T06:09:09.839Z"
+    "posted_at": "2026-10-31T06:09:09.839Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae58604001b6608c576",
@@ -18931,7 +19011,8 @@
     "source_url": "https://careers.principal.com/ph/jobs/53120?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-31T06:09:08.214Z"
+    "posted_at": "2026-10-31T06:09:08.214Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae58601000fd6b7605e",
@@ -18959,7 +19040,8 @@
     "source_url": "https://ats.rippling.com/expo/jobs/127cee2c-03fc-496a-90fc-b71f61e46434?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-31T06:09:05.024Z"
+    "posted_at": "2026-10-31T06:09:05.024Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae585ff002b9c057549",
@@ -18986,7 +19068,8 @@
     "source_url": "https://phh.tbe.taleo.net/phh04/ats/careers/v2/viewRequisition?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-31T06:09:03.453Z"
+    "posted_at": "2026-10-31T06:09:03.453Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae585fe000700de7b7c",
@@ -19010,7 +19093,8 @@
     "source_url": "https://www.ziprecruiter.com/kn/AAJWkKQYd_gxMZ_RF2-D4MG-e2jppfiUNjgl6lbQHyZEttEfJAPOobdIJJrPfBBFEF_X3f-G4hIOfiS-40o_DeprFliGR14h0JPfJXcBO6twWMPgw2OS9gYQEPbFEqcwDFcURynQK0x7URZMmec_wEd25vLbBqRmsxu-8btfSfHar5lyrXQUyPQ-1flt9J6NYDpk63wrMGoPpElWFs5FLhe5A656Gu93UHELpzWjbYW1t6sTmZVTgNMQTCxiLiNiwdU3PrAXNFgy4p2DLvSgu8M06VwX-85huq-_MiUTkUu01_vdMaUawgyNw9ztDyCiYtet9wp2TQKdzupaI4uuPO86ABdlkWWiAny7UX0OAffvGt4PUeKTvUOWCixb5hUzulHCfkUrrIP7z6NvsWgvg0F27QAni5X_JkVsp3AjHPq8Jw3nwQR-uOSK4K0P4PDgzvGDUo3mGJoJYwvfCHoCY9Kdor6T6Dgi",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-31T06:09:01.857Z"
+    "posted_at": "2026-10-31T06:09:01.857Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae585fa002f81542c80",
@@ -19030,7 +19114,8 @@
     "source_url": "https://www.ziprecruiter.com/kn/AALnn22HR5jXStfTOEqCYrU_nEkEnMdnr8_xuX_NzF9C419XP3FHEmsGcCk_L6GH9AOckImfjxWykxW35p3QzcbvQD9FHTab_XyckiqFUyj770SOKVtNBqCrIYkcxBh1pFbIsNNLbks_jRuELEt12snZfY5wq-drQIOAUAeNQBOdnbPswgQlBtEkNa_MARNFjsflRgWBEpqODcfva6rB4dl_aDuR3cX94eNk34S64l3YFJ1lgI4lunBdZ76wuABUk5rLNjVObMYfmPAQaz15qdq9wXXxfectR-ni0lPX_fftA-20EBLc3BKWw7pWbfggeWNR8EFnKsO6F1jJgeOnfoqCJ0fw9qyn9dltBkx-3RghoN_gdyg5TA1Ku96SRB6PH8z6jplZjIHrLvxI655b3dUOSMVWS0LlpaxDWzpW-2QJ_cozJpqDHY3osZcT18AYxwkifUTMBRNIi2qiYVjfP_FVURIwoFXD",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-31T06:08:58.394Z"
+    "posted_at": "2026-10-31T06:08:58.394Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae543e800340ad2185e",
@@ -19054,7 +19139,8 @@
     "source_url": "https://joblookup.com/us/job/senior-web-application-developer-with-active-secret-clearance-job-in-united-pa?j=1028169510963&x=102912148&f=679&p=eJzLtDIytQYABDUBRg%3D%3D&s=926cc0b20f&click_id=lp2X5AV&sub_id=pVy&uq=a7b031ef01&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Web Development",
-    "posted_at": "2026-10-31T01:27:04.591Z"
+    "posted_at": "2026-10-31T01:27:04.591Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae543e8000e6af43ab8",
@@ -19078,7 +19164,8 @@
     "source_url": "https://apply.workable.com/bask-health-1/j/01A6A33272/?jr_id=6ae0f65f829a3bada15f91c4&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-31T01:27:04.012Z"
+    "posted_at": "2026-10-31T01:27:04.012Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae543df0024008ecb41",
@@ -19102,7 +19189,8 @@
     "source_url": "https://job-boards.greenhouse.io/careaccess/jobs/4465770009?gh_src=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Clinical Research",
-    "posted_at": "2026-10-31T01:26:55.355Z"
+    "posted_at": "2026-10-31T01:26:55.355Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae543dc0020b4da9fc4",
@@ -19126,7 +19214,8 @@
     "source_url": "https://waldenlocalmeat.isolvedhire.com/jobs/1894234?jr_id=6ae39278c3139b475b5ae4d6&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Web Development",
-    "posted_at": "2026-10-31T01:26:52.293Z"
+    "posted_at": "2026-10-31T01:26:52.293Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae543d700208c8ba44b",
@@ -19149,7 +19238,8 @@
     "source_url": "https://twr.org/opportunity/web-coordinator?jr_id=6ae456abd7424a2a828e5edd&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Web Development",
-    "posted_at": "2026-10-31T01:26:47.293Z"
+    "posted_at": "2026-10-31T01:26:47.293Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae543bd000bb99e6c91",
@@ -19173,7 +19263,8 @@
     "source_url": "https://rysein.com/jobs/summer-2027-intern-forward-deployed-engi-salesforce-4j6rzald?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineering",
-    "posted_at": "2026-10-31T01:26:20.948Z"
+    "posted_at": "2026-10-31T01:26:20.948Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae5439c00206ca5b35e",
@@ -19196,7 +19287,8 @@
     "source_url": "https://careers.noblis.org/jobs/28089/Spring+2027+Graduate+Internship+-+Applied+Research+Intern?lang=en-US&mode=apply&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Applied Research",
-    "posted_at": "2026-10-31T01:25:48.289Z"
+    "posted_at": "2026-10-31T01:25:48.289Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae54393001ef23845df",
@@ -19219,7 +19311,8 @@
     "source_url": "https://schreiberfoods.wd115.myworkdayjobs.com/Schreiber_Careers/job/Green-Bay-WI/Quality-Intern--Year-Round-_R0037328?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Quality Assurance",
-    "posted_at": "2026-10-31T01:25:39.265Z"
+    "posted_at": "2026-10-31T01:25:39.265Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae5437f000d0a8eee1b",
@@ -19242,7 +19335,8 @@
     "source_url": "https://recruiting2.ultipro.com/FAB1001FABC/JobBoard/5c68a07b-778f-4cd0-8f0c-292b2e58783a/OpportunityDetail?opportunityId=4f79fa68-01ea-4730-b01b-7acb55acd310&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Structural Engineering",
-    "posted_at": "2026-10-31T01:25:18.969Z"
+    "posted_at": "2026-10-31T01:25:18.969Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae543670016f63d387c",
@@ -19266,7 +19360,8 @@
     "source_url": "https://swooped.co/job-postings/8d56aad4-7f9a-4499-811c-ad2e718512f4?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Analyst",
-    "posted_at": "2026-10-31T01:24:55.134Z"
+    "posted_at": "2026-10-31T01:24:55.134Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae543590031e6a0e821",
@@ -19290,7 +19385,8 @@
     "source_url": "https://hrgi.isolvedhire.com/jobs/1877596?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Analytics",
-    "posted_at": "2026-10-31T01:24:41.574Z"
+    "posted_at": "2026-10-31T01:24:41.574Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae5435600379113778d",
@@ -19314,7 +19410,8 @@
     "source_url": "https://careers.unitedhealthgroup.com/job/-/-/34088/102598437696?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Business Analytics",
-    "posted_at": "2026-10-31T01:24:38.651Z"
+    "posted_at": "2026-10-31T01:24:38.651Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae543280027fcc62a0b",
@@ -19338,7 +19435,8 @@
     "source_url": "https://job-boards.greenhouse.io/vialogic/jobs/5466980008?t=3253f722teu&gh_src=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Business Analysis",
-    "posted_at": "2026-10-31T01:23:52.403Z"
+    "posted_at": "2026-10-31T01:23:52.403Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae54325003947478ba8",
@@ -19361,7 +19459,8 @@
     "source_url": "https://job-boards.greenhouse.io/affirm/jobs/8010608003?gh_src=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-31T01:23:49.679Z"
+    "posted_at": "2026-10-31T01:23:49.679Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae5432000271fbc0c79",
@@ -19385,7 +19484,8 @@
     "source_url": "https://jobs.ashbyhq.com/cohere/4232d337-fbc7-4e8c-81d5-2903ab0eb6e8?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Web Development",
-    "posted_at": "2026-10-31T01:23:44.387Z"
+    "posted_at": "2026-10-31T01:23:44.387Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae5431c00116c25c881",
@@ -19409,7 +19509,8 @@
     "source_url": "https://jobs.ashbyhq.com/troveo/52258ed4-4506-4aab-91bb-4101be08c54e?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Frontend Engineering",
-    "posted_at": "2026-10-31T01:23:39.602Z"
+    "posted_at": "2026-10-31T01:23:39.602Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae5430200395893dc64",
@@ -19433,7 +19534,8 @@
     "source_url": "https://jobs.ashbyhq.com/weave/e68c935e-7313-48d2-86d5-0ddc9c555d4e?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-31T01:23:14.680Z"
+    "posted_at": "2026-10-31T01:23:14.680Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae542ef000f0765ef6c",
@@ -19457,7 +19559,8 @@
     "source_url": "https://jobs.ashbyhq.com/whatnot/0daea45d-2af3-4c02-bff5-a3e58a689fe5?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-31T01:22:55.012Z"
+    "posted_at": "2026-10-31T01:22:55.012Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae542de00070aabbf2b",
@@ -19481,7 +19584,8 @@
     "source_url": "https://thomsonreuters.wd5.myworkdayjobs.com/External_Career_Site/job/United-States-of-America-New-York-New-York/Front-End-Lead-Software-Engineer--Reuters_JREQ204668?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-31T01:22:37.884Z"
+    "posted_at": "2026-10-31T01:22:37.884Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae542d500063b49293b",
@@ -19503,7 +19607,8 @@
     "source_url": "https://www.alignerr.com/jobs/2ee54f4b-4726-4a77-8055-d0327c365a64?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-31T01:22:28.301Z"
+    "posted_at": "2026-10-31T01:22:28.301Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae540ef001e2a51d977",
@@ -19527,7 +19632,8 @@
     "source_url": "https://www.manchesterdigital.com/job/royallondon/summer-internship-data-and-tech-1?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data and Technology",
-    "posted_at": "2026-10-31T01:14:22.999Z"
+    "posted_at": "2026-10-31T01:14:22.999Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae540d90006aae6e9a9",
@@ -19548,7 +19654,8 @@
     "source_url": "https://jobs.ashbyhq.com/hiya/046212dd-41e3-46e7-a8ba-48cff5a7f947?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-31T01:14:00.858Z"
+    "posted_at": "2026-10-31T01:14:00.858Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae540c30025da68249f",
@@ -19570,7 +19677,8 @@
     "source_url": "https://jobs.womenintech.co.uk/jobs/634432930-engineering-internship-at-natwest-group?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering",
-    "posted_at": "2026-10-31T01:13:39.357Z"
+    "posted_at": "2026-10-31T01:13:39.357Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae540b3001a2b3631dc",
@@ -19591,7 +19699,8 @@
     "source_url": "https://careers.bakerhughes.com/global/en/job/BAHUGLOBALR171503EXTERNALENGLOBAL/Intern-Software-Engineering-2027?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineering",
-    "posted_at": "2026-10-31T01:13:23.197Z"
+    "posted_at": "2026-10-31T01:13:23.197Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae540a30018ea778cd3",
@@ -19614,7 +19723,8 @@
     "source_url": "https://recruiting.paylocity.com/Recruiting/Jobs/Details/4627560?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Entry",
-    "posted_at": "2026-10-31T01:13:07.171Z"
+    "posted_at": "2026-10-31T01:13:07.171Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae540970037c6030fa5",
@@ -19633,7 +19743,8 @@
     "source_url": "https://thealaskaclub.applicantpro.com/jobs/4260918?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Entry",
-    "posted_at": "2026-10-31T01:12:55.658Z"
+    "posted_at": "2026-10-31T01:12:55.658Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae5407a001747f4700a",
@@ -19655,7 +19766,8 @@
     "source_url": "https://recruiting.paylocity.com/Recruiting/Jobs/Details/4608424?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Entry",
-    "posted_at": "2026-10-31T01:12:26.118Z"
+    "posted_at": "2026-10-31T01:12:26.118Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae5406600274fb30504",
@@ -19677,7 +19789,8 @@
     "source_url": "https://bluestarinc.applicantpool.com/jobs/1337904-114211.html?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Entry",
-    "posted_at": "2026-10-31T01:12:06.337Z"
+    "posted_at": "2026-10-31T01:12:06.337Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4c8a2003159361c71",
@@ -19973,7 +20086,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/artificial-intelligence-intern-at-applogika-4485297033?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data & AI",
-    "posted_at": "2026-10-30T16:40:22.386Z"
+    "posted_at": "2026-10-30T16:40:22.386Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4c874003a64e55d9c",
@@ -22533,7 +22647,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/software-engineer-java-global-research-platform-at-imc-trading-4466860792?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T16:36:17.247Z"
+    "posted_at": "2026-10-30T16:36:17.247Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4c77e0001b6df65b6",
@@ -24335,7 +24450,8 @@
     "source_url": "https://jobs.smartrecruiters.com/InbulksCorp/743999750129753-junior-front-end-development-analyst-intern-4ds-corp?oga=true&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:56:36.023Z"
+    "posted_at": "2026-10-30T15:56:36.023Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4be2f00077aaa5b2b",
@@ -24359,7 +24475,8 @@
     "source_url": "https://jobs.ashbyhq.com/subtotal/3891929c-0ee6-46ea-a833-4efba2862801/application?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:56:30.855Z"
+    "posted_at": "2026-10-30T15:56:30.855Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4be2d0023686bab0c",
@@ -24380,7 +24497,8 @@
     "source_url": "https://caresource.wd1.myworkdayjobs.com/caresource/job/Remote/XMLNAME-2027-Summer-Internship-Program---Full-Stack-AI-Development-Intern-1_R14181?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:56:29.318Z"
+    "posted_at": "2026-10-30T15:56:29.318Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4be2c000163b2e89a",
@@ -24435,7 +24553,8 @@
     "source_url": "https://tgs.recruitee.com/o/software-engineer-shop-pod?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:56:26.086Z"
+    "posted_at": "2026-10-30T15:56:26.086Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4be28000aed7ade01",
@@ -24463,7 +24582,8 @@
     "source_url": "https://app.jobvite.com/CompanyJobs/Careers.aspx?k=Apply&j=oqyOAfw6&__jvst=Job+Board&__jvsd=jobright&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:56:23.928Z"
+    "posted_at": "2026-10-30T15:56:23.928Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4be2600210e5ca947",
@@ -24518,7 +24638,8 @@
     "source_url": "https://jobs.workable.com/view/fY3ohMBer6W5zodfx6WW8R/remote-agentic-software-developer-in-spain-at-valsoft-corporation?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:56:20.740Z"
+    "posted_at": "2026-10-30T15:56:20.740Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4be23001960676a91",
@@ -24546,7 +24667,8 @@
     "source_url": "https://mjhlifesciences.wd1.myworkdayjobs.com/Careers/job/United-States/Associate-Product-Engineer_JR102409-1?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:56:19.070Z"
+    "posted_at": "2026-10-30T15:56:19.070Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4be21002d9d59be24",
@@ -24595,7 +24717,8 @@
     "source_url": "https://www1.jobdiva.com/portal/?a=e5jdnwg7ia5nmpidkgm0x86zidegds023flk1ol79g88672m82f3rk6vbddcyss8&source=jobfound.org#/jobs/18035910",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:56:15.919Z"
+    "posted_at": "2026-10-30T15:56:15.919Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4be1e001d7f551ae3",
@@ -24650,7 +24773,8 @@
     "source_url": "https://fa-ertb-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/26852?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:56:12.617Z"
+    "posted_at": "2026-10-30T15:56:12.617Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4be1b001125943838",
@@ -24675,7 +24799,8 @@
     "source_url": "https://nwsnext.isolvedhire.com/jobs/1893744?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:56:11.012Z"
+    "posted_at": "2026-10-30T15:56:11.012Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4be1900210e47d078",
@@ -24700,7 +24825,8 @@
     "source_url": "https://www.ziprecruiter.com/kn/AALrTNGC2kcZ6kTpdD4d4NSWy4adP32KjhQKst1OobpUDpMhwPXrT0RhrHWqRsOFoiiAXhp26QgxaX3HW4zG5FxBY09yz5CGna_bZvYnHpcjyCYK1zY7MgKqhuYvxbGE6RHlIgiuS3G8Lj7TMFpUfDJUpdgMcPePhdARebVmm4jXcF4_APBt7ZB9lzBRj-88IjlwFcdLoKkjsGo5SJR39eIoAxrD3nMmCFoOYAjRsHvZleavsvNAyzUzIpMnXVaVMMt3t1_WQA_U624KRPrMMTeAHjA7sre0kZgby5JDXYD8d9Nqvxio4osGLsj6rj2PsFcgX1etlg8PH6yUOeLoWHEgVLdjPU-ui0m3iF1n9_aAmuOXjAHU433lyPyjA_UvqDZ6Ctpunz9_J4MQe5ky0Xv0rcEUM4V3lrNlPYiJSdQsJUgsxpauPxFfOqCEAED-B0RLiPcRe3KnsXB1vrilT4fXJbDAj5OH",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:56:09.288Z"
+    "posted_at": "2026-10-30T15:56:09.288Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4be170039b6d9fc18",
@@ -24754,7 +24880,8 @@
     "source_url": "https://fa-ertb-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/25824?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:56:06.090Z"
+    "posted_at": "2026-10-30T15:56:06.090Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4be14002f73d5fef3",
@@ -24810,7 +24937,8 @@
     "source_url": "https://jobs.baesystems.com/global/en/job/BAE1US131257BREXTERNAL/cyber-defense-full-stack-engineer?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:56:02.676Z"
+    "posted_at": "2026-10-30T15:56:02.676Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4be110007c5f4cef9",
@@ -24866,7 +24994,8 @@
     "source_url": "https://careers.cai.io/us/en/job/CAICAIUSR8881EXTERNALENUS/full-stack-software-engineer?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:55:59.284Z"
+    "posted_at": "2026-10-30T15:55:59.284Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4be0d003bd292bca6",
@@ -24894,7 +25023,8 @@
     "source_url": "https://oneai.o2inc.net/o2technologies/apply-jobs?id=aeb3c9ef-49b7-4a1f-9941-05c7a605d773&provider=21&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:55:57.702Z"
+    "posted_at": "2026-10-30T15:55:57.702Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4be0c0017dfdf18f6",
@@ -24950,7 +25080,8 @@
     "source_url": "https://fabletics.wd1.myworkdayjobs.com/fabletics/job/United-States-Remote/DevOps-Engineer-II_R8508?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:55:54.523Z"
+    "posted_at": "2026-10-30T15:55:54.523Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4be09000a848344f8",
@@ -24977,7 +25108,8 @@
     "source_url": "https://www1.jobdiva.com/portal/?a=a7jdnwsus2fmiuqyajck4mcntz54pf05a6mnogtaphm9mt9tz8opkrtglw4v6gqf&source=jobfound.org#/jobs/33316854",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:55:52.913Z"
+    "posted_at": "2026-10-30T15:55:52.913Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4be070018b8372aa3",
@@ -25005,7 +25137,8 @@
     "source_url": "https://jobs.ashbyhq.com/weave/ce79425d-20fc-4c15-841f-3445b86b05b5/application?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:55:51.137Z"
+    "posted_at": "2026-10-30T15:55:51.137Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4be05003167c88d81",
@@ -25033,7 +25166,8 @@
     "source_url": "https://jobs.ashbyhq.com/kong/7ae8b357-a8f0-4c3d-868d-add1789de7ff/application?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:55:49.528Z"
+    "posted_at": "2026-10-30T15:55:49.528Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4be04000b53067be9",
@@ -25061,7 +25195,8 @@
     "source_url": "https://www.linkedin.com/jobs/view/4485354381?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:55:47.946Z"
+    "posted_at": "2026-10-30T15:55:47.946Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4be0200271584541f",
@@ -25089,7 +25224,8 @@
     "source_url": "https://www.careers.jnj.com/en/jobs/R-083694/?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:55:46.357Z"
+    "posted_at": "2026-10-30T15:55:46.357Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4be000034891874ad",
@@ -25117,7 +25253,8 @@
     "source_url": "https://shi.wd12.myworkdayjobs.com/shicareers/job/US---TX---Home-Office/Solutions-Engineer---Data-Engineering_JR3645?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:55:44.591Z"
+    "posted_at": "2026-10-30T15:55:44.591Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4bdff00100949d5d2",
@@ -25169,7 +25306,8 @@
     "source_url": "https://jobs.premisehealth.com/job/brentwood/data-management-and-governance-analyst/1388/102593913872?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:55:41.508Z"
+    "posted_at": "2026-10-30T15:55:41.508Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4bdf7002d085b3ec5",
@@ -25197,7 +25335,8 @@
     "source_url": "https://savangroup.applytojob.com/apply/2lCDpR6Fkk/Software-Quality-Assurance-Engineer?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:55:35.462Z"
+    "posted_at": "2026-10-30T15:55:35.462Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4bdf5003410c4cc4f",
@@ -25224,7 +25363,8 @@
     "source_url": "https://job-boards.greenhouse.io/embed/job_app?for=utilityprofit&token=4379597009&gh_src=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:55:33.608Z"
+    "posted_at": "2026-10-30T15:55:33.608Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4bdf4000ae90a79ea",
@@ -25252,7 +25392,8 @@
     "source_url": "https://job-boards.greenhouse.io/embed/job_app?for=whitetech&token=4344905101&gh_src=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:55:31.946Z"
+    "posted_at": "2026-10-30T15:55:31.946Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4bdf20024b165fc79",
@@ -25281,7 +25422,8 @@
     "source_url": "https://careers-empowerai.icims.com/jobs/9576/qa---test-engineer-%28itsm-platform%29/job?in_iframe=1&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:55:30.350Z"
+    "posted_at": "2026-10-30T15:55:30.350Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4bdf0003ced9a40ea",
@@ -25309,7 +25451,8 @@
     "source_url": "https://apply.workable.com/opendatajobs/j/F1406AAF9C/?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:55:28.746Z"
+    "posted_at": "2026-10-30T15:55:28.746Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4bdef001a0ad86b45",
@@ -25352,7 +25495,8 @@
     "source_url": "https://jobs.silkroad.com/RiversideCC/Careers/jobs/12452?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:55:21.623Z"
+    "posted_at": "2026-10-30T15:55:21.623Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4bde8000b6b86a2b7",
@@ -25400,7 +25544,8 @@
     "source_url": "https://fa-euwp-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/393179?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:55:15.012Z"
+    "posted_at": "2026-10-30T15:55:15.012Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4bde10027ab6d7323",
@@ -25428,7 +25573,8 @@
     "source_url": "https://www1.jobdiva.com/portal/?a=1zjdnwmtd2sucfnvihd8ikgy20037z08916f7t4ybtbv06620instb5vc66z248q&source=jobfound.org#/jobs/33322327",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:55:13.394Z"
+    "posted_at": "2026-10-30T15:55:13.394Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4bde00002b9549d54",
@@ -25456,7 +25602,8 @@
     "source_url": "https://ivyrehab.wd5.myworkdayjobs.com/ivy_rehab/job/Work-from-Home/Cloud-Data-Engineer-I_JR118255?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:55:11.765Z"
+    "posted_at": "2026-10-30T15:55:11.765Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4bddc0035fa658e5b",
@@ -25473,7 +25620,8 @@
     "source_url": "https://kiewitcareers.kiewit.com/job/Remote-Design-Management-Intern-Kiewit-Infrastructure-Engineers/1446359300/?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:55:08.616Z"
+    "posted_at": "2026-10-30T15:55:08.616Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4bddb000c1ff8195c",
@@ -25529,7 +25677,8 @@
     "source_url": "https://jobs.lever.co/firemon/4bc9abf1-6ec3-48ef-90b3-90cbec43dd8b/apply?lever-source=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:55:05.051Z"
+    "posted_at": "2026-10-30T15:55:05.051Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4bdd7002136a0f5d8",
@@ -25557,7 +25706,8 @@
     "source_url": "https://twr.org/opportunity/web-coordinator?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Creatives and Design",
-    "posted_at": "2026-10-30T15:55:03.277Z"
+    "posted_at": "2026-10-30T15:55:03.277Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4bdd5002dc89fa1a3",
@@ -25585,7 +25735,8 @@
     "source_url": "https://bluestonelogic.recruitee.com/o/systems-engineer-test-engineer-juniormid?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:55:01.486Z"
+    "posted_at": "2026-10-30T15:55:01.486Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4bdd40001567a8ed5",
@@ -25607,7 +25758,8 @@
     "source_url": "https://jobs.ashbyhq.com/baseten/ae64d1d4-7b0a-4be4-8d77-7f5ce63849a7/application?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:54:59.790Z"
+    "posted_at": "2026-10-30T15:54:59.790Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4bdd2001b14fac1a5",
@@ -25635,7 +25787,8 @@
     "source_url": "https://jobs.gem.com/careers-myrrsgroup/am9icG9zdDrURiv9WCj8CriNlamjD62m?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:54:58.178Z"
+    "posted_at": "2026-10-30T15:54:58.178Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4bdd0003292f7afb2",
@@ -25656,7 +25809,8 @@
     "source_url": "https://seitenbau-gmbh.jobs.personio.com/job/2868842?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-30T15:54:56.462Z"
+    "posted_at": "2026-10-30T15:54:56.462Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae479510009f4ca5012",
@@ -25678,7 +25832,8 @@
     "source_url": "https://www.careers-page.com/jobsultant-solutions/job/L63Y4Y9W?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Entry",
-    "posted_at": "2026-10-30T11:02:40.774Z"
+    "posted_at": "2026-10-30T11:02:40.774Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae47948002ba3af3750",
@@ -25699,7 +25854,8 @@
     "source_url": "https://gfj.apexfocusgroup.com/hiring/data-entry-typing-associate-no-experience-delhi-la-6917cb235214c109b01a9b48?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Entry",
-    "posted_at": "2026-10-30T11:02:32.373Z"
+    "posted_at": "2026-10-30T11:02:32.373Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4792400372a29e862",
@@ -25723,7 +25879,8 @@
     "source_url": "https://www.careers-page.com/supreme-doctor-consultants-llc/job/L9XW8386?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Entry",
-    "posted_at": "2026-10-30T11:01:55.535Z"
+    "posted_at": "2026-10-30T11:01:55.535Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4706d002e7ca1cc38",
@@ -25769,7 +25926,8 @@
     "source_url": "https://search.jobs.barclays/job/-/-/13015/92613185088?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-30T05:52:51.660Z"
+    "posted_at": "2026-10-30T05:52:51.660Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4309d001fd1ae29ee",
@@ -25793,7 +25951,8 @@
     "source_url": "https://careers.acg-world.com/job/shirwal-Engineer-Software-Engineeirng/61088444/?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineering",
-    "posted_at": "2026-10-30T05:52:29.276Z"
+    "posted_at": "2026-10-30T05:52:29.276Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4309a0011722a29e1",
@@ -25817,7 +25976,8 @@
     "source_url": "https://careers.usbank.com/global/en/job/UBNAGLOBAL20260017316EXTERNALENGLOBAL/Software-Engineer?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-30T05:52:26.023Z"
+    "posted_at": "2026-10-30T05:52:26.023Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4306f0016456465ba",
@@ -25841,7 +26001,8 @@
     "source_url": "https://abnormal.ai/careers/jobs/8016939003?gh_jid=8016939003&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-30T05:51:43.126Z"
+    "posted_at": "2026-10-30T05:51:43.126Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae43065001248c7568b",
@@ -25865,7 +26026,8 @@
     "source_url": "https://dth.avature.net/en_US/careers/JobDetail?jobId=27786&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-30T05:51:33.065Z"
+    "posted_at": "2026-10-30T05:51:33.065Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4305f001ca00734c7",
@@ -25913,7 +26075,8 @@
     "source_url": "https://www.3ds.com/careers/jobs/graphics-engineer-549763?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-30T05:51:24.745Z"
+    "posted_at": "2026-10-30T05:51:24.745Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae43059001c12b30fdf",
@@ -25937,7 +26100,8 @@
     "source_url": "https://www.salesforce.com/company/careers/jobs/JR362247/software-engineering-mts-full-stack/?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-30T05:51:21.200Z"
+    "posted_at": "2026-10-30T05:51:21.200Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4304d001e4325d846",
@@ -25961,7 +26125,8 @@
     "source_url": "https://lseg.wd3.myworkdayjobs.com/Careers/job/IND-BLR-Divyasree-Technopolis/Associate-Software-Engineer_R0124079?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-30T05:51:09.229Z"
+    "posted_at": "2026-10-30T05:51:09.229Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae43042003e66c115d2",
@@ -25976,7 +26141,8 @@
     "source_url": "https://careers.fiserv.com/us/en/job/FFFYJUSR10405598EXTERNALENUS/Software-Development-Engineer?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-30T05:50:58.764Z"
+    "posted_at": "2026-10-30T05:50:58.764Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae4302c002662b08c8e",
@@ -26023,7 +26189,8 @@
     "source_url": "https://www.revolut.com/careers/position/cb1769cb-4903-4525-982f-734217331544/?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Frontend Engineering",
-    "posted_at": "2026-10-30T01:37:57.596Z"
+    "posted_at": "2026-10-30T01:37:57.596Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae3f4cb0037fd815f18",
@@ -26047,7 +26214,8 @@
     "source_url": "https://jobs.ashbyhq.com/checkly/0d236bb0-f860-4317-bc1c-84fed94d0f5a?jr_id=6ae1b6b81f9d9308370ab670&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Customer Support",
-    "posted_at": "2026-10-30T01:37:15.645Z"
+    "posted_at": "2026-10-30T01:37:15.645Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae3f4c00035cd47f639",
@@ -26069,7 +26237,8 @@
     "source_url": "https://cbh.wd12.myworkdayjobs.com/CherryBekaert/job/Raleigh/Data-Support-Coordinator_JR101295-1/?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Management",
-    "posted_at": "2026-10-30T01:37:04.639Z"
+    "posted_at": "2026-10-30T01:37:04.639Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae3f49c00054a5716e4",
@@ -26093,7 +26262,8 @@
     "source_url": "https://stripe.com/careers/listing/design-engineer-expansion/8212314?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Design Engineering",
-    "posted_at": "2026-10-30T01:36:27.790Z"
+    "posted_at": "2026-10-30T01:36:27.790Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae3f49b00159231c28b",
@@ -26117,7 +26287,8 @@
     "source_url": "https://jobs.ashbyhq.com/oneapp/b7ae2b9b-0f31-468d-9ac8-395536da8beb?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Design Engineering",
-    "posted_at": "2026-10-30T01:36:27.120Z"
+    "posted_at": "2026-10-30T01:36:27.120Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae3f48a0012b07c4a82",
@@ -26140,7 +26311,8 @@
     "source_url": "https://job-boards.greenhouse.io/embed/job_app?for=eqtcorporation&token=5462562008&gh_src=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Artificial Intelligence",
-    "posted_at": "2026-10-30T01:36:10.023Z"
+    "posted_at": "2026-10-30T01:36:10.023Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae3f4850025ae7659e8",
@@ -26164,7 +26336,8 @@
     "source_url": "https://job-boards.greenhouse.io/embed/job_app?for=aperiatechnologies&token=6223677004&gh_src=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Analyst",
-    "posted_at": "2026-10-30T01:36:05.348Z"
+    "posted_at": "2026-10-30T01:36:05.348Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae3f4800009f03ff1d3",
@@ -26187,7 +26360,8 @@
     "source_url": "https://myjobs.adp.com/advancelocalcareersite/cx/job-details?c=2171807&sor=adprm&reqId=5001223913406&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Governance",
-    "posted_at": "2026-10-30T01:35:59.917Z"
+    "posted_at": "2026-10-30T01:35:59.917Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae3f42b00339a3af533",
@@ -26209,7 +26383,8 @@
     "source_url": "https://job-boards.greenhouse.io/embed/job_app?for=businessolver&token=8281727&gh_src=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Business Intelligence",
-    "posted_at": "2026-10-30T01:34:35.598Z"
+    "posted_at": "2026-10-30T01:34:35.598Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae3f401002dca3d4ec4",
@@ -26232,7 +26407,8 @@
     "source_url": "https://jobs.smartrecruiters.com/DRTStrategies/743999925950243-data-visualization-specialist-remote-?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Visualization",
-    "posted_at": "2026-10-30T01:33:53.514Z"
+    "posted_at": "2026-10-30T01:33:53.514Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae3f2d6000b29dca12e",
@@ -26255,7 +26431,8 @@
     "source_url": "https://careers.peabody.org.uk/members/modules/job/detail.php?record=1500&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Business Administration",
-    "posted_at": "2026-10-30T01:28:53.919Z"
+    "posted_at": "2026-10-30T01:28:53.919Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae3f29d0028bd3e66dc",
@@ -26277,7 +26454,8 @@
     "source_url": "https://ukcareers.thewosgroup.com/jobs/vacancy/data-administrator-13532-carlton-park---leicester/13550/description/?_channelid=14&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Administration",
-    "posted_at": "2026-10-30T01:27:57.421Z"
+    "posted_at": "2026-10-30T01:27:57.421Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae3f28d000ebc7cb82d",
@@ -26300,7 +26478,8 @@
     "source_url": "https://netechair.discovered.ai/job-details/76010?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Entry",
-    "posted_at": "2026-10-30T01:27:40.992Z"
+    "posted_at": "2026-10-30T01:27:40.992Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae3a227003194e64d48",
@@ -27841,7 +28020,8 @@
     "source_url": "https://waldenlocalmeat.isolvedhire.com/jobs/1894234?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-29T19:19:07.532Z"
+    "posted_at": "2026-10-29T19:19:07.532Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae39c28001eb3addc47",
@@ -27896,7 +28076,8 @@
     "source_url": "https://careers.unitedhealthgroup.com/job/eden-prairie/software-engineer/34088/99522083376?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-29T19:19:00.760Z"
+    "posted_at": "2026-10-29T19:19:00.760Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae39c2300142bcd0d8f",
@@ -27924,7 +28105,8 @@
     "source_url": "https://hcsc.wd1.myworkdayjobs.com/hcsc_external/job/National-Remote/Developer_R0056051-1?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-29T19:18:59.101Z"
+    "posted_at": "2026-10-29T19:18:59.101Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae39c21002978bfc140",
@@ -27952,7 +28134,8 @@
     "source_url": "https://careers.vituity.com/job/CEAMUS260003GPEXTERNALENUS/software-engineer-i-remote-nationwide?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-29T19:18:57.440Z"
+    "posted_at": "2026-10-29T19:18:57.440Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae39c200005a166c535",
@@ -27974,7 +28157,8 @@
     "source_url": "https://ats.rippling.com/aries-solutions/jobs/a0bc3071-76f7-4288-9101-9457d00088f1?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-29T19:18:55.877Z"
+    "posted_at": "2026-10-29T19:18:55.877Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae39c1e0026928eed7a",
@@ -28019,7 +28203,8 @@
     "source_url": "https://fa-evmr-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/job/40564?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-29T19:18:51.634Z"
+    "posted_at": "2026-10-29T19:18:51.634Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae39c1a00105b15c388",
@@ -28047,7 +28232,8 @@
     "source_url": "https://jobs.jobvite.com/synergy/job/oer0AfwZ?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-29T19:18:50.042Z"
+    "posted_at": "2026-10-29T19:18:50.042Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae39c180003a15817c2",
@@ -28072,7 +28258,8 @@
     "source_url": "https://job-boards.greenhouse.io/gitlab/jobs/8912709002?gh_src=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-29T19:18:47.457Z"
+    "posted_at": "2026-10-29T19:18:47.457Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae3603a000be359ba17",
@@ -28094,7 +28281,8 @@
     "source_url": "https://employmenthero.com/jobs/position/knights-bridge-staffing-solutions-data-entry-specialist-remote/?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Entry",
-    "posted_at": "2026-10-29T15:03:21.924Z"
+    "posted_at": "2026-10-29T15:03:21.924Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae360360024def18f60",
@@ -28117,7 +28305,8 @@
     "source_url": "https://astoncarter.dejobs.org/bethesda-md/data-entry-coordinator/DC18291428BF42D0B6185028E0474CAB/job/?vs=5011&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Entry",
-    "posted_at": "2026-10-29T15:03:18.258Z"
+    "posted_at": "2026-10-29T15:03:18.258Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae3602100312cb4f0ff",
@@ -28139,7 +28328,8 @@
     "source_url": "https://jobs.polymer.co/invicta-software/41651?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Entry",
-    "posted_at": "2026-10-29T15:02:57.541Z"
+    "posted_at": "2026-10-29T15:02:57.541Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae3600000384caa83ea",
@@ -28160,7 +28350,8 @@
     "source_url": "https://manpowergroup.dejobs.org/virtual-usa/data-annotation-analyst/D3F5943406DF49498F5E477AE3AB3DF4/job/?vs=5011&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Annotation",
-    "posted_at": "2026-10-29T15:02:24.036Z"
+    "posted_at": "2026-10-29T15:02:24.036Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae357bc0025b28c914d",
@@ -29085,7 +29276,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/junior-software-developer-contract-at-infineon-technologies-4466094284?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-29T14:23:46.114Z"
+    "posted_at": "2026-10-29T14:23:46.114Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae356f0000d8f44056b",
@@ -29552,7 +29744,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/java-nms-ems-at-capgemini-engineering-4484949055?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-29T14:23:09.606Z"
+    "posted_at": "2026-10-29T14:23:09.606Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae356cc0009f951b1b5",
@@ -30508,7 +30701,8 @@
     "source_url": "https://www.ziprecruiter.com/ekn/AAK-kcJQe6bKGh642Le5Anzsh9fhTEAyLbDC_VSga7P8kw29dw_c5GxQMO7gu0XenBPMQmeN4Q30_jK4lEZUBoSo2vT7XAiOblknqlX4nKY7kPQZiwl-25_cKPzduZ8ZJLsTX8nvWhJ5cQTs-hi55FXuXUAOrmiT0nHcS_oQ2v0VDmteLuXr5wms8HWwqoCKm5zwT8xjJoZ2FErDJZ2itmQB6y857kgmEtmvgNWUjMmYkDhUMT2RE5wbqCKmcCvH-Cv4ABtswyWB0lBuKQNH8eywYBDSt9mTs3aOF5WHYucfqXXKtwa3SKKCBmuX1OSPT9K1KPjnZXkxO4VBdRBCzt0-movhld_wFVvg97RLq5Oow5kewAaNSEWRwbO6XU21RGxbdXDSx-7GZchHj3j9rKfIXq5tx4CgL5beifqPG8EfyxUYMQX_z7t2Kh7ttaYjWKZNZlZKr5i561sf3hKxbuvbxURcIjF",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-29T13:42:16.245Z"
+    "posted_at": "2026-10-29T13:42:16.245Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae34d36002c72da93d1",
@@ -30529,7 +30723,8 @@
     "source_url": "https://jobs.dropbox.com/listing/7172701?gh_jid=7172701&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-29T13:42:14.441Z"
+    "posted_at": "2026-10-29T13:42:14.441Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae345d6000c2258b5d2",
@@ -30551,7 +30746,8 @@
     "source_url": "https://www.oficareers.com/jobs/18411029-qa-data-entry-clerk?__jvst=Job+Board&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Entry",
-    "posted_at": "2026-10-29T13:10:45.881Z"
+    "posted_at": "2026-10-29T13:10:45.881Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae33be600259ea0444f",
@@ -30599,7 +30795,8 @@
     "source_url": "https://www.pgcareers.com/global/en/job/R000161858/Information-Technology-Intern?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Information Technology",
-    "posted_at": "2026-10-29T12:28:20.933Z"
+    "posted_at": "2026-10-29T12:28:20.933Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae33a66002a5edc7aab",
@@ -30646,7 +30843,8 @@
     "source_url": "https://circles.wd103.myworkdayjobs.com/Circles/job/India/Intern--Engineering-Operations_R-100492?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering Operations",
-    "posted_at": "2026-10-29T12:21:51.741Z"
+    "posted_at": "2026-10-29T12:21:51.741Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae33a49002a3955c0b0",
@@ -30670,7 +30868,8 @@
     "source_url": "https://brandstory.keka.com/careers/jobdetails/94010?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Web Development",
-    "posted_at": "2026-10-29T12:21:29.181Z"
+    "posted_at": "2026-10-29T12:21:29.181Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae2e032001fe21038b3",
@@ -30694,7 +30893,8 @@
     "source_url": "https://maersk.wd3.myworkdayjobs.com/Maersk_Careers/job/India-Bengaluru-560064/Software-Engineer_R193468?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-29T05:57:06.288Z"
+    "posted_at": "2026-10-29T05:57:06.288Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae2e02c0021112c0c86",
@@ -30718,7 +30918,8 @@
     "source_url": "https://careers.axa.com/careers-home/jobs/27485?lang=en-us&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Engineering",
-    "posted_at": "2026-10-29T05:57:00.254Z"
+    "posted_at": "2026-10-29T05:57:00.254Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae2e02c00189eabb299",
@@ -30741,7 +30942,8 @@
     "source_url": "https://kla.wd1.myworkdayjobs.com/Search/job/Chennai-India/Technical-Lead--Software-Development_2638455-3?bid=370&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-29T05:57:00.132Z"
+    "posted_at": "2026-10-29T05:57:00.132Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae2e021002217ec076b",
@@ -30837,7 +31039,8 @@
     "source_url": "https://magnitudesoftware.wd1.myworkdayjobs.com/External/job/India---Hyderabad---Remote/Software-Engineer--Frontend-_REQ001188?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-29T05:56:36.158Z"
+    "posted_at": "2026-10-29T05:56:36.158Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae2e0040009d1189f51",
@@ -30861,7 +31064,8 @@
     "source_url": "https://www.sourcingxpress.com/jobs/iXBKsT8ffbX2Yg?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineering",
-    "posted_at": "2026-10-29T05:56:19.921Z"
+    "posted_at": "2026-10-29T05:56:19.921Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae2dffb003239490892",
@@ -30885,7 +31089,8 @@
     "source_url": "https://job-boards.greenhouse.io/commvault/jobs/5441176008?gh_src=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-29T05:56:11.571Z"
+    "posted_at": "2026-10-29T05:56:11.571Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae2dff1000c47894ff6",
@@ -30909,7 +31114,8 @@
     "source_url": "https://www.rubrik.com/company/careers/departments/job.8258200?gh_jid=8258200&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-29T05:56:00.926Z"
+    "posted_at": "2026-10-29T05:56:00.926Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae2dfe6000c4a2d8480",
@@ -30933,7 +31139,8 @@
     "source_url": "https://www.cleanstart.com/job/full-stack-developer?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-29T05:55:49.973Z"
+    "posted_at": "2026-10-29T05:55:49.973Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae2dfde000d46d2adab",
@@ -30956,7 +31163,8 @@
     "source_url": "https://internshala.com/job/detail/front-end-developer-job-in-mumbai-at-saffiretech1793188926/?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Frontend Development",
-    "posted_at": "2026-10-29T05:55:41.945Z"
+    "posted_at": "2026-10-29T05:55:41.945Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae2dfdb003e279bfdd5",
@@ -30980,7 +31188,8 @@
     "source_url": "https://stripe.com/careers/listing/software-engineer-new-grad/8130876?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-29T05:55:39.760Z"
+    "posted_at": "2026-10-29T05:55:39.760Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae2dfcf0010525e44af",
@@ -31050,7 +31259,8 @@
     "source_url": "https://jobs.smartrecruiters.com/MikeFreemanChevroletINC/743999785448631-remote-data-entry?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Entry",
-    "posted_at": "2026-10-29T04:59:11.458Z"
+    "posted_at": "2026-10-29T04:59:11.458Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae2d29f0000cfc37c31",
@@ -31072,7 +31282,8 @@
     "source_url": "https://jobs.smartrecruiters.com/RetirementSolutionsAdvisors/744000071686925-remote-data-entry-clerk?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Entry",
-    "posted_at": "2026-10-29T04:59:10.775Z"
+    "posted_at": "2026-10-29T04:59:10.775Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae2c514003d68eb5cca",
@@ -31096,7 +31307,8 @@
     "source_url": "https://careers.regent.edu/jobs/front-end-web-developer-va-united-states?lApplicationSubSourceID=11198&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Web Development",
-    "posted_at": "2026-10-29T04:01:24.748Z"
+    "posted_at": "2026-10-29T04:01:24.748Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae2c50b00169352762b",
@@ -31120,7 +31332,8 @@
     "source_url": "https://www.capitalonecareers.com/job/-/-/234/101574346224?p_sid=_qyjq0b&p_uid=tzT7xvG6Nj&ss=paid&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-29T04:01:15.120Z"
+    "posted_at": "2026-10-29T04:01:15.120Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae2c4f8001ee46d2ef5",
@@ -31144,7 +31357,8 @@
     "source_url": "https://jobs.ashbyhq.com/livekit/88a67836-6ec6-4112-a69c-77bc9c7a369d?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Design Engineering",
-    "posted_at": "2026-10-29T04:00:56.038Z"
+    "posted_at": "2026-10-29T04:00:56.038Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae2c4e900222d7ae200",
@@ -31165,7 +31379,8 @@
     "source_url": "https://jobs.micro1.ai/post/88da544c-5d28-4835-bde7-0272a2a1a4eb?referralCode=9c7aa27d-d66b-4258-9d38-03e279f5c321&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Analysis",
-    "posted_at": "2026-10-29T04:00:41.267Z"
+    "posted_at": "2026-10-29T04:00:41.267Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae2c4e60023ee8cd705",
@@ -31188,7 +31403,8 @@
     "source_url": "https://jobs.ashbyhq.com/Higharc/b962dd6e-2abf-43a6-b16c-e4a1c2268cc0?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineering",
-    "posted_at": "2026-10-29T04:00:38.243Z"
+    "posted_at": "2026-10-29T04:00:38.243Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae2c4de0028171eeea2",
@@ -31212,7 +31428,8 @@
     "source_url": "https://job-boards.greenhouse.io/signifyd95/jobs/8240551?gh_src=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineering",
-    "posted_at": "2026-10-29T04:00:30.397Z"
+    "posted_at": "2026-10-29T04:00:30.397Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae2c4b2001d0675ae7d",
@@ -31236,7 +31453,8 @@
     "source_url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/UK-Remote/Software-Engineering-Intern--AI-Agents-and-Backend-Infrastructure---2027_JR2027939?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineering",
-    "posted_at": "2026-10-29T03:59:46.209Z"
+    "posted_at": "2026-10-29T03:59:46.209Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae2c48d003897d0a996",
@@ -31260,7 +31478,8 @@
     "source_url": "https://www.torentify.com/jobs/6ae07f3b8047379176689462?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineering",
-    "posted_at": "2026-10-29T03:59:09.659Z"
+    "posted_at": "2026-10-29T03:59:09.659Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae2c43e002cd8314a60",
@@ -31284,7 +31503,8 @@
     "source_url": "https://symetra.eightfold.ai/careers/job/446721451484?domain=symetra.com&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Analytics",
-    "posted_at": "2026-10-29T03:57:50.485Z"
+    "posted_at": "2026-10-29T03:57:50.485Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae2c42200089845f841",
@@ -31308,7 +31528,8 @@
     "source_url": "https://godirect.wd5.myworkdayjobs.com/voya_jobs/job/United-States-Remote/Summer-2027-Actuarial-Intern_JR0033152?Codes=lkdin&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Actuarial",
-    "posted_at": "2026-10-29T03:57:21.891Z"
+    "posted_at": "2026-10-29T03:57:21.891Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae2c3f50001525ed27b",
@@ -31332,7 +31553,8 @@
     "source_url": "https://firstam.wd1.myworkdayjobs.com/firstamericancareers/job/Data-Reconciliation-Analyst--Remote-_R059255/?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Analysis",
-    "posted_at": "2026-10-29T03:56:36.764Z"
+    "posted_at": "2026-10-29T03:56:36.764Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae2c3e50024b7a79e63",
@@ -31356,7 +31578,8 @@
     "source_url": "https://parsons.wd5.myworkdayjobs.com/Search/job/Frontend-Software-Engineer---Secret_R187649/?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-29T03:56:21.272Z"
+    "posted_at": "2026-10-29T03:56:21.272Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae2c3da000a94e17d29",
@@ -31380,7 +31603,8 @@
     "source_url": "https://tempus.wd5.myworkdayjobs.com/Tempus_Careers/job/Software-Engineer-II_JR202600801-1/?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-29T03:56:09.926Z"
+    "posted_at": "2026-10-29T03:56:09.926Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae2b8790033e70f602b",
@@ -31404,7 +31628,8 @@
     "source_url": "https://wise.jobs/job/lead-marketing-analyst-growth-enablement-in-london-jid-3227?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Marketing Analytics",
-    "posted_at": "2026-10-29T03:07:37.581Z"
+    "posted_at": "2026-10-29T03:07:37.581Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae2b8610000a7d39151",
@@ -31427,7 +31652,8 @@
     "source_url": "https://careers.ocugroup.com/postings/32d5ad38-20ca-4689-b9e6-17e398cda9d9/?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Analyst",
-    "posted_at": "2026-10-29T03:07:12.791Z"
+    "posted_at": "2026-10-29T03:07:12.791Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae2b82b00126e2dcbbe",
@@ -31451,7 +31677,8 @@
     "source_url": "https://aa210.taleo.net/careersection/ex/jobdetail.ftl?job=260001ZM&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Analytics",
-    "posted_at": "2026-10-29T03:06:19.067Z"
+    "posted_at": "2026-10-29T03:06:19.067Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae2b814003913c5235b",
@@ -31475,7 +31702,8 @@
     "source_url": "https://job-boards.greenhouse.io/via99/jobs/4372643009?gh_src=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Analytics",
-    "posted_at": "2026-10-29T03:05:56.693Z"
+    "posted_at": "2026-10-29T03:05:56.693Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae2b8130000d442ef69",
@@ -31499,7 +31727,8 @@
     "source_url": "https://secure4.entertimeonline.com/ta/6159636.careers?CareersSearch=&lang=en-US&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Analytics",
-    "posted_at": "2026-10-29T03:05:54.600Z"
+    "posted_at": "2026-10-29T03:05:54.600Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae293bf0013f761eb48",
@@ -32478,7 +32707,8 @@
     "source_url": "https://recruitingbypaycor.com/career/JobIntroduction.action?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-29T00:04:14.530Z"
+    "posted_at": "2026-10-29T00:04:14.530Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae28d7d000abb84f4e3",
@@ -32506,7 +32736,8 @@
     "source_url": "https://www.norsely.com/careers/react-3d-developer?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-29T00:04:12.950Z"
+    "posted_at": "2026-10-29T00:04:12.950Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae28d7b0024f08f3503",
@@ -32534,7 +32765,8 @@
     "source_url": "https://jobs.ashbyhq.com/1password/49f0fe51-fcdc-46d8-a046-35f357b0cf6e/?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-29T00:04:11.339Z"
+    "posted_at": "2026-10-29T00:04:11.339Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae28d79003c0ea42ef0",
@@ -32560,7 +32792,8 @@
     "source_url": "https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/jobsearch/job/330761?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-29T00:04:09.729Z"
+    "posted_at": "2026-10-29T00:04:09.729Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae28d78001c183eb6da",
@@ -32587,7 +32820,8 @@
     "source_url": "https://jobs.ashbyhq.com/ramp/be496b52-cfbf-494e-b862-61fb4a188b24/application?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-29T00:04:08.198Z"
+    "posted_at": "2026-10-29T00:04:08.198Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae28d7500197404d8c4",
@@ -32614,7 +32848,8 @@
     "source_url": "https://jobs.dayforcehcm.com/en-us/vitu/candidateportal/jobs/4743?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-29T00:04:05.172Z"
+    "posted_at": "2026-10-29T00:04:05.172Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae28d73003862c8d961",
@@ -32639,7 +32874,8 @@
     "source_url": "https://recruiting.paylocity.com/Recruiting/Jobs/Details/4608330?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-29T00:04:03.675Z"
+    "posted_at": "2026-10-29T00:04:03.675Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae28d720016786fd8ef",
@@ -32656,7 +32892,8 @@
     "source_url": "https://www.ziprecruiter.com/kn/AAK-cVTl2klCrLsKLTxgoto0hzLT3891yVB582qH-K-T30iQ0XWwSqGsvW_rxYsXWnKV-9dkq-WOCWqFZ79SIxaFiimo4krQdhCjLAiw16xKS02RECHi-iqDieXWrB4q6okEpAWng2AnARmUz1O_H0qbYUsGJpEo-tkJA_J_paMP3ZqregUzbKN01QFkiZpb2VBDUOjvSjmFa-6ThDusnppIRqvGGILk5ZAt_k26jp917FEh9xN_TyS3hG9WFmi1gsc5LjC_xKY72zqyemuSxcED0dBMfnpWw26dkXPM8SU1Y6a670ebjnlNTQJPpV1HIBCw7-jiLR9guRsnl1jMLF7KbNMP6wnLSVB3Rd5w8jrCn4QLE8IBZcTAcIZneCwYelYTED1JwEaANDMk9Qpvhj5SaquMYelpo_E4RVc_vqCJRKV9d1pJ3ebsvgeZnQasi6pbaq514hn0PKKN2ajwky8_j_FgYYlf",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-29T00:04:02.114Z"
+    "posted_at": "2026-10-29T00:04:02.114Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae28d6e003ad5e05e8a",
@@ -32684,7 +32921,8 @@
     "source_url": "https://www.ziprecruiter.com/kn/AAJKVsLiCDv-RtiaeYJ5pHbuvRJdoZ6wcC1rjHDgK9CEfddOx4lU95cecSwj2mLE8cWO0-ePlRSYu83p-Z6hKaphqHQG53Boh73ExJOxozlAHURYDi2RqTrDspUFaMiR60_upjTkEkZx0U-hgvXGwaa99MEx8ijHiUSjXPzCRyiH_9qaCRT3tcxUK-bulWwGAfUSX1JV8LNpV5ym1rZKJiky0_tS8HvigDBmA6t13r2kJvySRrgOQeCLoBLnqzMVA_9ZBrsoNx-FCHkMz6H4Hp2osBr0Tsy18vNQu3j-wVsawvN-QkFgzH-KXVjidNJbFtzw1naEyPtWWleTyPcuYuKZBUfv-ejcVbs8GpGOJJ_bEXfDih0WM9giwMlJFPOD-Non3P5RrIchsanxvZ_n8VfELEjcVl7O-p5lYQDWR3_i75zkbh_9mDF_QhjWtJkr8NQVUFdi_BHTG5qKSy7_mx4vO2Cv6Lf4",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-29T00:03:58.682Z"
+    "posted_at": "2026-10-29T00:03:58.682Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae28d6d00185171e598",
@@ -32712,7 +32950,8 @@
     "source_url": "https://jobs.jobvite.com/ninjaone/job/orHuAfwW?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-29T00:03:57.129Z"
+    "posted_at": "2026-10-29T00:03:57.129Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae28d6b0034b754b424",
@@ -32740,7 +32979,8 @@
     "source_url": "https://careers.planview.com/jobs/5080/job?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-29T00:03:55.571Z"
+    "posted_at": "2026-10-29T00:03:55.571Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae28d69000f18618abe",
@@ -32758,7 +32998,8 @@
     "source_url": "https://www.ziprecruiter.com/kn/AAIsWjOFFSUO69JOqeHs3xnB06iGtm2M1LOxPhhlh3cpc0uuA84mF2aWI4FbIZgof2MuDNbBfWe7Tt8fObRV5RsMl13lOprqlNlRPucPse5GaVTDxE7m66D7cbEnUN6bIOLRYtUuOWbdWit3tYVx0s1_VCe07Z9el_GBez7Iye5Je9dugGHkItQ0KKrm45gmnVnzR_1T09WKyanSj_kMJk-qu6E7WtxsHFgAYfg9NQVCc94xaPF4RyUYQgGYuMT-zEYBGlqXBPX2D7PvtXz5OxeLZWAJmMyAZjC8dvqwE1Mj4zu-9AnbnFPUnP_stQzXHDqYycsQg_t5kUCSHTm-o5xDMIe5QWKH0VuzyRaVoPET54vlZlD1TUioIFFOn_tS8FjO3l3Xxba6Xasc36QnehG07rkd3QnV6KZVYDQmJtH-pQZcsDoVdUxffPccc4IqNe3YpzIm8BiC9FoOtahIFOZVFLgfYL9A",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-29T00:03:53.014Z"
+    "posted_at": "2026-10-29T00:03:53.014Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae28d67002e1e31d149",
@@ -32782,7 +33023,8 @@
     "source_url": "https://www.ziprecruiter.com/kn/AALMpeZHbd7swcIZ5xDhHThe14EzN6CFkSNve8pP40kNAVLk9t0voeOFCfOza1tcGPKkSHJ_x9wYWN2V1F-LeACWmtfSzMNb7yYEVGGeaxGAJBOAczJAxHLL6ZFsgSu2GZp8U5fd7TrumQ97W6rE7BjUIXw2zEp-M6XBptSCjbqGfZW7VIBDnjwOZBDWXD3epYZvmk96_gaiuIwuZINP8YdBso1ysgczwF0v0Y54nkdN9BBg0vK6Y_T0n5rEtDzIOnHyA2RKn9Tw8_JD3-fYCaD5n3VIgfdxjDawRRfCJap7SOmrt3hsMKKTTTFQ8DRnejtHYkasaZCQBXYF8uASSsZFiubVWiB20TBpTTMUnzLpWJXsMPW3zN9tGHCWHvouYvpvVAk-wktpotoxXb9edZx0rfLRwGQHHe2Vcz0ZNsxsYmvxc14iVrSyaNWRFx90dteSvyfrhYS9GwcEDb-1w_9Hh2dqdZiL",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-29T00:03:51.494Z"
+    "posted_at": "2026-10-29T00:03:51.494Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae28d660005c4605414",
@@ -32801,7 +33043,8 @@
     "source_url": "https://www.ziprecruiter.com/kn/AALXZTI-fFsX8R5XvcWM15U3ppcUbrSEiM1i4sQIrOuEEgutcZppZgNWbhfNmE37iWflgwoQKFst3Hb6pjM5cG7ow-92fNl1LzgkFfB0hP8WG2_9vzFEBXUXXmEVMmw5dLOtkzDHHLr6TGYMslLp3Wo1c4A4qTd6dj9GrXprM9tWn-4xv8Z2Jx_lrYPovttJox40qVi2VfRsqBETtaSIUTB2_WyWwxPaLN8k2jyB6R_gGbLRyP8METBp3XLWzCMhKcwor6DwcTfxw_8h9Zldv2hlZBWvZIzU1pwX3UE3Ln138QHZqwcA8b6gdpiM2-MWXhC3mUiXsE3yi51OD32TQ1PPD9ul7iTMoG0r85e1x85tK05NoxuCYqK_Sk6GTC8_md0wgKCBi_QrKPANsydqCLKSPA4kp6CFJkCC2GMxoC2jMaxTtOXOdcxRzIT3h6rLfERlKUuFOOJk6KT6YQHzQUJlUKgPGPao",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-29T00:03:49.852Z"
+    "posted_at": "2026-10-29T00:03:49.852Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae28d64002576f7ce74",
@@ -32822,7 +33065,8 @@
     "source_url": "https://www.ziprecruiter.com/kn/AAKY9q34G9El3burV9-K7y-VA7KwbZbbFTFpAOV5Y23wOpeX95jhzJzLFsOc9uX5t1iSHpCoCS3FcqFkn-H_siDtmQ6o9u4L3N9DvpjUe2hGGuEujas6SjyLT1zDxshOsaL8FBnp9ipHI75Er9DMS2OXjHbstzUolB9DlZ01po4bMIO_UrVi3wzok-IifdPShtIfCHF3Xn_NcjYYM6RWkH-8DRhScPxFwVJPHuk2hKGqM-R5TVii-b7el29pwuwR6ZWHfT9ouauyCnv3HSGviTTyU2RIidq3cbhpWt2x4YdZankzsuUVZSUdt6Nfr5XJDmykZ8aXkaaeS46DWu3TakT-756K2mtY84_24F-iOEQ4UqdANEL-1DInRo_JHLP1EiLAnz1Knh-le1OgeWogj9v7YiNB0busAiQjYLO0sY2btcrRgbFOb4hds8L2OHa6-76fDmKCeEJUd2hJ2HxfOqceMjtHqefu",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-29T00:03:48.372Z"
+    "posted_at": "2026-10-29T00:03:48.372Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae28d63000501290567",
@@ -32852,7 +33096,8 @@
     "source_url": "https://www.ziprecruiter.com/kn/AALZt5vODQQf04xt__YbgP0-gPhKZpMxsw8Wyb17GntEoplN-UzAABr8co0q5mXBzTC3Uipk-RaozHODwEjm9UrQE9JrWGTMfi14mMGzCXib6AkGkKXdI6JUFZF-cOVUoo3PCB778dWNPsOaz0P9TFoPVGUVnddUHH1LnH5ILhULv3eSEOlMEEkyA29w-gE_DaJ6Tt-bbw00j0aSe05bvQwna7IdV9KQtga6Mekczx9xYi5mWqafd26IZmz7dKtpL1Uhob4WUsinXjuoxEqDmtys4FNYFTK8JoMIOBztMtvSOsacKKeZrrJC9zfj3IuaEXcN_1b7e19bMayel9Tn_ZoVJl1p5nwrnaOEWbl5PRPtzU93O-LRNBT0LoXU5g7cneCTfruKHyMkHkqnCcDttcwsZp2BH3-YasML58Ztbd7sCWIdxoDCFZjnseXd_EPthCbL4q_ybxGFDXgv5WSVvTm5jwUudXo5",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-29T00:03:46.842Z"
+    "posted_at": "2026-10-29T00:03:46.842Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae28d61001f2408ba40",
@@ -32878,7 +33123,8 @@
     "source_url": "https://www.ziprecruiter.com/kn/AAIHu5RyYnd6RWaTwN40_nFxxdluq1W00N3CZiOLOFeVEuEIezrrvIEoFc5B7jWfX0WhFK2DDdfPDWz8IK5G9V4qJT1os1jdZ5ITft2DqmovNNqFp0TBzvf-cZPmLI15nSBq04H0P8vIDv2un79C68AdmJGez269WydxN8YDSbLarm1tui57-ua1ykXYxJQb36uZoZjPzh-7d5Bio4Rvqb5xvmFfjCYlbG9hTIIVzbApTWzaWthi4jBNGU_ViW7P2iFlc7tYtrZ7xRzUZ7-j6gr7xEz3lekNisfnQjzdv369g_PL2-kWt8tN4ohCJ0C3webRt8thHRdf6ncrQgP-En9qOVBJvZeCSxLKHUSuA3GRal3maauey-1bRe-jRNeokXCmx-nK21cQAlkd2ieGPkZ1bWDFY3S0-x1b_CSsoDZe6l-FooeIpwryqpmxzlu_P-jrLjmMFbKz9bHrahK7tzgDUcsJfqtN",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-29T00:03:45.279Z"
+    "posted_at": "2026-10-29T00:03:45.279Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae28d5f003cd60e9be0",
@@ -32898,7 +33144,8 @@
     "source_url": "https://www.ziprecruiter.com/kn/AAJeOB5dopJOqrwlWV8dajZmeNJTMOiPYSxhszfcTRS-frvlI7XmeIL9YQ8OL2EeeIrmYHWwV3hx4oMvro-1OpmUdzfYZ-3bSCc-_Ae2GvYfPU2qtjOVo-T5SnoLyzs0I_PMQa6FQLwtTnhrFVHUe9vU-Z1L9xlTjMSHbSwfegSavZfSOxR9Ef3vRWvG0vc63or-A_H9m_oMXvguIR50fFCWLscNf5suqQBh0tWl53zqaZyDcArCnENAJr0NC-7s_C3OTlxy9zkzlayx38kSRhMOWX3fg7klix6ATkVVCjUq_zZgvGvfiUvI49ZoOojY_QMDIQgODdzCuPAOsp5y9hcwpy2WE1reSUYKZZvUj1uLEbHBPPxTCkneoo-N7CyYLnLrgQkgZbf6UwFg1xRQxxu_cl26vfmZEApuFe1FwTCxPezPB1-qE1lfbAg2RqwZadqOncMuora44eqX9rYfO33qxjIqfrey",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-29T00:03:43.695Z"
+    "posted_at": "2026-10-29T00:03:43.695Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae28d5e000b6c599417",
@@ -32926,7 +33173,8 @@
     "source_url": "https://boards.greenhouse.io/datacor/jobs/5257433007/?gh_src=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-29T00:03:41.940Z"
+    "posted_at": "2026-10-29T00:03:41.940Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae28d5b0005380baebf",
@@ -32951,7 +33199,8 @@
     "source_url": "https://jobs.gainwelltechnologies.com/job/Any-city-Early-Career-Application-Designer-IL-99999/1442467400/?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Creatives and Design",
-    "posted_at": "2026-10-29T00:03:38.830Z"
+    "posted_at": "2026-10-29T00:03:38.830Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae28d54000cbe0c2cac",
@@ -32969,7 +33218,8 @@
     "source_url": "https://www.ziprecruiter.com/kn/AAKWj26QSHCGXSLorME9rDL0KJcZ3QqMJrUVB2C9n1_rSps-mCSxpsfawAOKMiotTyPshc8Jw_Ds-zkSSHimOoB3pYu6y3lT1xsOLlDBS2bOcJTcIOzJhxgIN77ZTMpxKzoItMrphYRZZ1ssDEf5x10a7sgYmHJb65AMfQrYoD9FeRLZi6qm-AZheiFXo7emhBYT3OLNpPvXGfrJOK60_1P0JL3WgI1J8KD3w7TVkDOKz__OEIWATdcZm3JzyAi_vFL-OrdyP_37SBZJmMF9h1KLzeooQ0qm4sLPtbrzci5jwmp1VNnP7py0jpDN_Y-SY7rPlnUPbr0gbWzMobrf9Qxrbf15w5QleR70DcwcqYFyGxDgvDwfrmRPn4UxDdHzMqgy7DAEjS1tEOXwlQLsMQeqxa1zqoKjdw8OB9bT3rvySpXk1YZC2sPt3raFRzR6N-V_qjEE9n7BV0-rSANy4J0cS-MxoPFo",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-29T00:03:31.966Z"
+    "posted_at": "2026-10-29T00:03:31.966Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae28d520027fb324d10",
@@ -32990,7 +33240,8 @@
     "source_url": "https://www.ziprecruiter.com/kn/AAJpGW479xb4hPk-jQTYwXmki97qV5fRI9S93CcmR9TS_q-uMBsFXtZtjMT482P9YWzibeIjWZQ2DlmcgH84Rdyk7RWOy0af6botY2L2VCsXnr386t8RXbaDdeHe9uDLnS7uc1nd2MY6A0iP7353BhNRgdyxEYzQauoWdvAxGftDxhm7t4ULvgGWaB76bmPr69Ajff20H-54cKOMwEMdkPYlewRpEvEsAtkYsAiQV0oUfybi0UlJNqQJok3ehQgAJE6rTqVFPI0ykC94vOvO0hbhiQ2fokEUW-K7Ik3iEJNAhKoncSTIAU8k65I4RSYav6gNeSdXwLpBmaZURkXFfyw44z0nwtPBU-79wWriT0HLtJ2_7Pw7bwNkNfZjHegkzzFcF1Epsl-y8JhYnJprdvDPIuvyVsG-VFlIdvIAe7Ze1uKI6fY5GHCMGWxRBoHPyA-ZUb1DM6gOnGBsk5uQ2yTWf9uQwfGf",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-29T00:03:30.098Z"
+    "posted_at": "2026-10-29T00:03:30.098Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae28d4d000bf8e9a41c",
@@ -33014,7 +33265,8 @@
     "source_url": "https://www.ziprecruiter.com/kn/AALxGiyQNPIB8Mg48XL5fjxMcRh4sTKU_0073xfjp6HW8XLagJ50A1EFiY_-szczqEhJPlHplETEiOgKpNdo__Nm9BzOvbMY6CR9hxQZr1PeGcVc_OGP5vTRTK3RWBe-YWMjjZDyzpbBEKOwVzVVTLNxi7rkD1B5OiHyAauZqcZAj9xYsY0kZAI-ETQuToHBXuY1eXzucgAjEM9T-CL4QyllhmUziUbBYreyWZMEhnCONALsrKN_W_v82MhjUh0htJnKBJd7LXFoTf3HymvwBfI9ibFBGM84UINa2PkCyrlfv0NPJJm7VZd0iiOnXTM8oPvb0Td8vp20brMM4zRmySlRUDBw_5bRiv8hk1t2HIWa-auySZnWc1b-TULwmLc1g51geNwvqxPKzMbQ_SqO_c8BAJsGrfRk9nnN2cxQu7CgwBURIGdm2lP_X-6MdGvPVbO5CS93yROnKkVPCPvML2InoZuU7qpy",
     "source": "jobfound.org",
     "domain": "Human Resources",
-    "posted_at": "2026-10-29T00:03:24.937Z"
+    "posted_at": "2026-10-29T00:03:24.937Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae2427d0020cc13c1e8",
@@ -34802,7 +35054,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/web-developer-java-at-zimmer-biomet-4476567894?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-28T18:41:28.902Z"
+    "posted_at": "2026-10-28T18:41:28.902Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae241d1000e9e4884a4",
@@ -35660,7 +35913,8 @@
     "source_url": "https://www.ziprecruiter.com/kn/AAJPPLAyavg8kbbLu4HZ1_WmcaQfLGR0YW4tBRU-XmEwIm5ehG4AE4WeFcSKiTuVFNnzS5A4xzHY-bXd9Ghj3bOHBJ6OGyHYdfrM80tmtbuU0ogrx7oklW-IyIRrjMQlxWTXP8nPl_1Czbs0nx1BLUV3nuK3XbQez0LpHdZ2ZsSZt0rEc8DU3R7TyQY6FdLoeXFTIhlQcK-bItZkh9-K6uuU2O0cbnnJSUwJ0ZptyxUVJQzP139HC2eG5pnTQVZ98UEoN0YgxEqtodTcltoRqbY1rU5ME2lKe45U1M0hRbwEromMxKrffPWMfFTZgwWCol0s0MB2cTwsIyNh83saICAsbfnoIui4P1zOFf4uED9SeJO9nYbIfm1niEfelo5skYTpWCCrVdxED397a4Mlhdo7Vu9-EXW7WtRVcpy-l4NDM3FC0ssbl56aYggmbBpgNsr5XCKpa-E0bindQnk8FpEonzJNe4Km",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-28T18:08:07.095Z"
+    "posted_at": "2026-10-28T18:08:07.095Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae23a050033b380cc7a",
@@ -35684,7 +35938,8 @@
     "source_url": "https://job-boards.greenhouse.io/gitlab/jobs/8704363002?gh_src=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-28T18:08:05.588Z"
+    "posted_at": "2026-10-28T18:08:05.588Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae23a0400052f1d17e3",
@@ -35708,7 +35963,8 @@
     "source_url": "https://job-boards.greenhouse.io/gitlab/jobs/8891301002?gh_src=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-28T18:08:03.512Z"
+    "posted_at": "2026-10-28T18:08:03.512Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae23a020010b7d8e96e",
@@ -35730,7 +35986,8 @@
     "source_url": "https://job-boards.greenhouse.io/gitlab/jobs/8682860002?gh_src=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Software Engineer",
-    "posted_at": "2026-10-28T18:08:02.026Z"
+    "posted_at": "2026-10-28T18:08:02.026Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae23a0000236894c700",
@@ -35747,7 +36004,8 @@
     "source_url": "https://careers-piedmont.icims.com/jobs/23954/associate-bi-developer/job?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-28T18:08:00.041Z"
+    "posted_at": "2026-10-28T18:08:00.041Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae239fd0013c28ecc20",
@@ -35775,7 +36033,8 @@
     "source_url": "https://instem.csod.com/ux/ats/careersite/1/home/requisition/494?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-28T18:07:57.063Z"
+    "posted_at": "2026-10-28T18:07:57.063Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae239fb0029c71ed011",
@@ -35794,7 +36053,8 @@
     "source_url": "https://jobs.lever.co/slate/557fe4ab-d292-4069-8c63-36752f3da91d/apply?lever-source=jobfound.org&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-28T18:07:55.409Z"
+    "posted_at": "2026-10-28T18:07:55.409Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae239fa000ea7ce2b55",
@@ -35812,7 +36072,8 @@
     "source_url": "https://jobs.ashbyhq.com/Discernis/53496201-b984-4e50-938e-19c21cf26667?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-28T18:07:54.011Z"
+    "posted_at": "2026-10-28T18:07:54.011Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae239f8001ddad9b560",
@@ -35836,7 +36097,8 @@
     "source_url": "https://halvik.isolvedhire.com/jobs/1893172-338778.html?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-28T18:07:52.235Z"
+    "posted_at": "2026-10-28T18:07:52.235Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae239f6002c25f56919",
@@ -35863,7 +36125,8 @@
     "source_url": "https://careers.bigbear.ai/jobs/4600?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-28T18:07:50.468Z"
+    "posted_at": "2026-10-28T18:07:50.468Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae239f500067db650c5",
@@ -35937,7 +36200,8 @@
     "source_url": "https://bluestarpartners.hiringthing.com/job/991967/data-entry-operator-contract?s=zr&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Entry",
-    "posted_at": "2026-10-28T16:40:51.222Z"
+    "posted_at": "2026-10-28T16:40:51.222Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae2257f002ce5a33bb8",
@@ -35960,7 +36224,8 @@
     "source_url": "https://apply.workable.com/pavago/j/2FC0E4AFC4/?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Entry",
-    "posted_at": "2026-10-28T16:40:31.486Z"
+    "posted_at": "2026-10-28T16:40:31.486Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae225400031f6bd37ce",
@@ -35982,7 +36247,8 @@
     "source_url": "https://jobs.smartrecruiters.com/Contec1/743999825690138-home-based-data-entry-typist?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Entry",
-    "posted_at": "2026-10-28T16:39:28.565Z"
+    "posted_at": "2026-10-28T16:39:28.565Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae2252e003148637a11",
@@ -36003,7 +36269,8 @@
     "source_url": "https://apsmedical.rec.pro.ukg.net/APS1000APSM/JobBoard/0cb85964-dccf-425b-a088-890543f0c9cd/OpportunityDetail?opportunityId=499a54e4-5794-42b6-b3c3-f67a6aa05dfd&source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Entry",
-    "posted_at": "2026-10-28T16:39:10.544Z"
+    "posted_at": "2026-10-28T16:39:10.544Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae2238b000628dc8055",
@@ -36027,7 +36294,8 @@
     "source_url": "https://jobs.smartrecruiters.com/Blend360/744000158001359-data-entry-associate?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Data Entry",
-    "posted_at": "2026-10-28T16:32:10.258Z"
+    "posted_at": "2026-10-28T16:32:10.258Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae1edaa0024c4b41379",
@@ -36048,7 +36316,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/growth-intern-gold-at-jar-4484445340?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Internship",
-    "posted_at": "2026-10-28T12:42:18.249Z"
+    "posted_at": "2026-10-28T12:42:18.249Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae1eda5000e98e5292a",
@@ -36880,7 +37149,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/software-engineer-delivery-release-at-gitlab-4484434111?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-28T12:40:49.801Z"
+    "posted_at": "2026-10-28T12:40:49.801Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae1ed50001f65ee7dba",
@@ -38149,7 +38419,8 @@
     "source_url": "https://in.linkedin.com/jobs/view/engineer-linux-kernel-development-at-qualcomm-4390994161?source=jobfound.org",
     "source": "jobfound.org",
     "domain": "Engineering and Development",
-    "posted_at": "2026-10-28T12:39:13.865Z"
+    "posted_at": "2026-10-28T12:39:13.865Z",
+    "is_active": true
   },
   {
     "id": "jf_6ae1ecf00023545f500a",
@@ -39270,5 +39541,235 @@
     "source": "jobfound.org",
     "domain": "Engineering and Development",
     "posted_at": "2026-10-28T06:30:47.857Z"
+  },
+  {
+    "id": "rem_2091165",
+    "title": "Full-Stack Developer",
+    "company": "Fluence International, Inc.",
+    "location": "Worldwide",
+    "workplace_type": "remote",
+    "remote": true,
+    "experience_required": 4,
+    "skills": [
+      "admin",
+      "api",
+      "AWS",
+      "backend",
+      "cloud",
+      "Docker",
+      "frontend",
+      "fullstack"
+    ],
+    "description": "We’re looking for a pragmatic, security-minded Full-Stack Developer to help build and scale Fluence’s B2B products used by clinicians, researchers, and organizations in psychedelic-assisted therapy and mental health. You’ll work closely with and report to our Senior AI & Design Lead to turn product requirements into robust, secure, and well-documented applications, as well as maintain existing one...",
+    "source_url": "https://remotive.com/remote-jobs/software-development/full-stack-developer-2091165",
+    "source": "remotive.com",
+    "domain": "Data & AI",
+    "posted_at": "2026-10-29T18:22:41",
+    "is_active": true
+  },
+  {
+    "id": "rem_2091135",
+    "title": "Senior Back-end Developer",
+    "company": "Lemon.io",
+    "location": "Europe, USA, Canada, Australia, Singapore, Mexico, Saudi Arabia",
+    "workplace_type": "remote",
+    "remote": true,
+    "experience_required": 4,
+    "skills": [
+      ".Net",
+      "android",
+      "C",
+      "C#",
+      "C++",
+      "cloud",
+      "data science",
+      "golang"
+    ],
+    "description": "Lemon.io helps companies in the US and Europe hire experienced engineers, from funded startups to teams like Klarna, Retool, and Pinterest. We’ve been doing this since 2015, and more than 1,500 companies have hired engineers through us. Currently, we have a few open positions from our client, an AI-native cloud company. AI teams use its platform to run inference on open-source models, fine-tune th...",
+    "source_url": "https://remotive.com/remote-jobs/software-development/senior-back-end-developer-2091135",
+    "source": "remotive.com",
+    "domain": "Data & AI",
+    "posted_at": "2026-10-27T12:56:13",
+    "is_active": true
+  },
+  {
+    "id": "rem_2091134",
+    "title": "Head of Engineering",
+    "company": "Lemon.io",
+    "location": "Worldwide",
+    "workplace_type": "remote",
+    "remote": true,
+    "experience_required": 4,
+    "skills": [
+      "AI/ML",
+      "startup",
+      "marketplace",
+      "fundraising"
+    ],
+    "description": "About Lemon.io Lemon.io is a profitable, growing talent marketplace that connects vetted senior engineers with companies that need them. We’ve been in business for 10 years, have 60 people across Ukraine, Europe, Canada, and the US, and process over $16M in annual GMV. We compress the traditional 2–5 week hiring timeline down to 24–48 hours through a curated, pre-vetted supply of developers. Hirin...",
+    "source_url": "https://remotive.com/remote-jobs/software-development/head-of-engineering-2091134",
+    "source": "remotive.com",
+    "domain": "Data & AI",
+    "posted_at": "2026-10-26T12:20:09",
+    "is_active": true
+  },
+  {
+    "id": "rem_2091161",
+    "title": "AI Trainer - Video Annotation",
+    "company": "iMerit Technology",
+    "location": "Worldwide",
+    "workplace_type": "remote",
+    "remote": true,
+    "experience_required": 0,
+    "skills": [
+      "video",
+      "AI/ML",
+      "robotics"
+    ],
+    "description": "AI Trainer - Video Annotation Remote | Independent Contractor Prove your skills. Get certified. Robotics AI is advancing rapidly, and high-quality video data helps intelligent systems better understand the world around them. We are inviting detail-oriented professionals to complete our certification process for potential robotics AI projects. ▌ What you will do As part of the certification process...",
+    "source_url": "https://remotive.com/remote-jobs/artificial-intelligence/ai-trainer-video-annotation-2091161",
+    "source": "remotive.com",
+    "domain": "Data & AI",
+    "posted_at": "2026-10-22T18:40:19",
+    "is_active": true
+  },
+  {
+    "id": "rem_2091158",
+    "title": "Software Engineer, AI Coding Tasks",
+    "company": "Askable",
+    "location": "Worldwide",
+    "workplace_type": "remote",
+    "remote": true,
+    "experience_required": 0,
+    "skills": [
+      "C++",
+      "Docker",
+      "Git",
+      "Go",
+      "Java",
+      "Python",
+      "security",
+      "AI/ML"
+    ],
+    "description": "We're looking for experienced software engineers to build AI coding tasks from a codebase they know well. US$1,000 per task, and you can do as many tasks as you want. You turn a real change from a repository you know into a task that today's best AI coding models struggle with: hard for the models, but fair for a skilled engineer. Your tasks are used to measure and train AI coding models. Remote, ...",
+    "source_url": "https://remotive.com/remote-jobs/software-development/software-engineer-ai-coding-tasks-2091158",
+    "source": "remotive.com",
+    "domain": "Data & AI",
+    "posted_at": "2026-10-17T16:04:29",
+    "is_active": true
+  },
+  {
+    "id": "rem_2069746",
+    "title": "Tech Lead Full-Stack Rails Engineer",
+    "company": "Mitre Media",
+    "location": "USA, Canada, USA timezones",
+    "workplace_type": "remote",
+    "remote": true,
+    "experience_required": 4,
+    "skills": [
+      "api",
+      "CSS",
+      "Docker",
+      "elasticsearch",
+      "fullstack",
+      "HTML",
+      "JavaScript",
+      "Kubernetes"
+    ],
+    "description": "About Mitre Media Mitre Media is redefining FinTech with AI-driven tools that empower millions of investors. Our portfolio, including Dividend.com and MutualFunds.com, leverages LLMs to deliver novel data insights and visually rich user experiences. For over a decade, we’ve served individual investors, financial advisors, and top asset managers like BlackRock and Vanguard through our premium data,...",
+    "source_url": "https://remotive.com/remote-jobs/software-development/tech-lead-full-stack-rails-engineer-2069746",
+    "source": "remotive.com",
+    "domain": "Data & AI",
+    "posted_at": "2026-10-14T20:33:44",
+    "is_active": true
+  },
+  {
+    "id": "rem_1680495",
+    "title": "Remote Office Assistant",
+    "company": "Coalition Technologies",
+    "location": "Worldwide",
+    "workplace_type": "remote",
+    "remote": true,
+    "experience_required": 0,
+    "skills": [
+      "CSS",
+      "excel",
+      "frontend",
+      "Git",
+      "HTML",
+      "illustrator",
+      "magento",
+      "photoshop"
+    ],
+    "description": "Coalition Technologies is seeking a reliable, detail-oriented, and highly organized Remote Office Assistant to support administrative, bookkeeping, billing, reporting, data entry, and internal operations tasks. This role is ideal for someone with strong communication skills, discretion, attention to detail, and a willingness to learn and grow within a fast-paced remote work environment. As an Offi...",
+    "source_url": "https://remotive.com/remote-jobs/marketing/remote-office-assistant-1680495",
+    "source": "remotive.com",
+    "domain": "Data & AI",
+    "posted_at": "2026-10-11T20:17:27",
+    "is_active": true
+  },
+  {
+    "id": "rem_2086540",
+    "title": "Inside Sales Contractor",
+    "company": "Credit Wellness, LLC",
+    "location": "Worldwide",
+    "workplace_type": "remote",
+    "remote": true,
+    "experience_required": 0,
+    "skills": [
+      "CRM",
+      "google sheets",
+      "financial services",
+      "Inside Sales"
+    ],
+    "description": "About Us We are a financial services start up focusing on helping to improve consumer credit profiles. We are currently seeking KPI driven sales representatives looking to earn up to 45K in their first year while working remotely. We offer comprehensive training and continuous sales coaching to help you meet your financial goals. During our training period we offer a guaranteed training stipend wh...",
+    "source_url": "https://remotive.com/remote-jobs/sales/inside-sales-contractor-2086540",
+    "source": "remotive.com",
+    "domain": "Full Stack",
+    "posted_at": "2026-10-08T21:47:32",
+    "is_active": true
+  },
+  {
+    "id": "rem_2091045",
+    "title": "Tier III Service Desk Engineer",
+    "company": "Unio Digital",
+    "location": "Worldwide",
+    "workplace_type": "remote",
+    "remote": true,
+    "experience_required": 0,
+    "skills": [
+      "Azure",
+      "cisco",
+      "security",
+      "video",
+      "documentation",
+      "hardware",
+      "helpdesk",
+      "onboarding"
+    ],
+    "description": "Unió Digital is an Arizona-based managed service provider (MSP) delivering Managed IT Services, Low Voltage Cabling, Access Control, Video Surveillance, and Intrusion Services. We believe technology should be intuitive, not intimidating. We are looking for an experienced Tier 3 Service Desk Technician with exceptional problem-solving skills. You will serve as the escalation point within the team, ...",
+    "source_url": "https://remotive.com/remote-jobs/information-technology/tier-iii-service-desk-engineer-2091045",
+    "source": "remotive.com",
+    "domain": "Full Stack",
+    "posted_at": "2026-10-07T01:11:09",
+    "is_active": true
+  },
+  {
+    "id": "rem_1185979",
+    "title": "Freelance Writer",
+    "company": "IAPWE",
+    "location": "Worldwide",
+    "workplace_type": "remote",
+    "remote": true,
+    "experience_required": 0,
+    "skills": [
+      "REST API"
+    ],
+    "description": "Our organization is seeking content writers to create articles and blog posts on a variety of topics. The rate of pay is $20 per 100 words (this comes out to approximately $100 per article or $50 per hour). Some topics you may be asked to write about include the following (you can always turn down a topic if you do not feel comfortable writing about it, however if you have experience or expertise ...",
+    "source_url": "https://remotive.com/remote-jobs/writing/freelance-writer-1185979",
+    "source": "remotive.com",
+    "domain": "Full Stack",
+    "posted_at": "2026-10-04T16:53:34",
+    "is_active": true
   }
 ]

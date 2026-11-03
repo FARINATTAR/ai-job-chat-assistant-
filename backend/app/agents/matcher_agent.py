@@ -41,6 +41,10 @@ class MatcherAgent:
         scored_candidates: List[Tuple[Job, int, List[str], List[str]]] = []
 
         for job in all_jobs:
+            # 0. Skip any expired or inactive job
+            if getattr(job, "is_active", True) is False:
+                continue
+
             # 1. Apply conversational filters
             if filters.remote is True and not job.remote:
                 continue

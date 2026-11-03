@@ -43,13 +43,22 @@ export const JobCard: React.FC<JobCardProps> = ({ match, onApply, isApplied = fa
         {/* Header */}
         <div className="flex items-start justify-between gap-3 mb-2">
           <div>
-            <div className="flex items-center gap-2 mb-1">
+            <div className="flex flex-wrap items-center gap-1.5 mb-1.5">
               <span className="text-xs font-mono font-bold px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 border border-slate-700">
                 Job #{index}
               </span>
+              <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                Active & Open
+              </span>
               {job.remote && (
-                <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-300 border border-blue-500/30">
                   Remote
+                </span>
+              )}
+              {job.source && (
+                <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700/80">
+                  {job.source.replace(".org", "").replace(".com", "")}
                 </span>
               )}
             </div>
