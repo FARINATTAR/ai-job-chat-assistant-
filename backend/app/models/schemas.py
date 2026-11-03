@@ -99,3 +99,4 @@ class ChatResponse(BaseModel):
     session_id: str
     agent_trace: Optional[List[Dict[str, Any]]] = None
     job_results: Optional[List[JobMatch]] = None
+

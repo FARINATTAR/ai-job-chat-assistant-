@@ -69,3 +69,4 @@ class ApplicationRepository:
         ).order_by(ApplicationDB.applied_at.desc()).all()
 
         return [ApplicationRecord(**r.to_dict()) for r in records]
+

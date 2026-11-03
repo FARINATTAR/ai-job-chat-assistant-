@@ -117,3 +117,4 @@ def get_job_repository() -> JobRepository:
     if _job_repository_instance is None:
         _job_repository_instance = JobRepository()
     return _job_repository_instance
+

@@ -43,3 +43,4 @@ class ApplicationDB(Base):
             "status": self.status,
             "notes": self.notes or ""
         }
+

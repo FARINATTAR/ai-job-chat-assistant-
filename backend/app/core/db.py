@@ -34,3 +34,4 @@ def init_db():
     """Create all tables in the database if they do not exist."""
     from ..models import db_models  # Ensure models are imported
     Base.metadata.create_all(bind=engine)
+
