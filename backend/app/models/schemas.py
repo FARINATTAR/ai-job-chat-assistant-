@@ -1,8 +1,8 @@
 """
 Pydantic schemas for data validation, serialization, and LLM structured outputs.
 """
-from typing import List, Optional, Dict, Any
-from pydantic import BaseModel, Field
+from typing import List, Optional, Dict, Any, Union
+from pydantic import BaseModel, Field, field_validator
 
 
 class Job(BaseModel):
@@ -18,8 +18,14 @@ class Job(BaseModel):
     description: str = ""
     source_url: str = ""
     source: Optional[str] = "unknown"
-    posted_at: Optional[str] = ""
+    posted_at: Optional[Any] = ""
     is_active: bool = True
+
+    @field_validator("posted_at", mode="before")
+    def coerce_posted_at_to_str(cls, v):
+        if v is None:
+            return ""
+        return str(v)
 
 
 class ContactInfo(BaseModel):
