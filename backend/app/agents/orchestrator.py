@@ -51,12 +51,13 @@ class OrchestratorAgent:
         is_remote_query = any(kw in msg_low for kw in ["remote", "work from home", "wfh"])
         is_reset_query = any(kw in msg_low for kw in ["reset", "clear filter", "all jobs", "start over"])
         has_skill_query = any(s in msg_low for s in ["python", "react", "sql", "java", "docker", "aws", "node", "typescript"])
+        has_exp_query = any(w in msg_low for w in ["fresher", "intern", "junior", "senior", "mid-level", "years exp", "yr exp", "yrs exp", "experience", "exp"])
         is_recommend_query = any(kw in msg_low for kw in ["recommend", "matching", "find jobs", "show jobs", "search"])
 
         if is_reset_query:
             return {"intent": "RESET_FILTERS"}
 
-        if is_remote_query or has_skill_query or is_recommend_query:
+        if is_remote_query or has_skill_query or has_exp_query or is_recommend_query:
             return {
                 "intent": "SEARCH_OR_REFINE",
                 "is_remote": True if is_remote_query else None,
@@ -181,10 +182,40 @@ class OrchestratorAgent:
             if s.lower() in msg_low and s not in session.active_filters.skills:
                 session.active_filters.skills.append(s)
 
+        # Detect conversational experience filters:
+        # e.g., "fresher jobs", "internship", "0 years", "1-2 years", "max 3 years", "senior"
+        if any(w in msg_low for w in ["fresher", "intern", "0 exp", "0 year", "0 yr", "0-1 year", "0-1 yr", "entry level", "entry-level"]):
+            session.active_filters.max_experience = 1
+        elif any(w in msg_low for w in ["1-2 year", "1-2 yr", "2 year", "2 yr", "junior"]):
+            session.active_filters.max_experience = 2
+        elif any(w in msg_low for w in ["3 year", "3 yr", "3-5 year", "mid level", "mid-level"]):
+            session.active_filters.max_experience = 4
+        elif any(w in msg_low for w in ["senior", "lead", "5+ year", "5 year", "5 yr"]):
+            session.active_filters.max_experience = 10
+        elif "all exp" in msg_low or "all experience" in msg_low or "any experience" in msg_low:
+            session.active_filters.max_experience = None
+
+        exp_regex = re.search(r"(?:max|under|below|for)\s+(\d+)\s*(?:years?|yrs?)(?:\s*(?:of\s*)?exp)?", msg_low)
+        if exp_regex:
+            try:
+                session.active_filters.max_experience = int(exp_regex.group(1))
+            except ValueError:
+                pass
+
+        filter_desc = []
+        if session.active_filters.remote is not None:
+            filter_desc.append(f"Remote={session.active_filters.remote}")
+        if session.active_filters.max_experience is not None:
+            filter_desc.append(f"MaxExp={session.active_filters.max_experience}yr{'s' if session.active_filters.max_experience > 1 else ''}")
+        if session.active_filters.skills:
+            filter_desc.append(f"Skills={', '.join(session.active_filters.skills)}")
+
+        active_desc_str = ", ".join(filter_desc) if filter_desc else "Default Profile"
+
         yield StreamEmitter.agent_handoff(
             "Orchestrator",
             "JobMatcher",
-            f"Querying {self.job_repo.total_count} verified software jobs. Active filters: Remote={session.active_filters.remote}, Skills={session.active_filters.skills or 'All'}"
+            f"Querying {self.job_repo.total_count} verified software jobs. Active filters: {active_desc_str}"
         )
 
         # Execute Matcher with limit 10

@@ -48,30 +48,38 @@ class MatcherAgent:
                 continue
             if filters.location and filters.location.lower() not in job.location.lower():
                 continue
-            if filters.max_experience is not None and job.experience_required > filters.max_experience:
-                continue
             if filters.skills:
                 job_skills_lower = set(s.strip().lower() for s in job.skills)
                 requested_lower = set(s.strip().lower() for s in filters.skills)
                 if not job_skills_lower.intersection(requested_lower):
                     continue
 
-            # Experience-Gate: Prevent showing senior jobs to freshers/interns
+            # Experience-Gate & User Filter
             title_and_desc = f"{job.title} {job.description}".lower()
             senior_markers = [
                 "associate iii", "associate ii", "level 3", "level 2", "lead",
                 "senior", "sr.", "principal", "staff engineer", "architect", "manager"
             ]
 
-            # If candidate is fresher/intern/early-career (<= 1.0 yr exp)
-            if candidate_exp <= 1.0 or "intern" in candidate_title:
-                if job.experience_required > 1:
+            # 1. User Explicit Experience Filter (Takes top precedence if chosen)
+            if filters.max_experience is not None:
+                if job.experience_required > filters.max_experience:
                     continue
-                if any(marker in title_and_desc for marker in senior_markers):
+                # If user explicitly asked for Fresher/Entry-level (<= 1 yr), filter out senior titles
+                if filters.max_experience <= 1 and any(marker in title_and_desc for marker in senior_markers):
                     continue
+
+            # 2. Candidate Resume Profile Gating (When no explicit experience filter is active)
             else:
-                if job.experience_required > candidate_exp:
-                    continue
+                # If candidate is fresher/intern/early-career (<= 1.0 yr exp)
+                if candidate_exp <= 1.0 or "intern" in candidate_title:
+                    if job.experience_required > 1:
+                        continue
+                    if any(marker in title_and_desc for marker in senior_markers):
+                        continue
+                else:
+                    if job.experience_required > candidate_exp:
+                        continue
 
             # 2. Strict Score Calculation
             score, matched_skills, missing_skills = self._calculate_match_score(

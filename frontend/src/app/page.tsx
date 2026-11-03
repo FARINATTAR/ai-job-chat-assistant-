@@ -271,6 +271,30 @@ export default function Home() {
             currentProfile={currentProfile}
           />
 
+          {/* Experience Filter Selector */}
+          <div className="p-4 rounded-2xl bg-slate-900 border border-slate-800 space-y-2.5 text-xs">
+            <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+              <Sparkles className="w-3.5 h-3.5 text-amber-400" /> Filter by Experience Level
+            </p>
+            <div className="grid grid-cols-2 gap-1.5 pt-0.5">
+              {[
+                { label: "🎓 Fresher (0-1 yr)", query: "Show jobs for freshers (0-1 yr)" },
+                { label: "💼 Mid-Level (2-4 yrs)", query: "Show jobs for 2-4 years experience" },
+                { label: "🚀 Senior (5+ yrs)", query: "Show senior developer roles (5+ yrs)" },
+                { label: "🌐 All Experience", query: "Show jobs across all experience levels" },
+              ].map((item, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => handleSendMessage(item.query)}
+                  disabled={isStreaming}
+                  className="px-2.5 py-1.5 rounded-xl bg-slate-800/80 hover:bg-indigo-600 hover:text-white border border-slate-700/70 text-slate-300 transition-all text-[11px] font-medium text-left"
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
           {/* Quick Search Chips */}
           <div className="p-4 rounded-2xl bg-slate-900 border border-slate-800 space-y-2 text-xs">
             <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
@@ -365,7 +389,31 @@ export default function Home() {
           </div>
 
           {/* Bottom Chat Input Bar */}
-          <div className="p-3 sm:p-4 border-t border-slate-800 bg-slate-900/70 backdrop-blur-md">
+          <div className="p-3 sm:p-4 border-t border-slate-800 bg-slate-900/70 backdrop-blur-md space-y-2.5">
+            {/* Quick Filter Ribbon */}
+            <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar max-w-4xl mx-auto pb-0.5 text-[11px]">
+              <span className="text-slate-500 font-semibold text-[10px] uppercase shrink-0 flex items-center gap-1">
+                <Filter className="w-3 h-3 text-indigo-400" /> Filter:
+              </span>
+              {[
+                { label: "🎓 Fresher (0-1 yr)", q: "Show jobs for freshers (0-1 yr)" },
+                { label: "💼 1-3 Yrs", q: "Show jobs for 1-3 years experience" },
+                { label: "🚀 3+ Yrs", q: "Show senior jobs (3+ yrs)" },
+                { label: "🏠 Remote Only", q: "Show only remote roles" },
+                { label: "🔄 Reset Filters", q: "Reset all filters" },
+              ].map((btn, idx) => (
+                <button
+                  key={idx}
+                  type="button"
+                  onClick={() => handleSendMessage(btn.q)}
+                  disabled={isStreaming}
+                  className="px-2.5 py-1 rounded-full bg-slate-800/90 hover:bg-indigo-600 hover:text-white border border-slate-700/60 text-slate-300 transition-all shrink-0 font-medium"
+                >
+                  {btn.label}
+                </button>
+              ))}
+            </div>
+
             <form
               onSubmit={(e) => {
                 e.preventDefault();
