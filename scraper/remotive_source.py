@@ -91,7 +91,7 @@ class RemotiveSource(BaseJobSource):
                 "skills": skills[:8],
                 "description": cleaned_desc[:400] + ("..." if len(cleaned_desc) > 400 else ""),
                 "source_url": source_url,
-                "source": "remotive.com",
+                "source": "Remotive",
                 "domain": domain,
                 "posted_at": item.get("publication_date") or "",
                 "is_active": True

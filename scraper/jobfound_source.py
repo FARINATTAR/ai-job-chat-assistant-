@@ -117,6 +117,14 @@ class JobfoundSource(BaseJobSource):
                 if not apply_url and item.get("slug"):
                     apply_url = f"https://jobfound.org/jobs/{item.get('slug')}"
 
+                # Derive real source from actual URL domain
+                actual_source = "Jobfound"
+                if "linkedin.com" in apply_url:
+                    actual_source = "LinkedIn"
+                    # Strip tracking param
+                    import re as _re
+                    apply_url = _re.sub(r'\?source=jobfound\.org$', '', apply_url)
+
                 job_obj = {
                     "id": f"jf_{raw_id}",
                     "title": title,
@@ -128,9 +136,10 @@ class JobfoundSource(BaseJobSource):
                     "skills": list(dict.fromkeys(extracted_skills)),
                     "description": desc,
                     "source_url": apply_url,
-                    "source": "jobfound.org",
+                    "source": actual_source,
                     "domain": domain or "Software Engineering",
-                    "posted_at": item.get("postedAt") or ""
+                    "posted_at": item.get("postedAt") or "",
+                    "is_active": True
                 }
 
                 jobs.append(job_obj)
