@@ -36,8 +36,8 @@ export default function Home() {
     return "session_init";
   });
 
-  // Step-based flow
-  const [step, setStep] = useState<AppStep>("upload");
+  // Default to interactive conversational chat as required by assessment
+  const [step, setStep] = useState<AppStep>("chat");
 
   // Resume
   const [currentProfile, setCurrentProfile] = useState<ResumeProfile | null>(null);
@@ -65,7 +65,16 @@ export default function Home() {
     setSessionId(getSessionId());
   }, []);
 
+  // Smart auto-scroll: if job cards are rendered, scroll to TOP of the results so Job #1 is in view!
   useEffect(() => {
+    const lastMsg = messages[messages.length - 1];
+    if (lastMsg?.role === "assistant" && lastMsg.jobResults && lastMsg.jobResults.length > 0) {
+      const el = document.getElementById(`msg-${lastMsg.id}`);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+        return;
+      }
+    }
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, isStreaming]);
 
@@ -487,16 +496,86 @@ export default function Home() {
       <Header
         onOpenDrawer={() => setIsDrawerOpen(true)}
         appliedCount={appliedJobIds.size}
-        onGoBack={() => setStep("filters")}
         profileName={currentProfile?.name}
+        onUploadClick={() => chatFileInputRef.current?.click()}
       />
 
       <main className="flex-1 flex flex-col overflow-hidden">
         {/* Messages */}
         <div className="flex-1 overflow-y-auto px-4 sm:px-6 py-5 space-y-4 max-w-4xl w-full mx-auto">
+          {messages.length === 0 && (
+            <div className="py-8 sm:py-12 px-4 max-w-2xl mx-auto text-center space-y-6">
+              <div className="w-16 h-16 rounded-3xl bg-gradient-to-tr from-indigo-600 to-violet-600 text-white flex items-center justify-center mx-auto shadow-lg shadow-indigo-100">
+                <Bot className="w-8 h-8" />
+              </div>
+              <div className="space-y-2">
+                <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+                  AI Job Chat Assistant
+                </h2>
+                <p className="text-sm sm:text-base text-slate-600">
+                  Drop your resume to get instant grounded recommendations from over 2,500 real engineering roles, or explore positions directly through conversation.
+                </p>
+              </div>
+
+              {/* Drag and Drop Box in Welcome Screen */}
+              <div
+                onDragOver={(e) => { e.preventDefault(); setIsDragging(true); }}
+                onDragLeave={() => setIsDragging(false)}
+                onDrop={(e) => {
+                  e.preventDefault();
+                  setIsDragging(false);
+                  if (e.dataTransfer.files?.[0]) handleFileUploadInChat(e.dataTransfer.files[0]);
+                }}
+                onClick={() => chatFileInputRef.current?.click()}
+                className={`border-2 border-dashed rounded-2xl p-6 sm:p-8 text-center cursor-pointer transition-all ${
+                  isDragging
+                    ? "border-indigo-500 bg-indigo-50/80"
+                    : "border-slate-300 hover:border-indigo-400 bg-white hover:bg-indigo-50/20 shadow-xs"
+                }`}
+              >
+                <div className="flex flex-col items-center gap-3">
+                  <div className="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center">
+                    <UploadCloud className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-slate-900">
+                      Drop your resume here or click to browse
+                    </p>
+                    <p className="text-xs text-slate-500 mt-0.5">Supports PDF or DOCX format</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Quick Action Suggestion Chips */}
+              <div className="space-y-2 text-left">
+                <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider text-center">
+                  Or start with a conversational query
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {[
+                    { label: "🌍 Show remote developer roles", query: "show only remote roles" },
+                    { label: "⚡ Entry-level / Fresher jobs (0-1 yr)", query: "show fresher and entry level software jobs" },
+                    { label: "⚛️ Roles needing React & TypeScript", query: "jobs needing React and TypeScript" },
+                    { label: "🏢 Top tech companies (Google, Meta)", query: "show software engineer jobs at Google, Meta, or Amazon" },
+                  ].map((chip) => (
+                    <button
+                      key={chip.query}
+                      onClick={() => handleSendMessage(chip.query)}
+                      className="p-3 rounded-xl border border-slate-200 bg-white hover:border-indigo-300 hover:bg-indigo-50/40 text-xs sm:text-sm font-medium text-slate-700 text-left transition-all flex items-center justify-between group"
+                    >
+                      <span>{chip.label}</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-indigo-600 group-hover:translate-x-0.5 transition-all" />
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
           {messages.map((msg) => (
             <div
               key={msg.id}
+              id={`msg-${msg.id}`}
               className={`flex gap-3 ${msg.role === "user" ? "justify-end" : "justify-start"}`}
             >
               {msg.role === "assistant" && (
@@ -620,11 +699,13 @@ function Header({
   appliedCount,
   onGoBack,
   profileName,
+  onUploadClick,
 }: {
   onOpenDrawer: () => void;
   appliedCount: number;
   onGoBack?: () => void;
   profileName?: string;
+  onUploadClick?: () => void;
 }) {
   return (
     <header className="px-4 sm:px-6 py-3 border-b border-slate-200 bg-white flex items-center justify-between shrink-0">
@@ -649,25 +730,41 @@ function Header({
                 AI Job Assistant
               </span>
             </h1>
-            {profileName && (
-              <p className="text-[11px] text-slate-500">{profileName}</p>
+            {profileName ? (
+              <p className="text-[11px] font-medium text-emerald-600 flex items-center gap-1">
+                <CheckCircle className="w-3 h-3 inline" /> {profileName}
+              </p>
+            ) : (
+              <p className="text-[11px] text-slate-400">2,500+ Verified Roles</p>
             )}
           </div>
         </div>
       </div>
 
-      <button
-        onClick={onOpenDrawer}
-        className="px-3.5 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold flex items-center gap-1.5 transition-all shadow-xs"
-      >
-        <Briefcase className="w-3.5 h-3.5" />
-        <span>Applied Jobs</span>
-        {appliedCount > 0 && (
-          <span className="w-4 h-4 rounded-full bg-white text-indigo-700 text-[10px] font-bold flex items-center justify-center">
-            {appliedCount}
-          </span>
+      <div className="flex items-center gap-2">
+        {onUploadClick && (
+          <button
+            onClick={onUploadClick}
+            className="px-3 py-1.5 rounded-xl border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50/50 text-slate-700 hover:text-indigo-600 text-xs font-semibold flex items-center gap-1.5 transition-all"
+            title="Attach Resume (PDF/DOCX)"
+          >
+            <Paperclip className="w-3.5 h-3.5" />
+            <span className="hidden sm:inline">Upload Resume</span>
+          </button>
         )}
-      </button>
+        <button
+          onClick={onOpenDrawer}
+          className="px-3.5 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold flex items-center gap-1.5 transition-all shadow-xs"
+        >
+          <Briefcase className="w-3.5 h-3.5" />
+          <span>Applied Jobs</span>
+          {appliedCount > 0 && (
+            <span className="w-4 h-4 rounded-full bg-white text-indigo-700 text-[10px] font-bold flex items-center justify-center">
+              {appliedCount}
+            </span>
+          )}
+        </button>
+      </div>
     </header>
   );
 }

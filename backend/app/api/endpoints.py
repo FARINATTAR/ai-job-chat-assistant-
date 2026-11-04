@@ -53,7 +53,7 @@ def direct_apply(
     return {
         "success": True,
         "is_duplicate": not is_new,
-        "message": f"Successfully applied to {job.title} at {job.company}!" if is_new else f"You already applied to {job.title} at {job.company}.",
+        "message": f"Application recorded for {job.title} at {job.company} (Status: APPLIED)." if is_new else f"You already applied to {job.title} at {job.company}.",
         "application": record.model_dump()
     }
 

@@ -129,7 +129,7 @@ async def test_orchestrator_chat_stream_recommend_and_apply(orchestrator):
 
     apply_output = "".join(apply_events)
     assert "ApplicationManager" in apply_output
-    assert "Successfully applied" in apply_output
+    assert "Application Recorded" in apply_output
 
     # 3. Duplicate apply to job 1
     dup_events = []

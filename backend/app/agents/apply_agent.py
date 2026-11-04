@@ -100,18 +100,27 @@ class ApplyAgent:
             return ApplicationResult(
                 success=True,
                 is_duplicate=True,
-                message=f"You already submitted an application for **{job.title}** at **{job.company}** on {applied_date}. Status: **{record.status}**.",
+                message=(
+                    f"⚠️ **Already Applied:** You previously submitted an application for **{job.title}** at **{job.company}** on {applied_date}.\n\n"
+                    f"- **Status:** `{record.status}`\n"
+                    f"- **Notice:** Duplicate submissions are prevented."
+                ),
                 application=record
             )
 
         resume_note = ""
         if not session.resume_profile:
-            resume_note = " *(Tip: You can drop your resume anytime to attach full CV details).* "
+            resume_note = "\n- *(Tip: Attach your resume in chat anytime to update your candidate profile).*"
 
         return ApplicationResult(
             success=True,
             is_duplicate=False,
-            message=f"✅ Successfully applied to **{job.title}** at **{job.company}**! Your application has been recorded in the tracker.{resume_note}",
+            message=(
+                f"✅ **Application Recorded!** Your profile has been submitted for **{job.title}** at **{job.company}**.\n\n"
+                f"- **Status:** `{record.status}` | **Job ID:** `{job.id}`\n"
+                f"- **Tracking:** Saved to your 'Applied Jobs' drawer\n"
+                f"- **Official Posting:** [View Role on {job.source or 'Portal'}]({job.source_url}){resume_note}"
+            ),
             application=record
         )
 
