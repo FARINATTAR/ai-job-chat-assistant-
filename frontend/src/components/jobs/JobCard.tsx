@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { CheckCircle2, ExternalLink, MapPin, Briefcase, Sparkles, Send, Check } from "lucide-react";
 import { JobMatch } from "@/lib/api";
 
@@ -13,6 +13,12 @@ interface JobCardProps {
 export const JobCard: React.FC<JobCardProps> = ({ match, onApply, isApplied = false }) => {
   const [applying, setApplying] = useState(false);
   const [applied, setApplied] = useState(isApplied);
+
+  useEffect(() => {
+    if (isApplied) {
+      setApplied(true);
+    }
+  }, [isApplied]);
 
   const { job, match_score, match_reasons, matched_skills, missing_skills, index } = match;
 

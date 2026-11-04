@@ -14,6 +14,7 @@ import {
   CheckCircle,
   ArrowLeft,
   ArrowRight,
+  Paperclip,
 } from "lucide-react";
 import { getSessionId, API_BASE_URL, JobMatch, ResumeProfile, uploadResume, applyToJobDirect } from "@/lib/api";
 import { JobCard } from "@/components/jobs/JobCard";
@@ -58,6 +59,7 @@ export default function Home() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [appliedJobIds, setAppliedJobIds] = useState<Set<string>>(new Set());
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const chatFileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     setSessionId(getSessionId());
@@ -66,6 +68,54 @@ export default function Home() {
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, isStreaming]);
+
+  // ─── In-Chat Resume Upload ───────────────────────────
+  const handleFileUploadInChat = async (file: File) => {
+    setUploading(true);
+    const userMsgId = String(Date.now());
+    const botMsgId = String(Date.now() + 1);
+
+    setMessages((prev) => [
+      ...prev,
+      {
+        id: userMsgId,
+        role: "user",
+        content: `📎 Uploaded resume: ${file.name}`,
+      },
+      {
+        id: botMsgId,
+        role: "assistant",
+        content: "Parsing your resume and extracting technical skills, experience, and designation...",
+      },
+    ]);
+
+    try {
+      const data = await uploadResume(file, sessionId);
+      if (data?.profile) {
+        setCurrentProfile(data.profile);
+        const p = data.profile;
+        const skillsList = p.skills?.slice(0, 8).join(", ") || "General Tech";
+        const parseSummary = `✅ **Resume parsed successfully!**\n\n- **Candidate:** ${p.name || "Candidate"}\n- **Designation:** ${p.designation || "Software Engineer"}\n- **Experience:** ${p.years_of_experience || 0} years\n- **Identified Skills:** ${skillsList}\n\nFinding top matching jobs for your profile...`;
+
+        setMessages((prev) =>
+          prev.map((m) => (m.id === botMsgId ? { ...m, content: parseSummary } : m))
+        );
+
+        // Auto trigger recommendations for the newly uploaded resume
+        await handleSendMessage("recommend matching jobs for my uploaded resume");
+      }
+    } catch (err: any) {
+      setMessages((prev) =>
+        prev.map((m) =>
+          m.id === botMsgId
+            ? { ...m, content: `❌ Could not parse resume: ${err.message || "Unreadable file format. Please upload PDF or DOCX."}` }
+            : m
+        )
+      );
+    } finally {
+      setUploading(false);
+    }
+  };
 
   // ─── Resume Upload ────────────────────────────────────
   const handleFileUpload = async (file: File) => {
@@ -271,6 +321,20 @@ export default function Home() {
                 <span>{uploadError}</span>
               </div>
             )}
+
+            <div className="text-center pt-2">
+              <button
+                onClick={() => {
+                  setStep("chat");
+                  if (messages.length === 0) {
+                    handleSendMessage("hi");
+                  }
+                }}
+                className="text-sm font-semibold text-indigo-600 hover:text-indigo-700 hover:underline transition-colors"
+              >
+                Or explore jobs directly through chat without resume →
+              </button>
+            </div>
           </div>
         </div>
 
@@ -507,6 +571,24 @@ export default function Home() {
             onSubmit={(e) => { e.preventDefault(); handleSendMessage(); }}
             className="flex items-center gap-2 max-w-4xl mx-auto"
           >
+            <input
+              ref={chatFileInputRef}
+              type="file"
+              accept=".pdf,.docx,.doc"
+              className="hidden"
+              onChange={(e) => {
+                if (e.target.files?.[0]) handleFileUploadInChat(e.target.files[0]);
+              }}
+            />
+            <button
+              type="button"
+              onClick={() => chatFileInputRef.current?.click()}
+              disabled={isStreaming || uploading}
+              className="p-2.5 rounded-xl border border-slate-200 text-slate-500 hover:text-indigo-600 hover:border-indigo-300 hover:bg-indigo-50/50 transition-colors shrink-0"
+              title="Upload resume (PDF or DOCX) in chat"
+            >
+              <Paperclip className="w-4 h-4" />
+            </button>
             <input
               type="text"
               value={inputMessage}
