@@ -7819,7 +7819,7 @@
     "source": "LinkedIn",
     "domain": "Software Engineering",
     "posted_at": "2026-10-22",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "li_real_2530902",
@@ -10013,7 +10013,7 @@
     "source": "Jobfound",
     "domain": "Engineering and Development",
     "posted_at": "2026-11-02T18:03:38.054Z",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "jf_6ae8d07700113b5a84bf",
@@ -10464,7 +10464,7 @@
     "source": "Jobfound",
     "domain": "Software Engineer",
     "posted_at": "2026-11-02T15:16:29.711Z",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "jf_6ae8a93f0006d5c76fce",
@@ -10612,7 +10612,7 @@
     "source": "Jobfound",
     "domain": "Software Engineer",
     "posted_at": "2026-11-02T15:14:59.383Z",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "jf_6ae885550036fdead1de",
@@ -11079,7 +11079,7 @@
     "source": "Jobfound",
     "domain": "Data Analyst",
     "posted_at": "2026-11-02T01:25:48.661Z",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "jf_6ae7e6860030b34bef66",
@@ -11604,7 +11604,7 @@
     "source": "Jobfound",
     "domain": "Engineering and Development",
     "posted_at": "2026-11-01T06:27:08.752Z",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "jf_6ae6dbbb0016b80a5dc9",
@@ -12024,7 +12024,7 @@
     "source": "Jobfound",
     "domain": "Software Engineer",
     "posted_at": "2026-11-01T04:43:54.747Z",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "jf_6ae6c36700228928766d",
@@ -12409,7 +12409,7 @@
     "source": "Jobfound",
     "domain": "Software Engineering",
     "posted_at": "2026-11-01T04:17:40.515Z",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "jf_6ae6bd5a001c746c50b7",
@@ -12550,7 +12550,7 @@
     "source": "Jobfound",
     "domain": "Software Engineer",
     "posted_at": "2026-11-01T04:16:29.970Z",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "jf_6ae6bd0d002270118d15",
@@ -12628,7 +12628,7 @@
     "source": "Jobfound",
     "domain": "Engineering and Development",
     "posted_at": "2026-10-31T19:09:43.637Z",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "jf_6ae63cf60012ee660c8a",
@@ -12766,7 +12766,7 @@
     "source": "Jobfound",
     "domain": "Engineering and Development",
     "posted_at": "2026-10-31T19:09:34.309Z",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "jf_6ae5eec400252b38f83c",
@@ -12816,7 +12816,7 @@
     "source": "Jobfound",
     "domain": "Engineering",
     "posted_at": "2026-10-31T13:35:58.694Z",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "jf_6ae5ee33000cc5052c7b",
@@ -12936,7 +12936,7 @@
     "source": "Jobfound",
     "domain": "Software Engineer",
     "posted_at": "2026-10-31T07:48:48.298Z",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "jf_6ae59d56001454689168",
@@ -13308,7 +13308,7 @@
     "source": "Jobfound",
     "domain": "Engineering and Development",
     "posted_at": "2026-10-31T06:09:58.658Z",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "jf_6ae5863300316908fb67",
@@ -14271,7 +14271,7 @@
     "source": "Jobfound",
     "domain": "Quality Assurance",
     "posted_at": "2026-10-31T01:25:39.265Z",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "jf_6ae5437f000d0a8eee1b",
@@ -14544,7 +14544,7 @@
     "source": "Jobfound",
     "domain": "Software Engineer",
     "posted_at": "2026-10-31T01:22:37.884Z",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "jf_6ae542d500063b49293b",
@@ -14822,7 +14822,7 @@
     "source": "Jobfound",
     "domain": "Engineering and Development",
     "posted_at": "2026-10-30T15:56:29.318Z",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "jf_6ae4be2a0018af0dbbb2",
@@ -14938,7 +14938,7 @@
     "source": "Jobfound",
     "domain": "Engineering and Development",
     "posted_at": "2026-10-30T15:56:19.070Z",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "jf_6ae4be200009c6d51182",
@@ -15186,7 +15186,7 @@
     "source": "Jobfound",
     "domain": "Engineering and Development",
     "posted_at": "2026-10-30T15:55:54.523Z",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "jf_6ae4be09000a848344f8",
@@ -15330,7 +15330,7 @@
     "source": "Jobfound",
     "domain": "Engineering and Development",
     "posted_at": "2026-10-30T15:55:44.591Z",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "jf_6ae4bdfd002ee47d3851",
@@ -15604,7 +15604,7 @@
     "source": "Jobfound",
     "domain": "Engineering and Development",
     "posted_at": "2026-10-30T15:55:11.765Z",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "jf_6ae4bddc0035fa658e5b",
@@ -16053,7 +16053,7 @@
     "source": "Jobfound",
     "domain": "Software Engineer",
     "posted_at": "2026-10-30T05:51:09.229Z",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "jf_6ae43042003e66c115d2",
@@ -16141,7 +16141,7 @@
     "source": "Jobfound",
     "domain": "Data Management",
     "posted_at": "2026-10-30T01:37:04.639Z",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "jf_6ae3f49c00054a5716e4",
@@ -16465,7 +16465,7 @@
     "source": "Jobfound",
     "domain": "Engineering and Development",
     "posted_at": "2026-10-29T19:18:59.101Z",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "jf_6ae39c21002978bfc140",
@@ -16803,7 +16803,7 @@
     "source": "Jobfound",
     "domain": "Engineering Operations",
     "posted_at": "2026-10-29T12:21:51.741Z",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "jf_6ae33a49002a3955c0b0",
@@ -16853,7 +16853,7 @@
     "source": "Jobfound",
     "domain": "Software Engineer",
     "posted_at": "2026-10-29T05:57:06.288Z",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "jf_6ae2e02c0021112c0c86",
@@ -16902,7 +16902,7 @@
     "source": "Jobfound",
     "domain": "Software Engineer",
     "posted_at": "2026-10-29T05:57:00.132Z",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "jf_6ae2e0140018da543146",
@@ -16927,7 +16927,7 @@
     "source": "Jobfound",
     "domain": "Software Engineer",
     "posted_at": "2026-10-29T05:56:36.158Z",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "jf_6ae2e0040009d1189f51",
@@ -17293,7 +17293,7 @@
     "source": "Jobfound",
     "domain": "Software Engineering",
     "posted_at": "2026-10-29T03:59:46.209Z",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "jf_6ae2c48d003897d0a996",
@@ -17368,7 +17368,7 @@
     "source": "Jobfound",
     "domain": "Actuarial",
     "posted_at": "2026-10-29T03:57:21.891Z",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "jf_6ae2c3f50001525ed27b",
@@ -17393,7 +17393,7 @@
     "source": "Jobfound",
     "domain": "Data Analysis",
     "posted_at": "2026-10-29T03:56:36.764Z",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "jf_6ae2c3e50024b7a79e63",
@@ -17418,7 +17418,7 @@
     "source": "Jobfound",
     "domain": "Software Engineer",
     "posted_at": "2026-10-29T03:56:21.272Z",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "jf_6ae2c3da000a94e17d29",
@@ -17443,7 +17443,7 @@
     "source": "Jobfound",
     "domain": "Software Engineer",
     "posted_at": "2026-10-29T03:56:09.926Z",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "jf_6ae2b8790033e70f602b",
@@ -37281,7 +37281,7 @@
     "source": "LinkedIn",
     "domain": "Engineering and Development",
     "posted_at": "2026-11-01T06:27:14.976Z",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "jf_6ae6dbc10028b492813e",
@@ -43424,7 +43424,7 @@
     "source": "LinkedIn",
     "domain": "Internship",
     "posted_at": "2026-10-30T16:40:15.018Z",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "jf_6ae4c86b002a93ff9343",
@@ -43451,7 +43451,7 @@
     "source": "LinkedIn",
     "domain": "Internship",
     "posted_at": "2026-10-30T16:40:11.443Z",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "jf_6ae4c867001ec5a63c27",

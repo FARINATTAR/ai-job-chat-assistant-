@@ -13,6 +13,7 @@ interface JobCardProps {
 export const JobCard: React.FC<JobCardProps> = ({ match, onApply, isApplied = false }) => {
   const [applying, setApplying] = useState(false);
   const [applied, setApplied] = useState(isApplied);
+  const [showAllSkills, setShowAllSkills] = useState(false);
 
   useEffect(() => {
     if (isApplied) {
@@ -53,9 +54,9 @@ export const JobCard: React.FC<JobCardProps> = ({ match, onApply, isApplied = fa
               <span className="text-xs font-mono font-bold px-2 py-0.5 rounded-md bg-slate-100 text-slate-600 border border-slate-200">
                 Job #{index}
               </span>
-              <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center gap-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                Active & Open
+              <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 border border-slate-200 flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                Verified
               </span>
               {job.remote && (
                 <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">
@@ -115,8 +116,8 @@ export const JobCard: React.FC<JobCardProps> = ({ match, onApply, isApplied = fa
         {/* Matched Skills Tags */}
         {matched_skills && matched_skills.length > 0 && (
           <div className="mb-4">
-            <div className="flex flex-wrap gap-1.5 mt-1">
-              {matched_skills.slice(0, 5).map((skill, i) => (
+            <div className="flex flex-wrap gap-1.5 mt-1 items-center">
+              {(showAllSkills ? matched_skills : matched_skills.slice(0, 5)).map((skill, i) => (
                 <span
                   key={i}
                   className="text-[11px] px-2 py-0.5 rounded-md bg-indigo-50 text-indigo-700 border border-indigo-200/70 font-medium"
@@ -125,9 +126,13 @@ export const JobCard: React.FC<JobCardProps> = ({ match, onApply, isApplied = fa
                 </span>
               ))}
               {matched_skills.length > 5 && (
-                <span className="text-[10px] text-slate-500 self-center">
-                  +{matched_skills.length - 5} more
-                </span>
+                <button
+                  type="button"
+                  onClick={() => setShowAllSkills(!showAllSkills)}
+                  className="text-[10px] font-semibold text-indigo-600 hover:text-indigo-800 hover:underline px-1 py-0.5 rounded transition-colors"
+                >
+                  {showAllSkills ? "Show less" : `+${matched_skills.length - 5} more`}
+                </button>
               )}
             </div>
           </div>
