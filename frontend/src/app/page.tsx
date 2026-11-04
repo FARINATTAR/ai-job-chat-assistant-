@@ -17,6 +17,8 @@ import { ResumeUploader } from "@/components/resume/ResumeUploader";
 import { JobCard } from "@/components/jobs/JobCard";
 import { AgentTraceBadge, AgentTraceEvent } from "@/components/chat/AgentTraceBadge";
 import { AppliedJobsDrawer } from "@/components/applications/AppliedJobsDrawer";
+import { MarkdownRenderer } from "@/components/chat/MarkdownRenderer";
+import { WelcomeHero } from "@/components/chat/WelcomeHero";
 
 interface ChatMessage {
   id: string;
@@ -351,75 +353,93 @@ export default function Home() {
         {/* Right Column: Chat Window */}
         <main className="lg:col-span-8 flex flex-col h-full bg-slate-50/70 overflow-hidden">
           {/* Messages Area */}
-          <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4">
-            {messages.map((msg) => (
-              <div
-                key={msg.id}
-                className={`flex gap-3 max-w-3xl ${msg.role === "user" ? "ml-auto flex-row-reverse" : "mr-auto"}`}
-              >
-                {/* Avatar */}
+          <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-5">
+            {messages.map((msg) => {
+              // Special rich Welcome Hero for the initial greeting
+              if (msg.id === "init") {
+                return (
+                  <WelcomeHero
+                    key={msg.id}
+                    onSelectPrompt={(prompt) => handleSendMessage(prompt)}
+                    hasResume={!!currentProfile}
+                    totalJobs={backendStatus.jobs_loaded}
+                  />
+                );
+              }
+
+              return (
                 <div
-                  className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 text-xs font-bold shadow-xs ${
-                    msg.role === "user"
-                      ? "bg-indigo-600 text-white"
-                      : "bg-white text-indigo-600 border border-slate-200"
-                  }`}
+                  key={msg.id}
+                  className={`flex gap-3 max-w-3xl ${msg.role === "user" ? "ml-auto flex-row-reverse" : "mr-auto"}`}
                 >
-                  {msg.role === "user" ? <User className="w-4 h-4" /> : <Bot className="w-4 h-4" />}
-                </div>
+                  {/* Avatar */}
+                  <div
+                    className={`w-7 h-7 rounded-xl flex items-center justify-center shrink-0 text-xs font-bold shadow-xs ${
+                      msg.role === "user"
+                        ? "bg-indigo-600 text-white"
+                        : "bg-white text-indigo-600 border border-indigo-100 shadow-xs"
+                    }`}
+                  >
+                    {msg.role === "user" ? <User className="w-4 h-4" /> : <Bot className="w-4 h-4" />}
+                  </div>
 
-                {/* Message Body */}
-                <div className="space-y-3 max-w-[85%] sm:max-w-[90%]">
-                  {/* Trace badge on assistant messages */}
-                  {msg.traceEvents && msg.traceEvents.length > 0 && (
-                    <AgentTraceBadge events={msg.traceEvents} isStreaming={false} />
-                  )}
+                  {/* Message Body */}
+                  <div className="space-y-3 max-w-[85%] sm:max-w-[90%]">
+                    {/* Trace badge on assistant messages */}
+                    {msg.traceEvents && msg.traceEvents.length > 0 && (
+                      <AgentTraceBadge events={msg.traceEvents} isStreaming={false} />
+                    )}
 
-                  {msg.content && (
-                    <div
-                      className={`p-3.5 sm:p-4 rounded-2xl text-xs sm:text-sm whitespace-pre-wrap leading-relaxed shadow-sm ${
-                        msg.role === "user"
-                          ? "bg-indigo-600 text-white rounded-tr-none font-medium"
-                          : "bg-white border border-slate-200/90 text-slate-800 rounded-tl-none"
-                      }`}
-                    >
-                      {msg.content}
-                    </div>
-                  )}
-
-                  {/* Render Job Cards if available */}
-                  {msg.jobResults && msg.jobResults.length > 0 && (
-                    <div className="space-y-3 pt-2">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                        {msg.jobResults.map((match) => (
-                          <JobCard
-                            key={match.job.id}
-                            match={match}
-                            onApply={handleApplyToJob}
-                            isApplied={appliedJobIds.has(match.job.id)}
-                          />
-                        ))}
+                    {msg.content && (
+                      <div
+                        className={`p-4 rounded-2xl text-xs sm:text-sm leading-relaxed shadow-xs ${
+                          msg.role === "user"
+                            ? "bg-indigo-600 text-white rounded-tr-none font-medium whitespace-pre-wrap"
+                            : "bg-white border border-slate-200/90 text-slate-800 rounded-tl-none"
+                        }`}
+                      >
+                        {msg.role === "user" ? (
+                          msg.content
+                        ) : (
+                          <MarkdownRenderer content={msg.content} />
+                        )}
                       </div>
+                    )}
 
-                      {/* Pagination: Load Next 10 Jobs */}
-                      <div className="flex items-center justify-between pt-1 text-xs">
-                        <span className="text-[11px] text-slate-500">
-                          Showing {msg.jobResults.length} positions
-                        </span>
-                        <button
-                          type="button"
-                          onClick={() => handleSendMessage("next")}
-                          disabled={isStreaming}
-                          className="px-3.5 py-1.5 rounded-xl bg-white hover:bg-indigo-50 text-indigo-700 hover:text-indigo-800 border border-indigo-200/90 text-xs font-semibold flex items-center gap-1.5 transition-all shadow-xs"
-                        >
-                          <span>Load Next 10 Jobs ⏩</span>
-                        </button>
+                    {/* Render Job Cards if available */}
+                    {msg.jobResults && msg.jobResults.length > 0 && (
+                      <div className="space-y-3 pt-2">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                          {msg.jobResults.map((match) => (
+                            <JobCard
+                              key={match.job.id}
+                              match={match}
+                              onApply={handleApplyToJob}
+                              isApplied={appliedJobIds.has(match.job.id)}
+                            />
+                          ))}
+                        </div>
+
+                        {/* Pagination: Load Next 10 Jobs */}
+                        <div className="flex items-center justify-between pt-1 text-xs">
+                          <span className="text-[11px] text-slate-500">
+                            Showing {msg.jobResults.length} positions
+                          </span>
+                          <button
+                            type="button"
+                            onClick={() => handleSendMessage("next")}
+                            disabled={isStreaming}
+                            className="px-3.5 py-1.5 rounded-xl bg-white hover:bg-indigo-50 text-indigo-700 hover:text-indigo-800 border border-indigo-200/90 text-xs font-semibold flex items-center gap-1.5 transition-all shadow-xs"
+                          >
+                            <span>Load Next 10 Jobs ⏩</span>
+                          </button>
+                        </div>
                       </div>
-                    </div>
-                  )}
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
 
             {/* Live Streaming Trace Badge */}
             {isStreaming && currentTrace.length > 0 && (
