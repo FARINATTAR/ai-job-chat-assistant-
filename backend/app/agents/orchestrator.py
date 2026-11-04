@@ -299,10 +299,10 @@ class OrchestratorAgent:
 
             criteria_str = " (" + ", ".join(filter_summary) + ")" if filter_summary else ""
             zero_match_msg = (
-                f"I couldn't find any additional job listings currently matching your criteria{criteria_str}.\n\n"
-                "💡 **Suggestions:**\n"
-                "- Say *'reset filters'* to view all recommendations from the beginning.\n"
-                "- Try searching another source (e.g., *'show Arbeitnow jobs'* or *'show LinkedIn jobs'*)."
+                f"No additional jobs found matching your criteria{criteria_str}.\n\n"
+                "Suggestions:\n"
+                "- Type 'reset' to view all recommendations from the beginning.\n"
+                "- Try searching another source (e.g. 'show Arbeitnow jobs' or 'show LinkedIn jobs')."
             )
             session.history.append({"role": "assistant", "content": zero_match_msg})
             yield StreamEmitter.token(zero_match_msg)
@@ -318,18 +318,16 @@ class OrchestratorAgent:
         cards_payload = [m.model_dump() for m in matches]
         yield StreamEmitter.job_results(cards_payload)
 
-        # Text stream response explaining the recommendations
+        # Clean, concise response without duplicating card details
         page_num = session.active_filters.page
-        text_resp = f"Here are **matching positions #{matches[0].index} to #{matches[-1].index}** (Page {page_num}):\n\n"
-        for m in matches:
-            source_tag = f"[{m.job.source}] " if getattr(m.job, 'source', None) else ""
-            text_resp += (
-                f"**Job {m.index}: {source_tag}{m.job.title}** at **{m.job.company}**\n"
-                f"- Match Score: `{m.match_score}%` | Location: {m.job.location} ({'Remote' if m.job.remote else 'Onsite'})\n"
-                f"- Key Match: {m.match_reasons[0] if m.match_reasons else 'Aligned with your skills'}\n\n"
-            )
-        text_resp += f"💡 **Want to see more jobs?** Type *'next'* or click **Load More Jobs** below to view the next 10 roles!\n"
-        text_resp += f"👉 To apply, say *'apply to job {matches[0].index}'* or click the **Apply** button on any card."
+        count = len(matches)
+        source_str = f" from {session.active_filters.source}" if session.active_filters.source else ""
+        company_str = f" at {session.active_filters.company}" if session.active_filters.company else ""
+        
+        if page_num > 1:
+            text_resp = f"Showing next {count} positions (Page {page_num}):"
+        else:
+            text_resp = f"Found {count} matching roles{company_str}{source_str} for your profile:"
 
         session.history.append({"role": "assistant", "content": text_resp})
         yield StreamEmitter.token(text_resp)
