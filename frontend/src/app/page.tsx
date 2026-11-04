@@ -5,17 +5,14 @@ import {
   Send,
   Briefcase,
   Sparkles,
-  RefreshCw,
-  Cpu,
+  RotateCcw,
   Bot,
   User,
-  CheckCircle2,
   Filter,
 } from "lucide-react";
 import { getSessionId, checkBackendHealth, API_BASE_URL, JobMatch, ResumeProfile, applyToJobDirect } from "@/lib/api";
 import { ResumeUploader } from "@/components/resume/ResumeUploader";
 import { JobCard } from "@/components/jobs/JobCard";
-import { AgentTraceBadge, AgentTraceEvent } from "@/components/chat/AgentTraceBadge";
 import { AppliedJobsDrawer } from "@/components/applications/AppliedJobsDrawer";
 import { MarkdownRenderer } from "@/components/chat/MarkdownRenderer";
 import { WelcomeHero } from "@/components/chat/WelcomeHero";
@@ -25,7 +22,6 @@ interface ChatMessage {
   role: "user" | "assistant";
   content: string;
   jobResults?: JobMatch[];
-  traceEvents?: AgentTraceEvent[];
 }
 
 export default function Home() {
@@ -41,11 +37,10 @@ export default function Home() {
   const [currentProfile, setCurrentProfile] = useState<ResumeProfile | null>(null);
   const [backendStatus, setBackendStatus] = useState<{ status: string; jobs_loaded: number }>({
     status: "checking",
-    jobs_loaded: 0,
+    jobs_loaded: 2075,
   });
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [appliedJobIds, setAppliedJobIds] = useState<Set<string>>(new Set());
-  const [currentTrace, setCurrentTrace] = useState<AgentTraceEvent[]>([]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -57,11 +52,7 @@ export default function Home() {
       {
         id: "init",
         role: "assistant",
-        content:
-          "👋 Welcome! I am your **AI Job Chat Assistant**.\n\n" +
-          "1. **Upload your resume** (PDF or DOCX) on the left to get started.\n" +
-          "2. I'll auto-extract your skills and designation to recommend the best matching jobs from our 1,600+ verified software engineering dataset.\n" +
-          "3. You can naturally refine searches (*'show remote roles'*, *'jobs needing Python'*) and apply (*'apply to job 1'* or click Quick Apply).",
+        content: "Welcome! Upload your resume or explore verified jobs below.",
       },
     ]);
 
@@ -71,7 +62,7 @@ export default function Home() {
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages, isStreaming, currentTrace]);
+  }, [messages, isStreaming]);
 
   const handleSendMessage = async (customMessage?: string) => {
     const textToSend = (customMessage || inputMessage).trim();
@@ -90,9 +81,7 @@ export default function Home() {
     ]);
 
     setIsStreaming(true);
-    setCurrentTrace([]);
 
-    const traceAcc: AgentTraceEvent[] = [];
     let assistantText = "";
     let receivedJobs: JobMatch[] | undefined = undefined;
 
@@ -135,34 +124,7 @@ export default function Home() {
             parsedData = JSON.parse(rawData);
           } catch {}
 
-          const nowTime = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" });
-
-          if (eventType === "agent_start") {
-            traceAcc.push({
-              type: "start",
-              agent: parsedData.agent || "Orchestrator",
-              thought: parsedData.thought,
-              timestamp: nowTime,
-            });
-            setCurrentTrace([...traceAcc]);
-          } else if (eventType === "agent_handoff") {
-            traceAcc.push({
-              type: "handoff",
-              agent: parsedData.from_agent || "Orchestrator",
-              to_agent: parsedData.to_agent || "SubAgent",
-              thought: parsedData.reason,
-              timestamp: nowTime,
-            });
-            setCurrentTrace([...traceAcc]);
-          } else if (eventType === "agent_thought") {
-            traceAcc.push({
-              type: "thought",
-              agent: parsedData.agent || "Orchestrator",
-              thought: parsedData.thought,
-              timestamp: nowTime,
-            });
-            setCurrentTrace([...traceAcc]);
-          } else if (eventType === "job_results") {
+          if (eventType === "job_results") {
             receivedJobs = parsedData.jobs;
           } else if (eventType === "token") {
             assistantText += parsedData.content || "";
@@ -173,7 +135,6 @@ export default function Home() {
                       ...m,
                       content: assistantText,
                       jobResults: receivedJobs,
-                      traceEvents: [...traceAcc],
                     }
                   : m
               )
@@ -194,7 +155,6 @@ export default function Home() {
       );
     } finally {
       setIsStreaming(false);
-      setCurrentTrace([]);
     }
   };
 
@@ -218,51 +178,63 @@ export default function Home() {
     }
   };
 
+  const handleResetChat = () => {
+    setMessages([
+      {
+        id: "init",
+        role: "assistant",
+        content: "Welcome! Upload your resume or explore verified jobs below.",
+      },
+    ]);
+  };
+
   return (
-    <div className="flex flex-col h-screen bg-slate-50 text-slate-800">
+    <div className="flex flex-col h-screen bg-slate-50 text-slate-800 antialiased">
       {/* Top Navigation */}
-      <header className="px-4 sm:px-6 py-3 border-b border-slate-200/90 bg-white/90 backdrop-blur-md flex items-center justify-between shrink-0 shadow-xs">
+      <header className="px-4 sm:px-6 py-3 border-b border-slate-200/90 bg-white/95 backdrop-blur-md flex items-center justify-between shrink-0 shadow-xs">
         <div className="flex items-center gap-2.5">
           <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-600 flex items-center justify-center shadow-md shadow-indigo-500/20">
             <Sparkles className="w-4 h-4 text-white" />
           </div>
           <div>
             <h1 className="text-sm font-bold tracking-tight text-slate-900 flex items-center gap-2">
-              Hidani Tech <span className="text-slate-400 font-normal hidden sm:inline">| AI Job Chat Assistant</span>
+              Hidani Tech
+              <span className="px-2 py-0.5 rounded-full bg-indigo-50 border border-indigo-200/80 text-indigo-700 text-[10px] font-semibold">
+                AI Job Assistant
+              </span>
             </h1>
-            <p className="text-[10px] text-slate-500">Multi-Agent SDE Intern Assessment</p>
           </div>
         </div>
 
-        <div className="flex items-center gap-3">
-          {/* Backend Status indicator */}
-          <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-100 border border-slate-200 text-[11px] text-slate-700 font-medium">
-            <span
-              className={`w-2 h-2 rounded-full ${
-                backendStatus.status === "healthy" ? "bg-emerald-500 animate-pulse" : "bg-amber-500"
-              }`}
-            />
-            <span className="hidden sm:inline">
-              {backendStatus.jobs_loaded > 0
-                ? `${backendStatus.jobs_loaded.toLocaleString()} Real Jobs`
-                : "Connecting..."}
-            </span>
-          </div>
+        <div className="flex items-center gap-2.5">
+          {/* Reset Chat Button */}
+          <button
+            onClick={handleResetChat}
+            title="Reset conversation"
+            className="p-2 rounded-xl text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors"
+          >
+            <RotateCcw className="w-4 h-4" />
+          </button>
 
           {/* Applied Jobs Button */}
           <button
             onClick={() => setIsDrawerOpen(true)}
-            className="px-3.5 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold flex items-center gap-1.5 transition-all shadow-sm"
+            className="px-3.5 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold flex items-center gap-1.5 transition-all shadow-xs"
           >
             <Briefcase className="w-3.5 h-3.5" />
             <span>Applied Jobs</span>
+            {appliedJobIds.size > 0 && (
+              <span className="w-4 h-4 rounded-full bg-white text-indigo-700 text-[10px] font-bold flex items-center justify-center">
+                {appliedJobIds.size}
+              </span>
+            )}
           </button>
         </div>
       </header>
 
-      {/* Main Grid: Left Sidebar + Right Chat */}
+      {/* Main Layout: Left Sidebar + Right Chat */}
       <div className="flex-1 grid grid-cols-1 lg:grid-cols-12 overflow-hidden">
-        {/* Left Column: Resume Profile & Quick Filters */}
+        {/* Left Column: Profile & Quick Controls */}
         <aside className="lg:col-span-4 border-r border-slate-200 bg-white p-4 overflow-y-auto space-y-4 hidden lg:block">
           <ResumeUploader
             sessionId={sessionId}
@@ -273,79 +245,54 @@ export default function Home() {
             currentProfile={currentProfile}
           />
 
-          {/* Experience Filter Selector */}
-          <div className="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs space-y-2.5 text-xs">
-            <p className="text-[11px] font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
-              <Sparkles className="w-3.5 h-3.5 text-amber-500" /> Filter by Experience Level
-            </p>
-            <div className="grid grid-cols-2 gap-1.5 pt-0.5">
-              {[
-                { label: "🎓 Fresher (0-1 yr)", query: "Show jobs for freshers (0-1 yr)" },
-                { label: "💼 Mid-Level (2-4 yrs)", query: "Show jobs for 2-4 years experience" },
-                { label: "🚀 Senior (5+ yrs)", query: "Show senior developer roles (5+ yrs)" },
-                { label: "🌐 All Experience", query: "Show jobs across all experience levels" },
-              ].map((item, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => handleSendMessage(item.query)}
-                  disabled={isStreaming}
-                  className="px-2.5 py-1.5 rounded-xl bg-slate-50 hover:bg-indigo-50 hover:text-indigo-700 hover:border-indigo-300 border border-slate-200 text-slate-700 transition-all text-[11px] font-medium text-left shadow-xs"
-                >
-                  {item.label}
-                </button>
-              ))}
+          {/* Unified Clean Filter Card */}
+          <div className="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs space-y-3.5 text-xs">
+            {/* Experience Level */}
+            <div className="space-y-1.5">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500">
+                Experience Level
+              </span>
+              <div className="grid grid-cols-2 gap-1.5 pt-0.5">
+                {[
+                  { label: "All Experience", q: "Show jobs across all experience levels" },
+                  { label: "🎓 Fresher (0-1 yr)", q: "Show jobs for freshers (0-1 yr)" },
+                  { label: "💼 Mid (2-4 yrs)", q: "Show jobs for 2-4 years experience" },
+                  { label: "🚀 Senior (5+ yrs)", q: "Show senior developer roles (5+ yrs)" },
+                ].map((item, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => handleSendMessage(item.q)}
+                    disabled={isStreaming}
+                    className="px-2.5 py-1.5 rounded-xl bg-slate-50 hover:bg-indigo-50 hover:text-indigo-700 hover:border-indigo-300 border border-slate-200 text-slate-700 transition-all text-[11px] font-medium text-left shadow-xs"
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
             </div>
-          </div>
 
-          {/* Job Board / Source Selector */}
-          <div className="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs space-y-2.5 text-xs">
-            <p className="text-[11px] font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
-              <Briefcase className="w-3.5 h-3.5 text-emerald-600" /> Filter by Job Source
-            </p>
-            <div className="grid grid-cols-2 gap-1.5 pt-0.5">
-              {[
-                { label: "🌐 All Sources (2,075)", query: "Show jobs across all sources" },
-                { label: "💼 LinkedIn (1,221)", query: "Show LinkedIn jobs" },
-                { label: "🇩🇪 Arbeitnow (493)", query: "Show Arbeitnow jobs" },
-                { label: "⚡ Remotive (10)", query: "Show Remotive jobs" },
-              ].map((item, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => handleSendMessage(item.query)}
-                  disabled={isStreaming}
-                  className="px-2.5 py-1.5 rounded-xl bg-slate-50 hover:bg-emerald-50 hover:text-emerald-700 hover:border-emerald-300 border border-slate-200 text-slate-700 transition-all text-[11px] font-medium text-left shadow-xs"
-                >
-                  {item.label}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Quick Search Chips */}
-          <div className="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs space-y-2 text-xs">
-            <p className="text-[11px] font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
-              <Filter className="w-3.5 h-3.5 text-indigo-600" /> Conversational Refinements
-            </p>
-            <div className="flex flex-wrap gap-1.5 pt-1">
-              {[
-                "Recommend matching jobs",
-                "Show next 10 jobs",
-                "Show Arbeitnow jobs",
-                "Show only remote roles",
-                "Jobs needing Python",
-                "Jobs needing React",
-                "Show my applied jobs",
-                "Reset all filters",
-              ].map((chip, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => handleSendMessage(chip)}
-                  disabled={isStreaming}
-                  className="px-2.5 py-1 rounded-lg bg-slate-50 hover:bg-indigo-50 hover:text-indigo-700 hover:border-indigo-300 border border-slate-200 text-slate-700 transition-all text-[11px] font-medium shadow-xs"
-                >
-                  {chip}
-                </button>
-              ))}
+            {/* Source */}
+            <div className="space-y-1.5 pt-2 border-t border-slate-100">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500">
+                Job Source
+              </span>
+              <div className="grid grid-cols-2 gap-1.5 pt-0.5">
+                {[
+                  { label: "🌐 All Sources", q: "Show jobs across all sources" },
+                  { label: "💼 LinkedIn", q: "Show LinkedIn jobs" },
+                  { label: "🇩🇪 Arbeitnow", q: "Show Arbeitnow jobs" },
+                  { label: "⚡ Remotive", q: "Show Remotive jobs" },
+                ].map((item, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => handleSendMessage(item.q)}
+                    disabled={isStreaming}
+                    className="px-2.5 py-1.5 rounded-xl bg-slate-50 hover:bg-emerald-50 hover:text-emerald-700 hover:border-emerald-300 border border-slate-200 text-slate-700 transition-all text-[11px] font-medium text-left shadow-xs"
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </aside>
@@ -353,9 +300,9 @@ export default function Home() {
         {/* Right Column: Chat Window */}
         <main className="lg:col-span-8 flex flex-col h-full bg-slate-50/70 overflow-hidden">
           {/* Messages Area */}
-          <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-5">
+          <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4">
             {messages.map((msg) => {
-              // Special rich Welcome Hero for the initial greeting
+              // Rich Hero Onboarding when conversation starts
               if (msg.id === "init") {
                 return (
                   <WelcomeHero
@@ -385,11 +332,6 @@ export default function Home() {
 
                   {/* Message Body */}
                   <div className="space-y-3 max-w-[85%] sm:max-w-[90%]">
-                    {/* Trace badge on assistant messages */}
-                    {msg.traceEvents && msg.traceEvents.length > 0 && (
-                      <AgentTraceBadge events={msg.traceEvents} isStreaming={false} />
-                    )}
-
                     {msg.content && (
                       <div
                         className={`p-4 rounded-2xl text-xs sm:text-sm leading-relaxed shadow-xs ${
@@ -441,10 +383,11 @@ export default function Home() {
               );
             })}
 
-            {/* Live Streaming Trace Badge */}
-            {isStreaming && currentTrace.length > 0 && (
-              <div className="max-w-xl mr-auto pl-10">
-                <AgentTraceBadge events={currentTrace} isStreaming={true} />
+            {/* Clean Streaming Indicator */}
+            {isStreaming && (
+              <div className="flex items-center gap-2 text-slate-500 text-xs pl-10 py-1">
+                <span className="w-2 h-2 rounded-full bg-indigo-600 animate-pulse" />
+                <span className="font-medium">Finding best job matches...</span>
               </div>
             )}
 
@@ -452,20 +395,19 @@ export default function Home() {
           </div>
 
           {/* Bottom Chat Input Bar */}
-          <div className="p-3 sm:p-4 border-t border-slate-200/90 bg-white/90 backdrop-blur-md space-y-2.5 shadow-xs">
-            {/* Quick Filter Ribbon */}
+          <div className="p-3 sm:p-4 border-t border-slate-200/90 bg-white/95 backdrop-blur-md space-y-2.5 shadow-xs">
+            {/* Clean Quick Ribbon */}
             <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar max-w-4xl mx-auto pb-0.5 text-[11px]">
               <span className="text-slate-400 font-semibold text-[10px] uppercase shrink-0 flex items-center gap-1">
                 <Filter className="w-3 h-3 text-indigo-600" /> Quick:
               </span>
               {[
-                { label: "⏩ Next 10 Jobs", q: "Show next 10 jobs" },
-                { label: "💼 LinkedIn", q: "Show LinkedIn jobs" },
-                { label: "🇩🇪 Arbeitnow", q: "Show Arbeitnow jobs" },
-                { label: "⚡ Remotive", q: "Show Remotive jobs" },
-                { label: "🎓 Fresher (0-1 yr)", q: "Show jobs for freshers (0-1 yr)" },
+                { label: "🎓 Freshers Only", q: "Show jobs for freshers (0-1 yr)" },
                 { label: "🏠 Remote Only", q: "Show only remote roles" },
-                { label: "🔄 Reset Filters", q: "Reset all filters" },
+                { label: "🇩🇪 Arbeitnow", q: "Show Arbeitnow jobs" },
+                { label: "💼 LinkedIn", q: "Show LinkedIn jobs" },
+                { label: "⏩ Next 10 Jobs", q: "Show next 10 jobs" },
+                { label: "🔄 Reset", q: "Reset all filters" },
               ].map((btn, idx) => (
                 <button
                   key={idx}
@@ -520,4 +462,3 @@ export default function Home() {
     </div>
   );
 }
-

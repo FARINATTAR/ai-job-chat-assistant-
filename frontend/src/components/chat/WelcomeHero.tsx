@@ -47,17 +47,17 @@ export const WelcomeHero: React.FC<WelcomeHeroProps> = ({
       <div className="space-y-2">
         <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-indigo-50 border border-indigo-200/80 text-indigo-700 text-[11px] font-semibold tracking-wide uppercase">
           <Sparkles className="w-3.5 h-3.5 text-indigo-600" />
-          <span>AI Multi-Agent Job Assistant</span>
+          <span>AI Job Assistant</span>
         </div>
         <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900">
           Find Your Next Engineering Opportunity
         </h2>
         <p className="text-xs sm:text-sm text-slate-600 max-w-2xl leading-relaxed">
-          Upload your resume on the left sidebar to automatically extract your skills, or explore over{" "}
+          Upload your resume on the left sidebar to automatically match your skills, or explore over{" "}
           <span className="font-semibold text-slate-900">
             {totalJobs > 0 ? totalJobs.toLocaleString() : "2,000+"} verified active jobs
           </span>{" "}
-          from LinkedIn, Arbeitnow, and Remotive with transparent match reasoning.
+          from LinkedIn, Arbeitnow, and Remotive with instant relevance scoring.
         </p>
       </div>
 
@@ -89,7 +89,7 @@ export const WelcomeHero: React.FC<WelcomeHeroProps> = ({
           </div>
           <h3 className="text-xs font-bold text-slate-900">3. Quick Apply</h3>
           <p className="text-[11px] text-slate-500 leading-normal">
-            One-click apply or chat naturally to refine results and view agent reasoning traces.
+            One-click apply or chat naturally to discover and filter relevant jobs.
           </p>
         </div>
       </div>
