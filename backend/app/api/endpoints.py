@@ -3,7 +3,7 @@ FastAPI route definitions for health, applications, resume upload, and chat.
 """
 from typing import List, Dict, Any, Optional
 from pydantic import BaseModel
-from fastapi import APIRouter, Depends, HTTPException, UploadFile, File, status
+from fastapi import APIRouter, Depends, HTTPException, UploadFile, File, status, Header
 from fastapi.responses import StreamingResponse
 from ..models.schemas import ApplicationRecord, ResumeProfile, ChatRequest
 from ..repositories.job_repo import JobRepository, get_job_repository
