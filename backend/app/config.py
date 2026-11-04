@@ -20,6 +20,9 @@ class Settings(BaseSettings):
     OPENAI_API_KEY: str = ""
     DEFAULT_LLM_PROVIDER: str = "gemini"
 
+    # Job aggregation / RapidAPI configuration
+    RAPIDAPI_KEY: str = ""
+
     # Data file paths (relative to backend or absolute)
     BASE_DIR: str = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     JOBS_DATA_PATH: str = os.path.join(os.path.dirname(BASE_DIR), "data", "jobs.json")

@@ -39,6 +39,19 @@ def fetch_live_job_batch(target_per_source: int = 50) -> List[Dict[str, Any]]:
     except Exception as e:
         print(f"[JobRefresher] Arbeitnow sync error: {e}")
 
+    # 3. JSearch (Live MNC roles from LinkedIn / Indeed / Glassdoor)
+    try:
+        from scraper.skill_extractor import SkillExtractor
+        from scraper.jsearch_source import JSearchSource
+        from ..config import settings
+
+        extractor = SkillExtractor()
+        jsearch = JSearchSource(api_key=settings.RAPIDAPI_KEY, extractor=extractor)
+        js_jobs = jsearch.fetch_jobs(target_count=target_per_source)
+        all_fresh.extend(js_jobs)
+    except Exception as e:
+        print(f"[JobRefresher] JSearch sync error: {e}")
+
     return all_fresh
 
 
