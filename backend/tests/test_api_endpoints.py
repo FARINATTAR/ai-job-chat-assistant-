@@ -25,3 +25,4 @@ def test_report_closed_job_endpoint():
     # Report an invalid job ID
     response = client.post("/api/jobs/invalid_job_99999/report-closed")
     assert response.status_code == 404
+

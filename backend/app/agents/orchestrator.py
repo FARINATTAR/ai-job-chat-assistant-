@@ -253,7 +253,7 @@ class OrchestratorAgent:
                 "Hello! I am your **AI Job Chat Assistant**.\n\n"
                 "Here is how I can assist you:\n"
                 "1. **Upload your resume** (PDF or DOCX) so I can parse your skills, designation, and experience.\n"
-                "2. Ask me to **recommend matching jobs** from our dataset of over 2,500 verified roles.\n"
+                "2. Ask me to **recommend matching jobs** from our dataset of over 2,800 verified roles.\n"
                 "3. **Refine naturally** by saying *'show only remote roles'* or *'jobs needing React'*.\n"
                 "4. **Apply seamlessly** by saying *'apply to job 2'*.\n"
                 "5. **Track applications** anytime by asking *'show my applied jobs'*.\n\n"

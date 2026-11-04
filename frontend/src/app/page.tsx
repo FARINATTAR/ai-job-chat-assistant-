@@ -632,7 +632,7 @@ export default function Home() {
                   <Sparkles className="w-3.5 h-3.5 text-indigo-600" />
                   <span>AI Job Assistant</span>
                   <span className="text-indigo-300">•</span>
-                  <span className="text-slate-600 font-normal">2,500+ Verified Roles</span>
+                  <span className="text-slate-600 font-normal">2,800+ Verified Roles</span>
                 </div>
 
                 <div className="space-y-2">
@@ -905,7 +905,7 @@ function Header({
                 <CheckCircle className="w-3 h-3 inline" /> {profileName}
               </p>
             ) : (
-              <p className="text-[11px] text-slate-400">2,500+ Verified Roles</p>
+              <p className="text-[11px] text-slate-400">2,800+ Verified Roles</p>
             )}
           </div>
         </div>
