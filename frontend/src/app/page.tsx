@@ -5,7 +5,6 @@ import {
   Send,
   Briefcase,
   Sparkles,
-  RotateCcw,
   Bot,
   User,
   UploadCloud,
@@ -16,7 +15,7 @@ import {
   ArrowLeft,
   ArrowRight,
 } from "lucide-react";
-import { getSessionId, checkBackendHealth, API_BASE_URL, JobMatch, ResumeProfile, uploadResume, applyToJobDirect } from "@/lib/api";
+import { getSessionId, API_BASE_URL, JobMatch, ResumeProfile, uploadResume, applyToJobDirect } from "@/lib/api";
 import { JobCard } from "@/components/jobs/JobCard";
 import { AppliedJobsDrawer } from "@/components/applications/AppliedJobsDrawer";
 import { MarkdownRenderer } from "@/components/chat/MarkdownRenderer";
