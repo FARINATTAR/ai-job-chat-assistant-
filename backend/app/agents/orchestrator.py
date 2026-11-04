@@ -244,10 +244,10 @@ class OrchestratorAgent:
         if tool_name == "greet_user":
             yield StreamEmitter.agent_thought("Orchestrator", "Responding to greeting.")
             greeting_msg = (
-                "👋 Hello! I'm your **AI Job Chat Assistant**.\n\n"
+                "Hello! I am your **AI Job Chat Assistant**.\n\n"
                 "Here is how I can assist you:\n"
                 "1. **Upload your resume** (PDF or DOCX) so I can parse your skills, designation, and experience.\n"
-                "2. Ask me to **recommend matching jobs** from our dataset of over 1,600 verified roles.\n"
+                "2. Ask me to **recommend matching jobs** from our dataset of over 2,500 verified roles.\n"
                 "3. **Refine naturally** by saying *'show only remote roles'* or *'jobs needing React'*.\n"
                 "4. **Apply seamlessly** by saying *'apply to job 2'*.\n"
                 "5. **Track applications** anytime by asking *'show my applied jobs'*.\n\n"
@@ -277,7 +277,7 @@ class OrchestratorAgent:
                     "Ask me to recommend jobs or say *'show remote jobs'* to get started!"
                 )
             else:
-                msg = f"📋 You have applied to **{len(applied_jobs)}** role{'s' if len(applied_jobs) != 1 else ''}:\n\n"
+                msg = f"You have applied to **{len(applied_jobs)}** role{'s' if len(applied_jobs) != 1 else ''}:\n\n"
                 for idx, app in enumerate(applied_jobs, start=1):
                     applied_date = app.applied_at[:10] if app.applied_at else "Recently"
                     msg += (

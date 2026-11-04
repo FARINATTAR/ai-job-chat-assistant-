@@ -81,3 +81,4 @@ async def periodic_job_refresher(stop_event: asyncio.Event, interval_seconds: in
             pass
 
     print("[JobRefresher] Background sync worker stopped cleanly.")
+

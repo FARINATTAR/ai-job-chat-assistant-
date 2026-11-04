@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { AlertCircle, Info } from "lucide-react";
 
 interface MarkdownRendererProps {
   content: string;
@@ -19,10 +20,10 @@ export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, cla
         const trimmed = block.trim();
         if (!trimmed) return null;
 
-        // Check if block is a callout / suggestions block (e.g. starting with 💡, ⚠️, or >)
-        if (trimmed.startsWith("💡") || trimmed.startsWith("⚠️") || trimmed.startsWith(">")) {
-          const isWarning = trimmed.startsWith("⚠️");
-          const cleanedText = trimmed.replace(/^[💡⚠️>]\s*/, "");
+        // Check if block is a callout / suggestions block
+        if (trimmed.startsWith(">") || trimmed.startsWith("Note:") || trimmed.startsWith("Tip:")) {
+          const isWarning = trimmed.toLowerCase().includes("warning") || trimmed.toLowerCase().includes("alert");
+          const cleanedText = trimmed.replace(/^[>]\s*/, "");
           return (
             <div
               key={bIdx}
@@ -32,8 +33,12 @@ export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, cla
                   : "bg-indigo-50/60 border-indigo-100 text-indigo-950"
               }`}
             >
-              <span className="text-base leading-none select-none shrink-0">
-                {isWarning ? "⚠️" : "💡"}
+              <span className="shrink-0 mt-0.5">
+                {isWarning ? (
+                  <AlertCircle className="w-4 h-4 text-amber-600" />
+                ) : (
+                  <Info className="w-4 h-4 text-indigo-600" />
+                )}
               </span>
               <div className="space-y-1 flex-1">
                 {cleanedText.split("\n").map((line, lIdx) => (

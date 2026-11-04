@@ -56,7 +56,7 @@ class ApplyAgent:
         if not session.resume_profile:
             return ApplicationResult(
                 success=False,
-                message="⚠️ Please upload your resume (PDF/DOCX) on the left first so your qualifications can be attached to the application!"
+                message="Please upload your resume (PDF/DOCX) on the left first so your qualifications can be attached to the application!"
             )
 
         # 2. Resolve reference to actual Job ID
@@ -101,7 +101,7 @@ class ApplyAgent:
                 success=True,
                 is_duplicate=True,
                 message=(
-                    f"⚠️ **Already Applied:** You previously submitted an application for **{job.title}** at **{job.company}** on {applied_date}.\n\n"
+                    f"**Already Applied:** You previously submitted an application for **{job.title}** at **{job.company}** on {applied_date}.\n\n"
                     f"- **Status:** `{record.status}`\n"
                     f"- **Notice:** Duplicate submissions are prevented."
                 ),
@@ -116,7 +116,7 @@ class ApplyAgent:
             success=True,
             is_duplicate=False,
             message=(
-                f"✅ **Application Recorded!** Your profile has been submitted for **{job.title}** at **{job.company}**.\n\n"
+                f"**Application Recorded:** Your profile has been submitted for **{job.title}** at **{job.company}**.\n\n"
                 f"- **Status:** `{record.status}` | **Job ID:** `{job.id}`\n"
                 f"- **Tracking:** Saved to your 'Applied Jobs' drawer\n"
                 f"- **Official Posting:** [View Role on {job.source or 'Portal'}]({job.source_url}){resume_note}"

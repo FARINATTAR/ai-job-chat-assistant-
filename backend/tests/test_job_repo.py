@@ -67,3 +67,4 @@ def test_job_repo_upsert_and_deduplication(tmp_path):
     added_similar = repo.upsert_jobs(similar_job)
     assert added_similar == 0
     assert repo.total_count == 2
+

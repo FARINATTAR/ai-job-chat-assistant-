@@ -12,9 +12,14 @@ import {
   Loader2,
   AlertCircle,
   CheckCircle,
+  CheckCircle2,
   ArrowLeft,
   ArrowRight,
   Paperclip,
+  Globe,
+  Zap,
+  Code2,
+  Building2,
 } from "lucide-react";
 import { getSessionId, API_BASE_URL, JobMatch, ResumeProfile, uploadResume, applyToJobDirect } from "@/lib/api";
 import { JobCard } from "@/components/jobs/JobCard";
@@ -89,7 +94,7 @@ export default function Home() {
       {
         id: userMsgId,
         role: "user",
-        content: `📎 Uploaded resume: ${file.name}`,
+        content: `Uploaded resume: ${file.name}`,
       },
       {
         id: botMsgId,
@@ -104,7 +109,7 @@ export default function Home() {
         setCurrentProfile(data.profile);
         const p = data.profile;
         const skillsList = p.skills?.slice(0, 8).join(", ") || "General Tech";
-        const parseSummary = `✅ **Resume parsed successfully!**\n\n- **Candidate:** ${p.name || "Candidate"}\n- **Designation:** ${p.designation || "Software Engineer"}\n- **Experience:** ${p.years_of_experience || 0} years\n- **Identified Skills:** ${skillsList}\n\nFinding top matching jobs for your profile...`;
+        const parseSummary = `**Resume parsed successfully**\n\n- **Candidate:** ${p.name || "Candidate"}\n- **Designation:** ${p.designation || "Software Engineer"}\n- **Experience:** ${p.years_of_experience || 0} years\n- **Identified Skills:** ${skillsList}\n\nFinding top matching jobs for your profile...`;
 
         setMessages((prev) =>
           prev.map((m) => (m.id === botMsgId ? { ...m, content: parseSummary } : m))
@@ -117,7 +122,7 @@ export default function Home() {
       setMessages((prev) =>
         prev.map((m) =>
           m.id === botMsgId
-            ? { ...m, content: `❌ Could not parse resume: ${err.message || "Unreadable file format. Please upload PDF or DOCX."}` }
+            ? { ...m, content: `Could not parse resume: ${err.message || "Unreadable file format. Please upload PDF or DOCX."}` }
             : m
         )
       );
@@ -501,147 +506,181 @@ export default function Home() {
       />
 
       <main className="flex-1 flex flex-col overflow-hidden">
-        {/* Messages */}
-        <div className="flex-1 overflow-y-auto px-4 sm:px-6 py-5 space-y-4 max-w-4xl w-full mx-auto">
-          {messages.length === 0 && (
-            <div className="py-8 sm:py-12 px-4 max-w-2xl mx-auto text-center space-y-6">
-              <div className="w-16 h-16 rounded-3xl bg-gradient-to-tr from-indigo-600 to-violet-600 text-white flex items-center justify-center mx-auto shadow-lg shadow-indigo-100">
-                <Bot className="w-8 h-8" />
-              </div>
-              <div className="space-y-2">
-                <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
-                  AI Job Chat Assistant
-                </h2>
-                <p className="text-sm sm:text-base text-slate-600">
-                  Drop your resume to get instant grounded recommendations from over 2,500 real engineering roles, or explore positions directly through conversation.
-                </p>
-              </div>
+        {/* Messages scroll viewport: full-width so no vertical gray scrollbar line cuts through desktop */}
+        <div className="flex-1 overflow-y-auto">
+          <div className="px-4 sm:px-6 py-6 space-y-5 max-w-4xl w-full mx-auto">
+            {messages.length === 0 && (
+              <div className="py-6 sm:py-10 px-4 max-w-2xl mx-auto text-center space-y-6">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100/80 text-xs font-semibold text-indigo-700 shadow-xs">
+                  <Sparkles className="w-3.5 h-3.5 text-indigo-600" />
+                  <span>AI Job Assistant</span>
+                  <span className="text-indigo-300">•</span>
+                  <span className="text-slate-600 font-normal">2,500+ Verified Roles</span>
+                </div>
 
-              {/* Drag and Drop Box in Welcome Screen */}
+                <div className="space-y-2">
+                  <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                    Find and explore engineering roles
+                  </h2>
+                  <p className="text-sm sm:text-base text-slate-600 max-w-lg mx-auto">
+                    Upload your resume to get instant grounded recommendations, or explore opportunities directly through conversation.
+                  </p>
+                </div>
+
+                {/* Drag and Drop Box in Welcome Screen */}
+                <div
+                  onDragOver={(e) => { e.preventDefault(); setIsDragging(true); }}
+                  onDragLeave={() => setIsDragging(false)}
+                  onDrop={(e) => {
+                    e.preventDefault();
+                    setIsDragging(false);
+                    if (e.dataTransfer.files?.[0]) handleFileUploadInChat(e.dataTransfer.files[0]);
+                  }}
+                  onClick={() => chatFileInputRef.current?.click()}
+                  className={`border-2 border-dashed rounded-2xl p-6 sm:p-7 text-center cursor-pointer transition-all ${
+                    isDragging
+                      ? "border-indigo-500 bg-indigo-50/80"
+                      : "border-slate-300 hover:border-indigo-400 bg-white hover:bg-indigo-50/20 shadow-xs"
+                  }`}
+                >
+                  <div className="flex flex-col items-center gap-2.5">
+                    <div className="w-11 h-11 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center border border-indigo-100">
+                      <UploadCloud className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-slate-900">
+                        Drop your resume here or click to browse
+                      </p>
+                      <p className="text-xs text-slate-500 mt-0.5">Supports PDF or DOCX format</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Quick Action Suggestion Chips - Professional Lucide Icons, Zero Emojis */}
+                <div className="space-y-2.5 text-left pt-2">
+                  <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider text-center">
+                    Or start with a conversational query
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    {[
+                      {
+                        icon: Globe,
+                        iconColor: "text-indigo-600 bg-indigo-50 border border-indigo-100",
+                        label: "Remote developer roles",
+                        query: "show only remote roles",
+                      },
+                      {
+                        icon: Zap,
+                        iconColor: "text-amber-600 bg-amber-50 border border-amber-100",
+                        label: "Entry-level / Fresher jobs (0-1 yr)",
+                        query: "show fresher and entry level software jobs",
+                      },
+                      {
+                        icon: Code2,
+                        iconColor: "text-emerald-600 bg-emerald-50 border border-emerald-100",
+                        label: "Roles needing React & TypeScript",
+                        query: "jobs needing React and TypeScript",
+                      },
+                      {
+                        icon: Building2,
+                        iconColor: "text-violet-600 bg-violet-50 border border-violet-100",
+                        label: "Top tech companies (Google, Meta)",
+                        query: "show software engineer jobs at Google, Meta, or Amazon",
+                      },
+                    ].map((chip) => {
+                      const IconComp = chip.icon;
+                      return (
+                        <button
+                          key={chip.query}
+                          onClick={() => handleSendMessage(chip.query)}
+                          className="p-3 rounded-xl border border-slate-200 bg-white hover:border-indigo-300 hover:bg-indigo-50/40 text-xs sm:text-sm font-medium text-slate-700 text-left transition-all flex items-center justify-between group shadow-xs hover:shadow-sm"
+                        >
+                          <div className="flex items-center gap-2.5">
+                            <div className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 ${chip.iconColor}`}>
+                              <IconComp className="w-3.5 h-3.5" />
+                            </div>
+                            <span className="font-medium text-slate-800">{chip.label}</span>
+                          </div>
+                          <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-indigo-600 group-hover:translate-x-0.5 transition-all shrink-0 ml-2" />
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {messages.map((msg) => (
               <div
-                onDragOver={(e) => { e.preventDefault(); setIsDragging(true); }}
-                onDragLeave={() => setIsDragging(false)}
-                onDrop={(e) => {
-                  e.preventDefault();
-                  setIsDragging(false);
-                  if (e.dataTransfer.files?.[0]) handleFileUploadInChat(e.dataTransfer.files[0]);
-                }}
-                onClick={() => chatFileInputRef.current?.click()}
-                className={`border-2 border-dashed rounded-2xl p-6 sm:p-8 text-center cursor-pointer transition-all ${
-                  isDragging
-                    ? "border-indigo-500 bg-indigo-50/80"
-                    : "border-slate-300 hover:border-indigo-400 bg-white hover:bg-indigo-50/20 shadow-xs"
-                }`}
+                key={msg.id}
+                id={`msg-${msg.id}`}
+                className={`flex gap-3 ${msg.role === "user" ? "justify-end" : "justify-start"}`}
               >
-                <div className="flex flex-col items-center gap-3">
-                  <div className="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center">
-                    <UploadCloud className="w-6 h-6" />
+                {msg.role === "assistant" && (
+                  <div className="w-7 h-7 rounded-xl bg-white text-indigo-600 border border-indigo-100 flex items-center justify-center shrink-0 shadow-xs">
+                    <Bot className="w-4 h-4" />
                   </div>
-                  <div>
-                    <p className="text-sm font-semibold text-slate-900">
-                      Drop your resume here or click to browse
-                    </p>
-                    <p className="text-xs text-slate-500 mt-0.5">Supports PDF or DOCX format</p>
-                  </div>
-                </div>
-              </div>
+                )}
 
-              {/* Quick Action Suggestion Chips */}
-              <div className="space-y-2 text-left">
-                <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider text-center">
-                  Or start with a conversational query
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  {[
-                    { label: "🌍 Show remote developer roles", query: "show only remote roles" },
-                    { label: "⚡ Entry-level / Fresher jobs (0-1 yr)", query: "show fresher and entry level software jobs" },
-                    { label: "⚛️ Roles needing React & TypeScript", query: "jobs needing React and TypeScript" },
-                    { label: "🏢 Top tech companies (Google, Meta)", query: "show software engineer jobs at Google, Meta, or Amazon" },
-                  ].map((chip) => (
-                    <button
-                      key={chip.query}
-                      onClick={() => handleSendMessage(chip.query)}
-                      className="p-3 rounded-xl border border-slate-200 bg-white hover:border-indigo-300 hover:bg-indigo-50/40 text-xs sm:text-sm font-medium text-slate-700 text-left transition-all flex items-center justify-between group"
+                <div className={`max-w-[80%] space-y-3`}>
+                  {msg.content && (
+                    <div
+                      className={`p-4 rounded-2xl text-sm leading-relaxed ${
+                        msg.role === "user"
+                          ? "bg-indigo-600 text-white rounded-tr-sm"
+                          : "bg-white border border-slate-200 text-slate-800 rounded-tl-sm shadow-xs"
+                      }`}
                     >
-                      <span>{chip.label}</span>
-                      <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-indigo-600 group-hover:translate-x-0.5 transition-all" />
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </div>
-          )}
-
-          {messages.map((msg) => (
-            <div
-              key={msg.id}
-              id={`msg-${msg.id}`}
-              className={`flex gap-3 ${msg.role === "user" ? "justify-end" : "justify-start"}`}
-            >
-              {msg.role === "assistant" && (
-                <div className="w-7 h-7 rounded-xl bg-white text-indigo-600 border border-indigo-100 flex items-center justify-center shrink-0 shadow-xs">
-                  <Bot className="w-4 h-4" />
-                </div>
-              )}
-
-              <div className={`max-w-[80%] space-y-3`}>
-                {msg.content && (
-                  <div
-                    className={`p-4 rounded-2xl text-sm leading-relaxed ${
-                      msg.role === "user"
-                        ? "bg-indigo-600 text-white rounded-tr-sm"
-                        : "bg-white border border-slate-200 text-slate-800 rounded-tl-sm shadow-xs"
-                    }`}
-                  >
-                    {msg.role === "user" ? msg.content : <MarkdownRenderer content={msg.content} />}
-                  </div>
-                )}
-
-                {msg.jobResults && msg.jobResults.length > 0 && (
-                  <div className="space-y-3 pt-1">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                      {msg.jobResults.map((match) => (
-                        <JobCard
-                          key={match.job.id}
-                          match={match}
-                          onApply={handleApplyToJob}
-                          isApplied={appliedJobIds.has(match.job.id)}
-                        />
-                      ))}
+                      {msg.role === "user" ? msg.content : <MarkdownRenderer content={msg.content} />}
                     </div>
-                    <div className="flex items-center justify-between text-xs">
-                      <span className="text-slate-500">
-                        Showing {msg.jobResults.length} positions
-                      </span>
-                      <button
-                        type="button"
-                        onClick={() => handleSendMessage("next")}
-                        disabled={isStreaming}
-                        className="px-3 py-1.5 rounded-xl bg-white hover:bg-indigo-50 text-indigo-700 border border-indigo-200 text-xs font-semibold transition-all shadow-xs"
-                      >
-                        Load Next 10 Jobs
-                      </button>
+                  )}
+
+                  {msg.jobResults && msg.jobResults.length > 0 && (
+                    <div className="space-y-3 pt-1">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        {msg.jobResults.map((match) => (
+                          <JobCard
+                            key={match.job.id}
+                            match={match}
+                            onApply={handleApplyToJob}
+                            isApplied={appliedJobIds.has(match.job.id)}
+                          />
+                        ))}
+                      </div>
+                      <div className="flex items-center justify-between text-xs">
+                        <span className="text-slate-500">
+                          Showing {msg.jobResults.length} positions
+                        </span>
+                        <button
+                          type="button"
+                          onClick={() => handleSendMessage("next")}
+                          disabled={isStreaming}
+                          className="px-3 py-1.5 rounded-xl bg-white hover:bg-indigo-50 text-indigo-700 border border-indigo-200 text-xs font-semibold transition-all shadow-xs"
+                        >
+                          Load Next 10 Jobs
+                        </button>
+                      </div>
                     </div>
+                  )}
+                </div>
+
+                {msg.role === "user" && (
+                  <div className="w-7 h-7 rounded-xl bg-indigo-600 text-white flex items-center justify-center shrink-0 shadow-xs">
+                    <User className="w-4 h-4" />
                   </div>
                 )}
               </div>
+            ))}
 
-              {msg.role === "user" && (
-                <div className="w-7 h-7 rounded-xl bg-indigo-600 text-white flex items-center justify-center shrink-0 shadow-xs">
-                  <User className="w-4 h-4" />
-                </div>
-              )}
-            </div>
-          ))}
+            {isStreaming && (
+              <div className="flex items-center gap-2 text-slate-500 text-sm pl-10 py-1">
+                <span className="w-2 h-2 rounded-full bg-indigo-600 animate-pulse" />
+                <span>Finding matching jobs...</span>
+              </div>
+            )}
 
-          {isStreaming && (
-            <div className="flex items-center gap-2 text-slate-500 text-sm pl-10 py-1">
-              <span className="w-2 h-2 rounded-full bg-indigo-600 animate-pulse" />
-              <span>Finding matching jobs...</span>
-            </div>
-          )}
-
-          <div ref={messagesEndRef} />
+            <div ref={messagesEndRef} />
+          </div>
         </div>
 
         {/* Input Bar */}
