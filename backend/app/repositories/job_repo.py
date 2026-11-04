@@ -155,6 +155,23 @@ class JobRepository:
 
         return added
 
+    def mark_job_inactive(self, job_id: str) -> bool:
+        """Mark a job as inactive/expired in memory and persist to data/jobs.json."""
+        job = self._jobs_by_id.get(job_id)
+        if not job:
+            return False
+
+        job.is_active = False
+
+        try:
+            with open(self.json_path, "w", encoding="utf-8") as f:
+                json.dump([j.model_dump() for j in self._jobs], f, indent=2, ensure_ascii=False)
+            print(f"[JobRepository] Job {job_id} ({job.title} at {job.company}) marked as inactive.")
+            return True
+        except Exception as e:
+            print(f"[JobRepository] Error updating job status: {e}")
+            return False
+
 
 # Global singleton instance
 _job_repository_instance: Optional[JobRepository] = None

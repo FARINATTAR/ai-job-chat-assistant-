@@ -68,3 +68,32 @@ def test_job_repo_upsert_and_deduplication(tmp_path):
     assert added_similar == 0
     assert repo.total_count == 2
 
+
+def test_job_repo_mark_inactive(tmp_path):
+    test_json = tmp_path / "test_jobs.json"
+    test_json.write_text("[]", encoding="utf-8")
+
+    repo = JobRepository(json_path=str(test_json))
+    batch = [
+        {
+            "id": "job_to_deactivate",
+            "title": "Backend Intern",
+            "company": "Tech Corp",
+            "location": "Remote",
+            "remote": True,
+            "skills": ["Python"],
+            "experience_required": 0,
+            "source_url": "https://example.com/expired",
+        }
+    ]
+    repo.upsert_jobs(batch)
+    assert repo.get_by_id("job_to_deactivate").is_active is True
+
+    # Mark as inactive
+    ok = repo.mark_job_inactive("job_to_deactivate")
+    assert ok is True
+    assert repo.get_by_id("job_to_deactivate").is_active is False
+
+    # Deactivating unknown job returns False
+    assert repo.mark_job_inactive("non_existent_id") is False
+

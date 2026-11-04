@@ -58,6 +58,22 @@ def direct_apply(
     }
 
 
+@router.post("/jobs/{job_id}/report-closed", tags=["Jobs"])
+def report_closed_job(
+    job_id: str,
+    job_repo: JobRepository = Depends(get_job_repository)
+):
+    """Allows candidates to report an expired or filled role, deactivating it platform-wide."""
+    success = job_repo.mark_job_inactive(job_id)
+    if not success:
+        raise HTTPException(status_code=404, detail="Job not found or already deactivated")
+    return {
+        "success": True,
+        "message": "Job marked as closed/inactive. It will no longer be recommended to users.",
+        "job_id": job_id
+    }
+
+
 @router.post("/chat", tags=["Chat"])
 async def chat_stream(
     request: ChatRequest,

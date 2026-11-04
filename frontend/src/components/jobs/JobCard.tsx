@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { CheckCircle2, ExternalLink, MapPin, Briefcase, Sparkles, Send, Check } from "lucide-react";
-import { JobMatch } from "@/lib/api";
+import { JobMatch, reportClosedJobDirect } from "@/lib/api";
 
 interface JobCardProps {
   match: JobMatch;
@@ -14,6 +14,7 @@ export const JobCard: React.FC<JobCardProps> = ({ match, onApply, isApplied = fa
   const [applying, setApplying] = useState(false);
   const [applied, setApplied] = useState(isApplied);
   const [showAllSkills, setShowAllSkills] = useState(false);
+  const [isReportedClosed, setIsReportedClosed] = useState(false);
 
   useEffect(() => {
     if (isApplied) {
@@ -22,6 +23,16 @@ export const JobCard: React.FC<JobCardProps> = ({ match, onApply, isApplied = fa
   }, [isApplied]);
 
   const { job, match_score, match_reasons, matched_skills, missing_skills, index } = match;
+
+  const handleReportClosed = async () => {
+    if (isReportedClosed) return;
+    try {
+      await reportClosedJobDirect(job.id);
+      setIsReportedClosed(true);
+    } catch (e) {
+      console.error("Report closed error:", e);
+    }
+  };
 
   const handleApply = async () => {
     if (applied || applying) return;
@@ -141,29 +152,47 @@ export const JobCard: React.FC<JobCardProps> = ({ match, onApply, isApplied = fa
 
       {/* Action Buttons */}
       <div className="pt-3 border-t border-slate-100 flex items-center justify-between gap-2 mt-auto">
-        {job.source_url ? (
-          <a
-            href={job.source_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs text-slate-500 hover:text-indigo-600 font-medium flex items-center gap-1 transition-colors"
-          >
-            Original Job <ExternalLink className="w-3 h-3" />
-          </a>
-        ) : (
-          <div />
-        )}
+        <div className="flex items-center gap-3">
+          {job.source_url && (
+            <a
+              href={job.source_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-slate-500 hover:text-indigo-600 font-medium flex items-center gap-1 transition-colors"
+            >
+              Original Job <ExternalLink className="w-3 h-3" />
+            </a>
+          )}
+          {isReportedClosed ? (
+            <span className="text-[11px] text-amber-600 font-semibold bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
+              Reported Closed
+            </span>
+          ) : (
+            <button
+              type="button"
+              onClick={handleReportClosed}
+              className="text-[11px] text-slate-400 hover:text-rose-600 transition-colors cursor-pointer"
+              title="Report if this job is filled or no longer accepting applications"
+            >
+              Report Closed
+            </button>
+          )}
+        </div>
 
         <button
           onClick={handleApply}
-          disabled={applied || applying}
+          disabled={applied || applying || isReportedClosed}
           className={`px-4 py-2 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-all shadow-sm ${
-            applied
+            isReportedClosed
+              ? "bg-slate-200 text-slate-400 cursor-not-allowed"
+              : applied
               ? "bg-emerald-600 text-white cursor-default"
               : "bg-indigo-600 hover:bg-indigo-700 text-white hover:shadow-indigo-500/20"
           }`}
         >
-          {applied ? (
+          {isReportedClosed ? (
+            <>Closed</>
+          ) : applied ? (
             <>
               <Check className="w-3.5 h-3.5" /> Applied
             </>

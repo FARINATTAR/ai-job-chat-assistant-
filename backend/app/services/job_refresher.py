@@ -42,6 +42,33 @@ def fetch_live_job_batch(target_per_source: int = 50) -> List[Dict[str, Any]]:
     return all_fresh
 
 
+def check_expired_jobs(sample_size: int = 20) -> int:
+    """
+    Lightweight health-check on a subset of active jobs to identify expired links (404/410).
+    Runs synchronously inside a background worker thread.
+    """
+    import urllib.request
+    repo = get_job_repository()
+    active_jobs = [j for j in repo.get_all() if getattr(j, "is_active", True) is not False and j.source_url]
+    deactivated = 0
+
+    for job in active_jobs[:sample_size]:
+        try:
+            req = urllib.request.Request(
+                job.source_url,
+                headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"},
+                method="HEAD"
+            )
+            with urllib.request.urlopen(req, timeout=3.0) as resp:
+                if resp.status in (404, 410):
+                    repo.mark_job_inactive(job.id)
+                    deactivated += 1
+        except Exception:
+            continue
+
+    return deactivated
+
+
 async def periodic_job_refresher(stop_event: asyncio.Event, interval_seconds: int = 3600):
     """
     Background worker task running continuously during app lifespan.
@@ -69,6 +96,11 @@ async def periodic_job_refresher(stop_event: asyncio.Event, interval_seconds: in
                 print(f"[JobRefresher] Sync complete. Ingested {added_count} new unique jobs from live APIs.")
             else:
                 print("[JobRefresher] No new jobs retrieved during this cycle.")
+
+            # Validate health of existing jobs
+            deactivated = await asyncio.to_thread(check_expired_jobs, 20)
+            if deactivated > 0:
+                print(f"[JobRefresher] Deactivated {deactivated} expired job links.")
 
         except Exception as e:
             print(f"[JobRefresher] Background worker error: {e}")
