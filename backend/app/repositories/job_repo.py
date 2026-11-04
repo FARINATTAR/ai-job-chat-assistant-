@@ -107,6 +107,54 @@ class JobRepository:
 
         return results[:limit]
 
+    def upsert_jobs(self, raw_jobs: List[Dict[str, Any]]) -> int:
+        """
+        Dynamically ingest a batch of newly crawled jobs into the in-memory index
+        and persist changes to data/jobs.json without duplicating records.
+        """
+        added = 0
+        existing_keys = {
+            f"{j.title.strip().lower()}::{j.company.strip().lower()}"
+            for j in self._jobs
+        }
+
+        for item in raw_jobs:
+            jid = item.get("id")
+            title = (item.get("title") or "").strip().lower()
+            company = (item.get("company") or "").strip().lower()
+            key = f"{title}::{company}"
+
+            # Skip duplicate by ID or normalized (title, company) pair
+            if not jid or jid in self._jobs_by_id or key in existing_keys:
+                continue
+
+            try:
+                job = Job(**item)
+                self._jobs.append(job)
+                self._jobs_by_id[job.id] = job
+                existing_keys.add(key)
+
+                # Update inverted skills index
+                for s in job.skills:
+                    s_lower = s.strip().lower()
+                    if s_lower not in self._skills_index:
+                        self._skills_index[s_lower] = set()
+                    self._skills_index[s_lower].add(job.id)
+
+                added += 1
+            except Exception:
+                continue
+
+        if added > 0:
+            try:
+                with open(self.json_path, "w", encoding="utf-8") as f:
+                    json.dump([j.model_dump() for j in self._jobs], f, indent=2, ensure_ascii=False)
+                print(f"[JobRepository] Persisted {added} new jobs. Total dataset: {len(self._jobs)} roles.")
+            except Exception as e:
+                print(f"[JobRepository] Error persisting jobs: {e}")
+
+        return added
+
 
 # Global singleton instance
 _job_repository_instance: Optional[JobRepository] = None

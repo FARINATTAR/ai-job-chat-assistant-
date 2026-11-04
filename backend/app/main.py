@@ -2,12 +2,14 @@
 Main FastAPI Application Entrypoint.
 Initializes the in-memory JobRepository and database on startup.
 """
+import asyncio
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from .config import settings
 from .core.db import init_db
 from .repositories.job_repo import get_job_repository
+from .services.job_refresher import periodic_job_refresher
 from .api.endpoints import router as api_router
 
 
@@ -21,10 +23,22 @@ async def lifespan(app: FastAPI):
     repo = get_job_repository()
     print(f"[Startup] Ready! Loaded {repo.total_count} jobs.")
 
+    # Start automated background job refresher (syncs fresh roles every 60 mins)
+    stop_event = asyncio.Event()
+    worker_task = asyncio.create_task(
+        periodic_job_refresher(stop_event, interval_seconds=3600)
+    )
+
     yield
 
     # Shutdown
-    print("[Shutdown] Cleaning up resources...")
+    print("[Shutdown] Stopping background workers and cleaning up resources...")
+    stop_event.set()
+    worker_task.cancel()
+    try:
+        await worker_task
+    except (asyncio.CancelledError, Exception):
+        pass
 
 
 app = FastAPI(

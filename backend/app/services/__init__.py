@@ -8,6 +8,7 @@ from .document_extractor import (
     UnreadableDocumentError,
     CorruptDocumentError,
 )
+from .job_refresher import periodic_job_refresher, fetch_live_job_batch
 
 __all__ = [
     "DocumentExtractor",
@@ -15,5 +16,7 @@ __all__ = [
     "UnsupportedFileError",
     "UnreadableDocumentError",
     "CorruptDocumentError",
+    "periodic_job_refresher",
+    "fetch_live_job_batch",
 ]
 
