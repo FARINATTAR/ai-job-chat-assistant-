@@ -1,8 +1,8 @@
 """
 Unit and integration tests for OrchestratorAgent and chat flows.
-Verifies intent detection, agent handoffs, conversational refinement, and application workflows.
+Verifies LLM tool-calling intent detection (with regex fallback),
+agent handoffs, conversational refinement, and application workflows.
 """
-import asyncio
 import pytest
 from app.agents.orchestrator import OrchestratorAgent
 from app.core.session import SessionStore
@@ -23,103 +23,128 @@ def orchestrator():
 
 
 def test_intent_detection_apply(orchestrator):
-    assert orchestrator.detect_intent("apply to job 2") == {"intent": "APPLY", "reference": "2"}
-    assert orchestrator.detect_intent("apply for job 1") == {"intent": "APPLY", "reference": "1"}
-    assert orchestrator.detect_intent("apply to 3") == {"intent": "APPLY", "reference": "3"}
+    """Verify apply intents resolve to the apply_to_job tool with correct job reference."""
+    res = orchestrator.detect_intent("apply to job 2")
+    assert res["tool"] == "apply_to_job"
+    assert res["args"]["job_number"] == "2"
+
+    res2 = orchestrator.detect_intent("apply for job 1")
+    assert res2["tool"] == "apply_to_job"
+    assert res2["args"]["job_number"] == "1"
+
+    res3 = orchestrator.detect_intent("apply to 3")
+    assert res3["tool"] == "apply_to_job"
+    assert res3["args"]["job_number"] == "3"
 
 
 def test_intent_detection_tracking(orchestrator):
-    assert orchestrator.detect_intent("show my applied jobs") == {"intent": "TRACK"}
-    assert orchestrator.detect_intent("what are my applications") == {"intent": "TRACK"}
-    assert orchestrator.detect_intent("application status") == {"intent": "TRACK"}
+    """Verify application tracking queries route to list_applications tool."""
+    assert orchestrator.detect_intent("show my applied jobs")["tool"] == "list_applications"
+    assert orchestrator.detect_intent("what are my applications")["tool"] == "list_applications"
+    assert orchestrator.detect_intent("application status")["tool"] == "list_applications"
 
 
 def test_intent_detection_greeting(orchestrator):
-    assert orchestrator.detect_intent("hi") == {"intent": "GREETING"}
-    assert orchestrator.detect_intent("hello there") == {"intent": "GREETING"}
+    """Verify greetings route to greet_user tool."""
+    assert orchestrator.detect_intent("hi")["tool"] == "greet_user"
+    assert orchestrator.detect_intent("hello there")["tool"] == "greet_user"
 
 
 def test_intent_detection_filters(orchestrator):
+    """Verify filter queries route to recommend_jobs with correct parameters."""
     res = orchestrator.detect_intent("show only remote roles")
-    assert res["intent"] == "SEARCH_OR_REFINE"
-    assert res["is_remote"] is True
+    assert res["tool"] == "recommend_jobs"
+    assert res["args"].get("remote") is True
 
     res2 = orchestrator.detect_intent("reset filters")
-    assert res2["intent"] == "RESET_FILTERS"
+    assert res2["tool"] == "reset_filters"
 
 
-def test_orchestrator_chat_stream_greeting(orchestrator):
-    async def run():
-        store = SessionStore()
-        session = store.get_or_create("test_session_chat_1")
-        db = SessionLocal()
-        app_repo = ApplicationRepository(db)
-
-        events = []
-        async for event in orchestrator.stream_chat(session, "hi", app_repo):
-            events.append(event)
-        db.close()
-
-        full_output = "".join(events)
-        assert "agent_start" in full_output
-        assert "AI Job Chat Assistant" in full_output
-
-    asyncio.run(run())
+def test_intent_detection_skills(orchestrator):
+    """Verify skill mentions are extracted into recommend_jobs args."""
+    res = orchestrator.detect_intent("show me Python and React jobs")
+    assert res["tool"] == "recommend_jobs"
+    assert "Python" in res["args"].get("skills", [])
+    assert "React" in res["args"].get("skills", [])
 
 
-def test_orchestrator_chat_stream_recommend_and_apply(orchestrator):
-    async def run():
-        import uuid
-        store = SessionStore()
-        unique_id = f"test_chat_{uuid.uuid4().hex[:8]}"
-        session = store.get_or_create(unique_id)
-        db = SessionLocal()
-        app_repo = ApplicationRepository(db)
+def test_intent_detection_no_false_greeting(orchestrator):
+    """Verify 'hi' substring in longer words doesn't trigger greeting."""
+    res = orchestrator.detect_intent("show me jobs at higher companies")
+    assert res["tool"] == "recommend_jobs"
 
-        # Set up candidate profile
-        session.resume_profile = ResumeProfile(
-            name="Sarah Connor",
-            contact=ContactInfo(email="sarah@example.com"),
-            designation="Python Developer",
-            skills=["Python", "FastAPI", "SQL", "Docker"],
-            years_of_experience=2.0
-        )
+    res2 = orchestrator.detect_intent("history of my applications")
+    assert res2["tool"] != "greet_user"
 
-        # 1. Ask for recommendations
-        events = []
-        async for event in orchestrator.stream_chat(session, "recommend matching jobs for me", app_repo):
-            events.append(event)
 
-        full_output = "".join(events)
-        assert "JobMatcher" in full_output
-        assert "job_results" in full_output
-        assert len(session.last_results) > 0  # Index mapping created!
+@pytest.mark.anyio
+async def test_orchestrator_chat_stream_greeting(orchestrator):
+    store = SessionStore()
+    session = store.get_or_create("test_session_chat_1")
+    db = SessionLocal()
+    app_repo = ApplicationRepository(db)
 
-        # 2. Apply to job 1
-        apply_events = []
-        async for event in orchestrator.stream_chat(session, "apply to job 1", app_repo):
-            apply_events.append(event)
+    events = []
+    async for event in orchestrator.stream_chat(session, "hi", app_repo):
+        events.append(event)
+    db.close()
 
-        apply_output = "".join(apply_events)
-        assert "ApplicationManager" in apply_output
-        assert "Successfully applied" in apply_output
+    full_output = "".join(events)
+    assert "agent_start" in full_output
+    assert "AI Job Chat Assistant" in full_output
 
-        # 3. Duplicate apply to job 1
-        dup_events = []
-        async for event in orchestrator.stream_chat(session, "apply to job 1", app_repo):
-            dup_events.append(event)
 
-        dup_output = "".join(dup_events)
-        assert "already" in dup_output.lower()
+@pytest.mark.anyio
+async def test_orchestrator_chat_stream_recommend_and_apply(orchestrator):
+    import uuid
+    store = SessionStore()
+    unique_id = f"test_chat_{uuid.uuid4().hex[:8]}"
+    session = store.get_or_create(unique_id)
+    db = SessionLocal()
+    app_repo = ApplicationRepository(db)
 
-        # 4. Track applied jobs
-        track_events = []
-        async for event in orchestrator.stream_chat(session, "show my applied jobs", app_repo):
-            track_events.append(event)
+    # Set up candidate profile
+    session.resume_profile = ResumeProfile(
+        name="Sarah Connor",
+        contact=ContactInfo(email="sarah@example.com"),
+        designation="Python Developer",
+        skills=["Python", "FastAPI", "SQL", "Docker"],
+        years_of_experience=2.0
+    )
 
-        track_output = "".join(track_events)
-        assert "You have applied to" in track_output
+    # 1. Ask for recommendations
+    events = []
+    async for event in orchestrator.stream_chat(session, "recommend matching jobs for me", app_repo):
+        events.append(event)
 
-        db.close()
+    full_output = "".join(events)
+    assert "JobMatcher" in full_output
+    assert "job_results" in full_output
+    assert len(session.last_results) > 0
 
-    asyncio.run(run())
+    # 2. Apply to job 1
+    apply_events = []
+    async for event in orchestrator.stream_chat(session, "apply to job 1", app_repo):
+        apply_events.append(event)
+
+    apply_output = "".join(apply_events)
+    assert "ApplicationManager" in apply_output
+    assert "Successfully applied" in apply_output
+
+    # 3. Duplicate apply to job 1
+    dup_events = []
+    async for event in orchestrator.stream_chat(session, "apply to job 1", app_repo):
+        dup_events.append(event)
+
+    dup_output = "".join(dup_events)
+    assert "already" in dup_output.lower()
+
+    # 4. Track applied jobs
+    track_events = []
+    async for event in orchestrator.stream_chat(session, "show my applied jobs", app_repo):
+        track_events.append(event)
+
+    track_output = "".join(track_events)
+    assert "You have applied to" in track_output
+
+    db.close()
