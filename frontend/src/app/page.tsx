@@ -217,27 +217,27 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col h-screen bg-slate-950 text-slate-100">
+    <div className="flex flex-col h-screen bg-slate-50 text-slate-800">
       {/* Top Navigation */}
-      <header className="px-4 sm:px-6 py-3 border-b border-slate-800 bg-slate-900/80 backdrop-blur-md flex items-center justify-between shrink-0">
+      <header className="px-4 sm:px-6 py-3 border-b border-slate-200/90 bg-white/90 backdrop-blur-md flex items-center justify-between shrink-0 shadow-xs">
         <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center shadow-lg shadow-indigo-500/20">
+          <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-600 flex items-center justify-center shadow-md shadow-indigo-500/20">
             <Sparkles className="w-4 h-4 text-white" />
           </div>
           <div>
-            <h1 className="text-sm font-bold tracking-tight text-white flex items-center gap-2">
+            <h1 className="text-sm font-bold tracking-tight text-slate-900 flex items-center gap-2">
               Hidani Tech <span className="text-slate-400 font-normal hidden sm:inline">| AI Job Chat Assistant</span>
             </h1>
-            <p className="text-[10px] text-slate-400">Multi-Agent SDE Intern Assessment</p>
+            <p className="text-[10px] text-slate-500">Multi-Agent SDE Intern Assessment</p>
           </div>
         </div>
 
         <div className="flex items-center gap-3">
           {/* Backend Status indicator */}
-          <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-800/80 border border-slate-700/60 text-[11px] text-slate-300">
+          <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-100 border border-slate-200 text-[11px] text-slate-700 font-medium">
             <span
               className={`w-2 h-2 rounded-full ${
-                backendStatus.status === "healthy" ? "bg-emerald-400 animate-pulse" : "bg-amber-400"
+                backendStatus.status === "healthy" ? "bg-emerald-500 animate-pulse" : "bg-amber-500"
               }`}
             />
             <span className="hidden sm:inline">
@@ -250,7 +250,7 @@ export default function Home() {
           {/* Applied Jobs Button */}
           <button
             onClick={() => setIsDrawerOpen(true)}
-            className="px-3 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold flex items-center gap-1.5 transition-all shadow-md shadow-indigo-600/20"
+            className="px-3.5 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold flex items-center gap-1.5 transition-all shadow-sm"
           >
             <Briefcase className="w-3.5 h-3.5" />
             <span>Applied Jobs</span>
@@ -261,7 +261,7 @@ export default function Home() {
       {/* Main Grid: Left Sidebar + Right Chat */}
       <div className="flex-1 grid grid-cols-1 lg:grid-cols-12 overflow-hidden">
         {/* Left Column: Resume Profile & Quick Filters */}
-        <aside className="lg:col-span-4 border-r border-slate-800 bg-slate-900/50 p-4 overflow-y-auto space-y-4 hidden lg:block">
+        <aside className="lg:col-span-4 border-r border-slate-200 bg-white p-4 overflow-y-auto space-y-4 hidden lg:block">
           <ResumeUploader
             sessionId={sessionId}
             onProfileLoaded={(profile) => {
@@ -272,9 +272,9 @@ export default function Home() {
           />
 
           {/* Experience Filter Selector */}
-          <div className="p-4 rounded-2xl bg-slate-900 border border-slate-800 space-y-2.5 text-xs">
-            <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
-              <Sparkles className="w-3.5 h-3.5 text-amber-400" /> Filter by Experience Level
+          <div className="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs space-y-2.5 text-xs">
+            <p className="text-[11px] font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
+              <Sparkles className="w-3.5 h-3.5 text-amber-500" /> Filter by Experience Level
             </p>
             <div className="grid grid-cols-2 gap-1.5 pt-0.5">
               {[
@@ -287,7 +287,7 @@ export default function Home() {
                   key={idx}
                   onClick={() => handleSendMessage(item.query)}
                   disabled={isStreaming}
-                  className="px-2.5 py-1.5 rounded-xl bg-slate-800/80 hover:bg-indigo-600 hover:text-white border border-slate-700/70 text-slate-300 transition-all text-[11px] font-medium text-left"
+                  className="px-2.5 py-1.5 rounded-xl bg-slate-50 hover:bg-indigo-50 hover:text-indigo-700 hover:border-indigo-300 border border-slate-200 text-slate-700 transition-all text-[11px] font-medium text-left shadow-xs"
                 >
                   {item.label}
                 </button>
@@ -296,22 +296,22 @@ export default function Home() {
           </div>
 
           {/* Job Board / Source Selector */}
-          <div className="p-4 rounded-2xl bg-slate-900 border border-slate-800 space-y-2.5 text-xs">
-            <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
-              <Briefcase className="w-3.5 h-3.5 text-emerald-400" /> Filter by Job Source
+          <div className="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs space-y-2.5 text-xs">
+            <p className="text-[11px] font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
+              <Briefcase className="w-3.5 h-3.5 text-emerald-600" /> Filter by Job Source
             </p>
             <div className="grid grid-cols-2 gap-1.5 pt-0.5">
               {[
-                { label: "🌐 All Sources (2,086)", query: "Show jobs across all sources" },
-                { label: "💼 LinkedIn (1,224)", query: "Show LinkedIn jobs" },
-                { label: "🇩🇪 Arbeitnow (501)", query: "Show Arbeitnow jobs" },
+                { label: "🌐 All Sources (2,075)", query: "Show jobs across all sources" },
+                { label: "💼 LinkedIn (1,221)", query: "Show LinkedIn jobs" },
+                { label: "🇩🇪 Arbeitnow (493)", query: "Show Arbeitnow jobs" },
                 { label: "⚡ Remotive (10)", query: "Show Remotive jobs" },
               ].map((item, idx) => (
                 <button
                   key={idx}
                   onClick={() => handleSendMessage(item.query)}
                   disabled={isStreaming}
-                  className="px-2.5 py-1.5 rounded-xl bg-slate-800/80 hover:bg-emerald-600 hover:text-white border border-slate-700/70 text-slate-300 transition-all text-[11px] font-medium text-left"
+                  className="px-2.5 py-1.5 rounded-xl bg-slate-50 hover:bg-emerald-50 hover:text-emerald-700 hover:border-emerald-300 border border-slate-200 text-slate-700 transition-all text-[11px] font-medium text-left shadow-xs"
                 >
                   {item.label}
                 </button>
@@ -320,9 +320,9 @@ export default function Home() {
           </div>
 
           {/* Quick Search Chips */}
-          <div className="p-4 rounded-2xl bg-slate-900 border border-slate-800 space-y-2 text-xs">
-            <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
-              <Filter className="w-3.5 h-3.5 text-indigo-400" /> Conversational Refinements
+          <div className="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs space-y-2 text-xs">
+            <p className="text-[11px] font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
+              <Filter className="w-3.5 h-3.5 text-indigo-600" /> Conversational Refinements
             </p>
             <div className="flex flex-wrap gap-1.5 pt-1">
               {[
@@ -339,7 +339,7 @@ export default function Home() {
                   key={idx}
                   onClick={() => handleSendMessage(chip)}
                   disabled={isStreaming}
-                  className="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-indigo-950/80 hover:text-indigo-300 hover:border-indigo-500/40 border border-slate-700/80 text-slate-300 transition-all text-[11px]"
+                  className="px-2.5 py-1 rounded-lg bg-slate-50 hover:bg-indigo-50 hover:text-indigo-700 hover:border-indigo-300 border border-slate-200 text-slate-700 transition-all text-[11px] font-medium shadow-xs"
                 >
                   {chip}
                 </button>
@@ -349,7 +349,7 @@ export default function Home() {
         </aside>
 
         {/* Right Column: Chat Window */}
-        <main className="lg:col-span-8 flex flex-col h-full bg-slate-950 overflow-hidden">
+        <main className="lg:col-span-8 flex flex-col h-full bg-slate-50/70 overflow-hidden">
           {/* Messages Area */}
           <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4">
             {messages.map((msg) => (
@@ -359,10 +359,10 @@ export default function Home() {
               >
                 {/* Avatar */}
                 <div
-                  className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 text-xs font-bold ${
+                  className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 text-xs font-bold shadow-xs ${
                     msg.role === "user"
                       ? "bg-indigo-600 text-white"
-                      : "bg-slate-800 text-indigo-400 border border-slate-700"
+                      : "bg-white text-indigo-600 border border-slate-200"
                   }`}
                 >
                   {msg.role === "user" ? <User className="w-4 h-4" /> : <Bot className="w-4 h-4" />}
@@ -380,7 +380,7 @@ export default function Home() {
                       className={`p-3.5 sm:p-4 rounded-2xl text-xs sm:text-sm whitespace-pre-wrap leading-relaxed shadow-sm ${
                         msg.role === "user"
                           ? "bg-indigo-600 text-white rounded-tr-none font-medium"
-                          : "bg-slate-900 border border-slate-800 text-slate-200 rounded-tl-none"
+                          : "bg-white border border-slate-200/90 text-slate-800 rounded-tl-none"
                       }`}
                     >
                       {msg.content}
@@ -410,7 +410,7 @@ export default function Home() {
                           type="button"
                           onClick={() => handleSendMessage("next")}
                           disabled={isStreaming}
-                          className="px-3.5 py-1.5 rounded-xl bg-slate-800 hover:bg-indigo-600 hover:text-white border border-slate-700/80 text-slate-200 text-xs font-semibold flex items-center gap-1.5 transition-all shadow-md"
+                          className="px-3.5 py-1.5 rounded-xl bg-white hover:bg-indigo-50 text-indigo-700 hover:text-indigo-800 border border-indigo-200/90 text-xs font-semibold flex items-center gap-1.5 transition-all shadow-xs"
                         >
                           <span>Load Next 10 Jobs ⏩</span>
                         </button>
@@ -432,11 +432,11 @@ export default function Home() {
           </div>
 
           {/* Bottom Chat Input Bar */}
-          <div className="p-3 sm:p-4 border-t border-slate-800 bg-slate-900/70 backdrop-blur-md space-y-2.5">
+          <div className="p-3 sm:p-4 border-t border-slate-200/90 bg-white/90 backdrop-blur-md space-y-2.5 shadow-xs">
             {/* Quick Filter Ribbon */}
             <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar max-w-4xl mx-auto pb-0.5 text-[11px]">
-              <span className="text-slate-500 font-semibold text-[10px] uppercase shrink-0 flex items-center gap-1">
-                <Filter className="w-3 h-3 text-indigo-400" /> Quick:
+              <span className="text-slate-400 font-semibold text-[10px] uppercase shrink-0 flex items-center gap-1">
+                <Filter className="w-3 h-3 text-indigo-600" /> Quick:
               </span>
               {[
                 { label: "⏩ Next 10 Jobs", q: "Show next 10 jobs" },
@@ -452,7 +452,7 @@ export default function Home() {
                   type="button"
                   onClick={() => handleSendMessage(btn.q)}
                   disabled={isStreaming}
-                  className="px-2.5 py-1 rounded-full bg-slate-800/90 hover:bg-indigo-600 hover:text-white border border-slate-700/60 text-slate-300 transition-all shrink-0 font-medium"
+                  className="px-2.5 py-1 rounded-full bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 hover:border-indigo-300 border border-slate-200 text-slate-700 transition-all shrink-0 font-medium shadow-xs"
                 >
                   {btn.label}
                 </button>
@@ -476,12 +476,12 @@ export default function Home() {
                     : "Upload resume on the left or type your query here..."
                 }
                 disabled={isStreaming}
-                className="flex-1 bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all"
+                className="flex-1 bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:bg-white focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition-all shadow-xs"
               />
               <button
                 type="submit"
                 disabled={isStreaming || !inputMessage.trim()}
-                className="px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed text-white text-xs sm:text-sm font-semibold flex items-center gap-1.5 transition-all shadow-md shadow-indigo-600/20 shrink-0"
+                className="px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed text-white text-xs sm:text-sm font-semibold flex items-center gap-1.5 transition-all shadow-sm shrink-0"
               >
                 <Send className="w-4 h-4" />
                 <span className="hidden sm:inline">Send</span>

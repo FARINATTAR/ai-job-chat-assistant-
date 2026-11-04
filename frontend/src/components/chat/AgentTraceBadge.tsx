@@ -24,23 +24,23 @@ export const AgentTraceBadge: React.FC<AgentTraceBadgeProps> = ({ events, isStre
   const latestEvent = events[events.length - 1];
 
   return (
-    <div className="my-2 border border-indigo-500/30 bg-indigo-950/40 rounded-xl overflow-hidden backdrop-blur-sm transition-all text-xs">
+    <div className="my-2 border border-indigo-200/90 bg-indigo-50/60 rounded-xl overflow-hidden backdrop-blur-sm transition-all text-xs shadow-sm">
       <div
         onClick={() => setIsOpen(!isOpen)}
-        className="px-3 py-2 flex items-center justify-between cursor-pointer hover:bg-indigo-900/30 transition-colors"
+        className="px-3 py-2 flex items-center justify-between cursor-pointer hover:bg-indigo-100/60 transition-colors"
       >
         <div className="flex items-center gap-2">
           <div className="relative">
-            <Cpu className="w-3.5 h-3.5 text-indigo-400" />
+            <Cpu className="w-3.5 h-3.5 text-indigo-600" />
             {isStreaming && (
               <span className="absolute -top-1 -right-1 flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-600"></span>
               </span>
             )}
           </div>
 
-          <span className="font-medium text-indigo-300">
+          <span className="font-semibold text-indigo-900">
             {latestEvent?.type === "handoff"
               ? `Handoff: ${latestEvent.agent} ➔ ${latestEvent.to_agent}`
               : isStreaming
@@ -49,14 +49,14 @@ export const AgentTraceBadge: React.FC<AgentTraceBadgeProps> = ({ events, isStre
           </span>
 
           {latestEvent?.thought && (
-            <span className="text-slate-400 truncate max-w-[280px] hidden sm:inline">
+            <span className="text-slate-500 truncate max-w-[280px] hidden sm:inline">
               — {latestEvent.thought}
             </span>
           )}
         </div>
 
-        <div className="flex items-center gap-1.5 text-indigo-400">
-          <span className="text-[10px] bg-indigo-500/20 px-1.5 py-0.5 rounded font-mono">
+        <div className="flex items-center gap-1.5 text-indigo-600">
+          <span className="text-[10px] bg-white px-2 py-0.5 rounded border border-indigo-200 font-mono font-semibold">
             {events.length} step{events.length === 1 ? "" : "s"}
           </span>
           {isOpen ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
@@ -64,22 +64,22 @@ export const AgentTraceBadge: React.FC<AgentTraceBadgeProps> = ({ events, isStre
       </div>
 
       {isOpen && (
-        <div className="px-3 py-2.5 border-t border-indigo-500/20 bg-slate-950/70 space-y-2">
+        <div className="px-3.5 py-3 border-t border-indigo-100 bg-white space-y-2">
           {events.map((ev, i) => (
-            <div key={i} className="flex items-start gap-2 text-slate-300">
-              <span className="text-[10px] text-slate-500 font-mono mt-0.5">{ev.timestamp}</span>
+            <div key={i} className="flex items-start gap-2 text-slate-700">
+              <span className="text-[10px] text-slate-400 font-mono mt-0.5">{ev.timestamp}</span>
               <div>
                 {ev.type === "handoff" ? (
-                  <p className="font-semibold text-indigo-300">
-                    🔄 Handoff: <span className="text-white">{ev.agent}</span> ➔{" "}
-                    <span className="text-indigo-200">{ev.to_agent}</span>
+                  <p className="font-semibold text-indigo-900">
+                    🔄 Handoff: <span className="text-slate-900">{ev.agent}</span> ➔{" "}
+                    <span className="text-indigo-600">{ev.to_agent}</span>
                   </p>
                 ) : (
-                  <p className="font-semibold text-slate-200">
+                  <p className="font-semibold text-slate-800">
                     ⚡ {ev.agent}:
                   </p>
                 )}
-                {ev.thought && <p className="text-slate-400 text-[11px] mt-0.5">{ev.thought}</p>}
+                {ev.thought && <p className="text-slate-600 text-[11px] mt-0.5">{ev.thought}</p>}
               </div>
             </div>
           ))}
