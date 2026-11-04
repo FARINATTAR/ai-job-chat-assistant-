@@ -60,6 +60,27 @@ class MatcherAgent:
                 if not job_skills_lower.intersection(requested_lower):
                     continue
 
+            # Company filter
+            if filters.company and filters.company.lower() not in (job.company or "").lower():
+                continue
+
+            # Role / Query filter
+            if filters.query:
+                q_term = filters.query.lower()
+                job_full = f"{job.title} {job.company} {job.description} {' '.join(job.skills)}".lower()
+                
+                # Expand domain synonyms
+                terms_to_match = [q_term]
+                if q_term in ["sde", "software engineer", "swe", "software developer"]:
+                    terms_to_match = ["sde", "software development engineer", "software engineer", "software developer", "developer"]
+                elif "full stack" in q_term or "fullstack" in q_term:
+                    terms_to_match = ["full stack", "fullstack"]
+                elif "ai" in q_term or "ml" in q_term or "machine learning" in q_term:
+                    terms_to_match = ["machine learning", "artificial intelligence", "ai", "ml"]
+
+                if not any(t in job_full for t in terms_to_match):
+                    continue
+
             # Experience-Gate & User Filter
             title_and_desc = f"{job.title} {job.description}".lower()
             senior_markers = [
@@ -75,8 +96,8 @@ class MatcherAgent:
                 if filters.max_experience <= 1 and any(marker in title_and_desc for marker in senior_markers):
                     continue
 
-            # 2. Candidate Resume Profile Gating (When no explicit experience filter is active)
-            else:
+            # 2. Candidate Resume Profile Gating (When no explicit experience filter is active and not querying specific company)
+            elif not filters.company:
                 # If candidate is fresher/intern/early-career (<= 1.0 yr exp)
                 if candidate_exp <= 1.0 or "intern" in candidate_title:
                     if job.experience_required > 1:
@@ -191,8 +212,18 @@ class MatcherAgent:
             return 0, [], missing_skills
 
         # Weighted Composite Score
-        total_score = int(0.60 * skill_score + 0.25 * title_score + 0.15 * exp_score)
-        total_score = max(10, min(98, total_score))
+        total_score = int(0.55 * skill_score + 0.30 * title_score + 0.15 * exp_score)
+
+        # Brand / Core SDE Boost
+        top_tier = ["google", "amazon", "microsoft", "apple", "meta", "adobe", "uber", "atlassian", "salesforce", "cisco", "flipkart", "oracle", "goldman sachs", "jpmorgan", "intuit", "phonepe", "swiggy", "zomato"]
+        comp_lower = (job.company or "").lower()
+        if any(tt in comp_lower for tt in top_tier):
+            total_score += 10
+
+        if any(st in title_low for st in ["sde", "software development engineer", "software engineer", "full stack", "backend", "frontend"]):
+            total_score += 8
+
+        total_score = max(10, min(99, total_score))
 
         return total_score, matched_skills, missing_skills
 

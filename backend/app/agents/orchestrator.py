@@ -234,9 +234,34 @@ class OrchestratorAgent:
         elif "all source" in msg_low or "all sources" in msg_low:
             session.active_filters.source = None
 
+        # Detect specific company mentions
+        known_companies = [
+            "Google", "Amazon", "Microsoft", "Meta", "Apple", "Adobe", "Uber", "Flipkart",
+            "Atlassian", "Salesforce", "Oracle", "Cisco", "Goldman Sachs", "JPMorgan",
+            "Morgan Stanley", "Intuit", "PhonePe", "Paytm", "Swiggy", "Zomato",
+            "Infosys", "TCS", "Wipro", "Cognizant", "Accenture", "Mastercard", "Walmart"
+        ]
+        session.active_filters.company = None
+        for c in known_companies:
+            if c.lower() in msg_low:
+                session.active_filters.company = c
+                break
+
+        # Detect specific role keyword requests (e.g. SDE, Backend, Full Stack, Frontend)
+        role_keywords = ["sde", "software engineer", "full stack", "fullstack", "backend", "frontend", "devops", "cloud", "ai", "machine learning"]
+        session.active_filters.query = None
+        for rk in role_keywords:
+            if rk in msg_low:
+                session.active_filters.query = rk
+                break
+
         filter_desc = []
         if session.active_filters.source:
             filter_desc.append(f"Source={session.active_filters.source}")
+        if session.active_filters.company:
+            filter_desc.append(f"Company={session.active_filters.company}")
+        if session.active_filters.query:
+            filter_desc.append(f"Role={session.active_filters.query.upper()}")
         if session.active_filters.remote is not None:
             filter_desc.append(f"Remote={session.active_filters.remote}")
         if session.active_filters.max_experience is not None:

@@ -76,6 +76,7 @@ class ActiveFilters(BaseModel):
     location: Optional[str] = None
     max_experience: Optional[int] = None
     source: Optional[str] = None  # "LinkedIn", "Arbeitnow", "Remotive", or None
+    company: Optional[str] = None
     page: int = 1
     offset: int = 0
     query: Optional[str] = None
