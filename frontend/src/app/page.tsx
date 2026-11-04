@@ -46,6 +46,8 @@ export default function Home() {
   const [isDragging, setIsDragging] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
+  const [showAllSkills, setShowAllSkills] = useState(false);
+
   // Filters
   const [selectedExp, setSelectedExp] = useState<string | null>(null);
   const [selectedSource, setSelectedSource] = useState<string | null>(null);
@@ -214,12 +216,12 @@ export default function Home() {
         />
 
         <div className="flex-1 flex items-center justify-center p-6">
-          <div className="w-full max-w-lg space-y-6">
-            <div className="text-center space-y-2">
-              <h2 className="text-2xl font-bold text-slate-900 tracking-tight">
+          <div className="w-full max-w-xl space-y-8">
+            <div className="text-center space-y-2.5">
+              <h2 className="text-3xl font-bold text-slate-900 tracking-tight">
                 Upload Your Resume
               </h2>
-              <p className="text-sm text-slate-500">
+              <p className="text-base text-slate-600">
                 We will extract your skills, experience level, and designation to find the best matching roles.
               </p>
             </div>
@@ -229,10 +231,10 @@ export default function Home() {
               onDragLeave={() => setIsDragging(false)}
               onDrop={onDrop}
               onClick={() => fileInputRef.current?.click()}
-              className={`border-2 border-dashed rounded-2xl p-10 text-center cursor-pointer transition-all ${
+              className={`border-2 border-dashed rounded-2xl p-12 text-center cursor-pointer transition-all ${
                 isDragging
                   ? "border-indigo-500 bg-indigo-50/60"
-                  : "border-slate-300 hover:border-indigo-400 bg-white hover:bg-indigo-50/10"
+                  : "border-slate-300 hover:border-indigo-400 bg-white hover:bg-indigo-50/10 shadow-sm"
               }`}
             >
               <input
@@ -245,25 +247,27 @@ export default function Home() {
                 }}
               />
               {uploading ? (
-                <div className="flex flex-col items-center gap-3">
-                  <Loader2 className="w-8 h-8 text-indigo-600 animate-spin" />
-                  <p className="text-sm text-indigo-600 font-medium">Extracting skills and experience...</p>
+                <div className="flex flex-col items-center gap-3 py-4">
+                  <Loader2 className="w-10 h-10 text-indigo-600 animate-spin" />
+                  <p className="text-base text-indigo-600 font-medium">Extracting skills and experience...</p>
                 </div>
               ) : (
-                <div className="flex flex-col items-center gap-3">
-                  <UploadCloud className="w-10 h-10 text-slate-400" />
+                <div className="flex flex-col items-center gap-4 py-4">
+                  <div className="w-14 h-14 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center">
+                    <UploadCloud className="w-7 h-7" />
+                  </div>
                   <div>
-                    <p className="text-sm font-semibold text-slate-800">
+                    <p className="text-base font-semibold text-slate-900">
                       Drop your resume here or click to browse
                     </p>
-                    <p className="text-xs text-slate-400 mt-1">PDF or DOCX format</p>
+                    <p className="text-sm text-slate-500 mt-1">Supports PDF or DOCX</p>
                   </div>
                 </div>
               )}
             </div>
 
             {uploadError && (
-              <div className="p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-sm flex items-start gap-2">
+              <div className="p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-sm flex items-start gap-2">
                 <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
                 <span>{uploadError}</span>
               </div>
@@ -292,6 +296,11 @@ export default function Home() {
       { label: "Remotive", value: "Remotive" },
     ];
 
+    const SKILLS_PREVIEW = 10;
+    const allSkills = currentProfile?.skills || [];
+    const visibleSkills = showAllSkills ? allSkills : allSkills.slice(0, SKILLS_PREVIEW);
+    const hiddenCount = allSkills.length - SKILLS_PREVIEW;
+
     return (
       <div className="flex flex-col h-screen bg-slate-50 antialiased">
         <Header
@@ -299,47 +308,65 @@ export default function Home() {
           appliedCount={appliedJobIds.size}
         />
 
-        <div className="flex-1 flex items-center justify-center p-6">
-          <div className="w-full max-w-xl space-y-8">
+        <div className="flex-1 overflow-y-auto">
+          <div className="w-full max-w-2xl mx-auto px-6 py-10 space-y-10">
             {/* Profile summary */}
             {currentProfile && (
-              <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-xs">
-                <div className="flex items-center justify-between">
+              <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+                <div className="flex items-center justify-between mb-4">
                   <div>
-                    <p className="text-base font-bold text-slate-900">{currentProfile.name}</p>
-                    <p className="text-sm text-slate-600">{currentProfile.designation}</p>
+                    <p className="text-xl font-bold text-slate-900">{currentProfile.name}</p>
+                    <p className="text-base text-slate-600 mt-0.5">{currentProfile.designation}</p>
                   </div>
-                  <span className="text-xs font-medium px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center gap-1.5">
-                    <CheckCircle className="w-3.5 h-3.5" /> Resume parsed
+                  <span className="text-sm font-medium px-3 py-1.5 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4" /> Resume parsed
                   </span>
                 </div>
-                {currentProfile.skills && currentProfile.skills.length > 0 && (
-                  <div className="flex flex-wrap gap-1.5 mt-3 pt-3 border-t border-slate-100">
-                    {currentProfile.skills.slice(0, 12).map((skill, i) => (
-                      <span key={i} className="text-[11px] font-medium px-2 py-0.5 rounded-md bg-slate-100 text-slate-700 border border-slate-200">
-                        {skill}
-                      </span>
-                    ))}
-                    {currentProfile.skills.length > 12 && (
-                      <span className="text-[11px] text-slate-400 self-center">+{currentProfile.skills.length - 12} more</span>
-                    )}
+                {allSkills.length > 0 && (
+                  <div className="pt-4 border-t border-slate-100">
+                    <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2.5">
+                      Extracted Skills ({allSkills.length})
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {visibleSkills.map((skill, i) => (
+                        <span key={i} className="text-sm font-medium px-3 py-1 rounded-lg bg-slate-100 text-slate-700 border border-slate-200">
+                          {skill}
+                        </span>
+                      ))}
+                      {!showAllSkills && hiddenCount > 0 && (
+                        <button
+                          onClick={() => setShowAllSkills(true)}
+                          className="text-sm font-medium px-3 py-1 rounded-lg bg-indigo-50 text-indigo-600 border border-indigo-200 hover:bg-indigo-100 transition-colors cursor-pointer"
+                        >
+                          +{hiddenCount} more
+                        </button>
+                      )}
+                      {showAllSkills && allSkills.length > SKILLS_PREVIEW && (
+                        <button
+                          onClick={() => setShowAllSkills(false)}
+                          className="text-sm font-medium px-3 py-1 rounded-lg bg-slate-50 text-slate-500 border border-slate-200 hover:bg-slate-100 transition-colors cursor-pointer"
+                        >
+                          Show less
+                        </button>
+                      )}
+                    </div>
                   </div>
                 )}
               </div>
             )}
 
             {/* Experience Level */}
-            <div className="space-y-3">
-              <h3 className="text-sm font-bold text-slate-900">Experience Level</h3>
-              <div className="grid grid-cols-2 gap-2">
+            <div className="space-y-4">
+              <h3 className="text-lg font-bold text-slate-900">Experience Level</h3>
+              <div className="grid grid-cols-2 gap-3">
                 {expOptions.map((opt) => (
                   <button
                     key={opt.value}
                     onClick={() => setSelectedExp(selectedExp === opt.value ? null : opt.value)}
-                    className={`p-3 rounded-xl border text-sm font-medium text-left transition-all ${
+                    className={`p-4 rounded-xl border text-base font-medium text-left transition-all ${
                       selectedExp === opt.value
-                        ? "border-indigo-500 bg-indigo-50 text-indigo-700"
-                        : "border-slate-200 bg-white text-slate-700 hover:border-slate-300"
+                        ? "border-indigo-500 bg-indigo-50 text-indigo-700 shadow-sm"
+                        : "border-slate-200 bg-white text-slate-700 hover:border-slate-300 hover:shadow-xs"
                     }`}
                   >
                     {opt.label}
@@ -349,17 +376,17 @@ export default function Home() {
             </div>
 
             {/* Job Source */}
-            <div className="space-y-3">
-              <h3 className="text-sm font-bold text-slate-900">Job Source</h3>
-              <div className="grid grid-cols-2 gap-2">
+            <div className="space-y-4">
+              <h3 className="text-lg font-bold text-slate-900">Job Source</h3>
+              <div className="grid grid-cols-2 gap-3">
                 {sourceOptions.map((opt) => (
                   <button
                     key={opt.value}
                     onClick={() => setSelectedSource(selectedSource === opt.value ? null : opt.value)}
-                    className={`p-3 rounded-xl border text-sm font-medium text-left transition-all ${
+                    className={`p-4 rounded-xl border text-base font-medium text-left transition-all ${
                       selectedSource === opt.value
-                        ? "border-indigo-500 bg-indigo-50 text-indigo-700"
-                        : "border-slate-200 bg-white text-slate-700 hover:border-slate-300"
+                        ? "border-indigo-500 bg-indigo-50 text-indigo-700 shadow-sm"
+                        : "border-slate-200 bg-white text-slate-700 hover:border-slate-300 hover:shadow-xs"
                     }`}
                   >
                     {opt.label}
@@ -369,18 +396,18 @@ export default function Home() {
             </div>
 
             {/* Navigation */}
-            <div className="flex items-center justify-between pt-2">
+            <div className="flex items-center justify-between pt-4">
               <button
                 onClick={() => setStep("upload")}
-                className="px-4 py-2 rounded-xl text-sm font-medium text-slate-600 hover:text-slate-800 flex items-center gap-1.5 transition-colors"
+                className="px-5 py-2.5 rounded-xl text-base font-medium text-slate-600 hover:text-slate-800 flex items-center gap-2 transition-colors"
               >
-                <ArrowLeft className="w-4 h-4" /> Back to resume
+                <ArrowLeft className="w-5 h-5" /> Back to resume
               </button>
               <button
                 onClick={handleStartChat}
-                className="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold flex items-center gap-1.5 transition-all shadow-sm"
+                className="px-7 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-base font-semibold flex items-center gap-2 transition-all shadow-sm"
               >
-                Find Jobs <ArrowRight className="w-4 h-4" />
+                Find Jobs <ArrowRight className="w-5 h-5" />
               </button>
             </div>
           </div>
