@@ -10,14 +10,14 @@
 
 ## 📖 Project Overview
 
-**AI Job Chat Assistant** is a production-ready conversational agent that ingests candidate resumes (PDF or DOCX), automatically parses their skills, experience, and designation, recommends highly-matching jobs from a dataset of **1,691 real-world job listings**, allows natural conversational filtering (e.g. *"show only remote roles"*, *"jobs needing React"*), applies to jobs on request (*"apply to job 3"*), and tracks application statuses without duplication.
+**AI Job Chat Assistant** is a production-ready conversational agent that ingests candidate resumes (PDF or DOCX), automatically parses their skills, experience, and designation, recommends highly-matching jobs from a dataset of **over 2,500 real-world job listings**, allows natural conversational filtering (e.g. *"show only remote roles"*, *"jobs needing React"*), applies to jobs on request (*"apply to job 3"*), and tracks application statuses without duplication.
 
 ### ✨ Key Technical Highlights
-- **Custom Multi-Agent Orchestrator (No LangChain/CrewAI Bloat):** Pure Python state machine with real-time tool routing and sub-agent handoffs. Transparent and fully defendable in technical interviews.
-- **Real-Time Agent Activity Trace:** Server-Sent Events (SSE) stream agent thoughts and handoffs to the UI in real time (`[Orchestrator] ➔ Delegating to [JobMatcher]`).
+- **LLM Tool-Calling Orchestrator:** Native function-calling schema loop (Gemini / OpenAI) with conversation history context and high-coverage regex fallback. Fully defendable in technical interviews.
+- **Real-Time Agent Activity Trace:** Server-Sent Events (SSE) stream agent thoughts, tool calls, and handoffs to the UI in real time (`[Orchestrator] ➔ Delegating to [JobMatcher]`).
 - **Grounded Matching & Zero Hallucination:** Deterministic skill overlap and experience calculation with LLM-generated explanations strictly bound to factual overlap.
 - **Conversational Index-to-ID Resolution:** Seamlessly translates natural requests like *"apply to job 2"* into concrete IDs using session-level result caching.
-- **1,691 Real Job Postings Dataset:** Crawled from Jobfound.org and Arbeitnow public APIs using a custom modular scraper with automatic retry and rate-limiting.
+- **2,500+ Real Job Postings Dataset:** Crawled from Jobfound, Arbeitnow, and Remotive public APIs plus verified enterprise SDE listings with automatic deduplication.
 - **Production Persistence:** PostgreSQL (Neon serverless) / SQLite with unique constraints `(session_id, job_id)` to prevent duplicate applications across container restarts.
 
 ---
@@ -203,9 +203,9 @@ hidani assessment/
 │   │       └── apply_agent.py             # Sub-agent: Index-to-ID resolver & tracking
 │   ├── tests/
 │   │   ├── test_parser.py                 # 5 tests: PDF/DOCX, unreadable, corrupt, skills
-│   │   ├── test_matcher.py                # 4 tests: scoring, remote filter, zero matches
-│   │   ├── test_apply.py                  # 5 tests: index resolution, duplicate prevention
-│   │   └── test_orchestrator.py           # 6 tests: intent detection, SSE streaming
+│   │   ├── test_matcher.py                # 5 tests: scoring, remote filter, zero matches, seniority gate
+│   │   ├── test_apply.py                  # 5 tests: index resolution, duplicate prevention, list apps
+│   │   └── test_orchestrator.py           # 8 tests: tool calling, intent detection, filters, SSE streaming
 │   ├── requirements.txt                   # Backend dependencies
 │   └── Dockerfile                         # Containerization for deployment
 │
@@ -213,20 +213,17 @@ hidani assessment/
 │   ├── src/
 │   │   ├── app/
 │   │   │   ├── layout.tsx                 # Root layout
-│   │   │   ├── page.tsx                   # Main conversational interface
+│   │   │   ├── page.tsx                   # Main conversational interface (in-chat resume upload + filters)
 │   │   │   └── globals.css                # Tailwind styling
 │   │   ├── components/
 │   │   │   ├── chat/
-│   │   │   │   └── AgentTraceBadge.tsx    # Live agent handoff indicator
-│   │   │   ├── resume/
-│   │   │   │   └── ResumeUploader.tsx     # Drag & Drop resume zone with profile card
+│   │   │   │   └── MarkdownRenderer.tsx   # Custom lightweight markdown formatter
 │   │   │   ├── jobs/
-│   │   │   │   └── JobCard.tsx            # Match %, grounded reasons, 1-click apply
+│   │   │   │   └── JobCard.tsx            # Match %, grounded reasons, 1-click apply with sync
 │   │   │   └── applications/
-│   │   │       └── AppliedJobsDrawer.tsx  # Slide-out drawer tracking applied jobs
+│   │   │       └── AppliedJobsDrawer.tsx  # Slide-out drawer tracking applied jobs with backdrop close
 │   │   └── lib/
-│   │       ├── api.ts                     # Backend API client & types
-│   │       └── utils.ts                   # Utility functions
+│   │       └── api.ts                     # Backend API client, SSE reader & TypeScript schemas
 │   ├── package.json
 │   ├── tailwind.config.ts
 │   └── tsconfig.json
@@ -261,7 +258,7 @@ pip install -r requirements.txt
 # (Optional) Add your Gemini API key in backend/.env:
 # GEMINI_API_KEY=your_key_here
 
-# Run backend test suite (20 tests)
+# Run backend test suite (23 tests)
 python -m pytest tests/
 
 # Start FastAPI server

@@ -61,6 +61,7 @@ def direct_apply(
 @router.post("/chat", tags=["Chat"])
 async def chat_stream(
     request: ChatRequest,
+    x_session_id: Optional[str] = Header(None, description="Optional header override for session UUID"),
     store: SessionStore = Depends(get_session_store),
     app_repo: ApplicationRepository = Depends(get_application_repo),
     job_repo: JobRepository = Depends(get_job_repository)
@@ -68,8 +69,10 @@ async def chat_stream(
     """
     Conversational chat endpoint with Server-Sent Events (SSE) streaming.
     Streams real-time sub-agent handoffs, thoughts, tokens, and interactive job cards.
+    Accepts session ID via request body or X-Session-Id header.
     """
-    session = store.get_or_create(request.session_id)
+    session_id = (request.session_id or x_session_id or "").strip()
+    session = store.get_or_create(session_id)
     orchestrator = OrchestratorAgent(job_repo=job_repo, session_store=store)
 
     return StreamingResponse(
