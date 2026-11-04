@@ -98,9 +98,11 @@ class OrchestratorAgent:
         # Search / refine — extract filter parameters from the message
         args: Dict[str, Any] = {}
 
-        if any(kw in msg_low for kw in ["remote", "work from home", "wfh"]):
+        if any(kw in msg_low for kw in ["all modes", "all roles", "clear remote", "any workplace", "onsite and remote", "both remote and onsite"]):
+            args["remote"] = None
+        elif any(kw in msg_low for kw in ["remote", "work from home", "wfh"]):
             args["remote"] = True
-        elif any(kw in msg_low for kw in ["onsite", "in-office", "on-site"]):
+        elif any(kw in msg_low for kw in ["onsite", "in-office", "on-site", "in office"]):
             args["remote"] = False
 
         # Skills detection
@@ -216,7 +218,8 @@ class OrchestratorAgent:
         self,
         session: SessionState,
         user_message: str,
-        app_repo: ApplicationRepository
+        app_repo: ApplicationRepository,
+        filter_overrides: Optional[Dict[str, Any]] = None,
     ) -> AsyncGenerator[str, None]:
         """
         Main conversational loop yielding SSE formatted event strings.
@@ -234,6 +237,9 @@ class OrchestratorAgent:
         intent_data = self.detect_intent(user_message, history=session.history)
         tool_name = intent_data.get("tool", "recommend_jobs")
         tool_args = intent_data.get("args", {})
+
+        if filter_overrides:
+            tool_args.update(filter_overrides)
 
         yield StreamEmitter.agent_thought(
             "Orchestrator",

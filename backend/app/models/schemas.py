@@ -103,6 +103,7 @@ class ApplicationRecord(BaseModel):
 class ChatRequest(BaseModel):
     session_id: str
     message: str
+    filter_overrides: Optional[Dict[str, Any]] = None
 
 
 class ChatResponse(BaseModel):

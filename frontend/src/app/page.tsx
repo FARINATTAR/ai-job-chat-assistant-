@@ -20,6 +20,8 @@ import {
   Zap,
   Code2,
   Building2,
+  MapPin,
+  RotateCcw,
 } from "lucide-react";
 import { getSessionId, API_BASE_URL, JobMatch, ResumeProfile, uploadResume, applyToJobDirect } from "@/lib/api";
 import { JobCard } from "@/components/jobs/JobCard";
@@ -66,6 +68,10 @@ export default function Home() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const chatFileInputRef = useRef<HTMLInputElement>(null);
 
+  // Interactive top filter bar state
+  const [activeWorkMode, setActiveWorkMode] = useState<"all" | "remote" | "onsite">("all");
+  const [activeExpLevel, setActiveExpLevel] = useState<"all" | "fresher" | "mid">("all");
+
   useEffect(() => {
     setSessionId(getSessionId());
   }, []);
@@ -107,6 +113,8 @@ export default function Home() {
       const data = await uploadResume(file, sessionId);
       if (data?.profile) {
         setCurrentProfile(data.profile);
+        setActiveWorkMode("all");
+        setActiveExpLevel("all");
         const p = data.profile;
         const skillsList = p.skills?.slice(0, 8).join(", ") || "General Tech";
         const parseSummary = `**Resume parsed successfully**\n\n- **Candidate:** ${p.name || "Candidate"}\n- **Designation:** ${p.designation || "Software Engineer"}\n- **Experience:** ${p.years_of_experience || 0} years\n- **Identified Skills:** ${skillsList}\n\nFinding top matching jobs for your profile...`;
@@ -168,8 +176,46 @@ export default function Home() {
     setTimeout(() => handleSendMessage(query), 100);
   };
 
+  // ─── Filter Bar Handler ────────────────────────────────
+  const handleFilterChange = (filterType: string, value: string) => {
+    if (isStreaming) return;
+
+    let wm = activeWorkMode;
+    let el = activeExpLevel;
+
+    if (filterType === "workMode") {
+      wm = value as "all" | "remote" | "onsite";
+      setActiveWorkMode(wm);
+    } else if (filterType === "expLevel") {
+      el = value as "all" | "fresher" | "mid";
+      setActiveExpLevel(el);
+    } else {
+      wm = "all";
+      el = "all";
+      setActiveWorkMode("all");
+      setActiveExpLevel("all");
+    }
+
+    const overrides: Record<string, any> = {
+      remote: wm === "remote" ? true : wm === "onsite" ? false : null,
+      max_experience: el === "fresher" ? 1 : el === "mid" ? 4 : null,
+    };
+
+    const parts: string[] = [];
+    if (wm === "remote") parts.push("remote");
+    else if (wm === "onsite") parts.push("on-site / in-office");
+    if (el === "fresher") parts.push("entry-level (0-1 yr)");
+    else if (el === "mid") parts.push("mid-level (2+ yrs)");
+
+    const msg = parts.length > 0
+      ? `Show ${parts.join(", ")} software engineering jobs`
+      : "Show all jobs without workplace or experience filters";
+
+    handleSendMessage(msg, overrides);
+  };
+
   // ─── Chat ─────────────────────────────────────────────
-  const handleSendMessage = async (customMessage?: string) => {
+  const handleSendMessage = async (customMessage?: string, filterOverrides?: Record<string, any>) => {
     const textToSend = (customMessage || inputMessage).trim();
     if (!textToSend || isStreaming) return;
 
@@ -189,10 +235,13 @@ export default function Home() {
     let receivedJobs: JobMatch[] | undefined = undefined;
 
     try {
+      const body: Record<string, any> = { session_id: sessionId, message: textToSend };
+      if (filterOverrides) body.filter_overrides = filterOverrides;
+
       const response = await fetch(`${API_BASE_URL}/api/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ session_id: sessionId, message: textToSend }),
+        body: JSON.stringify(body),
       });
 
       if (!response.body) throw new Error("No response stream available.");
@@ -506,6 +555,74 @@ export default function Home() {
       />
 
       <main className="flex-1 flex flex-col overflow-hidden">
+        {/* Interactive Filter Bar */}
+        <div className="border-b border-slate-200/80 bg-white/95 backdrop-blur-sm px-4 sm:px-6 py-2 shrink-0">
+          <div className="max-w-4xl mx-auto flex flex-wrap items-center gap-x-3 gap-y-1.5">
+            {/* Workplace Mode */}
+            <div className="flex items-center gap-1 text-xs">
+              <MapPin className="w-3.5 h-3.5 text-slate-400 mr-0.5 shrink-0" />
+              {([
+                { label: "All Modes", value: "all" },
+                { label: "Remote", value: "remote" },
+                { label: "On-Site", value: "onsite" },
+              ] as const).map((opt) => (
+                <button
+                  key={opt.value}
+                  onClick={() => handleFilterChange("workMode", opt.value)}
+                  disabled={isStreaming}
+                  className={`px-2.5 py-1 rounded-lg font-medium transition-all ${
+                    activeWorkMode === opt.value
+                      ? "bg-indigo-600 text-white shadow-sm"
+                      : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                  }`}
+                >
+                  {opt.label}
+                </button>
+              ))}
+            </div>
+
+            <div className="w-px h-5 bg-slate-200 hidden sm:block" />
+
+            {/* Experience Level */}
+            <div className="flex items-center gap-1 text-xs">
+              <Briefcase className="w-3.5 h-3.5 text-slate-400 mr-0.5 shrink-0" />
+              {([
+                { label: "All Levels", value: "all" },
+                { label: "Fresher (0-1 yr)", value: "fresher" },
+                { label: "Mid (2+ yrs)", value: "mid" },
+              ] as const).map((opt) => (
+                <button
+                  key={opt.value}
+                  onClick={() => handleFilterChange("expLevel", opt.value)}
+                  disabled={isStreaming}
+                  className={`px-2.5 py-1 rounded-lg font-medium transition-all ${
+                    activeExpLevel === opt.value
+                      ? "bg-indigo-600 text-white shadow-sm"
+                      : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                  }`}
+                >
+                  {opt.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Reset All */}
+            {(activeWorkMode !== "all" || activeExpLevel !== "all") && (
+              <>
+                <div className="w-px h-5 bg-slate-200 hidden sm:block" />
+                <button
+                  onClick={() => handleFilterChange("reset", "all")}
+                  disabled={isStreaming}
+                  className="px-2.5 py-1 rounded-lg text-xs font-medium text-rose-600 bg-rose-50 hover:bg-rose-100 border border-rose-200/60 transition-all flex items-center gap-1"
+                >
+                  <RotateCcw className="w-3 h-3" />
+                  Reset
+                </button>
+              </>
+            )}
+          </div>
+        </div>
+
         {/* Messages scroll viewport: full-width so no vertical gray scrollbar line cuts through desktop */}
         <div className="flex-1 overflow-y-auto">
           <div className="px-4 sm:px-6 py-6 space-y-5 max-w-4xl w-full mx-auto">
@@ -568,31 +685,45 @@ export default function Home() {
                         iconColor: "text-indigo-600 bg-indigo-50 border border-indigo-100",
                         label: "Remote developer roles",
                         query: "show only remote roles",
+                        onSelect: () => {
+                          setActiveWorkMode("remote");
+                          handleSendMessage("show only remote roles", { remote: true });
+                        },
                       },
                       {
                         icon: Zap,
                         iconColor: "text-amber-600 bg-amber-50 border border-amber-100",
                         label: "Entry-level / Fresher jobs (0-1 yr)",
                         query: "show fresher and entry level software jobs",
+                        onSelect: () => {
+                          setActiveExpLevel("fresher");
+                          handleSendMessage("show fresher and entry level software jobs", { max_experience: 1 });
+                        },
                       },
                       {
                         icon: Code2,
                         iconColor: "text-emerald-600 bg-emerald-50 border border-emerald-100",
                         label: "Roles needing React & TypeScript",
                         query: "jobs needing React and TypeScript",
+                        onSelect: () => {
+                          handleSendMessage("jobs needing React and TypeScript", { skills: ["React", "TypeScript"] });
+                        },
                       },
                       {
                         icon: Building2,
                         iconColor: "text-violet-600 bg-violet-50 border border-violet-100",
                         label: "Top tech companies (Google, Meta)",
                         query: "show software engineer jobs at Google, Meta, or Amazon",
+                        onSelect: () => {
+                          handleSendMessage("show software engineer jobs at Google, Meta, or Amazon");
+                        },
                       },
                     ].map((chip) => {
                       const IconComp = chip.icon;
                       return (
                         <button
                           key={chip.query}
-                          onClick={() => handleSendMessage(chip.query)}
+                          onClick={chip.onSelect}
                           className="p-3 rounded-xl border border-slate-200 bg-white hover:border-indigo-300 hover:bg-indigo-50/40 text-xs sm:text-sm font-medium text-slate-700 text-left transition-all flex items-center justify-between group shadow-xs hover:shadow-sm"
                         >
                           <div className="flex items-center gap-2.5">

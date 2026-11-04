@@ -79,7 +79,8 @@ async def chat_stream(
         orchestrator.stream_chat(
             session=session,
             user_message=request.message,
-            app_repo=app_repo
+            app_repo=app_repo,
+            filter_overrides=request.filter_overrides,
         ),
         media_type="text/event-stream",
         headers={
@@ -127,8 +128,9 @@ async def upload_resume(
         parser = ResumeParserAgent()
         profile = parser.parse_document(content, filename)
 
-        # 4. Save to session context
+        # 4. Save to session context & reset stale conversational filters for clean matching
         session.resume_profile = profile
+        session.active_filters = ActiveFilters()
 
         return {
             "status": "success",
