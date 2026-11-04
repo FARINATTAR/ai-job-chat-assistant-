@@ -115,7 +115,7 @@ export const JobCard: React.FC<JobCardProps> = ({ match, onApply, isApplied = fa
                   key={i}
                   className="text-[11px] px-2 py-0.5 rounded-md bg-indigo-50 text-indigo-700 border border-indigo-200/70 font-medium"
                 >
-                  ✓ {skill}
+                  {skill}
                 </span>
               ))}
               {matched_skills.length > 5 && (

@@ -125,7 +125,7 @@ export const ResumeUploader: React.FC<ResumeUploaderProps> = ({
           <p className="text-indigo-600 font-semibold">{currentProfile.designation}</p>
 
           {currentProfile.contact?.email && (
-            <p className="text-slate-500 text-[11px] truncate">✉️ {currentProfile.contact.email}</p>
+            <p className="text-slate-500 text-[11px] truncate">{currentProfile.contact.email}</p>
           )}
 
           {/* Extracted Skills Badges */}
