@@ -55,5 +55,6 @@ Thumbs.db
 # Logs & Test Caches
 *.log
 .pytest_cache/
+.vercel/
 
 

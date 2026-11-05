@@ -64,11 +64,13 @@ class ResumeParserAgent:
             system_instruction=RESUME_PARSER_SYSTEM_PROMPT
         )
 
+        sections = self._extract_sections(raw_text)
+
         if profile_data:
             profile = self._build_profile_from_dict(profile_data)
         else:
             # 2. Heuristic fallback when LLM is unavailable (offline or tests)
-            profile = self._heuristic_fallback_parse(raw_text, filename)
+            profile = self._heuristic_fallback_parse(raw_text, filename, sections)
 
         # 3. Post-process: normalize & deduplicate skills
         normalized_skills = []
@@ -76,6 +78,14 @@ class ResumeParserAgent:
             norm = self.normalize_skill(s)
             if norm and norm not in normalized_skills:
                 normalized_skills.append(norm)
+
+        # Ensure any skills from skills section are added
+        if "skills" in sections:
+            section_skills = self._extract_skills_from_section(sections["skills"])
+            for s in section_skills:
+                norm = self.normalize_skill(s)
+                if norm and norm not in normalized_skills:
+                    normalized_skills.append(norm)
 
         # Ensure any taxonomy skills in text are captured
         text_lower = raw_text.lower()
@@ -136,8 +146,52 @@ class ResumeParserAgent:
             print(f"[ResumeParserAgent] Error converting dict to schema: {e}")
             return ResumeProfile()
 
-    def _heuristic_fallback_parse(self, text: str, filename: str) -> ResumeProfile:
+    @staticmethod
+    def _extract_sections(raw_text: str) -> Dict[str, str]:
+        """Split resume text into semantic sections using header detection."""
+        headers = [
+            ("education", r"(?:^|\n)\s*(?:EDUCATION|ACADEMIC\s+BACKGROUND|QUALIFICATIONS)\b"),
+            ("skills", r"(?:^|\n)\s*(?:TECHNICAL\s+SKILLS|CORE\s+COMPETENCIES|CORE\s+SKILLS|SKILLS|TECHNOLOGIES)\b"),
+            ("projects", r"(?:^|\n)\s*(?:PROJECTS|PERSONAL\s+PROJECTS|KEY\s+PROJECTS|ACADEMIC\s+PROJECTS|TECHNICAL\s+PROJECTS)\b"),
+            ("experience", r"(?:^|\n)\s*(?:WORK\s+EXPERIENCE|PROFESSIONAL\s+EXPERIENCE|EXPERIENCE|INTERNSHIPS?|EMPLOYMENT\s+HISTORY)\b"),
+        ]
+        matches = []
+        for sec_name, pattern in headers:
+            m = re.search(pattern, raw_text, re.IGNORECASE)
+            if m:
+                matches.append((m.start(), m.end(), sec_name))
+        matches.sort(key=lambda x: x[0])
+
+        sections: Dict[str, str] = {}
+        for i, (start, end, name) in enumerate(matches):
+            next_start = matches[i + 1][0] if i + 1 < len(matches) else len(raw_text)
+            sections[name] = raw_text[end:next_start].strip()
+        return sections
+
+    @staticmethod
+    def _extract_skills_from_section(section_text: str) -> List[str]:
+        """Extract skill keywords from the skills section."""
+        extracted: List[str] = []
+        lines = [l.strip() for l in section_text.splitlines() if l.strip()]
+        for line in lines:
+            # Strip leading category labels like 'Languages:', 'Frameworks:'
+            content = re.sub(r"^[A-Za-z\s&/\\-]+[:\-]\s*", "", line)
+            tokens = re.split(r"[,|•\*\n]+", content)
+            for t in tokens:
+                cleaned = t.strip()
+                cleaned = re.sub(r"\(.*?\)", "", cleaned).strip()
+                if cleaned and len(cleaned) < 35 and not re.match(r"^\d+$", cleaned):
+                    if cleaned not in extracted:
+                        extracted.append(cleaned)
+        return extracted
+
+    def _heuristic_fallback_parse(
+        self, text: str, filename: str, sections: Optional[Dict[str, str]] = None
+    ) -> ResumeProfile:
         """Deterministic regex-based parsing when LLM is unavailable."""
+        if sections is None:
+            sections = self._extract_sections(text)
+
         # Email
         email_match = re.search(r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}", text)
         email = email_match.group(0) if email_match else None
@@ -158,7 +212,10 @@ class ResumeParserAgent:
 
         # Designation heuristic
         designation = "Software Engineer"
-        for title_candidate in ["Frontend Developer", "Backend Developer", "Full Stack Developer", "Data Scientist", "DevOps Engineer", "Machine Learning Engineer", "SDE Intern"]:
+        for title_candidate in [
+            "Frontend Developer", "Backend Developer", "Full Stack Developer",
+            "Data Scientist", "DevOps Engineer", "Machine Learning Engineer", "SDE Intern"
+        ]:
             if title_candidate.lower() in text.lower():
                 designation = title_candidate
                 break
@@ -172,11 +229,16 @@ class ResumeParserAgent:
             except ValueError:
                 pass
 
-        # Education heuristic: extract degree, institution, and year from text
-        education = self._extract_education_heuristic(text)
+        # Education heuristic: extract degree, institution, and year from text or education section
+        education = self._extract_education_heuristic(text, sections.get("education"))
 
-        # Projects heuristic: extract project names and descriptions from text
-        projects = self._extract_projects_heuristic(text)
+        # Projects heuristic: extract project names and descriptions
+        projects = self._extract_projects_heuristic(text, sections.get("projects"))
+
+        # Skills from skills section
+        skills = []
+        if "skills" in sections:
+            skills = self._extract_skills_from_section(sections["skills"])
 
         return ResumeProfile(
             name=candidate_name,
@@ -187,7 +249,7 @@ class ResumeParserAgent:
                 linkedin=f"https://{li_match.group(0)}" if li_match else None,
             ),
             designation=designation,
-            skills=[],
+            skills=skills,
             years_of_experience=exp_years,
             experience_summary=f"Parsed from {filename}",
             education=education,
@@ -198,70 +260,80 @@ class ResumeParserAgent:
     # Heuristic sub-extractors for education and projects
     # ------------------------------------------------------------------
     @staticmethod
-    def _extract_education_heuristic(text: str) -> list:
-        """Extract education entries using regex patterns."""
+    def _extract_education_heuristic(text: str, edu_section: Optional[str] = None) -> list:
+        """Extract education entries using targeted patterns."""
         from ..models.schemas import EducationItem
 
         education: list = []
-        degree_patterns = [
-            r"((?:Bachelor|Master|B\.?S\.?|M\.?S\.?|B\.?Tech|M\.?Tech|B\.?E\.?|M\.?E\.?|B\.?Sc|M\.?Sc|MBA|Ph\.?D|Diploma)"
-            r"[^,\n]{0,80}?)"
-            r"[,\s]+([A-Z][a-zA-Z\s&]+(?:University|Institute|College|School|Academy)[a-zA-Z\s]*)"
-            r"[,\s]*(\d{4})?",
-        ]
-        for pattern in degree_patterns:
-            for m in re.finditer(pattern, text, re.IGNORECASE):
-                degree = m.group(1).strip().rstrip(",. ")
-                institution = m.group(2).strip().rstrip(",. ")
-                year = m.group(3) if m.lastindex >= 3 else None
-                education.append(EducationItem(degree=degree, institution=institution, year=year))
+        deg_regex = re.compile(
+            r"\b(?:Bachelor(?:\s+of\s+[A-Za-z\s]+)?|B\.?Tech|B\.?E\.?|B\.?S\.?|Master(?:\s+of\s+[A-Za-z\s]+)?|M\.?Tech|M\.?E\.?|M\.?S\.?|MCA|BCA|B\.?Sc|M\.?Sc|MBA|Ph\.?D|Diploma)\b[^\n\(\),;]*",
+            re.IGNORECASE,
+        )
+        year_regex = re.compile(r"\b(19[89]\d|20[0-3]\d)\b")
+        inst_regex = re.compile(
+            r"[A-Za-z\s&]+(?:University|Institute|College|School|Academy)[A-Za-z\s]*",
+            re.IGNORECASE,
+        )
 
-        # Simpler fallback: look for lines like "B.S. Computer Science, 2022"
-        if not education:
-            simple = re.findall(
-                r"((?:Bachelor|Master|B\.?S\.?|M\.?S\.?|B\.?Tech|M\.?Tech|B\.?E\.?|M\.?E\.?|B\.?Sc|M\.?Sc|MBA|Ph\.?D|Diploma)"
-                r"[^.\n]{5,100}?)"
-                r"[,\s]*(\d{4})",
-                text,
-                re.IGNORECASE,
-            )
-            for deg_text, year in simple:
-                education.append(EducationItem(degree=deg_text.strip(), year=year))
+        source_text = edu_section if edu_section else text
+        lines = [l.strip() for l in source_text.splitlines() if l.strip()]
+
+        for line in lines:
+            if re.search(r"\b(?:cgpa|percentage|marks|grade)\b", line, re.IGNORECASE):
+                continue
+            y_match = year_regex.findall(line)
+            year = y_match[-1] if y_match else None
+
+            d_match = deg_regex.search(line)
+            i_match = inst_regex.search(line)
+
+            if d_match:
+                deg = d_match.group(0).strip().rstrip(",. ")
+                inst = i_match.group(0).strip().rstrip(",. ") if i_match else None
+                education.append(EducationItem(degree=deg, institution=inst, year=year))
+            elif i_match and education and not education[-1].institution:
+                education[-1].institution = i_match.group(0).strip().rstrip(",. ")
+                if year and not education[-1].year:
+                    education[-1].year = year
+            elif i_match and edu_section:
+                education.append(EducationItem(degree="Bachelor Degree", institution=i_match.group(0).strip().rstrip(",. "), year=year))
 
         return education
 
     @staticmethod
-    def _extract_projects_heuristic(text: str) -> list:
-        """Extract project entries from sections labeled 'Projects'."""
+    def _extract_projects_heuristic(text: str, proj_section: Optional[str] = None) -> list:
+        """Extract project entries cleanly."""
         from ..models.schemas import ProjectItem
 
         projects: list = []
+        source_text = proj_section
 
-        # Find a "Projects" section
-        proj_match = re.search(
-            r"(?:^|\n)\s*(?:Projects?|Personal Projects?|Key Projects?)\s*[:\-]?\s*(.+)",
-            text,
-            re.IGNORECASE | re.DOTALL,
-        )
-        if proj_match:
-            remaining = proj_match.group(1)
-            # Stop at the next major section header if any
-            cutoff = re.search(r"\n\s*(?:Education|Experience|Technical Skills|Skills|Certifications?|Awards?)\s*[:\-]", remaining, re.IGNORECASE)
-            section_text = remaining[:cutoff.start()].strip() if cutoff else remaining.strip()
+        if not source_text:
+            proj_match = re.search(
+                r"(?:^|\n)\s*(?:Projects?|Personal Projects?|Key Projects?)\s*[:\-]?\s*(.+)",
+                text,
+                re.IGNORECASE | re.DOTALL,
+            )
+            if proj_match:
+                remaining = proj_match.group(1)
+                cutoff = re.search(r"\n\s*(?:Education|Experience|Technical Skills|Skills|Certifications?|Awards?)\s*[:\-]", remaining, re.IGNORECASE)
+                source_text = remaining[:cutoff.start()].strip() if cutoff else remaining.strip()
 
-            # Split by lines or bullet points
-            lines = [l.strip() for l in re.split(r"(?:\n\s*(?:[•\-\*\d]+[.\)]\s*)|\n+)", section_text) if l.strip()]
+        if source_text:
+            lines = [l.strip() for l in re.split(r"(?:\n\s*(?:[•\-\*\d]+[.\)]\s*)|\n+)", source_text) if l.strip()]
             for item in lines:
-                if len(item) < 8:
+                clean_item = re.sub(r"^[•\*\-\d+\.]+\s*", "", item).strip()
+                if len(clean_item) < 6:
                     continue
-                # Split on colon or hyphen if present
-                if ":" in item:
-                    name, desc = item.split(":", 1)
-                elif " - " in item:
-                    name, desc = item.split(" - ", 1)
+                if " - " in clean_item:
+                    name, desc = clean_item.split(" - ", 1)
+                elif ":" in clean_item:
+                    name, desc = clean_item.split(":", 1)
+                elif " | " in clean_item:
+                    name, desc = clean_item.split(" | ", 1)
                 else:
-                    name = item[:80].strip()
-                    desc = item.strip()
+                    name = clean_item[:50].strip()
+                    desc = clean_item.strip()
                 projects.append(ProjectItem(name=name.strip(), description=desc.strip()))
 
         return projects
