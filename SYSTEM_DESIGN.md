@@ -1,4 +1,4 @@
-# 🏗️ System Design Document: AI Job Chat Assistant
+# System Design Document: AI Job Chat Assistant
 
 > **Company:** Hidani Tech  
 > **Role Assessment:** SDE Intern - AI Agents & Automation  
@@ -85,7 +85,7 @@ graph TD
 - **Error Handling:** Detects empty text (scanned PDF), corrupted headers, or non-resume documents, prompting user to upload a valid text PDF/DOCX.
 
 ### 2.3 Sub-Agent 2: JobMatcher Agent
-- **Role:** Finds the best matching jobs from `jobs.json` (1,500–2,000 listings) and explains why.
+- **Role:** Finds the best matching jobs from `jobs.json` (over 2,900 verified listings) and explains why.
 - **Hybrid Matching Engine:**
   - **Deterministic Scoring (Code):**
     $$\text{Score} = w_1 \times \text{SkillOverlap} + w_2 \times \text{ExperienceFit} + w_3 \times \text{DesignationSimilarity}$$
