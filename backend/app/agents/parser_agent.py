@@ -170,17 +170,32 @@ class ResumeParserAgent:
 
     @staticmethod
     def _extract_skills_from_section(section_text: str) -> List[str]:
-        """Extract skill keywords from the skills section."""
+        """Extract skill keywords cleanly from the skills section."""
         extracted: List[str] = []
-        lines = [l.strip() for l in section_text.splitlines() if l.strip()]
+        # First fix any line-wrapped hyphens in the section text
+        cleaned_sec = re.sub(r"(\b[A-Za-z]+)-\s*\n\s*([A-Za-z]+\b)", r"\1\2", section_text)
+        lines = [l.strip() for l in cleaned_sec.splitlines() if l.strip()]
+
         for line in lines:
-            # Strip leading category labels like 'Languages:', 'Frameworks:'
-            content = re.sub(r"^[A-Za-z\s&/\\-]+[:\-]\s*", "", line)
-            tokens = re.split(r"[,|•\*\n]+", content)
+            # 1. Strip leading bullet markers (•, -, *, 1., etc.)
+            clean_line = re.sub(r"^[•\*\-\d+\.]+\s*", "", line).strip()
+            # 2. Strip leading category labels like 'GenAI & AI Capabilities:', 'Languages:', etc.
+            clean_content = re.sub(r"^[A-Za-z0-9\s&/\\()\-]+[:\-]\s*", "", clean_line).strip()
+            # 3. Split on commas, pipes, bullets, and newlines
+            tokens = re.split(r"[,|•\*\n]+", clean_content)
             for t in tokens:
                 cleaned = t.strip()
+                # Remove parens info like 'Python (Advanced)'
                 cleaned = re.sub(r"\(.*?\)", "", cleaned).strip()
-                if cleaned and len(cleaned) < 35 and not re.match(r"^\d+$", cleaned):
+                # Remove leading stray punctuation like '& AI' or '- Tool'
+                cleaned = re.sub(r"^[&/\\:\-\*•\s]+", "", cleaned).strip()
+                # Validate length and content
+                if (
+                    cleaned
+                    and 2 <= len(cleaned) <= 35
+                    and not re.match(r"^\d+$", cleaned)
+                    and not cleaned.lower().startswith("capabilities")
+                ):
                     if cleaned not in extracted:
                         extracted.append(cleaned)
         return extracted
@@ -220,7 +235,7 @@ class ResumeParserAgent:
                 designation = title_candidate
                 break
 
-        # Experience years heuristic
+        # Experience years heuristic: look for years and months (e.g. internships)
         exp_years = 0.0
         exp_match = re.search(r"(\d+(?:\.\d+)?)\s*(?:\+|-\s*\d+)?\s*(?:years?|yrs?)(?:\s*of\s*experience)?", text, re.IGNORECASE)
         if exp_match:
@@ -228,6 +243,13 @@ class ResumeParserAgent:
                 exp_years = min(float(exp_match.group(1)), 25.0)
             except ValueError:
                 pass
+        elif "intern" in text.lower() or "internship" in text.lower():
+            months_match = re.search(r"(\d+)\s*(?:months?|mos?)(?:\s*internship|\s*experience)?", text, re.IGNORECASE)
+            if months_match:
+                try:
+                    exp_years = round(float(months_match.group(1)) / 12.0, 1)
+                except ValueError:
+                    pass
 
         # Education heuristic: extract degree, institution, and year from text or education section
         education = self._extract_education_heuristic(text, sections.get("education"))
@@ -261,7 +283,7 @@ class ResumeParserAgent:
     # ------------------------------------------------------------------
     @staticmethod
     def _extract_education_heuristic(text: str, edu_section: Optional[str] = None) -> list:
-        """Extract education entries using targeted patterns."""
+        """Extract education entries grouping degree, college (with apostrophes), and year."""
         from ..models.schemas import EducationItem
 
         education: list = []
@@ -271,13 +293,14 @@ class ResumeParserAgent:
         )
         year_regex = re.compile(r"\b(19[89]\d|20[0-3]\d)\b")
         inst_regex = re.compile(
-            r"[A-Za-z\s&]+(?:University|Institute|College|School|Academy)[A-Za-z\s]*",
+            r"([A-Za-z0-9\s&\'\.,\-]+(?:University|Institute|College|School|Academy)[A-Za-z0-9\s&\'\.,\-]*)",
             re.IGNORECASE,
         )
 
         source_text = edu_section if edu_section else text
         lines = [l.strip() for l in source_text.splitlines() if l.strip()]
 
+        current_entry: Dict[str, Any] = {}
         for line in lines:
             if re.search(r"\b(?:cgpa|percentage|marks|grade)\b", line, re.IGNORECASE):
                 continue
@@ -289,14 +312,46 @@ class ResumeParserAgent:
 
             if d_match:
                 deg = d_match.group(0).strip().rstrip(",. ")
-                inst = i_match.group(0).strip().rstrip(",. ") if i_match else None
-                education.append(EducationItem(degree=deg, institution=inst, year=year))
-            elif i_match and education and not education[-1].institution:
-                education[-1].institution = i_match.group(0).strip().rstrip(",. ")
-                if year and not education[-1].year:
-                    education[-1].year = year
-            elif i_match and edu_section:
-                education.append(EducationItem(degree="Bachelor Degree", institution=i_match.group(0).strip().rstrip(",. "), year=year))
+                if "degree" in current_entry:
+                    education.append(
+                        EducationItem(
+                            degree=current_entry.get("degree"),
+                            institution=current_entry.get("institution"),
+                            year=current_entry.get("year"),
+                        )
+                    )
+                    current_entry = {}
+                current_entry["degree"] = deg
+                if year and "year" not in current_entry:
+                    current_entry["year"] = year
+
+            if i_match:
+                inst = i_match.group(0).strip().rstrip(",. ")
+                # If current already has both, flush it
+                if "institution" in current_entry and "degree" in current_entry:
+                    education.append(
+                        EducationItem(
+                            degree=current_entry.get("degree"),
+                            institution=current_entry.get("institution"),
+                            year=current_entry.get("year"),
+                        )
+                    )
+                    current_entry = {}
+                current_entry["institution"] = inst
+                if year and "year" not in current_entry:
+                    current_entry["year"] = year
+
+            if year and "year" not in current_entry:
+                current_entry["year"] = year
+
+        if current_entry and (current_entry.get("degree") or current_entry.get("institution")):
+            education.append(
+                EducationItem(
+                    degree=current_entry.get("degree") or "Bachelor of Engineering",
+                    institution=current_entry.get("institution"),
+                    year=current_entry.get("year"),
+                )
+            )
 
         return education
 

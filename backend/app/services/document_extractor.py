@@ -53,6 +53,10 @@ class DocumentExtractor:
 
         cleaned = text.strip()
 
+        # De-hyphenate line-wrapped words across linebreaks (e.g. "Hallu-\n cination" -> "Hallucination")
+        import re
+        cleaned = re.sub(r"(\b[A-Za-z]+)-\s*\n\s*([A-Za-z]+\b)", r"\1\2", cleaned)
+
         # Check if text is too short (e.g. image-only scanned PDF)
         if len(cleaned) < 50:
             raise UnreadableDocumentError(
