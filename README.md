@@ -1,4 +1,4 @@
-# 🤖 AI Job Chat Assistant
+# AI Job Chat Assistant
 
 > **Company:** Hidani Tech  
 > **Position:** Software Development Engineer (SDE) Intern - AI Agents & Automation  
@@ -8,11 +8,11 @@
 
 ---
 
-## 📖 Project Overview
+## Project Overview
 
 **AI Job Chat Assistant** is a production-ready conversational agent that ingests candidate resumes (PDF or DOCX), automatically parses their skills, experience, and designation, recommends highly-matching jobs from a dataset of **over 2,900 real-world job listings**, allows natural conversational filtering (e.g. *"show only remote roles"*, *"jobs needing React"*), applies to jobs on request (*"apply to job 3"*), and tracks application statuses without duplication.
 
-### ✨ Key Technical Highlights
+### Key Technical Highlights
 - **LLM Tool-Calling Orchestrator:** Native function-calling schema loop (Gemini / OpenAI) with conversation history context and high-coverage regex fallback. Fully defendable in technical interviews.
 - **Real-Time Agent Activity Trace:** Server-Sent Events (SSE) stream agent thoughts, tool calls, and handoffs to the UI in real time (`[Orchestrator] ➔ Delegating to [JobMatcher]`).
 - **Grounded Matching & Zero Hallucination:** Deterministic skill overlap and experience calculation with LLM-generated explanations strictly bound to factual overlap.
@@ -22,7 +22,7 @@
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 ```mermaid
 graph TD
@@ -83,7 +83,7 @@ graph TD
 
 ---
 
-## 🔄 End-to-End Dataflow & Sequence Diagram
+## End-to-End Dataflow & Sequence Diagram
 
 ```mermaid
 sequenceDiagram
@@ -108,7 +108,7 @@ sequenceDiagram
     API->>Orch: stream_chat("recommend matching jobs")
     Orch->>UI: SSE Event: agent_handoff -> JobMatcher
     Orch->>Matcher: match_jobs(profile, active_filters)
-    Matcher->>DB: Query 1,691 jobs in memory
+    Matcher->>DB: Query 2,900+ jobs in memory
     DB-->>Matcher: Filtered & Scored Candidates
     Matcher-->>Orch: Top 5 Jobs + Grounded Match Reasons
     Orch->>Orch: Update session.last_results = [job1, job2, job3...]
@@ -142,7 +142,7 @@ sequenceDiagram
 
 ---
 
-## 🛡️ Edge-Case Handling (Mandatory Assessment Criteria)
+## Edge-Case Handling (Mandatory Assessment Criteria)
 
 The application handles all edge cases required by the Hidani Tech assessment:
 
@@ -157,13 +157,13 @@ The application handles all edge cases required by the Hidani Tech assessment:
 
 ---
 
-## 📂 Project Directory Structure
+## Project Directory Structure
 
 ```text
 hidani assessment/
 │
 ├── data/                                  # Datasets & Taxonomies
-│   ├── jobs.json                          # 1,691 real job records (Deliverable)
+│   ├── jobs.json                          # 2,900+ real job records (Deliverable)
 │   └── skills_taxonomy.json               # Standardized skills & synonyms
 │
 ├── scraper/                               # Modular Job Scraper Pipeline (Deliverable)
@@ -189,7 +189,7 @@ hidani assessment/
 │   │   │   ├── db_models.py               # SQLAlchemy ApplicationDB model (unique constraint)
 │   │   │   └── schemas.py                 # Pydantic schemas (ResumeProfile, JobMatch, etc.)
 │   │   ├── repositories/
-│   │   │   ├── job_repo.py                # In-memory fast search over 1,691 jobs
+│   │   │   ├── job_repo.py                # In-memory fast search over 2,900+ jobs
 │   │   │   └── app_repo.py                # Database CRUD with duplicate prevention
 │   │   ├── llm/
 │   │   │   ├── client.py                  # Provider-agnostic LLM wrapper (Gemini / OpenAI)
@@ -238,7 +238,7 @@ hidani assessment/
 
 ---
 
-## ⚡ Quickstart: Local Setup Guide
+## Quickstart: Local Setup Guide
 
 ### Prerequisites
 - Python 3.10+
@@ -284,7 +284,7 @@ Frontend will be live at `http://localhost:3000`.
 
 ---
 
-## 🚀 Cloud Deployment Guide
+## Cloud Deployment Guide
 
 ### Backend (Render / Railway / Fly.io)
 1. Link your GitHub repository.
@@ -302,17 +302,3 @@ Frontend will be live at `http://localhost:3000`.
 4. Deploy!
 
 ---
-
-## 🎥 3–5 Minute Video Demo Script
-
-Follow this script for the screen recording submission:
-
-| Time | Step | Action & Script Talking Points |
-|---|---|---|
-| **0:00 – 0:45** | **Introduction** | *"Hello! In this walkthrough, I am demoing the AI Job Chat Assistant built for the Hidani Tech SDE Intern assessment. Our backend is loaded with 2,900+ real jobs crawled from online job boards."* |
-| **0:45 – 1:30** | **Resume Upload & Parsing** | Drop a sample resume (PDF/DOCX) into the upload zone. Point out the auto-extracted Profile Card: Name, Designation, and verified technical skills. |
-| **1:30 – 2:30** | **Job Recommendations & SSE Trace** | Click *"Recommend matching jobs"*. Show the **Live Agent Trace badge** expanding: `[Orchestrator] ➔ Delegated to [JobMatcher Sub-Agent]`. Point out the grounded match score and bulleted reasons. |
-| **2:30 – 3:15** | **Conversational Refinement** | Type: *"Show only remote roles"*, followed by *"jobs needing Python"*. Show how filters stack statefully across turns and update results dynamically. |
-| **3:15 – 4:00** | **Natural Apply & Tracking** | Type: *"apply to job 1"*. Show the instant confirmation. Try applying again to show **duplicate prevention**. Then say *"show my applied jobs"* and open the **Applied Jobs Drawer**. |
-| **4:00 – 4:30** | **Edge-Case Handling** | Demonstrate attempting an invalid index (*"apply to job 99"*), showing the clear error correction. Conclude with summary. |
-
