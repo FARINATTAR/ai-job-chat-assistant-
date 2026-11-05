@@ -172,6 +172,12 @@ class ResumeParserAgent:
             except ValueError:
                 pass
 
+        # Education heuristic: extract degree, institution, and year from text
+        education = self._extract_education_heuristic(text)
+
+        # Projects heuristic: extract project names and descriptions from text
+        projects = self._extract_projects_heuristic(text)
+
         return ResumeProfile(
             name=candidate_name,
             contact=ContactInfo(
@@ -184,7 +190,79 @@ class ResumeParserAgent:
             skills=[],
             years_of_experience=exp_years,
             experience_summary=f"Parsed from {filename}",
-            education=[],
-            projects=[]
+            education=education,
+            projects=projects,
         )
+
+    # ------------------------------------------------------------------
+    # Heuristic sub-extractors for education and projects
+    # ------------------------------------------------------------------
+    @staticmethod
+    def _extract_education_heuristic(text: str) -> list:
+        """Extract education entries using regex patterns."""
+        from ..models.schemas import EducationItem
+
+        education: list = []
+        degree_patterns = [
+            r"((?:Bachelor|Master|B\.?S\.?|M\.?S\.?|B\.?Tech|M\.?Tech|B\.?E\.?|M\.?E\.?|B\.?Sc|M\.?Sc|MBA|Ph\.?D|Diploma)"
+            r"[^,\n]{0,80}?)"
+            r"[,\s]+([A-Z][a-zA-Z\s&]+(?:University|Institute|College|School|Academy)[a-zA-Z\s]*)"
+            r"[,\s]*(\d{4})?",
+        ]
+        for pattern in degree_patterns:
+            for m in re.finditer(pattern, text, re.IGNORECASE):
+                degree = m.group(1).strip().rstrip(",. ")
+                institution = m.group(2).strip().rstrip(",. ")
+                year = m.group(3) if m.lastindex >= 3 else None
+                education.append(EducationItem(degree=degree, institution=institution, year=year))
+
+        # Simpler fallback: look for lines like "B.S. Computer Science, 2022"
+        if not education:
+            simple = re.findall(
+                r"((?:Bachelor|Master|B\.?S\.?|M\.?S\.?|B\.?Tech|M\.?Tech|B\.?E\.?|M\.?E\.?|B\.?Sc|M\.?Sc|MBA|Ph\.?D|Diploma)"
+                r"[^.\n]{5,100}?)"
+                r"[,\s]*(\d{4})",
+                text,
+                re.IGNORECASE,
+            )
+            for deg_text, year in simple:
+                education.append(EducationItem(degree=deg_text.strip(), year=year))
+
+        return education
+
+    @staticmethod
+    def _extract_projects_heuristic(text: str) -> list:
+        """Extract project entries from sections labeled 'Projects'."""
+        from ..models.schemas import ProjectItem
+
+        projects: list = []
+
+        # Find a "Projects" section
+        proj_match = re.search(
+            r"(?:^|\n)\s*(?:Projects?|Personal Projects?|Key Projects?)\s*[:\-]?\s*(.+)",
+            text,
+            re.IGNORECASE | re.DOTALL,
+        )
+        if proj_match:
+            remaining = proj_match.group(1)
+            # Stop at the next major section header if any
+            cutoff = re.search(r"\n\s*(?:Education|Experience|Technical Skills|Skills|Certifications?|Awards?)\s*[:\-]", remaining, re.IGNORECASE)
+            section_text = remaining[:cutoff.start()].strip() if cutoff else remaining.strip()
+
+            # Split by lines or bullet points
+            lines = [l.strip() for l in re.split(r"(?:\n\s*(?:[•\-\*\d]+[.\)]\s*)|\n+)", section_text) if l.strip()]
+            for item in lines:
+                if len(item) < 8:
+                    continue
+                # Split on colon or hyphen if present
+                if ":" in item:
+                    name, desc = item.split(":", 1)
+                elif " - " in item:
+                    name, desc = item.split(" - ", 1)
+                else:
+                    name = item[:80].strip()
+                    desc = item.strip()
+                projects.append(ProjectItem(name=name.strip(), description=desc.strip()))
+
+        return projects
 

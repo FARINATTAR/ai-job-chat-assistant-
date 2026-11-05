@@ -64,3 +64,4 @@ def check_job_url_active(url: str, timeout: float = 3.5) -> Tuple[bool, str]:
     except Exception as e:
         # Network timeout or DNS glitch on individual check - keep active to prevent false dropouts
         return True, f"timeout_keep"
+

@@ -80,6 +80,7 @@ class ActiveFilters(BaseModel):
     page: int = 1
     offset: int = 0
     query: Optional[str] = None
+    posted_within_days: Optional[int] = None  # e.g. 1 for last 24h, 3 for last 3 days, 7 for last week
 
 
 class ApplicationCreate(BaseModel):

@@ -21,6 +21,7 @@ import {
   Code2,
   Building2,
   MapPin,
+  Clock,
   RotateCcw,
 } from "lucide-react";
 import { getSessionId, API_BASE_URL, JobMatch, ResumeProfile, uploadResume, applyToJobDirect } from "@/lib/api";
@@ -71,6 +72,7 @@ export default function Home() {
   // Interactive top filter bar state
   const [activeWorkMode, setActiveWorkMode] = useState<"all" | "remote" | "onsite">("all");
   const [activeExpLevel, setActiveExpLevel] = useState<"all" | "fresher" | "mid">("all");
+  const [activeDatePosted, setActiveDatePosted] = useState<"all" | "24h" | "3d" | "7d">("all");
 
   useEffect(() => {
     setSessionId(getSessionId());
@@ -117,7 +119,36 @@ export default function Home() {
         setActiveExpLevel("all");
         const p = data.profile;
         const skillsList = p.skills?.slice(0, 8).join(", ") || "General Tech";
-        const parseSummary = `**Resume parsed successfully**\n\n- **Candidate:** ${p.name || "Candidate"}\n- **Designation:** ${p.designation || "Software Engineer"}\n- **Experience:** ${p.years_of_experience || 0} years\n- **Identified Skills:** ${skillsList}\n\nFinding top matching jobs for your profile...`;
+
+        // Build education summary
+        let educationLine = "";
+        if (p.education && p.education.length > 0) {
+          const eduItems = p.education.map((e: any) => {
+            const parts = [e.degree, e.institution, e.year].filter(Boolean);
+            return parts.join(", ");
+          });
+          educationLine = `\n- **Education:** ${eduItems.join("; ")}`;
+        }
+
+        // Build projects summary
+        let projectsLine = "";
+        if (p.projects && p.projects.length > 0) {
+          const projNames = p.projects.slice(0, 4).map((pr: any) => pr.name);
+          projectsLine = `\n- **Projects:** ${projNames.join(", ")}`;
+        }
+
+        // Build contact summary
+        let contactLine = "";
+        const contactParts: string[] = [];
+        if (p.contact?.email) contactParts.push(p.contact.email);
+        if (p.contact?.phone) contactParts.push(p.contact.phone);
+        if (p.contact?.linkedin) contactParts.push(`[LinkedIn](${p.contact.linkedin})`);
+        if (p.contact?.github) contactParts.push(`[GitHub](${p.contact.github})`);
+        if (contactParts.length > 0) {
+          contactLine = `\n- **Contact:** ${contactParts.join(" | ")}`;
+        }
+
+        const parseSummary = `**Resume parsed successfully**\n\n- **Candidate:** ${p.name || "Candidate"}${contactLine}\n- **Designation:** ${p.designation || "Software Engineer"}\n- **Experience:** ${p.years_of_experience || 0} years\n- **Identified Skills:** ${skillsList}${educationLine}${projectsLine}\n\nFinding top matching jobs for your profile...`;
 
         setMessages((prev) =>
           prev.map((m) => (m.id === botMsgId ? { ...m, content: parseSummary } : m))
@@ -182,6 +213,7 @@ export default function Home() {
 
     let wm = activeWorkMode;
     let el = activeExpLevel;
+    let dp = activeDatePosted;
 
     if (filterType === "workMode") {
       wm = value as "all" | "remote" | "onsite";
@@ -189,27 +221,36 @@ export default function Home() {
     } else if (filterType === "expLevel") {
       el = value as "all" | "fresher" | "mid";
       setActiveExpLevel(el);
+    } else if (filterType === "datePosted") {
+      dp = value as "all" | "24h" | "3d" | "7d";
+      setActiveDatePosted(dp);
     } else {
       wm = "all";
       el = "all";
+      dp = "all";
       setActiveWorkMode("all");
       setActiveExpLevel("all");
+      setActiveDatePosted("all");
     }
 
     const overrides: Record<string, any> = {
       remote: wm === "remote" ? true : wm === "onsite" ? false : null,
       max_experience: el === "fresher" ? 1 : el === "mid" ? 4 : null,
+      posted_within_days: dp === "24h" ? 1 : dp === "3d" ? 3 : dp === "7d" ? 7 : null,
     };
 
     const parts: string[] = [];
     if (wm === "remote") parts.push("remote");
-    else if (wm === "onsite") parts.push("on-site / in-office");
-    if (el === "fresher") parts.push("entry-level (0-1 yr)");
+    else if (wm === "onsite") parts.push("on-site");
+    if (el === "fresher") parts.push("fresher (0-1 yr)");
     else if (el === "mid") parts.push("mid-level (2+ yrs)");
+    if (dp === "24h") parts.push("posted in last 24 hours");
+    else if (dp === "3d") parts.push("posted in last 3 days");
+    else if (dp === "7d") parts.push("posted in past week");
 
     const msg = parts.length > 0
       ? `Show ${parts.join(", ")} software engineering jobs`
-      : "Show all jobs without workplace or experience filters";
+      : "Show all jobs without filters";
 
     handleSendMessage(msg, overrides);
   };
@@ -606,8 +647,34 @@ export default function Home() {
               ))}
             </div>
 
+            <div className="w-px h-5 bg-slate-200 hidden sm:block" />
+
+            {/* Date Posted (Recency) */}
+            <div className="flex items-center gap-1 text-xs">
+              <Clock className="w-3.5 h-3.5 text-slate-400 mr-0.5 shrink-0" />
+              {([
+                { label: "All Time", value: "all" },
+                { label: "Past 24h", value: "24h" },
+                { label: "Past 3 Days", value: "3d" },
+                { label: "Past Week", value: "7d" },
+              ] as const).map((opt) => (
+                <button
+                  key={opt.value}
+                  onClick={() => handleFilterChange("datePosted", opt.value)}
+                  disabled={isStreaming}
+                  className={`px-2.5 py-1 rounded-lg font-medium transition-all ${
+                    activeDatePosted === opt.value
+                      ? "bg-indigo-600 text-white shadow-sm"
+                      : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                  }`}
+                >
+                  {opt.label}
+                </button>
+              ))}
+            </div>
+
             {/* Reset All */}
-            {(activeWorkMode !== "all" || activeExpLevel !== "all") && (
+            {(activeWorkMode !== "all" || activeExpLevel !== "all" || activeDatePosted !== "all") && (
               <>
                 <div className="w-px h-5 bg-slate-200 hidden sm:block" />
                 <button
@@ -753,7 +820,7 @@ export default function Home() {
                   </div>
                 )}
 
-                <div className={`max-w-[80%] space-y-3`}>
+                <div className={`${msg.jobResults && msg.jobResults.length > 0 ? "w-full" : "max-w-[85%]"} space-y-3`}>
                   {msg.content && (
                     <div
                       className={`p-4 rounded-2xl text-sm leading-relaxed ${
@@ -768,6 +835,14 @@ export default function Home() {
 
                   {msg.jobResults && msg.jobResults.length > 0 && (
                     <div className="space-y-3 pt-1">
+                      <div className="flex items-center justify-between text-xs px-1 text-slate-500">
+                        <span className="font-semibold text-slate-700">
+                          {msg.jobResults.length} Roles Recommended
+                        </span>
+                        <span className="text-[11px] text-indigo-600 bg-indigo-50 px-2.5 py-0.5 rounded-full border border-indigo-100 font-medium">
+                          Scroll down to view all {msg.jobResults.length} jobs ↓
+                        </span>
+                      </div>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         {msg.jobResults.map((match) => (
                           <JobCard
@@ -778,8 +853,8 @@ export default function Home() {
                           />
                         ))}
                       </div>
-                      <div className="flex items-center justify-between text-xs">
-                        <span className="text-slate-500">
+                      <div className="flex items-center justify-between text-xs pt-1">
+                        <span className="text-slate-500 font-medium">
                           Showing {msg.jobResults.length} positions
                         </span>
                         <button

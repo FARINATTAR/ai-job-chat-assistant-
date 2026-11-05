@@ -5,7 +5,7 @@ from typing import List, Dict, Any, Optional
 from pydantic import BaseModel
 from fastapi import APIRouter, Depends, HTTPException, UploadFile, File, status, Header
 from fastapi.responses import StreamingResponse
-from ..models.schemas import ApplicationRecord, ResumeProfile, ChatRequest
+from ..models.schemas import ApplicationRecord, ResumeProfile, ChatRequest, ActiveFilters
 from ..repositories.job_repo import JobRepository, get_job_repository
 from ..repositories.app_repo import ApplicationRepository
 from ..agents.parser_agent import ResumeParserAgent
@@ -127,12 +127,14 @@ async def upload_resume(
 
     # 2. Read file bytes with size check (max 10MB)
     try:
-        content = await file.read()
+        content = file.file.read() if hasattr(file, "file") else await file.read()
         if len(content) > 10 * 1024 * 1024:
             raise HTTPException(
                 status_code=status.HTTP_400_BAD_REQUEST,
                 detail="File size exceeds maximum allowed limit of 10MB."
             )
+    except HTTPException:
+        raise
     except Exception as e:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,

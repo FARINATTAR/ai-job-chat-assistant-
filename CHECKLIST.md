@@ -39,9 +39,9 @@
   - Standardized tech skill extractor (e.g., regex + taxonomy for Python, React, Docker, Node.js, etc.).
   - Experience level parser (maps "Entry", "3+ years", etc. to integer ranges).
 - [x] **1.4 Dataset Generation & Verification:**
-  - Scraped and deduplicated 1,691 real job records from Jobfound.org.
+  - Scraped and deduplicated 2,900+ real job records from Jobfound, Arbeitnow, Remotive, and LinkedIn (via JSearch API).
   - Saved to `data/jobs.json`.
-  - Validated dataset completeness: 1,691 unique jobs, 1,086 developer/tech roles, 428 remote.
+  - Validated dataset completeness: 2,900+ unique jobs across multiple sources with full schema coverage.
 
 ---
 
@@ -127,7 +127,7 @@
     - `event: token` -> Live conversational message stream
 - [x] **6.3 Guardrails & Testing:**
   - Enforces resume upload pre-condition before applying or matching.
-  - Complete backend test suite: 20/20 tests passing in pytest.
+  - Complete backend test suite: 30/30 tests passing in pytest.
 
 ---
 
@@ -164,7 +164,7 @@
   - Unit tests for Resume Parser (valid PDF, unreadable document, unsupported formats, skills).
   - Unit tests for Matcher Engine (synonyms, filter stacking, top-k ranking, zero matches).
   - Integration tests for Apply & Dedupe flows.
-  - Complete backend test suite: **20/20 tests passing**.
+  - Complete backend test suite: **31/31 tests passing**.
 - [x] **9.2 Verification of 3 Mandatory Assessment Edge Cases:**
   - Case 1: Unreadable/malformed resume -> friendly error message.
   - Case 2: Zero job matches -> advice on broadening filters.

@@ -52,3 +52,8 @@ lerna-debug.log*
 Thumbs.db
 .DS_Store
 
+# Logs & Test Caches
+*.log
+.pytest_cache/
+
+

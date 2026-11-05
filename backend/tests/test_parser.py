@@ -84,6 +84,10 @@ def test_resume_parser_agent_profile_building():
     assert "docker" in skills_lower
     assert "postgresql" in skills_lower
     assert profile.years_of_experience >= 2.0
+    assert len(profile.education) > 0
+    assert "Bachelor" in profile.education[0].degree
+    assert len(profile.projects) > 0
+    assert "High-throughput API" in profile.projects[0].name or "API gateway" in profile.projects[0].description
 
 
 def test_skill_normalization():

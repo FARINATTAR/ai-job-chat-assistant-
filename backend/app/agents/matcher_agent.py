@@ -5,10 +5,26 @@ Uses strict deterministic skill-overlap scoring, experience suitability,
 and title similarity to ensure 100% relevant software jobs with zero hallucination.
 """
 import re
+from datetime import datetime, timezone
 from typing import List, Dict, Any, Tuple, Optional
 from ..models.schemas import Job, ResumeProfile, JobMatch, ActiveFilters
 from ..repositories.job_repo import JobRepository, get_job_repository
 from ..llm.client import LLMClient, get_llm_client
+
+
+def parse_job_date(posted_at: Any) -> Optional[datetime]:
+    if not posted_at:
+        return None
+    try:
+        s = str(posted_at).strip()
+        if s.isdigit():
+            ts = float(s)
+            if ts > 1e11:
+                ts /= 1000
+            return datetime.fromtimestamp(ts, tz=timezone.utc).date()
+        return datetime.strptime(s[:10], "%Y-%m-%d").date()
+    except Exception:
+        return None
 
 
 class MatcherAgent:
@@ -63,6 +79,16 @@ class MatcherAgent:
             # Company filter
             if filters.company and filters.company.lower() not in (job.company or "").lower():
                 continue
+
+            # Date posted recency filter (e.g. 1 day for 24h, 3 days, 7 days)
+            if filters.posted_within_days is not None:
+                job_date = parse_job_date(job.posted_at)
+                if job_date:
+                    today = datetime.now(timezone.utc).date()
+                    if (today - job_date).days > filters.posted_within_days:
+                        continue
+                else:
+                    continue
 
             # Role / Query filter
             if filters.query:
@@ -123,11 +149,46 @@ class MatcherAgent:
         # Sort by match score descending
         scored_candidates.sort(key=lambda x: x[1], reverse=True)
 
-        if not scored_candidates:
+        # 1. Deduplicate identical (company, title)
+        seen_keys = set()
+        deduped_candidates = []
+        for item in scored_candidates:
+            j = item[0]
+            k = (j.company.strip().lower(), j.title.strip().lower())
+            if k in seen_keys:
+                continue
+            seen_keys.add(k)
+            deduped_candidates.append(item)
+
+        # 2. Source Balancing: If user didn't request a specific source, prevent any single platform from dominating
+        if not (filters and filters.source):
+            balanced_candidates = []
+            pool = list(deduped_candidates)
+            while pool:
+                found_idx = None
+                for idx, item in enumerate(pool):
+                    src = (item[0].source or "Other").lower()
+                    if (
+                        len(balanced_candidates) >= 2
+                        and (balanced_candidates[-1][0].source or "Other").lower() == src
+                        and (balanced_candidates[-2][0].source or "Other").lower() == src
+                    ):
+                        continue
+                    found_idx = idx
+                    break
+
+                if found_idx is not None:
+                    balanced_candidates.append(pool.pop(found_idx))
+                else:
+                    balanced_candidates.extend(pool)
+                    break
+            deduped_candidates = balanced_candidates
+
+        if not deduped_candidates:
             return [], False
 
         offset = filters.offset if filters else 0
-        top_candidates = scored_candidates[offset : offset + limit]
+        top_candidates = deduped_candidates[offset : offset + limit]
         job_matches: List[JobMatch] = []
 
         for idx, (job, score, matched_skills, missing_skills) in enumerate(top_candidates, start=offset + 1):
@@ -221,6 +282,11 @@ class MatcherAgent:
             total_score += 10
 
         if any(st in title_low for st in ["sde", "software development engineer", "software engineer", "full stack", "backend", "frontend"]):
+            total_score += 8
+
+        # Boost verified live platforms with guaranteed active application links
+        source_low = (job.source or "").lower()
+        if any(v in source_low for v in ["jobfound", "arbeitnow", "remotive"]):
             total_score += 8
 
         total_score = max(10, min(99, total_score))

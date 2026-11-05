@@ -13,6 +13,18 @@ export function getSessionId(): string {
   return sid;
 }
 
+export interface EducationItem {
+  degree?: string;
+  institution?: string;
+  year?: string;
+}
+
+export interface ProjectItem {
+  name: string;
+  description?: string;
+  technologies?: string[];
+}
+
 export interface ResumeProfile {
   name: string;
   contact: {
@@ -25,6 +37,8 @@ export interface ResumeProfile {
   skills: string[];
   years_of_experience: number;
   experience_summary?: string;
+  education?: EducationItem[];
+  projects?: ProjectItem[];
 }
 
 export interface JobMatch {

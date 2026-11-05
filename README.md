@@ -10,14 +10,14 @@
 
 ## 📖 Project Overview
 
-**AI Job Chat Assistant** is a production-ready conversational agent that ingests candidate resumes (PDF or DOCX), automatically parses their skills, experience, and designation, recommends highly-matching jobs from a dataset of **over 2,500 real-world job listings**, allows natural conversational filtering (e.g. *"show only remote roles"*, *"jobs needing React"*), applies to jobs on request (*"apply to job 3"*), and tracks application statuses without duplication.
+**AI Job Chat Assistant** is a production-ready conversational agent that ingests candidate resumes (PDF or DOCX), automatically parses their skills, experience, and designation, recommends highly-matching jobs from a dataset of **over 2,900 real-world job listings**, allows natural conversational filtering (e.g. *"show only remote roles"*, *"jobs needing React"*), applies to jobs on request (*"apply to job 3"*), and tracks application statuses without duplication.
 
 ### ✨ Key Technical Highlights
 - **LLM Tool-Calling Orchestrator:** Native function-calling schema loop (Gemini / OpenAI) with conversation history context and high-coverage regex fallback. Fully defendable in technical interviews.
 - **Real-Time Agent Activity Trace:** Server-Sent Events (SSE) stream agent thoughts, tool calls, and handoffs to the UI in real time (`[Orchestrator] ➔ Delegating to [JobMatcher]`).
 - **Grounded Matching & Zero Hallucination:** Deterministic skill overlap and experience calculation with LLM-generated explanations strictly bound to factual overlap.
 - **Conversational Index-to-ID Resolution:** Seamlessly translates natural requests like *"apply to job 2"* into concrete IDs using session-level result caching.
-- **2,500+ Real Job Postings Dataset:** Crawled from Jobfound, Arbeitnow, and Remotive public APIs plus verified enterprise SDE listings with automatic deduplication.
+- **2,900+ Real Job Postings Dataset:** Crawled from Jobfound, Arbeitnow, Remotive public APIs and LinkedIn/Indeed/Glassdoor via JSearch API with automatic deduplication.
 - **Production Persistence:** PostgreSQL (Neon serverless) / SQLite with unique constraints `(session_id, job_id)` to prevent duplicate applications across container restarts.
 
 ---
@@ -50,7 +50,7 @@ graph TD
     end
 
     subgraph DataStorage ["Data & Storage Layer"]
-        JobRepo[("JobRepository<br/>1,691 Real Jobs in Memory")]
+        JobRepo[("JobRepository<br/>2,900+ Real Jobs in Memory")]
         Database[("Database<br/>SQLite / Neon PostgreSQL")]
         LLMProvider[("LLM Client<br/>Gemini 1.5/2.0 Flash / OpenAI")]
     end
@@ -202,10 +202,13 @@ hidani assessment/
 │   │       ├── matcher_agent.py           # Sub-agent: Skill scoring & grounded match reason
 │   │       └── apply_agent.py             # Sub-agent: Index-to-ID resolver & tracking
 │   ├── tests/
-│   │   ├── test_parser.py                 # 5 tests: PDF/DOCX, unreadable, corrupt, skills
+│   │   ├── test_parser.py                 # 5 tests: PDF/DOCX, unreadable, corrupt, skills, edu & projects
 │   │   ├── test_matcher.py                # 5 tests: scoring, remote filter, zero matches, seniority gate
 │   │   ├── test_apply.py                  # 5 tests: index resolution, duplicate prevention, list apps
-│   │   └── test_orchestrator.py           # 8 tests: tool calling, intent detection, filters, SSE streaming
+│   │   ├── test_orchestrator.py           # 8 tests: tool calling, intent detection, filters, SSE streaming
+│   │   ├── test_api_endpoints.py          # 4 tests: health check, closed job reporting, upload resume & validation
+│   │   ├── test_job_repo.py               # 2 tests: job upsert, deduplication, active/inactive state
+│   │   └── test_jsearch.py                # 2 tests: JSearch adapter fallback & normalized schema
 │   ├── requirements.txt                   # Backend dependencies
 │   └── Dockerfile                         # Containerization for deployment
 │
@@ -258,8 +261,8 @@ pip install -r requirements.txt
 # (Optional) Add your Gemini API key in backend/.env:
 # GEMINI_API_KEY=your_key_here
 
-# Run backend test suite (23 tests)
-python -m pytest tests/
+# Run backend test suite (31 tests)
+python -m pytest
 
 # Start FastAPI server
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
@@ -306,7 +309,7 @@ Follow this script for the screen recording submission:
 
 | Time | Step | Action & Script Talking Points |
 |---|---|---|
-| **0:00 – 0:45** | **Introduction** | *"Hello! In this walkthrough, I am demoing the AI Job Chat Assistant built for the Hidani Tech SDE Intern assessment. Our backend is loaded with 1,691 real jobs crawled from online job boards."* |
+| **0:00 – 0:45** | **Introduction** | *"Hello! In this walkthrough, I am demoing the AI Job Chat Assistant built for the Hidani Tech SDE Intern assessment. Our backend is loaded with 2,900+ real jobs crawled from online job boards."* |
 | **0:45 – 1:30** | **Resume Upload & Parsing** | Drop a sample resume (PDF/DOCX) into the upload zone. Point out the auto-extracted Profile Card: Name, Designation, and verified technical skills. |
 | **1:30 – 2:30** | **Job Recommendations & SSE Trace** | Click *"Recommend matching jobs"*. Show the **Live Agent Trace badge** expanding: `[Orchestrator] ➔ Delegated to [JobMatcher Sub-Agent]`. Point out the grounded match score and bulleted reasons. |
 | **2:30 – 3:15** | **Conversational Refinement** | Type: *"Show only remote roles"*, followed by *"jobs needing Python"*. Show how filters stack statefully across turns and update results dynamically. |

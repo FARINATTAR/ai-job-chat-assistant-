@@ -16,29 +16,33 @@ from .api.endpoints import router as api_router
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # Startup: Initialize database tables and load jobs into memory
-    print("[Startup] Initializing database...")
+    print("[Startup] Initializing database...", flush=True)
     init_db()
 
-    print("[Startup] Pre-loading jobs dataset into memory...")
+    print("[Startup] Pre-loading jobs dataset into memory...", flush=True)
     repo = get_job_repository()
-    print(f"[Startup] Ready! Loaded {repo.total_count} jobs.")
+    print(f"[Startup] Ready! Loaded {repo.total_count} jobs.", flush=True)
 
     # Start automated background job refresher (syncs fresh roles every 60 mins)
+    worker_task = None
     stop_event = asyncio.Event()
-    worker_task = asyncio.create_task(
-        periodic_job_refresher(stop_event, interval_seconds=3600)
-    )
+    import os
+    if not os.getenv("TESTING"):
+        worker_task = asyncio.create_task(
+            periodic_job_refresher(stop_event, interval_seconds=3600)
+        )
 
     yield
 
     # Shutdown
-    print("[Shutdown] Stopping background workers and cleaning up resources...")
-    stop_event.set()
-    worker_task.cancel()
-    try:
-        await worker_task
-    except (asyncio.CancelledError, Exception):
-        pass
+    if worker_task:
+        print("[Shutdown] Stopping background workers and cleaning up resources...")
+        stop_event.set()
+        worker_task.cancel()
+        try:
+            await worker_task
+        except (asyncio.CancelledError, Exception):
+            pass
 
 
 app = FastAPI(

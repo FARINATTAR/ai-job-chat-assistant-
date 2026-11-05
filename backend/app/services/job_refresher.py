@@ -55,17 +55,19 @@ def fetch_live_job_batch(target_per_source: int = 50) -> List[Dict[str, Any]]:
     return all_fresh
 
 
-def check_expired_jobs(sample_size: int = 25) -> int:
+def check_expired_jobs(sample_size: int = 50) -> int:
     """
     Periodic health-check on active jobs to identify expired links (404/410/closed banners).
     Runs synchronously inside a background worker thread.
     """
+    import random
     from .job_validator import check_job_url_active
     repo = get_job_repository()
     active_jobs = [j for j in repo.get_all() if getattr(j, "is_active", True) is not False and j.source_url]
     deactivated = 0
 
-    for job in active_jobs[:sample_size]:
+    sample = random.sample(active_jobs, min(sample_size, len(active_jobs))) if active_jobs else []
+    for job in sample:
         is_active, reason = check_job_url_active(job.source_url)
         if not is_active:
             repo.mark_job_inactive(job.id)
@@ -80,7 +82,7 @@ async def periodic_job_refresher(stop_event: asyncio.Event, interval_seconds: in
     Periodically pulls fresh job postings, deduplicates, and upserts them
     into the in-memory repository without interfering with user chat latency.
     """
-    print(f"[JobRefresher] Async background worker initialized (sync interval: {interval_seconds // 60} minutes).")
+    print(f"[JobRefresher] Async background worker initialized (sync interval: {interval_seconds // 60} minutes).", flush=True)
 
     # Initial delay: wait 90 seconds after server startup before running first background sync
     try:
@@ -91,24 +93,24 @@ async def periodic_job_refresher(stop_event: asyncio.Event, interval_seconds: in
 
     while not stop_event.is_set():
         try:
-            print("[JobRefresher] Executing scheduled background sync from live APIs...")
+            print("[JobRefresher] Executing scheduled background sync from live APIs...", flush=True)
             # Run blocking HTTP requests in a worker thread
             fresh_jobs = await asyncio.to_thread(fetch_live_job_batch, 50)
 
             if fresh_jobs:
                 repo = get_job_repository()
                 added_count = repo.upsert_jobs(fresh_jobs)
-                print(f"[JobRefresher] Sync complete. Ingested {added_count} new unique jobs from live APIs.")
+                print(f"[JobRefresher] Sync complete. Ingested {added_count} new unique jobs from live APIs.", flush=True)
             else:
-                print("[JobRefresher] No new jobs retrieved during this cycle.")
+                print("[JobRefresher] No new jobs retrieved during this cycle.", flush=True)
 
             # Validate health of existing jobs
-            deactivated = await asyncio.to_thread(check_expired_jobs, 20)
+            deactivated = await asyncio.to_thread(check_expired_jobs, 50)
             if deactivated > 0:
-                print(f"[JobRefresher] Deactivated {deactivated} expired job links.")
+                print(f"[JobRefresher] Deactivated {deactivated} expired job links.", flush=True)
 
         except Exception as e:
-            print(f"[JobRefresher] Background worker error: {e}")
+            print(f"[JobRefresher] Background worker error: {e}", flush=True)
 
         # Sleep for interval_seconds (or abort early if stop_event is set on shutdown)
         try:
@@ -117,5 +119,5 @@ async def periodic_job_refresher(stop_event: asyncio.Event, interval_seconds: in
         except asyncio.TimeoutError:
             pass
 
-    print("[JobRefresher] Background sync worker stopped cleanly.")
+    print("[JobRefresher] Background sync worker stopped cleanly.", flush=True)
 

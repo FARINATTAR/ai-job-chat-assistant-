@@ -162,6 +162,16 @@ class OrchestratorAgent:
                 args["source"] = src_name
                 break
 
+        # Date posted recency detection (24h, 3 days, week, etc.)
+        if any(w in msg_low for w in ["24h", "24 hrs", "24 hours", "last 24", "today", "past day", "1 day"]):
+            args["posted_within_days"] = 1
+        elif any(w in msg_low for w in ["3 days", "3days", "past 3 days", "last 3 days"]):
+            args["posted_within_days"] = 3
+        elif any(w in msg_low for w in ["week", "7 days", "past week", "last 7 days"]):
+            args["posted_within_days"] = 7
+        elif any(w in msg_low for w in ["month", "30 days", "past month"]):
+            args["posted_within_days"] = 30
+
         # Company detection — scan the message for any company name
         if re.search(r"\b(at|from|by|company)\b", msg_low):
             # Extract potential company name after these keywords
@@ -452,6 +462,8 @@ class OrchestratorAgent:
             session.active_filters.company = args["company"]
         if "query" in args:
             session.active_filters.query = args["query"]
+        if "posted_within_days" in args:
+            session.active_filters.posted_within_days = args["posted_within_days"]
 
     @staticmethod
     def _describe_filters(filters: ActiveFilters) -> List[str]:
@@ -470,6 +482,10 @@ class OrchestratorAgent:
             desc.append(f"MaxExp={exp}yr{'s' if exp > 1 else ''}")
         if filters.skills:
             desc.append(f"Skills={', '.join(filters.skills)}")
+        if filters.posted_within_days is not None:
+            days = filters.posted_within_days
+            label = "Last 24h" if days == 1 else f"Last {days} days"
+            desc.append(f"DatePosted={label}")
         if filters.page > 1:
             desc.append(f"Page={filters.page}")
         return desc

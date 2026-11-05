@@ -3,6 +3,7 @@ Unit and integration tests for OrchestratorAgent and chat flows.
 Verifies LLM tool-calling intent detection (with regex fallback),
 agent handoffs, conversational refinement, and application workflows.
 """
+import uuid
 import pytest
 from app.agents.orchestrator import OrchestratorAgent
 from app.core.session import SessionStore
@@ -20,6 +21,21 @@ def setup_db():
 @pytest.fixture
 def orchestrator():
     return OrchestratorAgent()
+
+
+def _run_agen(agen):
+    """Consumes an async generator synchronously without an event loop."""
+    items = []
+    while True:
+        try:
+            coro = agen.asend(None)
+            try:
+                coro.send(None)
+            except StopIteration as si:
+                items.append(si.value)
+        except StopAsyncIteration:
+            break
+    return items
 
 
 def test_intent_detection_apply(orchestrator):
@@ -77,16 +93,14 @@ def test_intent_detection_no_false_greeting(orchestrator):
     assert res2["tool"] != "greet_user"
 
 
-@pytest.mark.anyio
-async def test_orchestrator_chat_stream_greeting(orchestrator):
+def test_orchestrator_chat_stream_greeting(orchestrator, setup_db):
+    """Verify greeting flow streams agent_start and greeting message."""
     store = SessionStore()
     session = store.get_or_create("test_session_chat_1")
     db = SessionLocal()
     app_repo = ApplicationRepository(db)
 
-    events = []
-    async for event in orchestrator.stream_chat(session, "hi", app_repo):
-        events.append(event)
+    events = _run_agen(orchestrator.stream_chat(session, "hi", app_repo))
     db.close()
 
     full_output = "".join(events)
@@ -94,9 +108,8 @@ async def test_orchestrator_chat_stream_greeting(orchestrator):
     assert "AI Job Chat Assistant" in full_output
 
 
-@pytest.mark.anyio
-async def test_orchestrator_chat_stream_recommend_and_apply(orchestrator):
-    import uuid
+def test_orchestrator_chat_stream_recommend_and_apply(orchestrator, setup_db):
+    """End-to-end: recommend jobs, apply to job 1, check duplicate, track applications."""
     store = SessionStore()
     unique_id = f"test_chat_{uuid.uuid4().hex[:8]}"
     session = store.get_or_create(unique_id)
@@ -113,37 +126,25 @@ async def test_orchestrator_chat_stream_recommend_and_apply(orchestrator):
     )
 
     # 1. Ask for recommendations
-    events = []
-    async for event in orchestrator.stream_chat(session, "recommend matching jobs for me", app_repo):
-        events.append(event)
-
+    events = _run_agen(orchestrator.stream_chat(session, "recommend matching jobs for me", app_repo))
     full_output = "".join(events)
     assert "JobMatcher" in full_output
     assert "job_results" in full_output
     assert len(session.last_results) > 0
 
     # 2. Apply to job 1
-    apply_events = []
-    async for event in orchestrator.stream_chat(session, "apply to job 1", app_repo):
-        apply_events.append(event)
-
+    apply_events = _run_agen(orchestrator.stream_chat(session, "apply to job 1", app_repo))
     apply_output = "".join(apply_events)
     assert "ApplicationManager" in apply_output
     assert "Application Recorded" in apply_output
 
     # 3. Duplicate apply to job 1
-    dup_events = []
-    async for event in orchestrator.stream_chat(session, "apply to job 1", app_repo):
-        dup_events.append(event)
-
+    dup_events = _run_agen(orchestrator.stream_chat(session, "apply to job 1", app_repo))
     dup_output = "".join(dup_events)
     assert "already" in dup_output.lower()
 
     # 4. Track applied jobs
-    track_events = []
-    async for event in orchestrator.stream_chat(session, "show my applied jobs", app_repo):
-        track_events.append(event)
-
+    track_events = _run_agen(orchestrator.stream_chat(session, "show my applied jobs", app_repo))
     track_output = "".join(track_events)
     assert "You have applied to" in track_output
 

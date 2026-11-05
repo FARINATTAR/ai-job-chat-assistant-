@@ -5,9 +5,25 @@ Provides sub-millisecond filtering, keyword search, and indexing.
 import json
 import os
 import re
+from datetime import datetime, timezone
 from typing import List, Dict, Optional, Any, Set
 from ..models.schemas import Job, ActiveFilters
 from ..config import settings
+
+
+def _parse_job_date(posted_at: Any) -> Optional[datetime]:
+    if not posted_at:
+        return None
+    try:
+        s = str(posted_at).strip()
+        if s.isdigit():
+            ts = float(s)
+            if ts > 1e11:
+                ts /= 1000
+            return datetime.fromtimestamp(ts, tz=timezone.utc).date()
+        return datetime.strptime(s[:10], "%Y-%m-%d").date()
+    except Exception:
+        return None
 
 
 class JobRepository:
@@ -67,7 +83,7 @@ class JobRepository:
 
     def filter_jobs(self, filters: ActiveFilters, limit: int = 50) -> List[Job]:
         """Apply active conversational filters."""
-        results = self._jobs
+        results = [j for j in self._jobs if getattr(j, "is_active", True) is not False]
 
         # Remote filter
         if filters.remote is not None:
@@ -76,6 +92,14 @@ class JobRepository:
         # Experience filter
         if filters.max_experience is not None:
             results = [j for j in results if j.experience_required <= filters.max_experience]
+
+        # Date posted recency filter
+        if filters.posted_within_days is not None:
+            today = datetime.now(timezone.utc).date()
+            results = [
+                j for j in results
+                if (d := _parse_job_date(j.posted_at)) and (today - d).days <= filters.posted_within_days
+            ]
 
         # Location filter
         if filters.location:
