@@ -14418,7 +14418,7 @@
     "source_url": "https://careers.cai.io/us/en/job/CAICAIUSR8881EXTERNALENUS/full-stack-software-engineer?source=jobfound.org",
     "source": "Jobfound",
     "posted_at": "2026-10-30T15:55:59.284Z",
-    "is_active": true
+    "is_active": false
   },
   {
     "id": "jf_6ae4be0d003bd292bca6",
@@ -63470,6 +63470,23 @@
     "source_url": "https://www.arbeitnow.com/jobs/companies/taxtalentede/steuerberater-in-swisttal-auf-wunsch-mit-partnerperspektive-gesucht-mindestens-90000eur-14634",
     "source": "arbeitnow.com",
     "posted_at": "1793860238",
+    "is_active": true
+  },
+  {
+    "id": "an_it-netzwerk-und-sicherheitsspezialist-munich-112430",
+    "title": "IT-Netzwerk- und Sicherheitsspezialist (m/w/d)",
+    "company": "hubside - Die Recruitingwerkstatt",
+    "location": "Munich",
+    "workplace_type": "onsite",
+    "remote": false,
+    "experience_required": 0,
+    "skills": [
+      "IT Security"
+    ],
+    "description": "<p>Sie möchten eine moderne IT-Infrastruktur aktiv mitgestalten und die Themen Netzwerk, Virtualisierung und IT-Sicherheit vorantreiben?</p><p>In dieser Position als IT-Netzwerk- und Sicherheitsspezialist (m/w/d) übernehmen Sie Verantwortung für den stabilen und sicheren Betrieb komplexer IT-Systeme. Dabei verbinden Sie fundiertes Infrastruktur-Know-how mit modernen Security-Konzepten und gestalten die technologische Weiterentwicklung der IT-Landschaft aktiv mit.</p><h3>Ihre Aufgaben</h3><ul><li><p>Verantwortung für den sicheren Betrieb und Weiterentwicklung der IT Infrastruktur, Virtualisierungs- und Backup-Umgebungen</p></li><li><p>Implementierung von Sicherheitsstandards sowie Durchführung von Patch-, Schwachstellen- und Risikomanagement</p></li><li><p>Administration von Proxmox VE, Netzwerken (VPN, SD-WAN, LAN, WAN, WLAN), Firewalls und Switches</p></li><li><p>Weiterentwicklung von Zero-Trust- und NAC-Konzepten inklusive macmon, 802.1X und Zertifikatsmanagement</p></li><li><p>Planung von Notfall- und Recovery-Konzepten, Begleitung von DORA-Audits sowie technische Steuerung von Infrastruktur- und Security-Projekten inklusive 2nd- und 3rd-Level-Support</p></li></ul><h3>Ihr Profil</h3><ul><li><p>Abgeschlossenes IT-Studium oder vergleichbare Ausbildung mit mehrjähriger Berufserfahrung</p></li><li><p>Fundierte Kenntnisse in IT-Infrastruktur, Netzwerkadministration, IT-Security und Virtualisierung (Proxmox VE, Veeam)</p></li><li><p>Erfahrung mit Routing, Switching, Firewalls, SD-WAN, Zero Trust, NAC sowie idealerweise macmon und 802.1X</p></li><li><p>Know-how in PKI, Kryptografie, Schwachstellenmanagement und regulatorischen Anforderungen wie DORA</p></li><li><p>Analytische und eigenständige Arbeitsweise, ausgeprägte Kommunikationsfähigkeit und Reisebereitschaft innerhalb Bayerns</p></li></ul><h3>Unser Angebot</h3><ul><li><p>Eine langfristige Perspektive in einem zukunftsorientierten Unternehmen</p></li><li><p>Attraktive Sozialleistungen und zusätzliche Benefits</p></li><li><p>Moderne Arbeitsumgebung</p></li><li><p>Ein kollegiales Arbeitsumfeld mit kurzen Entscheidungswegen</p></li><li><p>Spannende Aufgaben mit Gestaltungsspielraum und hoher Eigenverantwortung</p></li><li><p>Individuelle Möglichkeiten zur fachlichen und persönlichen Weiterentwicklung</p></li><li><p>Eine <strong>Werbeprämie von 1000 Euro </strong>bei erfolgreicher Empfehlung</p></li></ul><p>Find <a href=\"https://www.arbeitnow.com\">Jobs in Germany</a> on Arbeitnow</a>",
+    "source_url": "https://www.arbeitnow.com/jobs/companies/hubside-die-recruitingwerkstatt/it-netzwerk-und-sicherheitsspezialist-munich-112430",
+    "source": "arbeitnow.com",
+    "posted_at": "1793863858",
     "is_active": true
   }
 ]

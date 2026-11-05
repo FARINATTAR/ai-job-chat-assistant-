@@ -597,8 +597,8 @@ export default function Home() {
 
       <main className="flex-1 flex flex-col overflow-hidden">
         {/* Interactive Filter Bar */}
-        <div className="border-b border-slate-200/80 bg-white/95 backdrop-blur-sm px-4 sm:px-6 py-2 shrink-0">
-          <div className="max-w-4xl mx-auto flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        <div className="border-b border-slate-200/80 bg-white/95 backdrop-blur-sm px-4 sm:px-6 lg:px-8 py-2 shrink-0">
+          <div className="max-w-7xl mx-auto flex flex-wrap items-center gap-x-3 gap-y-1.5">
             {/* Workplace Mode */}
             <div className="flex items-center gap-1 text-xs">
               <MapPin className="w-3.5 h-3.5 text-slate-400 mr-0.5 shrink-0" />
@@ -692,14 +692,14 @@ export default function Home() {
 
         {/* Messages scroll viewport: full-width so no vertical gray scrollbar line cuts through desktop */}
         <div className="flex-1 overflow-y-auto">
-          <div className="px-4 sm:px-6 py-6 space-y-5 max-w-4xl w-full mx-auto">
+          <div className="px-4 sm:px-6 lg:px-8 py-6 space-y-6 max-w-7xl w-full mx-auto">
             {messages.length === 0 && (
-              <div className="py-6 sm:py-10 px-4 max-w-2xl mx-auto text-center space-y-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100/80 text-xs font-semibold text-indigo-700 shadow-xs">
+              <div className="py-6 sm:py-10 px-4 max-w-3xl mx-auto text-center space-y-6">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-50 border border-indigo-100/80 text-xs font-semibold text-indigo-700 shadow-xs">
                   <Sparkles className="w-3.5 h-3.5 text-indigo-600" />
                   <span>AI Job Assistant</span>
                   <span className="text-indigo-300">•</span>
-                  <span className="text-slate-600 font-normal">2,800+ Verified Roles</span>
+                  <span className="text-slate-600 font-normal">2,900+ Verified Roles</span>
                 </div>
 
                 <div className="space-y-2">
@@ -745,7 +745,7 @@ export default function Home() {
                   <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider text-center">
                     Or start with a conversational query
                   </p>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
                     {[
                       {
                         icon: Globe,
@@ -843,7 +843,7 @@ export default function Home() {
                           Scroll down to view all {msg.jobResults.length} jobs ↓
                         </span>
                       </div>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
                         {msg.jobResults.map((match) => (
                           <JobCard
                             key={match.job.id}
@@ -893,7 +893,7 @@ export default function Home() {
         <div className="border-t border-slate-200 bg-white p-3 sm:p-4 shadow-xs">
           <form
             onSubmit={(e) => { e.preventDefault(); handleSendMessage(); }}
-            className="flex items-center gap-2 max-w-4xl mx-auto"
+            className="flex items-center gap-2 max-w-7xl mx-auto"
           >
             <input
               ref={chatFileInputRef}
@@ -953,62 +953,64 @@ function Header({
   onUploadClick?: () => void;
 }) {
   return (
-    <header className="px-4 sm:px-6 py-3 border-b border-slate-200 bg-white flex items-center justify-between shrink-0">
-      <div className="flex items-center gap-3">
-        {onGoBack && (
-          <button
-            onClick={onGoBack}
-            className="p-1.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors"
-            title="Back to filters"
-          >
-            <ArrowLeft className="w-4 h-4" />
-          </button>
-        )}
-        <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-600 flex items-center justify-center shadow-sm">
-            <Sparkles className="w-4 h-4 text-white" />
-          </div>
-          <div>
-            <h1 className="text-sm font-bold text-slate-900">
-              Hidani Tech
-              <span className="ml-2 text-xs font-normal text-slate-400 hidden sm:inline">
+    <header className="px-4 sm:px-6 lg:px-8 py-3.5 border-b border-slate-200 bg-white shrink-0 shadow-xs">
+      <div className="max-w-7xl mx-auto flex items-center justify-between w-full">
+        <div className="flex items-center gap-3">
+          {onGoBack && (
+            <button
+              onClick={onGoBack}
+              className="p-1.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors"
+              title="Back to filters"
+            >
+              <ArrowLeft className="w-4 h-4" />
+            </button>
+          )}
+          <div className="flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-600 flex items-center justify-center shadow-sm">
+              <Sparkles className="w-4 h-4 text-white" />
+            </div>
+            <div>
+              <h1 className="text-sm font-bold text-slate-900 flex items-center gap-2">
                 AI Job Assistant
-              </span>
-            </h1>
-            {profileName ? (
-              <p className="text-[11px] font-medium text-emerald-600 flex items-center gap-1">
-                <CheckCircle className="w-3 h-3 inline" /> {profileName}
-              </p>
-            ) : (
-              <p className="text-[11px] text-slate-400">2,800+ Verified Roles</p>
-            )}
+                <span className="text-xs font-normal text-slate-400 hidden sm:inline">
+                  Role Matcher & Tracker
+                </span>
+              </h1>
+              {profileName ? (
+                <p className="text-[11px] font-medium text-emerald-600 flex items-center gap-1">
+                  <CheckCircle className="w-3 h-3 inline" /> {profileName}
+                </p>
+              ) : (
+                <p className="text-[11px] text-slate-400 font-medium">2,900+ Verified Software Roles</p>
+              )}
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="flex items-center gap-2">
-        {onUploadClick && (
-          <button
-            onClick={onUploadClick}
-            className="px-3 py-1.5 rounded-xl border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50/50 text-slate-700 hover:text-indigo-600 text-xs font-semibold flex items-center gap-1.5 transition-all"
-            title="Attach Resume (PDF/DOCX)"
-          >
-            <Paperclip className="w-3.5 h-3.5" />
-            <span className="hidden sm:inline">Upload Resume</span>
-          </button>
-        )}
-        <button
-          onClick={onOpenDrawer}
-          className="px-3.5 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold flex items-center gap-1.5 transition-all shadow-xs"
-        >
-          <Briefcase className="w-3.5 h-3.5" />
-          <span>Applied Jobs</span>
-          {appliedCount > 0 && (
-            <span className="w-4 h-4 rounded-full bg-white text-indigo-700 text-[10px] font-bold flex items-center justify-center">
-              {appliedCount}
-            </span>
+        <div className="flex items-center gap-2">
+          {onUploadClick && (
+            <button
+              onClick={onUploadClick}
+              className="px-3.5 py-1.5 rounded-xl border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50/50 text-slate-700 hover:text-indigo-600 text-xs font-semibold flex items-center gap-1.5 transition-all shadow-2xs"
+              title="Attach Resume (PDF/DOCX)"
+            >
+              <Paperclip className="w-3.5 h-3.5" />
+              <span className="hidden sm:inline">Upload Resume</span>
+            </button>
           )}
-        </button>
+          <button
+            onClick={onOpenDrawer}
+            className="px-3.5 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold flex items-center gap-1.5 transition-all shadow-xs"
+          >
+            <Briefcase className="w-3.5 h-3.5" />
+            <span>Applied Jobs</span>
+            {appliedCount > 0 && (
+              <span className="w-4 h-4 rounded-full bg-white text-indigo-700 text-[10px] font-bold flex items-center justify-center">
+                {appliedCount}
+              </span>
+            )}
+          </button>
+        </div>
       </div>
     </header>
   );

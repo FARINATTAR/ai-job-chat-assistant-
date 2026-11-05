@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AI Job Chat Assistant | Hidani Tech",
+  title: "AI Job Assistant | Role Matcher & Application Tracker",
   description: "Conversational AI assistant for resume parsing, job matching, and one-click applications.",
 };
 
