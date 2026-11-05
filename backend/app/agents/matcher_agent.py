@@ -37,7 +37,12 @@ CAREER_DOMAINS = {
     "ai_ml": ["ai", "machine learning", "deep learning", "nlp", "computer vision", "genai", "generative ai", "llm", "azure openai", "rag", "prompt engineering"],
     "frontend": ["frontend", "react", "next.js", "vue", "angular", "ui developer", "web developer"],
     "backend": ["backend", "api", "fastapi", "django", "node", "express", "golang", "java developer"],
+    "marketing": ["marketing", "seo", "sem", "content strategy", "social media", "google ads", "hubspot", "brand management", "email marketing", "growth hacking"],
+    "finance": ["finance", "accounting", "chartered accountant", "ca", "cfa", "investment banking", "financial analyst"],
 }
+
+# Domains where the dataset might have limited direct matches
+NICHE_DOMAINS = {"hr", "design", "marketing", "finance", "legal", "medical"}
 
 
 class MatcherAgent:
@@ -52,9 +57,25 @@ class MatcherAgent:
         """Detect primary career domain of candidate."""
         combined = candidate_title.lower() + " " + " ".join(candidate_skills_lower)
         for dom, kws in CAREER_DOMAINS.items():
-            if any(k in combined for k in kws):
-                return dom
-        return "software"
+            for k in kws:
+                if len(k) <= 3:
+                    if re.search(r"\b" + re.escape(k) + r"\b", combined):
+                        return dom
+                elif k in combined:
+                    return dom
+        # If title or skills contain tech/software markers, classify as software
+        software_markers = [
+            "software", "developer", "engineer", "programmer", "coding",
+            "sde", "swe", "web", "computer", "tech", "it", "fullstack",
+            "backend", "frontend", "intern"
+        ]
+        for marker in software_markers:
+            if len(marker) <= 3:
+                if re.search(r"\b" + re.escape(marker) + r"\b", combined):
+                    return "software"
+            elif marker in combined:
+                return "software"
+        return "other"
 
     def match_jobs(
         self,
@@ -63,7 +84,7 @@ class MatcherAgent:
         limit: int = 10
     ) -> Tuple[List[JobMatch], bool]:
         """
-        Rank top software jobs for the candidate considering active conversational filters.
+        Rank top jobs for the candidate considering active conversational filters.
         Returns (ranked_job_matches, has_matches).
         """
         filters = filters or ActiveFilters()
@@ -75,6 +96,7 @@ class MatcherAgent:
         candidate_skills_lower = set(s.strip().lower() for s in profile.skills if s.strip())
         candidate_title = profile.designation.lower()
         candidate_exp = profile.years_of_experience
+        cand_domain = self._detect_domain(candidate_title, candidate_skills_lower)
 
         scored_candidates: List[Tuple[Job, int, List[str], List[str]]] = []
 
@@ -270,7 +292,6 @@ class MatcherAgent:
         cand_domain = self._detect_domain(candidate_title, candidate_skills_lower)
         title_low = job.title.lower()
         job_skills_lower = set(s.strip().lower() for s in job_skills)
-        job_desc_low = (job.description or "").lower()
 
         # Check if job belongs to candidate's domain
         is_job_in_domain = False
@@ -282,10 +303,11 @@ class MatcherAgent:
             ):
                 is_job_in_domain = True
         else:
-            is_job_in_domain = True
+            is_job_in_domain = False
 
-        # Non-tech domains (HR, Design) must NOT receive generic software engineering jobs
-        if cand_domain in ["hr", "design"] and not is_job_in_domain and num_matched == 0:
+        # For niche domains or completely out-of-league fields: if no skill overlap AND job is not in domain, reject
+        # to avoid polluting results with random tech jobs
+        if (cand_domain in NICHE_DOMAINS or cand_domain == "other") and not is_job_in_domain and num_matched == 0:
             return 0, [], missing_skills
 
         # Title score calculation

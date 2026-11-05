@@ -402,12 +402,24 @@ class OrchestratorAgent:
             criteria_str = (
                 " (" + ", ".join(filter_summary) + ")" if filter_summary else ""
             )
-            zero_match_msg = (
-                f"No additional jobs found matching your criteria{criteria_str}.\n\n"
-                "Suggestions:\n"
-                "- Type 'reset' to view all recommendations from the beginning.\n"
-                "- Try searching another source (e.g. 'show Arbeitnow jobs' or 'show LinkedIn jobs')."
-            )
+
+            # Check if candidate has a specific non-software or niche designation with 0 dataset matches
+            cand_title = session.resume_profile.designation if session.resume_profile else ""
+            if cand_title and cand_title not in ["Software Engineer", "Candidate"] and not filter_summary:
+                zero_match_msg = (
+                    f"No open positions currently found directly matching **{cand_title}** in our active dataset.\n\n"
+                    "Our verified listings currently center around **Software Engineering, AI/ML, Data & Analytics, Cloud/DevOps, Product Management**, and tech-adjacent roles.\n\n"
+                    "**Suggestions:**\n"
+                    "- Search for related analytical or technical positions (e.g. *'show Data Analyst jobs'* or *'show remote Product roles'*).\n"
+                    "- Say *'show all jobs'* or *'reset'* to explore all available listings across platforms."
+                )
+            else:
+                zero_match_msg = (
+                    f"No additional jobs found matching your criteria{criteria_str}.\n\n"
+                    "Suggestions:\n"
+                    "- Type 'reset' to view all recommendations from the beginning.\n"
+                    "- Try searching another source (e.g. 'show Arbeitnow jobs' or 'show LinkedIn jobs')."
+                )
             session.history.append({"role": "assistant", "content": zero_match_msg})
             yield StreamEmitter.token(zero_match_msg)
             yield StreamEmitter.complete()
@@ -428,11 +440,13 @@ class OrchestratorAgent:
         source_str = f" from {session.active_filters.source}" if session.active_filters.source else ""
         company_str = f" at {session.active_filters.company}" if session.active_filters.company else ""
 
-        text_resp = (
-            f"Showing next {count} positions (Page {page_num}):"
-            if page_num > 1
-            else f"Found {count} matching roles{company_str}{source_str} for your profile:"
-        )
+        cand_title = session.resume_profile.designation if session.resume_profile else ""
+        if page_num > 1:
+            text_resp = f"Showing next {count} positions (Page {page_num}):"
+        elif cand_title and cand_title not in ["Candidate"]:
+            text_resp = f"Found {count} matching roles{company_str}{source_str} for your **{cand_title}** profile:"
+        else:
+            text_resp = f"Found {count} matching roles{company_str}{source_str} for your profile:"
 
         session.history.append({"role": "assistant", "content": text_resp})
         yield StreamEmitter.token(text_resp)

@@ -244,6 +244,12 @@ class ResumeParserAgent:
             (r"\b(?:devops\s+engineer|cloud\s+engineer|site\s+reliability\s+engineer|sre|platform\s+engineer|infrastructure\s+engineer)\b", "DevOps Engineer"),
             # AI / Machine Learning & GenAI
             (r"\b(?:genai\s+engineer|generative\s+ai|ai\s+engineer|machine\s+learning\s+engineer|nlp\s+engineer|deep\s+learning\s+engineer|prompt\s+engineer)\b", "AI Engineer"),
+            # Marketing & Growth
+            (r"\b(?:digital\s+marketing|marketing\s+(?:manager|specialist|executive|intern|lead)|growth\s+marketer|seo\s+specialist|content\s+strategist|brand\s+manager)\b", "Marketing Specialist"),
+            # Sales & Business Development
+            (r"\b(?:business\s+development|sales\s+(?:manager|executive|representative|associate|lead)|account\s+executive)\b", "Business Development"),
+            # Finance & Accounting
+            (r"\b(?:financial\s+analyst|accountant|finance\s+specialist|chartered\s+accountant|investment\s+analyst)\b", "Financial Analyst"),
             # Web & Software Development Tracks
             (r"\b(?:full\s*stack\s+developer|full\s*stack\s+engineer)\b", "Full Stack Developer"),
             (r"\b(?:frontend\s+developer|frontend\s+engineer|react\s+developer|web\s+developer)\b", "Frontend Developer"),
