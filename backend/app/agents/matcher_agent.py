@@ -27,12 +27,34 @@ def parse_job_date(posted_at: Any) -> Optional[datetime]:
         return None
 
 
+CAREER_DOMAINS = {
+    "embedded": ["embedded", "firmware", "iot", "hardware", "microcontroller", "rtos", "arm", "pcb", "fpga", "robotics", "device driver"],
+    "hr": ["hr", "human resources", "talent acquisition", "recruiter", "recruitment", "people operations", "staffing", "human capital", "onboarding"],
+    "data": ["data analyst", "data engineer", "data scientist", "analytics", "bi developer", "tableau", "power bi", "etl", "data warehouse"],
+    "design": ["designer", "ui/ux", "product design", "figma", "graphic design", "user experience"],
+    "qa": ["qa", "tester", "testing", "quality assurance", "sdet", "test automation"],
+    "devops": ["devops", "cloud engineer", "sre", "site reliability", "infrastructure", "platform engineer", "kubernetes"],
+    "ai_ml": ["ai", "machine learning", "deep learning", "nlp", "computer vision", "genai", "generative ai", "llm", "azure openai", "rag", "prompt engineering"],
+    "frontend": ["frontend", "react", "next.js", "vue", "angular", "ui developer", "web developer"],
+    "backend": ["backend", "api", "fastapi", "django", "node", "express", "golang", "java developer"],
+}
+
+
 class MatcherAgent:
     """Sub-agent responsible for ranking jobs and generating grounded explanations."""
 
     def __init__(self, job_repo: Optional[JobRepository] = None, llm_client: Optional[LLMClient] = None):
         self.job_repo = job_repo or get_job_repository()
         self.llm = llm_client or get_llm_client()
+
+    @staticmethod
+    def _detect_domain(candidate_title: str, candidate_skills_lower: set) -> str:
+        """Detect primary career domain of candidate."""
+        combined = candidate_title.lower() + " " + " ".join(candidate_skills_lower)
+        for dom, kws in CAREER_DOMAINS.items():
+            if any(k in combined for k in kws):
+                return dom
+        return "software"
 
     def match_jobs(
         self,
@@ -244,18 +266,40 @@ class MatcherAgent:
             # Multi-skill overlap reward curve
             skill_score = min(100.0, (num_matched / total_req) * 115.0)
 
-        # 2. Title & Role Relevance
+        # 2. Domain & Title Alignment
+        cand_domain = self._detect_domain(candidate_title, candidate_skills_lower)
         title_low = job.title.lower()
+        job_skills_lower = set(s.strip().lower() for s in job_skills)
+        job_desc_low = (job.description or "").lower()
+
+        # Check if job belongs to candidate's domain
+        is_job_in_domain = False
+        if cand_domain in CAREER_DOMAINS:
+            dom_kws = CAREER_DOMAINS[cand_domain]
+            if (
+                any(k in title_low for k in dom_kws)
+                or any(k in s for s in job_skills_lower for k in dom_kws)
+            ):
+                is_job_in_domain = True
+        else:
+            is_job_in_domain = True
+
+        # Non-tech domains (HR, Design) must NOT receive generic software engineering jobs
+        if cand_domain in ["hr", "design"] and not is_job_in_domain and num_matched == 0:
+            return 0, [], missing_skills
+
+        # Title score calculation
+        cand_words = set(re.findall(r"\w+", candidate_title))
         title_score = 30.0
 
-        tech_roles = ["software", "developer", "engineer", "frontend", "backend", "full stack", "fullstack", "sde", "intern", "web", "data", "ai", "cloud"]
-        cand_words = set(re.findall(r"\w+", candidate_title))
-
-        # Title keyword overlap
         if any(w in title_low for w in cand_words if len(w) > 3):
-            title_score = 85.0
-        elif any(r in title_low for r in tech_roles):
+            title_score = 90.0
+        elif is_job_in_domain:
+            title_score = 80.0
+        elif cand_domain == "software" and any(r in title_low for r in ["software", "developer", "engineer", "sde"]):
             title_score = 65.0
+        else:
+            title_score = 15.0
 
         # 3. Experience Fit
         req_exp = float(job.experience_required)
@@ -268,26 +312,37 @@ class MatcherAgent:
         else:
             exp_score = 20.0
 
-        # If zero technical skills matched and title is weak, reject early
+        # Early rejection for zero skill overlap and weak title
         if num_matched == 0 and title_score < 70:
             return 0, [], missing_skills
 
         # Weighted Composite Score
         total_score = int(0.55 * skill_score + 0.30 * title_score + 0.15 * exp_score)
 
-        # Brand / Core SDE Boost
-        top_tier = ["google", "amazon", "microsoft", "apple", "meta", "adobe", "uber", "atlassian", "salesforce", "cisco", "flipkart", "oracle", "goldman sachs", "jpmorgan", "intuit", "phonepe", "swiggy", "zomato"]
+        # Domain Alignment Bonus
+        if is_job_in_domain and cand_domain != "software":
+            total_score += 20
+
+        # Brand Boost (Only awarded if candidate has real skill or domain relevance)
+        top_tier = [
+            "google", "amazon", "microsoft", "apple", "meta", "adobe", "uber",
+            "atlassian", "salesforce", "cisco", "flipkart", "oracle",
+            "goldman sachs", "jpmorgan", "intuit", "phonepe", "swiggy", "zomato"
+        ]
         comp_lower = (job.company or "").lower()
-        if any(tt in comp_lower for tt in top_tier):
+        if (num_matched > 0 or is_job_in_domain) and any(tt in comp_lower for tt in top_tier):
             total_score += 10
 
-        if any(st in title_low for st in ["sde", "software development engineer", "software engineer", "full stack", "backend", "frontend"]):
+        # Core Track Boost
+        if cand_domain in ["software", "frontend", "backend"] and any(
+            st in title_low for st in ["sde", "software development engineer", "software engineer", "full stack", "backend", "frontend"]
+        ):
             total_score += 8
 
         # Boost verified live platforms with guaranteed active application links
         source_low = (job.source or "").lower()
         if any(v in source_low for v in ["jobfound", "arbeitnow", "remotive"]):
-            total_score += 8
+            total_score += 5
 
         total_score = max(10, min(99, total_score))
 

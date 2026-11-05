@@ -7,7 +7,15 @@
     "Linux", "Terraform", "Kafka", "RabbitMQ", "Microservices",
     "Machine Learning", "Deep Learning", "NLP", "Computer Vision", "PyTorch", "TensorFlow",
     "Pandas", "NumPy", "Scikit-Learn", "Data Analysis", "Java", "C++", "C#", "Go", "Rust",
-    "Agile", "Scrum", "Jest", "Pytest", "Unit Testing"
+    "Agile", "Scrum", "Jest", "Pytest", "Unit Testing",
+    "Embedded C", "RTOS", "ARM", "Microcontroller", "UART", "SPI", "I2C", "Firmware",
+    "PCB Design", "Keil", "Verilog", "VHDL", "IoT", "Robotics", "MATLAB",
+    "Talent Acquisition", "Recruitment", "Employee Engagement", "HR Policies", "Onboarding",
+    "Payroll", "Screening", "Performance Management", "Sourcing", "Workday", "ATS", "Human Resources",
+    "Power BI", "Tableau", "Excel", "ETL", "Data Warehousing", "Snowflake", "BigQuery", "Data Modeling",
+    "Figma", "UI/UX", "Wireframing", "Prototyping", "User Research", "Adobe XD",
+    "Selenium", "Cypress", "Automation Testing", "Manual Testing", "Postman", "JMeter", "TestNG", "JIRA",
+    "LangChain", "LlamaIndex", "RAG", "Prompt Engineering", "Hugging Face", "OpenAI", "LLMs", "Azure OpenAI"
   ],
   "synonyms": {
     "js": "JavaScript",
@@ -26,7 +34,14 @@
     "ml": "Machine Learning",
     "ai": "Artificial Intelligence",
     "rest": "REST API",
-    "restful": "REST API"
+    "restful": "REST API",
+    "genai": "Generative AI",
+    "prompting": "Prompt Engineering",
+    "embedded": "Embedded C",
+    "microcontrollers": "Microcontroller",
+    "talent": "Talent Acquisition",
+    "hr": "Human Resources",
+    "testing": "Manual Testing",
+    "qa": "Automation Testing"
   }
 }
-

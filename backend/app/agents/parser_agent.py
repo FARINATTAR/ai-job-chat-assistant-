@@ -225,15 +225,51 @@ class ResumeParserAgent:
         if len(candidate_name) > 40 or "@" in candidate_name:
             candidate_name = "Candidate"
 
-        # Designation heuristic
+        # Designation heuristic: comprehensive multi-domain career track detection
         designation = "Software Engineer"
-        for title_candidate in [
-            "Frontend Developer", "Backend Developer", "Full Stack Developer",
-            "Data Scientist", "DevOps Engineer", "Machine Learning Engineer", "SDE Intern"
-        ]:
-            if title_candidate.lower() in text.lower():
-                designation = title_candidate
+        career_tracks = [
+            # Embedded, Firmware & Hardware
+            (r"\b(?:embedded\s+(?:systems?\s+)?(?:engineer|developer)|firmware\s+engineer|iot\s+engineer|hardware\s+engineer|rtos\s+developer)\b", "Embedded Engineer"),
+            # Human Resources & Talent
+            (r"\b(?:human\s+resources|talent\s+acquisition|hr\s+(?:generalist|executive|specialist|manager|intern|partner)|technical\s+recruiter|recruiter|people\s+operations)\b", "HR Specialist"),
+            # Data & Analytics
+            (r"\b(?:data\s+analyst|business\s+analyst|data\s+scientist|data\s+engineer|bi\s+developer|analytics\s+engineer)\b", "Data Analyst"),
+            # UI/UX & Design
+            (r"\b(?:ui[/-]ux\s+designer|product\s+designer|ux\s+researcher|graphic\s+designer|web\s+designer)\b", "UI/UX Designer"),
+            # Quality Assurance & Testing
+            (r"\b(?:qa\s+engineer|sdet|quality\s+assurance|test\s+engineer|automation\s+tester|software\s+tester)\b", "QA Engineer"),
+            # Product & Project Management
+            (r"\b(?:product\s+manager|associate\s+product\s+manager|technical\s+program\s+manager|project\s+manager|scrum\s+master)\b", "Product Manager"),
+            # DevOps & Cloud Infrastructure
+            (r"\b(?:devops\s+engineer|cloud\s+engineer|site\s+reliability\s+engineer|sre|platform\s+engineer|infrastructure\s+engineer)\b", "DevOps Engineer"),
+            # AI / Machine Learning & GenAI
+            (r"\b(?:genai\s+engineer|generative\s+ai|ai\s+engineer|machine\s+learning\s+engineer|nlp\s+engineer|deep\s+learning\s+engineer|prompt\s+engineer)\b", "AI Engineer"),
+            # Web & Software Development Tracks
+            (r"\b(?:full\s*stack\s+developer|full\s*stack\s+engineer)\b", "Full Stack Developer"),
+            (r"\b(?:frontend\s+developer|frontend\s+engineer|react\s+developer|web\s+developer)\b", "Frontend Developer"),
+            (r"\b(?:backend\s+developer|backend\s+engineer|node\s+developer|python\s+developer|java\s+developer)\b", "Backend Developer"),
+            (r"\b(?:mobile\s+developer|android\s+developer|ios\s+developer|flutter\s+developer)\b", "Mobile Developer"),
+            (r"\b(?:sde\s+intern|software\s+intern|engineering\s+intern)\b", "SDE Intern"),
+            (r"\b(?:software\s+(?:development\s+)?engineer|sde|software\s+developer)\b", "Software Engineer"),
+        ]
+
+        # First scan the candidate header (first 5 lines) where candidates state their title
+        header_text = "\n".join(lines[:5])
+        found_title = None
+        for pattern, title_val in career_tracks:
+            if re.search(pattern, header_text, re.IGNORECASE):
+                found_title = title_val
                 break
+
+        # If not found in header, scan the full resume text
+        if not found_title:
+            for pattern, title_val in career_tracks:
+                if re.search(pattern, text, re.IGNORECASE):
+                    found_title = title_val
+                    break
+
+        if found_title:
+            designation = found_title
 
         # Experience years heuristic: look for years and months (e.g. internships)
         exp_years = 0.0
