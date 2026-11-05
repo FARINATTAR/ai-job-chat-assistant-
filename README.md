@@ -3,7 +3,8 @@
 > **Company:** Hidani Tech  
 > **Position:** Software Development Engineer (SDE) Intern - AI Agents & Automation  
 > **Candidate:** Farin Attar  
-> **Live Demo:** [https://ai-job-chat-assistant.vercel.app](https://ai-job-chat-assistant.vercel.app) *(Deploy link)*  
+> **Live Demo:** [https://ai-job-chat-assistant-six.vercel.app/](https://ai-job-chat-assistant-six.vercel.app/)
+> **Backend API:** [https://ai-job-chat-backend.onrender.com](https://ai-job-chat-backend.onrender.com)  
 > **GitHub Repository:** [https://github.com/FARINATTAR/ai-job-chat-assistant-](https://github.com/FARINATTAR/ai-job-chat-assistant-)  
 
 ---
