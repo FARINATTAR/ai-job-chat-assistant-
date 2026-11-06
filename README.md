@@ -241,6 +241,18 @@ hidani assessment/
 
 ## Quickstart: Local Setup Guide
 
+### Option A: Run with Docker Compose (Recommended)
+Launch the entire system (FastAPI backend + Next.js frontend) with a single command:
+```bash
+git clone https://github.com/FARINATTAR/ai-job-chat-assistant-.git
+cd ai-job-chat-assistant-
+docker compose up --build
+```
+- Frontend UI: `http://localhost:3000`
+- Backend API Docs: `http://localhost:8000/docs`
+
+### Option B: Manual Local Setup
+
 ### Prerequisites
 - Python 3.10+
 - Node.js 18+ and npm
